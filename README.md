@@ -29,8 +29,8 @@ Aqui irán las entidades que hagamos
   </tr>
     <td> Pablo </td>
     <td> Fuente Pérez </td>
-    <td> <a href="https://github.com/Maes95">  Maes95 </a></td>
-	  <td> <a href="mailto:m.maes@alumnos.urjc.es"> m.maes@alumnos.urjc.es</a></td>
+    <td> <a href="https://github.com/pabloFuente">  pabloFuente </a></td>
+	  <td> <a href="mailto:p.fuente@alumnos.urjc.es"> p.fuente@alumnos.urjc.es</a></td>
   </tr>
     <td> Sergio </td>
     <td> Pérez Peló </td>
