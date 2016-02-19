@@ -4,6 +4,7 @@
 Indicando qué funcionalidad es pública y cual es privada y diferente para cada usuario.
 
 ## Entidades
+Aqui irán las entidades que hagamos
 
 ## Integrantes del equipo de desarrollo: 
 
