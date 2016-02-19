@@ -35,7 +35,7 @@ Aqui irán las entidades que hagamos
     <td> Sergio </td>
     <td> Pérez Peló </td>
     <td> <a href="https://github.com/SackerTesla">  SackerTesla </a></td>
-	  <td> <a href="mailto:s.perezpel@alumnos.urjc.es"> m.maes@alumnos.urjc.es</a></td>
+	  <td> <a href="mailto:s.perezpel@alumnos.urjc.es"> s.perezpel@alumnos.urjc.es</a></td>
   </tr>
 </table>
 <!-- Fin tabla -->
