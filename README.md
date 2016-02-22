@@ -19,8 +19,8 @@ Aqui irán las entidades que hagamos
   <tr style="background-color: #FFFFFF;">
     <td> Enrique </td>
     <td> García Galán </td>
-    <td> <a href="https://github.com/Maes95">  Maes95 </a></td>
-	  <td> <a href="mailto:m.maes@alumnos.urjc.es"> m.maes@alumnos.urjc.es</a></td>
+    <td> <a href="https://github.com/ea2809">  ea2809 </a></td>
+	  <td> <a href="mailto:e.garciagala@alumnos.urjc.es"> m.maes@alumnos.urjc.es</a></td>
   </tr>
     <td> Michel </td>
     <td> Maes Bermejo </td>
