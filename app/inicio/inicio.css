@@ -1,0 +1,43 @@
+#botonAdd{
+    font-size: 6em;
+    margin: auto;
+    text-align: center;
+    clear: both;
+    z-index: 10;
+    position: fixed;
+    bottom: 0.1em;
+    left: 50%;
+    background-color: #34495E;
+    border-radius: 50%;
+    color: #3498DB;
+    line-height: 120px;
+    vertical-align: middle;
+    width: 120px;
+    height: 120px;
+}
+
+#botonAdd:hover{
+  cursor: pointer;
+  color: #F1C40F;
+  font-size: 7em;
+}
+
+#botonAdd > i {
+    top: 50%;
+    left: 50%;
+}
+
+#fondo {
+    background-color: #34495E;
+    width: 100%;
+    height: 4.3em;
+    /*height: 5.3em;*/
+    position: fixed;
+    bottom: 0;
+    clear: both;
+    z-index: 9;
+    max-width: 100%;
+}
+#contenido{
+    padding-bottom: 6em;
+}
