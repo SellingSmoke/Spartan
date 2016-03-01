@@ -5,6 +5,7 @@ import {Inicio} from '../inicio/inicio';
 import {Perfil} from '../perfil/perfil';
 import {Mensajes} from '../mensajes/mensajes';
 import {Ejercicios} from '../ejercicios/ejercicios';
+import {Calentadas} from '../calentadas/calentadas';
 
 @Component({
 	selector: 'predator',
@@ -18,6 +19,7 @@ import {Ejercicios} from '../ejercicios/ejercicios';
   new Route({ path: '/perfil', component: Perfil, name: 'Perfil'}),
   new Route({ path: '/ejercicios', component: Ejercicios, name: 'Ejercicios'}),
   new Route({ path: '/mensajes', component: Mensajes, name: 'Mensajes'}),
+	new Route({ path: '/calentadas', component: Calentadas, name: 'Calentadas'}),
   // new Route({ path: '/github/...', component: RepoBrowser, name: 'RepoBrowser'})
 ])
 
