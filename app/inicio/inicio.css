@@ -1,25 +1,31 @@
 #botonAdd{
-    font-size: 6em;
-    margin: auto;
-    text-align: center;
+    font-size: 5em;
+    size: 5em;
     clear: both;
     z-index: 10;
     position: fixed;
-    bottom: 0.1em;
-    left: 50%;
+    bottom: 0.0em;
+    left: 45%;
+    right: 45%;
     background-color: #34495E;
     border-radius: 50%;
     color: #3498DB;
-    line-height: 120px;
-    vertical-align: middle;
-    width: 120px;
-    height: 120px;
+    line-height: 100px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+
+#centerDiv{
+  /*margin: auto;*/
 }
 
 #botonAdd:hover{
   cursor: pointer;
   color: #F1C40F;
-  font-size: 7em;
+  font-size: 5.5em;
 }
 
 #botonAdd > i {
@@ -30,7 +36,7 @@
 #fondo {
     background-color: #34495E;
     width: 100%;
-    height: 4.3em;
+    height: 3.5em;
     /*height: 5.3em;*/
     position: fixed;
     bottom: 0;
@@ -40,4 +46,15 @@
 }
 #contenido{
     padding-bottom: 6em;
+}
+
+@media (max-width: 400px) {
+  #botonAdd{
+      font-size: 4em;
+      size: 4em;
+  }
+  #botonAdd:hover{
+    font-size: 5em;
+    size: 5em;
+  }
 }
