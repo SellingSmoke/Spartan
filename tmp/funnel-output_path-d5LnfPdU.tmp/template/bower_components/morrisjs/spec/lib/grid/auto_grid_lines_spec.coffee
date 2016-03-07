@@ -1,0 +1,1 @@
+/home/michel/Telegram Desktop/Spartan/Spartan/tmp/funnel-input_base_path-SiTgIhzE.tmp/0/template/bower_components/morrisjs/spec/lib/grid/auto_grid_lines_spec.coffee

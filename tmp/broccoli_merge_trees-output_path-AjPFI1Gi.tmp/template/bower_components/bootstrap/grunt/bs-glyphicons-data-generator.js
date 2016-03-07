@@ -1,0 +1,1 @@
+/home/michel/Telegram Desktop/Spartan/Spartan/src/template/bower_components/bootstrap/grunt/bs-glyphicons-data-generator.js

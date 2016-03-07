@@ -1,0 +1,1 @@
+/home/michel/Telegram Desktop/Spartan/Spartan/src/app/ejercicios/ejercicio.ts

@@ -1,0 +1,17 @@
+/*.router-link-active{
+    background-color: grey;
+}*/
+.router-link-active > a{
+    color: #3498DB;
+}
+
+/*.router-link-active:hover{
+    background-color: grey;
+}*/
+.router-link-active > a:hover{
+    color: #3498DB;
+}*
+
+a:hover{
+  cursor: pointer;
+}
