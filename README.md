@@ -55,5 +55,5 @@ De forma adicional y de cara a la visibilidad se pueden sacar estadisticas de se
 </table>
 <!-- Fin tabla -->
 
-Tablero de Trello: https://trello.com/b/3mlHi8Fy/web-app
+<a href="https://trello.com/b/3mlHi8Fy/web-app" target=_blank>Tablero de Trello</a>
 
