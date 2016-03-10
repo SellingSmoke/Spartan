@@ -1,5 +1,5 @@
 
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top sp-menu">
       <div class="container-fluid">
         <!-- Cuando se reduce el tamaño de la página -->
         <div class="navbar-header">
@@ -9,17 +9,17 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">Predator</a>
+          <a class="navbar-brand sp-white" href="index.html">Predator</a>
         </div>
 
         <!-- Links de la cabecera -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li role="presentation"  [routerLink]="['/Inicio']" ><a><i class="fa fa-dashboard fa-fw"></i> Dashboard</a></li>
-            <li role="presentation"  [routerLink]="['/Perfil']"><a><i class="fa fa-user fa-fw"></i> Perfil</a></li>
-            <li role="presentation"  [routerLink]="['/Mensajes']"><a><i class="fa fa-envelope-o fa-fw"></i> Mensajes</a></li>
-            <li role="presentation"  [routerLink]="['/Ejercicios']"><a><i class="fa fa-table fa-fw"></i> Ejercicios</a></li>
-            <li role="presentation"  [routerLink]="['/Calentadas']"><a><i class="fa fa-rocket fa-fw"></i> Calentadas</a></li>
+          <ul class="nav navbar-nav navbar-right">
+            <li role="presentation"  [routerLink]="['/Inicio']" class="sp-nav" ><a><i class="fa fa-dashboard fa-fw"></i> Dashboard</a></li>
+            <li role="presentation"  [routerLink]="['/Perfil']" class="sp-nav" ><a><i class="fa fa-user fa-fw"></i> Perfil</a></li>
+            <li role="presentation"  [routerLink]="['/Mensajes']" class="sp-nav" ><a><i class="fa fa-envelope-o fa-fw"></i> Mensajes</a></li>
+            <li role="presentation"  [routerLink]="['/Ejercicios']" class="sp-nav" ><a><i class="fa fa-table fa-fw"></i> Ejercicios</a></li>
+            <li role="presentation"  [routerLink]="['/Calentadas']" class="sp-nav" ><a><i class="fa fa-rocket fa-fw"></i> Calentadas</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->

@@ -4,7 +4,7 @@
 	font-size: 85%;
     padding: 1.25em;
 	margin: 1.25em;
-	
+
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
@@ -89,7 +89,7 @@
     -webkit-animation: spin2 1.9s infinite linear;
   	font-size: 9em;
 }
-	
+
 @-webkit-keyframes spin2 {
 from { -webkit-transform: rotate(0deg);}
 to { -webkit-transform: rotate(360deg);}
