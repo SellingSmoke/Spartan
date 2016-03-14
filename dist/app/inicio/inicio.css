@@ -4,11 +4,14 @@
     z-index: 10;
     position: fixed;
     bottom: 0em;
-    left: 45%;
 
-    background-color: #34495E;
+
+    left: 50%;
+    margin-left: -50px;
+
+    background-color: #b14943;
     border-radius: 50%;
-    color: #3498DB;
+    color: #E96C65;
     line-height: 100px;
     width: 100px;
     height: 100px;
@@ -18,12 +21,11 @@
 
 
 #centerDiv{
-  /*margin: auto;*/
 }
 
 #botonAdd:hover{
   cursor: pointer;
-  color: #F1C40F;
+  color: #FFC1BE;
   font-size: 5.5em;
 }
 
@@ -33,7 +35,7 @@
 }
 
 #fondo {
-    background-color: #34495E;
+    background-color: #b14943;
     width: 100%;
     height: 3.5em;
     /*height: 5.3em;*/
@@ -65,7 +67,7 @@
   }
 
   #fondo {
-      background-color: #34495E;
+      background-color: #b14943;
       width: 100%;
       height: 2.8em;
   }

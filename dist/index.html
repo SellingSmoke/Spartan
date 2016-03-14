@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE HTML>
 <html>
 <head>
   <meta charset="utf-8">
@@ -20,23 +20,49 @@
   -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link rel="stylesheet" href="spartan.css">
+
   <!-- COSICAS MICHEL -->
 
-      <!-- Bootstrap Core CSS -->
-      <link href="template/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+      <!-- A REFACTORIZAR -->
 
-      <!-- MetisMenu CSS -->
-      <link href="template/bower_components/metisMenu/dist/metisMenu.css" rel="stylesheet">
+          <!-- Bootstrap Core CSS
+          <link href="template/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">-->
 
-      <!-- Custom CSS -->
-      <link href="template/dist/css/sb-admin-2.css" rel="stylesheet">
+          <!-- MetisMenu CSS -->
+          <link href="template/bower_components/metisMenu/dist/metisMenu.css" rel="stylesheet">
 
-      <!-- Custom Fonts -->
-      <link href="template/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+          <!-- Custom CSS -->
+          <link href="template/dist/css/sb-admin-2.css" rel="stylesheet">
 
-      <!-- Nuestras CSS -->
-      <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="spartan.css">
+          <!-- Custom Fonts -->
+          <link href="template/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+          <!-- Nuestras CSS -->
+          <link rel="stylesheet" href="main.css">
+
+      <!-- NUEVO DISEÑO MATERIAL DESING -->
+
+          <!-- Material Design fonts -->
+          <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+          <!-- Bootstrap -->
+          <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+          <script href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+          <!-- Bootstrap Material Design -->
+          <link href="materialD/dist/css/bootstrap-material-design.css" rel="stylesheet">
+          <link href="materialD/dist/css/ripples.min.css" rel="stylesheet">
+
+          <script src="materialD/dist/js/ripples.min.js"></script>
+          <script src="materialD/dist/js/material.min.js"></script>
+          <script href="http://fezvrasta.github.io/snackbarjs/dist/snackbar.min.js"></script>
+          <script href"http://cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script>
+
+          <!-- jQuery -->
+          <script href="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
 
   <!-- FIN COSICAS MICHEL -->
 </head>
@@ -54,7 +80,7 @@
 
 
   <script src="thirdparty/libs.js"></script>
-  
+
   <script>
     System.config({
       packages: {
@@ -70,10 +96,16 @@
     <!-- /#wrapper -->
 
     <predator>
-		<div class="sp-center">
-			<div class="fa fa-spinner fa-fw sp-spinner">
-			</div>
-		</div>
+    <div class="cs-loader">
+      <div class="cs-loader-inner">
+        <label>	●</label>
+        <label>	●</label>
+        <label>	●</label>
+        <label>	●</label>
+        <label>	●</label>
+        <label>	●</label>
+      </div>
+  </div>
 	</predator> <!-- AQUI EL CONTENIDO DE LA PAGINA -->
 
     <!-- jQuery -->

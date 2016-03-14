@@ -1,17 +1,30 @@
 /*.router-link-active{
     background-color: grey;
 }*/
-.router-link-active > a{
-    color: #3498DB;
-}
 
-/*.router-link-active:hover{
-    background-color: grey;
-}*/
-.router-link-active > a:hover{
-    color: #3498DB;
-}*
 
 a:hover{
   cursor: pointer;
+}
+
+.router-link-active > a , .sp-nav > a:hover , .sp-white:hover {
+	background-color: #A5261F;
+  color: white;
+}
+
+.sp-nav > a {
+	color: white;
+}
+
+.sp-menu {
+	border-bottom: 10px;
+	border-color: #E96C65;
+	border-style: solid;
+	border-bottom-color: #E96D65;
+	background-color: #b14943;
+  font-size: 20px;
+}
+
+.sp-white {
+	color: white;
 }
