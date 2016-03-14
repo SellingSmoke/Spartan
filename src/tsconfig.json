@@ -13,5 +13,6 @@
     "sourceMap": true,
     "sourceRoot": "/",
     "target": "es5"
-  }
+  },
+  "compileOnSave": false
 }
