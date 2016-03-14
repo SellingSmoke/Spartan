@@ -8,7 +8,7 @@ import {Ejercicios} from '../ejercicios/ejercicios';
 import {Calentadas} from '../calentadas/calentadas';
 
 @Component({
-	selector: 'predator',
+	selector: 'spartan',
     templateUrl: 'app/main/app.main.html',
     styleUrls: ['app/main/app.main.css'],
     directives: [ROUTER_DIRECTIVES],
