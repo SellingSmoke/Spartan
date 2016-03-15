@@ -1,4 +1,4 @@
-System.register(['angular2/core', '../alumnos/alumno-detail', '../alumnos/alumno-service'], function(exports_1) {
+System.register(['angular2/core', '../dashboard-entrenador/dashboard-entrenador'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,41 +8,28 @@ System.register(['angular2/core', '../alumnos/alumno-detail', '../alumnos/alumno
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, alumno_detail_1, alumno_service_1;
+    var core_1, dashboard_entrenador_1;
     var Inicio;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (alumno_detail_1_1) {
-                alumno_detail_1 = alumno_detail_1_1;
-            },
-            function (alumno_service_1_1) {
-                alumno_service_1 = alumno_service_1_1;
+            function (dashboard_entrenador_1_1) {
+                dashboard_entrenador_1 = dashboard_entrenador_1_1;
             }],
         execute: function() {
             Inicio = (function () {
-                function Inicio(_alumnoService) {
-                    this._alumnoService = _alumnoService;
+                function Inicio() {
                 }
-                Inicio.prototype.getAlumnos = function () {
-                    var _this = this;
-                    this._alumnoService.getAlumnos().then(function (alumnos) { return _this.alumnos = alumnos; });
-                };
-                Inicio.prototype.ngOnInit = function () {
-                    this.getAlumnos();
-                };
-                Inicio.prototype.onSelect = function (alumno) { this.selectedAlumno = alumno; };
                 Inicio = __decorate([
                     core_1.Component({
                         selector: 'inicio',
                         styleUrls: ['app/inicio/inicio.css'],
                         templateUrl: 'app/inicio/inicio.html',
-                        directives: [alumno_detail_1.AlumnoDetailComponent],
-                        providers: [alumno_service_1.AlumnoService]
+                        directives: [dashboard_entrenador_1.DashboardEntrenador]
                     }), 
-                    __metadata('design:paramtypes', [alumno_service_1.AlumnoService])
+                    __metadata('design:paramtypes', [])
                 ], Inicio);
                 return Inicio;
             })();

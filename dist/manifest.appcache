@@ -1,17 +1,19 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: 3cb60e50e34243dca1a82dd1ae64dec73f52fa87
-# sw.file.hash: dddb1f0294dcbaad61d80fe78d5199a2429d3406
+# sw.version: 7059d593f0585af85a14ccac7b58ad6f822cd341
+# sw.file.hash: a0052044e2f737692b5d9942d3c98020821f8b35
+/app/alumnos/alumno-detail.html
+# sw.file.hash: c0865d4433df5974ce4f95025cd400cf0ccf0707
 /app/alumnos/alumno-detail.js
-# sw.file.hash: 56d974aec0d45380739334311252aff59b872175
+# sw.file.hash: bfdeda42fe95bb38a71f476e989fc2f93cbe2358
 /app/alumnos/alumno-detail.js.map
-# sw.file.hash: b6dec6ec408e354a1ca774f14221b1e382f74f69
+# sw.file.hash: c4d1ee71dad2682ddd59f01ada008ec9a8a7b015
 /app/alumnos/alumno-detail.ts
-# sw.file.hash: 0b7de40b209fa59dfdf22e73da4b067627746ad7
+# sw.file.hash: bc6dff978740461f7c32258b56d657d665c06800
 /app/alumnos/alumno-service.js
-# sw.file.hash: 5c4f0aba9afa624ff13a379bae3c8cfd6e0651a2
+# sw.file.hash: 75f1fc40eb0a89bcef3cbbf6e3c13215814f6569
 /app/alumnos/alumno-service.js.map
-# sw.file.hash: e5a891a9fe346ae95e834da56eb95f6d9ac7c4da
+# sw.file.hash: ec5dadd4d464664555f056c5639fdf398a807a9e
 /app/alumnos/alumno-service.ts
 # sw.file.hash: 50b6967ea0372d5220677473f457f47d23277c14
 /app/alumnos/alumno.js
@@ -19,12 +21,6 @@ CACHE MANIFEST
 /app/alumnos/alumno.js.map
 # sw.file.hash: 3d7be024aba3f25b78146cd27ad819935e49de25
 /app/alumnos/alumno.ts
-# sw.file.hash: 1e5212e143eebc9bc493279e5c159be3cde38984
-/app/alumnos/alumnos-list.js
-# sw.file.hash: 9c25cf774c75f5286ae936fe9dc663d96ceb9268
-/app/alumnos/alumnos-list.js.map
-# sw.file.hash: 726c5da028c7acffa27195b8c4f11f375cb9079a
-/app/alumnos/alumnos-list.ts
 # sw.file.hash: 5c28cd792106c4e165ed1c285fcfe5d2588f085c
 /app/calentadas/calentadas.html
 # sw.file.hash: e522070ce9c0d2352080d7f9bc220c02d816674d
@@ -33,6 +29,14 @@ CACHE MANIFEST
 /app/calentadas/calentadas.js.map
 # sw.file.hash: 3d88ea69a864e33297180f77dbc9763192ae32ea
 /app/calentadas/calentadas.ts
+# sw.file.hash: febba58ba7a9814a554e8a77254f2db255651476
+/app/dashboard-entrenador/dashboard-entrenador.html
+# sw.file.hash: 14463d6d7c30bd2a3e7d32e51e64b92af960353f
+/app/dashboard-entrenador/dashboard-entrenador.js
+# sw.file.hash: 4597939fbece0ac11db61230334cda1356937cf3
+/app/dashboard-entrenador/dashboard-entrenador.js.map
+# sw.file.hash: a208319980a784dc814be00340719377d8ad6d5f
+/app/dashboard-entrenador/dashboard-entrenador.ts
 # sw.file.hash: 1c7b12fd59106d6e6c173e35c384aaf09b3752d7
 /app/ejercicios/ejercicio.js
 # sw.file.hash: 8b8d4d5a6aed6df828ba0a8d62d44ec341c612ba
@@ -49,13 +53,13 @@ CACHE MANIFEST
 /app/ejercicios/ejercicios.ts
 # sw.file.hash: 4f31e7a8f9105302f0af873d084f1d3bca337af0
 /app/inicio/inicio.css
-# sw.file.hash: baec04cf8330bd821feeb057be67b55ac64b144b
+# sw.file.hash: dec93cafc99b6dbd6c7306a4cae808ede85bedcc
 /app/inicio/inicio.html
-# sw.file.hash: b04e14004ff54bb82845ebee8da82ad7199b6d6a
+# sw.file.hash: 11402426c035ad095edfddc10c07e5f200ad42d6
 /app/inicio/inicio.js
-# sw.file.hash: 569fc9c6b1865946c9da34ba2d48677e20548ad9
+# sw.file.hash: 03ab36a6a987205b5c0a18c86e9d1ae270bac75e
 /app/inicio/inicio.js.map
-# sw.file.hash: 66e15f89ce700a28c9601fd9158a9022618f144c
+# sw.file.hash: 0abd8b6855a2bfa092b21f447cbb1609eb0d931d
 /app/inicio/inicio.ts
 # sw.file.hash: b3d287bb36ef4f4f7c60b8e540a384ac738e12ec
 /app/main/app.component.js
@@ -95,6 +99,12 @@ CACHE MANIFEST
 /app/perfil/perfil.js.map
 # sw.file.hash: d1e3dd6fe913349af1f50be21432071a7fec2060
 /app/perfil/perfil.ts
+# sw.file.hash: 964e3cf3b4b77a602beed3d4ffe17bbbab105dbb
+/app/recursos-estaticos.js
+# sw.file.hash: 2d6955b38943b103bd5931f81b48906747e32535
+/app/recursos-estaticos.js.map
+# sw.file.hash: eb5fcbfece0052d26cb16a50a941b6d69252ae74
+/app/recursos-estaticos.ts
 # sw.file.hash: 84161b857f5c547e3699ddfbffc6d8d737542e01
 /favicon.ico
 # sw.file.hash: 5a6788a43d7978194118a5f22f72e42da24ab594
@@ -353,7 +363,7 @@ CACHE MANIFEST
 /scripts/system.js
 # sw.file.hash: 761f5fd7b2c13688d4e810f3ade6e1e0135de899
 /scripts/typescript.js
-# sw.file.hash: 29cd36439f5cc8d10d7f9ddbbea2e853e0dfe272
+# sw.file.hash: ef83d82919f28761f3f8ed6f723097042d73e40b
 /spartan.css
 # sw.file.hash: da39a3ee5e6b4b0d3255bfef95601890afd80709
 /thirdparty/libs.js

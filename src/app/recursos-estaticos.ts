@@ -1,4 +1,6 @@
-import {Alumno} from './alumno';
+import {Alumno} from './alumnos/alumno';
+
+// AQUI PODEIS METER DATOS ESTATICOS: ALUMNOS, EJERCICIOS, DIETAS ..
 
 export var ALUMNOS: Alumno[] = [
   { "id": 1, "name": "Michel", "tarea": "" },
