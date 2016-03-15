@@ -10,6 +10,14 @@
 	border-radius: 5px;
 }
 
+.sp-container-lg{
+	padding-right: 1em;
+	padding-left: 1em;
+	margin-right: auto;
+	margin-left: auto;
+	padding-bottom: 4em;
+}
+
 
 /* COLORES */
 .sp-blue{

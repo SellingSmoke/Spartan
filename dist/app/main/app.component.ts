@@ -8,7 +8,7 @@ import {Ejercicios} from '../ejercicios/ejercicios';
 import {Calentadas} from '../calentadas/calentadas';
 
 @Component({
-	selector: 'predator',
+	selector: 'spartan',
     templateUrl: 'app/main/app.main.html',
     styleUrls: ['app/main/app.main.css'],
     directives: [ROUTER_DIRECTIVES],
@@ -20,7 +20,6 @@ import {Calentadas} from '../calentadas/calentadas';
   new Route({ path: '/ejercicios', component: Ejercicios, name: 'Ejercicios'}),
   new Route({ path: '/mensajes', component: Mensajes, name: 'Mensajes'}),
 	new Route({ path: '/calentadas', component: Calentadas, name: 'Calentadas'}),
-  // new Route({ path: '/github/...', component: RepoBrowser, name: 'RepoBrowser'})
 ])
 
 export class AppComponent { }

@@ -1,6 +1,30 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: 8c93fa9a92606a1d209d06c1394e7afb08985974
+# sw.version: 1f004830d66e7f4c43da2731863a3a0d11db3831
+# sw.file.hash: dddb1f0294dcbaad61d80fe78d5199a2429d3406
+/app/alumnos/alumno-detail.js
+# sw.file.hash: 56d974aec0d45380739334311252aff59b872175
+/app/alumnos/alumno-detail.js.map
+# sw.file.hash: b6dec6ec408e354a1ca774f14221b1e382f74f69
+/app/alumnos/alumno-detail.ts
+# sw.file.hash: 0b7de40b209fa59dfdf22e73da4b067627746ad7
+/app/alumnos/alumno-service.js
+# sw.file.hash: 5c4f0aba9afa624ff13a379bae3c8cfd6e0651a2
+/app/alumnos/alumno-service.js.map
+# sw.file.hash: e5a891a9fe346ae95e834da56eb95f6d9ac7c4da
+/app/alumnos/alumno-service.ts
+# sw.file.hash: 50b6967ea0372d5220677473f457f47d23277c14
+/app/alumnos/alumno.js
+# sw.file.hash: cdf1bf6cdf15eda9c83ecca8471c750f004458f9
+/app/alumnos/alumno.js.map
+# sw.file.hash: 3d7be024aba3f25b78146cd27ad819935e49de25
+/app/alumnos/alumno.ts
+# sw.file.hash: 1e5212e143eebc9bc493279e5c159be3cde38984
+/app/alumnos/alumnos-list.js
+# sw.file.hash: 9c25cf774c75f5286ae936fe9dc663d96ceb9268
+/app/alumnos/alumnos-list.js.map
+# sw.file.hash: 726c5da028c7acffa27195b8c4f11f375cb9079a
+/app/alumnos/alumnos-list.ts
 # sw.file.hash: 5c28cd792106c4e165ed1c285fcfe5d2588f085c
 /app/calentadas/calentadas.html
 # sw.file.hash: e522070ce9c0d2352080d7f9bc220c02d816674d
@@ -25,19 +49,19 @@ CACHE MANIFEST
 /app/ejercicios/ejercicios.ts
 # sw.file.hash: 4f31e7a8f9105302f0af873d084f1d3bca337af0
 /app/inicio/inicio.css
-# sw.file.hash: df918c295ba7408db82964d340bbd27751339df2
+# sw.file.hash: 9030fe854b192a382415aa19736d09bf7ad6dd33
 /app/inicio/inicio.html
-# sw.file.hash: 1385c017b275c20d3f6b86152d56d9f7c6558f1a
+# sw.file.hash: b04e14004ff54bb82845ebee8da82ad7199b6d6a
 /app/inicio/inicio.js
-# sw.file.hash: 64bc0aa370645ee63771779d8d793a2cd4bf7ffe
+# sw.file.hash: 569fc9c6b1865946c9da34ba2d48677e20548ad9
 /app/inicio/inicio.js.map
-# sw.file.hash: d9ec27d707a76c084b049d5a477a09dc97a3eb04
+# sw.file.hash: 66e15f89ce700a28c9601fd9158a9022618f144c
 /app/inicio/inicio.ts
-# sw.file.hash: e7ff5cbf9a11ec825a6cda676abe9d1eac338a51
+# sw.file.hash: b3d287bb36ef4f4f7c60b8e540a384ac738e12ec
 /app/main/app.component.js
-# sw.file.hash: 6211b9a0c6ab107365dd9fc2a054af3b30a39589
+# sw.file.hash: 6877b6140db6acb75850dc993464f6a2dce01caf
 /app/main/app.component.js.map
-# sw.file.hash: 32d0d1540e45fda10605ecbaebf13e57b357d28c
+# sw.file.hash: 6ee1826d41882f38c223dfa67bc74efa5120f958
 /app/main/app.component.ts
 # sw.file.hash: deca090ea60a008493d1d914cf331891be390d40
 /app/main/app.main.css
@@ -73,9 +97,9 @@ CACHE MANIFEST
 /app/perfil/perfil.ts
 # sw.file.hash: 84161b857f5c547e3699ddfbffc6d8d737542e01
 /favicon.ico
-# sw.file.hash: 56735cc31a53168c5adb3291876ceb40fead26c5
+# sw.file.hash: c48c929e047dd1601555d606df3e4fa3e77da68a
 /index.html
-# sw.file.hash: 9fc2887761d42c081cb26c3b01311da72fe761e1
+# sw.file.hash: f320dd9824c975fcfee561cbcfe8e1be495e6065
 /main.css
 # sw.file.hash: cdcb96342eb9439009a52083d03bf88009703f55
 /materialD/CONTRIBUTING.md
@@ -329,7 +353,7 @@ CACHE MANIFEST
 /scripts/system.js
 # sw.file.hash: 761f5fd7b2c13688d4e810f3ade6e1e0135de899
 /scripts/typescript.js
-# sw.file.hash: cb88728167985b38ae8c4a460feb5c2ae6f6fa0c
+# sw.file.hash: 29cd36439f5cc8d10d7f9ddbbea2e853e0dfe272
 /spartan.css
 # sw.file.hash: 3d7fb80ebbbcf16714347df99bdab582c42e3c2c
 /template/bower_components/bootstrap-social/README.md

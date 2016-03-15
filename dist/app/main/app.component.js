@@ -39,7 +39,7 @@ System.register(['angular2/core', 'angular2/router', '../inicio/inicio', '../per
                 }
                 AppComponent = __decorate([
                     core_1.Component({
-                        selector: 'predator',
+                        selector: 'spartan',
                         templateUrl: 'app/main/app.main.html',
                         styleUrls: ['app/main/app.main.css'],
                         directives: [router_1.ROUTER_DIRECTIVES],
