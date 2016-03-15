@@ -6,12 +6,13 @@ import {Perfil} from '../perfil/perfil';
 import {Mensajes} from '../mensajes/mensajes';
 import {Ejercicios} from '../ejercicios/ejercicios';
 import {Calentadas} from '../calentadas/calentadas';
+import {LoggedInRouterOutlet} from "../autenticacion/router";
 
 @Component({
 	selector: 'spartan',
     templateUrl: 'app/main/app.main.html',
     styleUrls: ['app/main/app.main.css'],
-    directives: [ROUTER_DIRECTIVES],
+    directives: [ROUTER_DIRECTIVES,LoggedInRouterOutlet],
 })
 
 @RouteConfig([
@@ -19,7 +20,7 @@ import {Calentadas} from '../calentadas/calentadas';
   new Route({ path: '/perfil', component: Perfil, name: 'Perfil'}),
   new Route({ path: '/ejercicios', component: Ejercicios, name: 'Ejercicios'}),
   new Route({ path: '/mensajes', component: Mensajes, name: 'Mensajes'}),
-	new Route({ path: '/calentadas', component: Calentadas, name: 'Calentadas'}),
+  new Route({ path: '/calentadas', component: Calentadas, name: 'Calentadas'}),
 ])
 
 export class AppComponent { }

@@ -22,6 +22,7 @@ export class autenticacion {
 
     private comprobarDatos():boolean{
         // mirar localstorage y comprobar que esta registrado.
+        return true;
     }
 
     public login(){
