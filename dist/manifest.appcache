@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: 1f004830d66e7f4c43da2731863a3a0d11db3831
+# sw.version: 171110b0c2534fb346c7fb2e696a71f16dd04d70
 # sw.file.hash: dddb1f0294dcbaad61d80fe78d5199a2429d3406
 /app/alumnos/alumno-detail.js
 # sw.file.hash: 56d974aec0d45380739334311252aff59b872175
@@ -65,7 +65,7 @@ CACHE MANIFEST
 /app/main/app.component.ts
 # sw.file.hash: deca090ea60a008493d1d914cf331891be390d40
 /app/main/app.main.css
-# sw.file.hash: a938fa0276dbfd509df07d154961f2921e783cb1
+# sw.file.hash: 13f056ca416a272607749cc9d670a7e4c2ea569b
 /app/main/app.main.html
 # sw.file.hash: a5aade0d7bff9ca9729acf53c7156392f92bfa5e
 /app/main/main.js
@@ -97,9 +97,9 @@ CACHE MANIFEST
 /app/perfil/perfil.ts
 # sw.file.hash: 84161b857f5c547e3699ddfbffc6d8d737542e01
 /favicon.ico
-# sw.file.hash: c48c929e047dd1601555d606df3e4fa3e77da68a
+# sw.file.hash: 3281dd329bee9888ad6429587383599df925d3be
 /index.html
-# sw.file.hash: f320dd9824c975fcfee561cbcfe8e1be495e6065
+# sw.file.hash: 0d0e6ba189329f3a96fdab05b868b3e9ce8a7c86
 /main.css
 # sw.file.hash: cdcb96342eb9439009a52083d03bf88009703f55
 /materialD/CONTRIBUTING.md
