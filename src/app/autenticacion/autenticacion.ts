@@ -1,10 +1,7 @@
-import {Component, Injectable} from 'angular2/core';
+import {Injectable} from 'angular2/core';
 
-@Component({
-    selector: 'autenticacion',
-})
-
-export class autenticacion {
+@Injectable()
+export class Autenticacion {
 
     private _rol; // Uno y dos por ejemplo
 
@@ -33,5 +30,8 @@ export class autenticacion {
 
     public logout(){
         // Eliminar localstorage
+    }
+    public isLogIn():boolean{
+        return true;
     }
 };
