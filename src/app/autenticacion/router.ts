@@ -15,15 +15,16 @@ export class LoggedInRouterOutlet extends RouterOutlet {
         this.padre = _parentRouter;
         this.rutasPublicas = {
             '/login': true,
-            '/registro': true
+            '/registroAlumno': true,
+            '/registroEntrenador': true
         };
     }
 
     activate(instruction:ComponentInstruction) {
         var url = this.padre.lastNavigationAttempt;
         if (!this.rutasPublicas[url] && !localStorage.getItem('jwt')) {
-            // todo: redirect to Login, may be there a better way?
-            this.padre.navigateByUrl('/inicio');
+            // todo: redir ect to Login, may be there a better way?
+            this.padre.navigateByUrl('/login');
         }
         return super.activate(instruction);
     }

@@ -5,4 +5,4 @@ import {Component} from 'angular2/core';
     templateUrl: 'app/login/login.html'
 })
 
-export class login {};
+export class Login {};

@@ -5,4 +5,4 @@ import {Component} from 'angular2/core';
     templateUrl: 'app/registroEntrenador/registroEntrenador.html'
 })
 
-export class registroEntrenador {};
+export class RegistroEntrenador {};
