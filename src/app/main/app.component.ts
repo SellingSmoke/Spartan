@@ -29,4 +29,13 @@ import {RegistroAlumno} from '../resgistroAlumno/registroAlumno';
   new Route({ path: '/registroAlumno', component: RegistroAlumno, name: 'RegistroAlumno'}),
 ])
 
-export class AppComponent {}
+export class AppComponent {
+
+    constructor(private router:Router){}
+
+    public logOut(){
+        // Eliminar localstorage
+        localStorage.removeItem('spartan');
+        this.router.navigateByUrl("/login");
+    }
+}

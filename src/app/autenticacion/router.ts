@@ -1,6 +1,7 @@
 import {Directive, Attribute, ElementRef, DynamicComponentLoader} from 'angular2/core';
 import {Router, RouterOutlet, ComponentInstruction} from 'angular2/router';
 import {Autenticacion} from "./autenticacion";
+
 @Directive({
     selector: 'router-outlet',
     providers: [Autenticacion],
@@ -21,13 +22,15 @@ export class LoggedInRouterOutlet extends RouterOutlet {
         };
     }
 
-    activate(instruction:ComponentInstruction) {
+    activate(instruction:ComponentInstruction){
+        console.log(this.autenticacion.isLogIn());
         var url = instruction.urlPath;
-        if (!this.rutasPublicas[url] && !this.autenticacion.isLogIn()) {
+        if (!this.rutasPublicas[url] && !localStorage.getItem('spartan')) {
             // todo: redir ect to Login, may be there a better way?
             this.padre.navigateByUrl('/login');
         }
-        if (this.rutasPublicas[url] && this.autenticacion.isLogIn()){
+
+        if (this.rutasPublicas[url] && localStorage.getItem('spartan')){
             this.padre.navigateByUrl('/perfil');
         }
         return super.activate(instruction);

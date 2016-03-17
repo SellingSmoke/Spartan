@@ -16,7 +16,7 @@
             <label for="nombreUsuario" class="col-md-2 control-label">Nombre de usuario</label>
 
             <div class="col-md-10">
-              <input class="form-control" id="nombreUsuario" placeholder="Nombre de usuario" type="text">
+              <input [(ngModel)]="model.user" class="form-control" id="nombreUsuario" placeholder="Nombre de usuario" type="text">
             </div>
           <span class="material-input"></span>
           </div>
@@ -24,7 +24,7 @@
             <label for="password" class="col-md-2 control-label">Contraseña</label>
 
             <div class="col-md-10">
-              <input class="form-control" id="password" placeholder="Contraseña" type="password">
+              <input [(ngModel)]="model.pass" class="form-control" id="password" placeholder="Contraseña" type="password">
 
             </div>
           <span class="material-input"></span>

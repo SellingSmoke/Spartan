@@ -23,20 +23,11 @@ export class Autenticacion {
         return true;
     }
 
-    public login(user:string,password:string){
-        // llamar a la api
-
-        //Introducir los datos en localstorage
-        if (user==="spartan" && password===user){
-            this._logIn=true;
-        }
-    }
-
     public logout(){
         // Eliminar localstorage
-        this._logIn=false;
+        localStorage.removeItem('spartan');
     }
     public isLogIn():boolean{
-        return this._logIn;
+        return localStorage.getItem('spartan');
     }
 };
