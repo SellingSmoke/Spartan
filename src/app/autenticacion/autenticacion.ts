@@ -4,9 +4,10 @@ import {Injectable} from 'angular2/core';
 export class Autenticacion {
 
     private _rol; // Uno y dos por ejemplo
-
+    private _logIn;
     constructor (){
-
+        this._rol=1;
+        this._logIn=false;
     }
 
     public esAlumno():boolean {
@@ -22,16 +23,20 @@ export class Autenticacion {
         return true;
     }
 
-    public login(){
+    public login(user:string,password:string){
         // llamar a la api
 
         //Introducir los datos en localstorage
+        if (user==="spartan" && password===user){
+            this._logIn=true;
+        }
     }
 
     public logout(){
         // Eliminar localstorage
+        this._logIn=false;
     }
     public isLogIn():boolean{
-        return true;
+        return this._logIn;
     }
 };
