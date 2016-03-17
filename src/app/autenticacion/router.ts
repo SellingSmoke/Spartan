@@ -1,6 +1,3 @@
-/**
- * Created by Enrique on 15/3/16.
- */
 import {Directive, Attribute, ElementRef, DynamicComponentLoader} from 'angular2/core';
 import {Router, RouterOutlet, ComponentInstruction} from 'angular2/router';
 
@@ -8,25 +5,25 @@ import {Router, RouterOutlet, ComponentInstruction} from 'angular2/router';
     selector: 'router-outlet'
 })
 export class LoggedInRouterOutlet extends RouterOutlet {
-    publicRoutes:any;
-    private parentRouter:Router;
+    rutasPublicas:any;
+    private padre:Router;
 
     constructor(_elementRef:ElementRef, _loader:DynamicComponentLoader,
                 _parentRouter:Router, @Attribute('name') nameAttr:string) {
         super(_elementRef, _loader, _parentRouter, nameAttr);
 
-        this.parentRouter = _parentRouter;
-        this.publicRoutes = {
+        this.padre = _parentRouter;
+        this.rutasPublicas = {
             '/login': true,
             '/registro': true
         };
     }
 
     activate(instruction:ComponentInstruction) {
-        var url = this.parentRouter.lastNavigationAttempt;
-        if (!this.publicRoutes[url] && !localStorage.getItem('jwt')) {
+        var url = this.padre.lastNavigationAttempt;
+        if (!this.rutasPublicas[url] && !localStorage.getItem('jwt')) {
             // todo: redirect to Login, may be there a better way?
-            this.parentRouter.navigateByUrl('/inicio');
+            this.padre.navigateByUrl('/inicio');
         }
         return super.activate(instruction);
     }
