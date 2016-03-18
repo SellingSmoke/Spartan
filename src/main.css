@@ -46,11 +46,10 @@ b, strong {
     }
 }
 
-
 .progress {
   height: 40px;
 }
 
 .progress-bar {
-  background-color:
+  background-color: orange;
 }
