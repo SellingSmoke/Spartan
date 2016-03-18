@@ -45,3 +45,12 @@ b, strong {
         filter: grayscale(0%);
     }
 }
+
+
+.progress {
+  height: 40px;
+}
+
+.progress-bar {
+  background-color:
+}
