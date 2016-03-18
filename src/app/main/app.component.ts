@@ -1,6 +1,7 @@
 import {Component} from 'angular2/core';
 import {Router, Route, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
+import {DashboardAlumno} from '../dashboard-alumno/dashboard-alumno';
 import {Inicio} from '../inicio/inicio';
 import {Perfil} from '../perfil/perfil';
 import {Mensajes} from '../mensajes/mensajes';
@@ -19,7 +20,8 @@ import {RegistroAlumno} from '../resgistroAlumno/registroAlumno';
 })
 
 @RouteConfig([
-  new Route({ path: '/inicio', component: Inicio, name: 'Inicio', useAsDefault: true}),
+  new Route({ path: '/inicio', component: Inicio, name: 'Inicio'}),
+	new Route({ path: '/alumno', component: DashboardAlumno, name: 'DashboardAlumno', useAsDefault: true}),
   new Route({ path: '/perfil', component: Perfil, name: 'Perfil'}),
   new Route({ path: '/ejercicios', component: Ejercicios, name: 'Ejercicios'}),
   new Route({ path: '/mensajes', component: Mensajes, name: 'Mensajes'}),
