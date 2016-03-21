@@ -6,7 +6,7 @@ import { AlumnoService } from '../alumnos/alumno-service';
 
 @Component({
 	selector: 'dashboard-entrenador',
-  styleUrls: ['app/inicio/inicio.css'],
+  styleUrls: ['app/inicio/inicio.css', 'app/main/app.main.css'],
   templateUrl: 'app/dashboard-entrenador/dashboard-entrenador.html',
 	directives: [AlumnoDetailComponent],
   providers: [AlumnoService]

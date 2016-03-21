@@ -1,28 +1,34 @@
 <div class="sp-container-lg">
   <!-- Dasboard entrenador -->
   <div class="row">
-    <div class=" col-md-offset-1 col-md-4">
+    <div class=" col-md-offset-1 col-md-6">
       <div class="panel panel-default">
         <div class="panel-heading">Mis alumnos</div>
         <div class="panel-body">
-          <div class="col-md-10">
-            <div *ngFor="#alumno of alumnos" [class.selected]="alumno === selectedAlumno" class="panel panel-default">
-              <div class="panel-heading">{{alumno.name}}
-                <div (click)="onSelect(alumno)" class="btn btn-raised btn-danger btn-xs pull-right">Ver tareas</div>
-              </div>
-              <div class="panel-body">
-                Breve descripcion del alumno {{alumno.id}}
-              </div>
+            <div class="ui four cards">
+              <!-- INICIO TARJETA ALUMNO -->
+
+                <div *ngFor="#alumno of alumnos" [class.selected]="alumno === selectedAlumno" [class.blue]="alumno === selectedAlumno"
+                  (click)="onSelect(alumno)" class="ui red link card fluid card">
+                  <div class="image">
+                    <img src="https://www.ucl.ac.uk/steapp/images/people-images/user_icon.jpg">
+                  </div>
+                  <div class="content">
+                    <span class="header">{{alumno.name}}</span>
+                  </div>
+                </div>
+
+              <!-- FIN TARJETA ALUMNO -->
             </div>
-          </div>
         </div>
       </div>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-4">
       <div class="panel panel-default">
-        <div class="panel-heading">Tareas del Alumno</div>
+        <div class="panel-heading">Detalles del Alumno</div>
         <div class="panel-body">
           <alumno-detail [alumno]="selectedAlumno"></alumno-detail>
+          <div class="sp-center-paragraph" *ngIf="selectedAlumno == nil"><p><i class="material-icons sp-lg">face</i></p> Selecciona un alumno para ver sus detalles</div>
         </div>
       </div>
     </div>
