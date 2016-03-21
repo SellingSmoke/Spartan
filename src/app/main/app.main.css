@@ -28,3 +28,14 @@ a:hover{
 .sp-white {
 	color: white;
 }
+
+.sp-center-paragraph{
+  text-align: center;
+  color: #BDBDBD;
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+
+.sp-lg{
+  font-size: 5em;
+}
