@@ -17,7 +17,7 @@ export class DashboardAlumno implements OnInit {
   selectedAlumno: Alumno;
 	alumnos: Alumno[];
 
-  constructor(private _alumnoService: AlumnoService) { }
+  constructor(private _alumnoService: AlumnoService) {}
 
   getAlumnos() {
     this._alumnoService.getAlumnos().then(alumnos => this.alumnos = alumnos);
