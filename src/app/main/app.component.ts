@@ -20,8 +20,8 @@ import {RegistroAlumno} from '../resgistroAlumno/registroAlumno';
 })
 
 @RouteConfig([
-  new Route({ path: '/inicio', component: Inicio, name: 'Inicio'}),
-	new Route({ path: '/alumno', component: DashboardAlumno, name: 'DashboardAlumno', useAsDefault: true}),
+  new Route({ path: '/inicio', component: Inicio, name: 'Inicio', useAsDefault: true}),
+	new Route({ path: '/alumno/:id', component: DashboardAlumno, name: 'DashboardAlumno'}),
   new Route({ path: '/perfil', component: Perfil, name: 'Perfil'}),
   new Route({ path: '/ejercicios', component: Ejercicios, name: 'Ejercicios'}),
   new Route({ path: '/mensajes', component: Mensajes, name: 'Mensajes'}),

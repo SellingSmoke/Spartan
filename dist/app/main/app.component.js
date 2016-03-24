@@ -66,8 +66,8 @@ System.register(['angular2/core', 'angular2/router', '../dashboard-alumno/dashbo
                         directives: [router_1.ROUTER_DIRECTIVES, router_2.LoggedInRouterOutlet],
                     }),
                     router_1.RouteConfig([
-                        new router_1.Route({ path: '/inicio', component: inicio_1.Inicio, name: 'Inicio' }),
-                        new router_1.Route({ path: '/alumno', component: dashboard_alumno_1.DashboardAlumno, name: 'DashboardAlumno', useAsDefault: true }),
+                        new router_1.Route({ path: '/inicio', component: inicio_1.Inicio, name: 'Inicio', useAsDefault: true }),
+                        new router_1.Route({ path: '/alumno/:id', component: dashboard_alumno_1.DashboardAlumno, name: 'DashboardAlumno' }),
                         new router_1.Route({ path: '/perfil', component: perfil_1.Perfil, name: 'Perfil' }),
                         new router_1.Route({ path: '/ejercicios', component: ejercicios_1.Ejercicios, name: 'Ejercicios' }),
                         new router_1.Route({ path: '/mensajes', component: mensajes_1.Mensajes, name: 'Mensajes' }),
