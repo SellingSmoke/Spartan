@@ -1,19 +1,19 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: f00fa49073e71fb982fb80f16150e91b5c53af2d
-# sw.file.hash: 3655b9b4b2feddb3032686703c8a77326fd5e933
+# sw.version: 3f54df1a286fea239c1cfc3719181080e6554c17
+# sw.file.hash: 418b498cd8bfc726e1cde9d09220176acb599cfe
 /app/alumnos/alumno-detail.html
-# sw.file.hash: c0865d4433df5974ce4f95025cd400cf0ccf0707
+# sw.file.hash: 901ad12213dba90856e27dd6fb2a2c7a6e37de6d
 /app/alumnos/alumno-detail.js
-# sw.file.hash: bfdeda42fe95bb38a71f476e989fc2f93cbe2358
+# sw.file.hash: 3d9b131750b6f01048eaf66be6c3ce1ed140f4eb
 /app/alumnos/alumno-detail.js.map
-# sw.file.hash: c4d1ee71dad2682ddd59f01ada008ec9a8a7b015
+# sw.file.hash: b4e8ef950bd6a0266ca8c4bf254c51e8a7576a93
 /app/alumnos/alumno-detail.ts
-# sw.file.hash: bc6dff978740461f7c32258b56d657d665c06800
+# sw.file.hash: a8a317ee6d4de3bb8f1a6e32f444e359fde02536
 /app/alumnos/alumno-service.js
-# sw.file.hash: 75f1fc40eb0a89bcef3cbbf6e3c13215814f6569
+# sw.file.hash: 784dde36cec0d80b239f195f7351f99f71ddf9a9
 /app/alumnos/alumno-service.js.map
-# sw.file.hash: ec5dadd4d464664555f056c5639fdf398a807a9e
+# sw.file.hash: 1ac8d02f5246b00365e0d92a268707e943d54f8c
 /app/alumnos/alumno-service.ts
 # sw.file.hash: 50b6967ea0372d5220677473f457f47d23277c14
 /app/alumnos/alumno.js
@@ -41,13 +41,13 @@ CACHE MANIFEST
 /app/calentadas/calentadas.js.map
 # sw.file.hash: 3d88ea69a864e33297180f77dbc9763192ae32ea
 /app/calentadas/calentadas.ts
-# sw.file.hash: 10b3fba3f3165eebdc938fad3b6f4c75adac6fc6
+# sw.file.hash: c835822a3efd4805e1a3f196f3e51860782fb309
 /app/dashboard-alumno/dashboard-alumno.html
-# sw.file.hash: d01c2c3f6e8ae7e9cc8561bbf2eb0760ef193bb8
+# sw.file.hash: c2465d33e7af1f2dc3ebcf53f03015e01721ab13
 /app/dashboard-alumno/dashboard-alumno.js
-# sw.file.hash: 6dbd959644c4f04b303f8edf8917cad689ff4ab3
+# sw.file.hash: b3a5d829cf663a54534d8d4fc354d536b973b14b
 /app/dashboard-alumno/dashboard-alumno.js.map
-# sw.file.hash: db404b1dddf1e52f62facb455b2a7f8c9e42a197
+# sw.file.hash: 10f14c7c4b073bad1ff3347960fd2fdea29f13b7
 /app/dashboard-alumno/dashboard-alumno.ts
 # sw.file.hash: 40d83060712ad48c0bd11b85f45268f324e97e4c
 /app/dashboard-entrenador/dashboard-entrenador.html
@@ -95,15 +95,15 @@ CACHE MANIFEST
 /app/login/login.js.map
 # sw.file.hash: d75ec5ba4b71a09e97e56d7aaa0d45139a067962
 /app/login/login.ts
-# sw.file.hash: 0a1f35c0837b0dd7983d4bfcdcea8a7ca66e1d04
+# sw.file.hash: bfbaa8d07ce2d41e67a79dec61cadcbb011eae0e
 /app/main/app.component.js
-# sw.file.hash: ceb2ba1b6e28563346d437bc7f56aea0d3b0b4da
+# sw.file.hash: f7b5bca48fd76c811cfc23c7f6e51a69e8e15976
 /app/main/app.component.js.map
-# sw.file.hash: 96014c637430c93c68794e23447b2f4359a68403
+# sw.file.hash: 2d8a1a5be94ffa7399d8d19638757a6f212e635a
 /app/main/app.component.ts
 # sw.file.hash: 85ec924807c065ca7b7ff00957ee55828d17aeda
 /app/main/app.main.css
-# sw.file.hash: d4300f2163b610c069afa64991b80110eb9d71f6
+# sw.file.hash: 6d5c103699324aba0d7f196255c94f7855f027c2
 /app/main/app.main.html
 # sw.file.hash: a5aade0d7bff9ca9729acf53c7156392f92bfa5e
 /app/main/main.js
@@ -125,7 +125,7 @@ CACHE MANIFEST
 /app/mensajes/mensajes.js.map
 # sw.file.hash: 77348974eb6d620870bcc60fe421d13bda837415
 /app/mensajes/mensajes.ts
-# sw.file.hash: c6f0324eaee795acf4dda47df2eaaf640eb2b869
+# sw.file.hash: b1bb17f6fa795417ed1470827206ac0a31748a8b
 /app/perfil/perfil.html
 # sw.file.hash: b604cc7bac6100d35349c22ad884491f071b61f1
 /app/perfil/perfil.js
@@ -163,9 +163,9 @@ CACHE MANIFEST
 /app/task/task.ts
 # sw.file.hash: 84161b857f5c547e3699ddfbffc6d8d737542e01
 /favicon.ico
-# sw.file.hash: edd756baa353ab3f7b415eddc06555f559983ba6
+# sw.file.hash: 2bd37294d886a0e87bc765c98df8748774fc69dc
 /index.html
-# sw.file.hash: 069a23fa34504231a50aa3b7be9716a88333a956
+# sw.file.hash: 9ce2f665acbadfa1f5d40283751b995953255f79
 /main.css
 # sw.file.hash: cdcb96342eb9439009a52083d03bf88009703f55
 /materialD/CONTRIBUTING.md
@@ -395,6 +395,8 @@ CACHE MANIFEST
 /materialD/test/ripplesSpec.js
 # sw.file.hash: 4c4315e2e593eab7422a242dec799ae50319000b
 /materialD/testcase.html
+# sw.file.hash: 3bbba79235ddec0080cbab5926b844a91fb3e090
+/pure-css-accordion/style.css
 # sw.file.hash: 9f2d5f45393742f4c1bdb3b05b1e5b3680679eaf
 /scripts/Rx.js
 # sw.file.hash: f72705562b9b90f9c1cc7d24d1558f4310824ed8

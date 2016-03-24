@@ -51,5 +51,21 @@ b, strong {
 }
 
 .progress-bar {
-  background-color: orange;
+  background-color: #B71C1C !important;
+}
+
+a.btn-fab-mini {
+  margin-right: 10px !important;
+}
+
+#goal-title {
+  text-align: center;
+}
+
+.container {
+  width: auto;
+}
+
+ul {
+ list-style-type: none;
 }
