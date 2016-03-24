@@ -10,23 +10,19 @@ import { AlumnoService } from '../alumnos/alumno-service';
   providers: [AlumnoService]
 })
 
-export class DashboardAlumno implements OnInit {
+export class DashboardAlumno{
 
 	alumno: Alumno;
 
 	constructor(
 		private _alumnoService: AlumnoService,
 		private _routeParams: RouteParams) {
+
+			let id = +this._routeParams.get('id');
+			console.log(id);
+			this._alumnoService.getAlumno(id)
+				.then(alumno => this.alumno = alumno);
+
 	}
 
-	getAlumno(){
-		let id = +this._routeParams.get('id');
-		console.log(id);
-		this._alumnoService.getAlumno(id)
-			.then(alumno => this.alumno = alumno);
-	}
-
-	ngOnInit() {
-		this.getAlumno();
-	}
 }
