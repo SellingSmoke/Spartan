@@ -19,6 +19,16 @@
 	padding-bottom: 4em;
 }
 
+.sp-label{
+	font-size: 1.5em;
+}
+
+.sp-label2{
+	font-size: 1em;
+	text-align: center;
+	width: 100%;
+}
+
 /* COLORES */
 .sp-blue{
 	color: white;

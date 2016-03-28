@@ -22,7 +22,10 @@ export class DashboardAlumno{
 			console.log(id);
 			this._alumnoService.getAlumno(id)
 				.then(alumno => this.alumno = alumno);
-
 	}
+
+	goBack() {
+    window.history.back();
+  }
 
 }

@@ -47,11 +47,13 @@ b, strong {
 }
 
 .progress {
-  height: 40px;
+  height: 30px;
+  border-radius: 4px;
 }
 
 .progress-bar {
-  background-color: #B71C1C !important;
+  /** background-color: #B71C1C !important; */
+  line-height: 30px !important;
 }
 
 a.btn-fab-mini {
