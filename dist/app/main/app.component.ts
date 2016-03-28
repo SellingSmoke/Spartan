@@ -5,12 +5,12 @@ import {DashboardAlumno} from '../dashboard-alumno/dashboard-alumno';
 import {Inicio} from '../inicio/inicio';
 import {Perfil} from '../perfil/perfil';
 import {Mensajes} from '../mensajes/mensajes';
-import {Ejercicios} from '../ejercicios/ejercicios';
-import {Calentadas} from '../calentadas/calentadas';
 import {LoggedInRouterOutlet} from '../autenticacion/router';
 import {Login} from '../login/login';
 import {RegistroEntrenador} from '../registroEntrenador/registroEntrenador';
-import {RegistroAlumno} from '../resgistroAlumno/registroAlumno';
+import {RegistroAlumno} from '../registroAlumno/registroAlumno';
+import {Meta} from '../meta/meta';
+import {Dietas} from '../dietas/dietas';
 
 @Component({
 	selector: 'spartan',
@@ -23,12 +23,12 @@ import {RegistroAlumno} from '../resgistroAlumno/registroAlumno';
   new Route({ path: '/inicio', component: Inicio, name: 'Inicio', useAsDefault: true}),
 	new Route({ path: '/alumno/:id', component: DashboardAlumno, name: 'DashboardAlumno'}),
   new Route({ path: '/perfil', component: Perfil, name: 'Perfil'}),
-  new Route({ path: '/ejercicios', component: Ejercicios, name: 'Ejercicios'}),
   new Route({ path: '/mensajes', component: Mensajes, name: 'Mensajes'}),
-  new Route({ path: '/calentadas', component: Calentadas, name: 'Calentadas'}),
   new Route({ path: '/login', component: Login, name: 'Login'}),
   new Route({ path: '/registroEntrenador', component: RegistroEntrenador, name: 'RegistroEntrenador'}),
   new Route({ path: '/registroAlumno', component: RegistroAlumno, name: 'RegistroAlumno'}),
+	new Route({ path: '/meta', component: Meta, name: 'Meta'}),
+	new Route({ path: '/dietas', component: Dietas, name: 'Dietas'}),
 ])
 
 export class AppComponent {

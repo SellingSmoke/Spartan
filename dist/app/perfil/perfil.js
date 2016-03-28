@@ -18,11 +18,57 @@ System.register(['angular2/core'], function(exports_1) {
         execute: function() {
             Perfil = (function () {
                 function Perfil() {
+                    this.cambiarPassword = undefined;
+                    this.cambiarCorreoE = undefined;
+                    this.cambiarAge = undefined;
+                    this.modelo = {
+                        id: 2,
+                        nombre: "Sergio",
+                        apellido: "Pérez Peló",
+                        genero: "Masculino",
+                        edad: 20,
+                        email: "spartanos@spartan.com",
+                        entrenador: "Arnold suaseneguer"
+                    };
                 }
+                Perfil.prototype.esMasculino = function () {
+                    return this.modelo.genero === "Masculino";
+                };
+                Perfil.prototype.cambiarPassClick = function () {
+                    this.cambiarPassword = "cambiar";
+                };
+                Perfil.prototype.cambiarPass = function () {
+                    return this.cambiarPassword !== undefined;
+                };
+                Perfil.prototype.cambiarAlgo = function () {
+                    return this.cambiarPassword !== undefined || this.cambiarCorreoE !== undefined || this.cambiarAge !== undefined;
+                };
+                Perfil.prototype.guardarPass = function () {
+                    this.cambiarPassword = undefined;
+                };
+                Perfil.prototype.cambiarEdadClick = function () {
+                    this.cambiarAge = "cambiar";
+                };
+                Perfil.prototype.cambiarEdad = function () {
+                    return this.cambiarAge !== undefined;
+                };
+                Perfil.prototype.guardarEdad = function () {
+                    this.cambiarAge = undefined;
+                };
+                Perfil.prototype.cambiarCorreoClick = function () {
+                    this.cambiarCorreoE = "cambiar";
+                };
+                Perfil.prototype.cambiarCorreo = function () {
+                    return this.cambiarCorreoE !== undefined;
+                };
+                Perfil.prototype.guardarCorreo = function () {
+                    this.cambiarCorreoE = undefined;
+                };
                 Perfil = __decorate([
                     core_1.Component({
                         selector: 'perfil',
-                        templateUrl: 'app/perfil/perfil.html'
+                        templateUrl: 'app/perfil/perfil.html',
+                        styleUrls: ['app/perfil/perfil.css']
                     }), 
                     __metadata('design:paramtypes', [])
                 ], Perfil);
