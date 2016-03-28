@@ -6,7 +6,6 @@ Spartan es una aplicación web que te permitirá realizar un seguimiento de tú 
 ## Entidades
 
 - Usuario (Entrenado/Entrenador)
-- Mensajes (POST)
 - Metas (formadas por tareas)
 - Tareas
 - Dietas 
@@ -16,7 +15,7 @@ De forma adicional y de cara a la visibilidad se pueden sacar estadisticas de se
 
 ## Diagrama de navegación
 
-(METER DIAGRAMA AQUI)
+![Diagrama](CapturasPantallas/SpartanDiagram.png)
 
 ## Captura de pantalla de las páginas principales
 
