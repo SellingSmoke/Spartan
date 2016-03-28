@@ -17,7 +17,9 @@ De forma adicional y de cara a la visibilidad se pueden sacar estadisticas de se
 
 (METER DIAGRAMA AQUI)
 
-## CAPTURA DE PANTALLA DE LAS PAGINAS PRINCIPALES
+## Captura de pantalla de las páginas principales
+
+(METER CCAPTURAS AQUI AQUI)
 
 ## Integrantes del equipo de desarrollo:
 
