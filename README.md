@@ -10,7 +10,8 @@ Spartan es una aplicación web que te permitirá realizar un seguimiento de tú 
 - Metas (formadas por tareas)
 - Tareas
 - Dietas 
-- 
+
+
 De forma adicional y de cara a la visibilidad se pueden sacar estadisticas de seguimiento a partir de las entidades
 
 ## Diagrama de navegación
