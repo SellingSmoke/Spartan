@@ -1,20 +1,23 @@
 # Spartan
 
 ## Descripción de la temática de la web
-Spartan es una aplicación web que te permitirá realizar un seguimiento de tú a tú con tu entrenador. Ya practiques un deporte individual o de equipo, a un nivel amateur o profesional, Predator te permitirá llevar un control fácil, rápido, directo, actualizado y completo de toda tu actividad, con el objetivo de que mejores y alcances las metas que te marques tú o tu entrenador.
+Spartan es una aplicación web que te permitirá realizar un seguimiento de tú a tú con tu entrenador. Te permitirá llevar un control fácil, rápido, directo, actualizado y completo de toda tu actividad, con el objetivo de que mejores y alcances las metas que te marques tú o tu entrenador.
 
 ## Entidades
 
 - Usuario (Entrenado/Entrenador)
-
-Si entrenas solo
-
 - Mensajes (POST)
-- Tablas de ejercicios (Pueden estar incluidas en mensajes)
-- Dietas (Pueden estar incluidas en mensajes)
-- Noticias/Publicaciones (Usuarios de ambos tipos pueden postear en su perfil noticias o articulos deportivos)
-
+- Metas (formadas por tareas)
+- Tareas
+- Dietas 
+- 
 De forma adicional y de cara a la visibilidad se pueden sacar estadisticas de seguimiento a partir de las entidades
+
+## Diagrama de navegación
+
+(METER DIAGRAMA AQUI)
+
+## CAPTURA DE PANTALLA DE LAS PAGINAS PRINCIPALES
 
 ## Integrantes del equipo de desarrollo:
 
@@ -49,5 +52,3 @@ De forma adicional y de cara a la visibilidad se pueden sacar estadisticas de se
   </tr>
 </table>
 <!-- Fin tabla -->
-
-<a href="https://trello.com/b/3mlHi8Fy/web-app" target=_blank>Tablero de Trello</a>
