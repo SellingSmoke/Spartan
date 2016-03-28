@@ -23,6 +23,8 @@ export class DashboardAlumno{
 			this._alumnoService.getAlumno(id)
 				.then(alumno => this.alumno = alumno);
 
+			
+
 	}
 
 }

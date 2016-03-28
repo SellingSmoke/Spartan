@@ -2,92 +2,18 @@
   <!-- Dasboard entrenador -->
   <br>
 
-  <div class="col-md-3"></div>
-  <div class="col-md-6">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
     <div class="container">
       <div class="jumbotron">
         <h1 id="goal-title"> {{ alumno.goal }}</h1>
-        <div class="bs-component">
-          <div class="progress progress-striped active">
-            <div class="progress-bar" style="width: 45%"></div>
+
+        <div *ngIf="alumno.progreso != 0" class="progress">
+          <div class="progress-bar" [style.width.%]="alumno.progreso">
+            <span class="sp-label">{{alumno.progreso}} % COMPLETADO</span>
           </div>
         </div>
-
-
-        <br>
-        <br>
-
-        <!--<div class="panel panel-warning">
-          <div class="panel-heading">
-            <h3 class="panel-title"></h3>
-          </div>
-          <div class="panel-body">
-            <div class="col-md-6">
-              <h4>Press de Pecho</h4>
-            </div>
-            <div class="col-md-6">
-              <div class="pull-right">
-                <a href="javascript:void(0)" class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">done</i><div class="ripple-container"></div></a>
-                <a href="javascript:void(0)" class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">add circle outline</i><div class="ripple-container"></div></a>
-                <a href="javascript:void(0)" class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">chat</i><div class="ripple-container"></div></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="panel panel-info">
-          <div class="panel-heading">
-            <h3 class="panel-title"></h3>
-          </div>
-          <div class="panel-body">
-            <div class="col-md-6">
-              <h4>Elíptica</h4>
-            </div>
-            <div class="col-md-6">
-              <div class="pull-right">
-                <a href="javascript:void(0)" class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">done</i><div class="ripple-container"></div></a>
-                <a href="javascript:void(0)" class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">add circle outline</i><div class="ripple-container"></div></a>
-                <a href="javascript:void(0)" class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">chat</i><div class="ripple-container"></div></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="panel panel-warning">
-          <div class="panel-heading">
-            <h3 class="panel-title"></h3>
-          </div>
-          <div class="panel-body">
-            <div class="col-md-6">
-              <h4>Dominadas</h4>
-            </div>
-            <div class="col-md-6">
-              <div class="pull-right">
-                <a href="javascript:void(0)" class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">done</i><div class="ripple-container"></div></a>
-                <a href="javascript:void(0)" class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">add circle outline</i><div class="ripple-container"></div></a>
-                <a href="javascript:void(0)" class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">chat</i><div class="ripple-container"></div></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="panel panel-info">
-          <div class="panel-heading">
-            <h3 class="panel-title"></h3>
-          </div>
-          <div class="panel-body">
-            <div class="col-md-6">
-              <h4>Carrera en Cinta</h4>
-            </div>
-            <div class="col-md-6">
-              <div class="pull-right">
-                <a href="javascript:void(0)" class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">done</i><div class="ripple-container"></div></a>
-                <a href="javascript:void(0)" class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">add circle outline</i><div class="ripple-container"></div></a>
-                <a href="javascript:void(0)" class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">chat</i><div class="ripple-container"></div></a>
-              </div>
-            </div>
-          </div>
-        </div>-->
+        <p *ngIf="alumno.progreso == 0" class="sp-label2 text-muted">Sin tareas completadas</p>
 
         <ul class="accordion">
           <li class="accordion-item">
@@ -187,7 +113,7 @@
                   <div class="col-md-offset-2 col-md-10">
                     <div class="togglebutton">
                       <label>
-                        <input type="checkbox" checked=""> Toggle button
+                        <input type="checkbox" checked="false"> Toggle button
                       </label>
                     </div>
                   </div>
@@ -214,10 +140,13 @@
 
         </ul>
 
+        <!--SOLO ENTRENADOR -->
+        <a href="javascript:void(0)" class="btn btn-danger btn-lg btn-block"><i class="material-icons">add_circle_outline</i>  Añadir Tarea</a>
+        <!--FIN SOLO ENTRENADOR -->
 
       </div>
     </div>
   </div>
-  <div class="col-md-3"></div>
+  <div class="col-md-2"></div>
 
 </div>
