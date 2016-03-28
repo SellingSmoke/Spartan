@@ -38,6 +38,9 @@ De forma adicional y de cara a la visibilidad se pueden sacar estadisticas de se
 <b>Detalle Alumno 2</b>
 ![Detalle Alumno 2](CapturasPantallas/detalleAlumno2.png)
 
+<b>Añadir Meta</b>
+![Añadir Meta](CapturasPantallas/meta.png)
+
 <b>Mi perfil</b>
 ![Mi perfil](CapturasPantallas/miPerfil.png)
 
