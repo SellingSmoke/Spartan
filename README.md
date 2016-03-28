@@ -13,6 +13,16 @@ Spartan es una aplicación web que te permitirá realizar un seguimiento de tú 
 
 De forma adicional y de cara a la visibilidad se pueden sacar estadisticas de seguimiento a partir de las entidades
 
+## Funcionamiento
+La release se ejecuta con las especificaciones dadas en clase. Es necesario:
+- node
+- npm
+- Lanzar el servidor con "ng serve" de angular cli
+
+Implementado en Angular2. Probada la funcionalidad en Windows, Mac y Linux.
+
+
+
 ## Diagrama de navegación
 
 ![Diagrama](CapturasPantallas/SpartanDiagram.png)
