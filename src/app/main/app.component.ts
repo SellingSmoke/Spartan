@@ -10,6 +10,7 @@ import {Login} from '../login/login';
 import {RegistroEntrenador} from '../registroEntrenador/registroEntrenador';
 import {RegistroAlumno} from '../resgistroAlumno/registroAlumno';
 import {Meta} from '../meta/meta';
+import {Dietas} from '../dietas/dietas';
 
 @Component({
 	selector: 'spartan',
@@ -27,6 +28,7 @@ import {Meta} from '../meta/meta';
   new Route({ path: '/registroEntrenador', component: RegistroEntrenador, name: 'RegistroEntrenador'}),
   new Route({ path: '/registroAlumno', component: RegistroAlumno, name: 'RegistroAlumno'}),
 	new Route({ path: '/meta', component: Meta, name: 'Meta'}),
+	new Route({ path: '/dietas', component: Dietas, name: 'Dietas'}),
 ])
 
 export class AppComponent {

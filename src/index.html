@@ -7,17 +7,6 @@
   <base href="/"> {{content-for 'head'}}
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-  <!-- Service worker support is disabled by default.
-       Install the worker script and uncomment to enable.
-       Only enable service workers in production.
-  <script type="text/javascript">
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/worker.js').catch(function(err) {
-        console.log('Error installing service worker: ', err);
-      });
-    }
-  </script>
-  -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- COSICAS PABLO -->
@@ -45,11 +34,11 @@
 
   <!-- COSICAS MICHEL -->
       <link rel="stylesheet" href="semantic-ui-card/card.css" >
+      <link rel="stylesheet" href="semantic-ui-transition/transition.css" >
+      <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+
   <!-- FIN COSICAS MICHEL -->
-
-  <!-- COSICAS PABLO -->
-
-  <!-- FIN COSICAS PABLO -->
 
 </head>
 
@@ -106,10 +95,20 @@
   <script href="http://fezvrasta.github.io/snackbarjs/dist/snackbar.min.js"></script>
   <script href "http://cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script>
 
+  <!-- SEMANTIC UI JS -->
+  <script src="semantic-ui-transition/transition.js"></script>
+  <script>
 
+  function flip(){
+    $('#cosa')
+    .transition('fade left')
+    ;
+  }
+
+  </script>
+  <!-- FIN SEMANTIC UI JS -->
 
   <!-- Bootstrap Core JavaScript -->
-  <script src="template/bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
   <!-- Añadimos las librerias javascript de bootstrap -->
