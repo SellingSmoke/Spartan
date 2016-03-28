@@ -2,7 +2,7 @@ import {Component} from 'angular2/core';
 
 @Component({
 	selector: 'ejercicios',
-    templateUrl: 'app/ejercicios/ejercicios.html'
+    templateUrl: 'app/dietas/dietas.html'
 })
 
-export class Ejercicios {};
+export class Dietas {};
