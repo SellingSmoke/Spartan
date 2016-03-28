@@ -5,4 +5,5 @@ import {Component} from 'angular2/core';
     templateUrl: 'app/mensajes/mensajes.html'
 })
 
-export class Mensajes {};
+export class Mensajes {
+};
