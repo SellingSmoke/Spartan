@@ -20,7 +20,29 @@ De forma adicional y de cara a la visibilidad se pueden sacar estadisticas de se
 
 ## Captura de pantalla de las páginas principales
 
-(METER CCAPTURAS AQUI AQUI)
+<b>Login</b>
+![Login](CapturasPantallas/login.png)
+
+<b>Registro Alumno</b>
+![Registro Alumno](CapturasPantallas/registroAlumno.png)
+
+<b>Registro Entrenador</b>
+![Registro Entrenador](CapturasPantallas/registroEntrenador.png)
+
+<b>Mis Alumnos</b>
+![Mis Alumnos](CapturasPantallas/misAlumnos.png)
+
+<b>Detalle Alumno 1</b>
+![Detalle Alumno 1](CapturasPantallas/detalleAlumno1.png)
+
+<b>Detalle Alumno 2</b>
+![Detalle Alumno 2](CapturasPantallas/detalleAlumno2.png)
+
+<b>Mi perfil</b>
+![Mi perfil](CapturasPantallas/miPerfil.png)
+
+<b>Dieta</b>
+![Dieta](CapturasPantallas/dieta.png)
 
 ## Integrantes del equipo de desarrollo:
 
