@@ -8,7 +8,7 @@ import {Mensajes} from '../mensajes/mensajes';
 import {LoggedInRouterOutlet} from '../autenticacion/router';
 import {Login} from '../login/login';
 import {RegistroEntrenador} from '../registroEntrenador/registroEntrenador';
-import {RegistroAlumno} from '../resgistroAlumno/registroAlumno';
+import {RegistroAlumno} from '../registroAlumno/registroAlumno';
 import {Meta} from '../meta/meta';
 
 @Component({
