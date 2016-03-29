@@ -15,9 +15,10 @@ De forma adicional y de cara a la visibilidad se pueden sacar estadisticas de se
 
 ## Funcionamiento
 La release se ejecuta con las especificaciones dadas en clase. Es necesario:
-- node
-- npm
-- Lanzar el servidor con "ng serve" de angular cli
+- node 4.2.X
+- npm 3.6.X
+- `npm install` para dependencias
+- Lanzar el servidor con `ng serve` de angular cli
 
 Implementado en Angular2. Probada la funcionalidad en Windows, Mac y Linux.
 
