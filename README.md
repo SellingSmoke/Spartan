@@ -20,6 +20,11 @@ La release se ejecuta con las especificaciones dadas en clase. Es necesario:
 - `npm install` para dependencias
 - Lanzar el servidor con `ng serve` de angular cli
 
+Para ejecutar la aplicacipn seguir los siguientes pasos:
+- Clonar el repositorio `https://github.com/Maes95/Spartan.git` 
+- Desplazarse hasta la carpeta Spartan recién clonada y ejecutar el comando "ng serve" (puede necesitarse permisos de administrador)
+- Abrir en el navegador el puerto proporcionado por angular cli
+
 Implementado en Angular2. Probada la funcionalidad en Windows, Mac y Linux.
 
 
