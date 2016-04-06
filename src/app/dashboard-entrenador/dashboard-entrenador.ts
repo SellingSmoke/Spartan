@@ -17,7 +17,7 @@ export class DashboardEntrenador implements OnInit {
   selectedAlumno: Alumno;
 	alumnos: Alumno[];
 
-  constructor(private _alumnoService: AlumnoService) { }
+  constructor(private _alumnoService: AlumnoService, private _router: Router) { }
 
   getAlumnos() {
     this._alumnoService.getAlumnos().then(alumnos => this.alumnos = alumnos);
@@ -27,5 +27,15 @@ export class DashboardEntrenador implements OnInit {
     this.getAlumnos();
   }
 
-  onSelect(alumno: Alumno) { this.selectedAlumno = alumno; }
+  onSelect(alumno: Alumno) {
+		this.selectedAlumno = alumno;
+	}
+
+	goToAlumnoTask(alumno: Alumno) {
+    this._router.navigate(['DashboardAlumno', { id: alumno.id }]);
+  }
+
+	getBack(back: boolean){
+	 	this.selectedAlumno = undefined;
+	}
 }
