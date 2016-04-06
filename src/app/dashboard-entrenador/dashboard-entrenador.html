@@ -1,43 +1,39 @@
 <div class="sp-container-lg">
   <!-- Dasboard entrenador -->
   <div class="row">
-    <div class=" col-md-offset-1 col-md-6">
+    <div class=" col-md-offset-1 col-md-10">
       <div class="panel panel-default">
         <div class="panel-heading">Mis alumnos</div>
         <div class="panel-body">
-            <div class="ui four cards">
-              <!-- INICIO TARJETA ALUMNO -->
-
-                <div *ngFor="#alumno of alumnos" [class.selected]="alumno === selectedAlumno" [class.blue]="alumno === selectedAlumno"
-                  (click)="onSelect(alumno)" class="ui red link card fluid card">
-                  <div class="image">
-                    <img src="https://www.ucl.ac.uk/steapp/images/people-images/user_icon.jpg">
-                  </div>
-                  <div class="content">
-                    <span class="header">{{alumno.name}}</span>
-                  </div>
-                </div>
-
-              <!-- FIN TARJETA ALUMNO -->
+          <div class="ui five stackable cards">
+            <!-- INICIO TARJETA ALUMNO -->
+            <div *ngFor="#alumno of alumnos" [class.selected]="alumno === selectedAlumno"
+                  [class.blue]="alumno === selectedAlumno" class="ui red link card fluid card">
+              <div class="content">
+                <span class="header">{{alumno.name}} <small class="text-muted">{{alumno.lastname}}</small></span>
+              </div>
+              <!-- FOTO ALUMNO -->
+              <div *ngIf="selectedAlumno != alumno" class="image">
+                <img src="https://account.socialbakers.com/default_user.png">
+              </div>
+              <div *ngIf="selectedAlumno != alumno" class="content">
+                  <button (click)="onSelect(alumno)" class="btn btn-info btn-raised btn-lg btn-block">
+                    <i class="material-icons">face</i> Detalles</button>
+                  <button (click)="goToAlumnoTask(alumno)" class="btn btn-danger btn-raised btn-lg btn-block">
+                    <i class="material-icons">trending_up</i> Progreso</button>
+              </div>
+              <!-- FIN FOTO ALUMNO -->
+              <!-- DETALLES ALUMNO -->
+              <div *ngIf="selectedAlumno == alumno" class="content">
+                <alumno-detail (back)='getBack($event)'
+                  [alumno]="selectedAlumno"></alumno-detail>
+              </div>
+              <!-- FIN DETALLES ALUMNO -->
             </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">Detalles del Alumno</div>
-        <div class="panel-body">
-          <alumno-detail [alumno]="selectedAlumno"></alumno-detail>
-          <div class="sp-center-paragraph" *ngIf="selectedAlumno == nil"><p><i class="material-icons sp-lg">face</i></p> Selecciona un alumno para ver sus detalles</div>
+            <!-- FIN TARJETA ALUMNO -->
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-  <!-- Boton añadir
-  <div id="centerDiv">
-    <i id="botonAdd" class="material-icons">add_circle_outline</i>
-    <div id="fondo"></div>
-  </div>
-  -->
