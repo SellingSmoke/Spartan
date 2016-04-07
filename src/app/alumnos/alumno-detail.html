@@ -1,26 +1,24 @@
-<div *ngIf="alumno">
-  <h3>{{alumno.name}} <small class="text-muted">{{alumno.lastname}}</small></h3>
-
-  <div>
-
+<div class="content">
     <div class="well well-sm">
-      <p><i class="material-icons">directions_run</i><b>Meta del alumno</b> {{alumno.goal}}</p>
+      <p><b>Meta del alumno</b></p>
+      <p> {{alumno.goal}}</p>
       <div *ngIf="alumno.progreso != 0" class="progress">
         <div class="progress-bar" [style.width.%]="alumno.progreso">
-          <span class="sp-label">{{alumno.progreso}} % COMPLETADO</span>
+          <span class="sp-label">{{alumno.progreso}} %</span>
         </div>
       </div>
       <p *ngIf="alumno.progreso == 0" class="sp-label2 text-muted">Sin tareas completadas</p>
     </div>
-
-      <button (click)="goToAlumnoTask()" class="btn btn-danger btn-lg btn-block btn-raised">Ver progreso</button>
       <p><b>Datos personales</b></p>
       <span class="label label-default">Sexo</span>
       <p>{{alumno.gender}}</p>
       <span class="label label-default">Edad</span>
       <p>{{alumno.age}}</p>
-      <span class="label label-default">Fecha matriculación</span>
+      <span class="label label-default">Fecha matriculación</span><span class="right floated">
+        <button (click)="goBack()" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+          <i class="material-icons">keyboard_backspace</i>
+        </button>
+      </span>
       <p>{{alumno.registration_date}}</p>
 
-  </div>
 </div>
