@@ -53,6 +53,10 @@ System.register(['angular2/core', 'angular2/router', '../dashboard-alumno/dashbo
                 function AppComponent(router) {
                     this.router = router;
                 }
+                AppComponent.prototype.isLogIn = function () {
+                    // Comprobar si hay una sesión activa
+                    return localStorage.getItem('spartan');
+                };
                 AppComponent.prototype.logOut = function () {
                     // Eliminar localstorage
                     localStorage.removeItem('spartan');

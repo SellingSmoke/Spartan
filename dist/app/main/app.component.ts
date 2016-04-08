@@ -35,6 +35,11 @@ export class AppComponent {
 
     constructor(private router:Router){}
 
+		public isLogIn(){
+			// Comprobar si hay una sesión activa
+			return localStorage.getItem('spartan');
+		}
+
     public logOut(){
         // Eliminar localstorage
         localStorage.removeItem('spartan');

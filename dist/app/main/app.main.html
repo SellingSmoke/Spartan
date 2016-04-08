@@ -1,27 +1,40 @@
-    <nav class="navbar navbar-default navbar-fixed-top sp-menu">
-      <div class="container-fluid">
-        <!-- Cuando se reduce el tamaño de la página -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand sp-white" href="index.html">Spartan</a>
-        </div>
+<nav *ngIf="isLogIn()" class="navbar navbar-default navbar-fixed-top sp-menu">
+  <div class="container-fluid">
+    <!-- Cuando se reduce el tamaño de la página -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <span class="navbar-brand mdl-typography--title" href="index.html"><i class="material-icons">fitness_center</i> Spartan</span>
+    </div>
 
-        <!-- Links de la cabecera -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li role="presentation"  [routerLink]="['/Inicio']" class="sp-nav" ><a><i class="material-icons">timeline</i> Mis Alumnos</a></li>
-            <li role="presentation"  [routerLink]="['/Perfil']" class="sp-nav" ><a><i class="material-icons">person</i> Mi Perfil</a></li>
-            <li role="presentation"  [routerLink]="['/Mensajes']" class="sp-nav" ><a><i class="material-icons">forum</i> Mensajes</a></li>
-            <li role="presentation"  [routerLink]="['/Dietas']" class="sp-nav" ><a><i class="material-icons">local_dining</i> Dietas</a></li>
-            <li role="presentation"  (click)="logOut()" class="sp-nav" ><a><i class="material-icons">power_settings_new</i></a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-      <!-- Page Content -->
-              <router-outlet></router-outlet>
+    <!-- Links de la cabecera -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+
+        <li role="presentation" [routerLink]="['/Inicio']" class="sp-nav hidden-xs"><a><i class="material-icons">timeline</i> Mis Alumnos</a></li>
+        <li role="presentation" [routerLink]="['/Inicio']" class="sp-nav visible-xs"><a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><i class="material-icons">timeline</i> Mis Alumnos</a></li>
+
+        <li role="presentation" [routerLink]="['/Perfil']" class="sp-nav hidden-xs"><a><i class="material-icons">person</i> Mi Perfil</a></li>
+        <li role="presentation" [routerLink]="['/Perfil']" class="sp-nav visible-xs"><a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><i class="material-icons">person</i> Mi Perfil</a></li>
+
+        <li role="presentation" [routerLink]="['/Mensajes']" class="sp-nav hidden-xs"><a><i class="material-icons">forum</i> Mensajes</a></li>
+        <li role="presentation" [routerLink]="['/Mensajes']" class="sp-nav visible-xs"><a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><i class="material-icons">forum</i> Mensajes</a></li>
+
+        <li role="presentation" [routerLink]="['/Dietas']" class="sp-nav hidden-xs"><a><i class="material-icons">local_dining</i> Dietas</a></li>
+        <li role="presentation" [routerLink]="['/Dietas']" class="sp-nav visible-xs"><a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><i class="material-icons">local_dining</i> Dietas</a></li>
+
+        <li role="presentation" (click)="logOut()" class="sp-nav hidden-xs"><a><i class="material-icons">subdirectory_arrow_left</i></a></li>
+        <li role="presentation" (click)="logOut()" class="sp-nav visible-xs"><a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><i class="material-icons">subdirectory_arrow_left</i> Logout</a></li>
+
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+<!-- Page Content -->
+<router-outlet></router-outlet>
