@@ -10,6 +10,22 @@
 	border-radius: 5px;
 }
 
+div.sp-link{
+	padding-top: 1em;
+	cursor: pointer;
+	text-align: center;
+
+}
+
+span.sp-link{
+	cursor: pointer;
+	text-align: center;
+}
+
+.sp-link:hover{
+	font-weight: bold;
+}
+
 .sp-container-lg{
 	margin-top: 40px;
 	padding-right: 1em;
@@ -89,6 +105,7 @@
 	color: darkslategrey;
 	background: rgba(30,144,255,0.3);
 }
+
 
 
 

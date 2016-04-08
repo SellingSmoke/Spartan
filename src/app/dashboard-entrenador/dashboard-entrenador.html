@@ -1,11 +1,12 @@
-<div class="sp-container-lg">
   <!-- Dasboard entrenador -->
+
+<div class="sp-container-lg">
   <div class="row">
     <div class=" col-md-offset-1 col-md-10">
       <div class="panel panel-default">
         <div class="panel-heading">Mis alumnos</div>
         <div class="panel-body">
-          <div class="ui five stackable cards">
+          <div class="ui four stackable cards">
             <!-- INICIO TARJETA ALUMNO -->
             <div *ngFor="#alumno of alumnos" [class.selected]="alumno === selectedAlumno"
                   [class.blue]="alumno === selectedAlumno" class="ui red link card fluid card">
@@ -17,10 +18,10 @@
                 <img src="https://account.socialbakers.com/default_user.png">
               </div>
               <div *ngIf="selectedAlumno != alumno" class="content">
-                  <button (click)="onSelect(alumno)" class="btn btn-info btn-raised btn-lg btn-block">
-                    <i class="material-icons">face</i> Detalles</button>
                   <button (click)="goToAlumnoTask(alumno)" class="btn btn-danger btn-raised btn-lg btn-block">
                     <i class="material-icons">trending_up</i> Progreso</button>
+                  <button (click)="onSelect(alumno)" class="btn btn-info btn-raised btn-lg btn-block">
+                    <i class="material-icons">face</i> Detalles</button>
               </div>
               <!-- FIN FOTO ALUMNO -->
               <!-- DETALLES ALUMNO -->
