@@ -1,4 +1,4 @@
-import {Alumno} from './alumno';
+import {Alumno} from '../dataTypes/alumno';
 import {ALUMNOS} from '../recursos-estaticos';
 import {Injectable} from 'angular2/core';
 

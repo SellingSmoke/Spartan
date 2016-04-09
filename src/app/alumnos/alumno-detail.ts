@@ -1,5 +1,5 @@
 import {Component, Output, EventEmitter} from 'angular2/core';
-import {Alumno} from './alumno';
+import {Alumno} from '../dataTypes/alumno';
 import { Router } from 'angular2/router';
 
 @Component({

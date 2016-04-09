@@ -1,40 +1,32 @@
-  <!-- Dasboard entrenador -->
+<!-- Dasboard entrenador -->
 
-<div class="sp-container-lg">
-  <div class="row">
-    <div class=" col-md-offset-1 col-md-10">
-      <div class="panel panel-default">
-        <div class="panel-heading">Mis alumnos</div>
-        <div class="panel-body">
-          <div class="ui four stackable cards">
-            <!-- INICIO TARJETA ALUMNO -->
-            <div *ngFor="#alumno of alumnos" [class.selected]="alumno === selectedAlumno"
-                  [class.blue]="alumno === selectedAlumno" class="ui red link card fluid card">
-              <div class="content">
-                <span class="header">{{alumno.name}} <small class="text-muted">{{alumno.lastname}}</small></span>
-              </div>
-              <!-- FOTO ALUMNO -->
-              <div *ngIf="selectedAlumno != alumno" class="image">
-                <img src="https://account.socialbakers.com/default_user.png">
-              </div>
-              <div *ngIf="selectedAlumno != alumno" class="content">
-                  <button (click)="goToAlumnoTask(alumno)" class="btn btn-danger btn-raised btn-lg btn-block">
-                    <i class="material-icons">trending_up</i> Progreso</button>
-                  <button (click)="onSelect(alumno)" class="btn btn-info btn-raised btn-lg btn-block">
-                    <i class="material-icons">face</i> Detalles</button>
-              </div>
-              <!-- FIN FOTO ALUMNO -->
-              <!-- DETALLES ALUMNO -->
-              <div *ngIf="selectedAlumno == alumno" class="content">
-                <alumno-detail (back)='getBack($event)'
-                  [alumno]="selectedAlumno"></alumno-detail>
-              </div>
-              <!-- FIN DETALLES ALUMNO -->
-            </div>
-            <!-- FIN TARJETA ALUMNO -->
-          </div>
+<div class="row sp-container-lg col-md-offset-1 col-md-10">
+  <div class="panel panel-default">
+    <div class="panel-heading mdl-typography--title sp-center">Alumnos</div>
+    <div class="panel-body ui four stackable cards">
+      <!-- INICIO TARJETA ALUMNO -->
+      <div *ngFor="#alumno of alumnos" [class.selected]="alumno === selectedAlumno" [class.blue]="alumno === selectedAlumno" class="ui red link card fluid card">
+        <div class="content">
+          <span class="header">{{alumno.name}} <small class="text-muted">{{alumno.lastname}}</small></span>
         </div>
+        <!-- FOTO ALUMNO -->
+        <div *ngIf="selectedAlumno != alumno" class="image">
+          <img src="https://account.socialbakers.com/default_user.png">
+        </div>
+        <div *ngIf="selectedAlumno != alumno" class="content">
+          <button (click)="goToAlumnoTask(alumno)" class="btn btn-danger btn-raised btn-lg btn-block">
+            <i class="material-icons">trending_up</i> Progreso</button>
+          <button (click)="onSelect(alumno)" class="btn btn-info btn-raised btn-lg btn-block">
+            <i class="material-icons">face</i> Detalles</button>
+        </div>
+        <!-- FIN FOTO ALUMNO -->
+        <!-- DETALLES ALUMNO -->
+        <div *ngIf="selectedAlumno == alumno" class="content">
+          <alumno-detail (back)='getBack($event)' [alumno]="selectedAlumno"></alumno-detail>
+        </div>
+        <!-- FIN DETALLES ALUMNO -->
       </div>
+      <!-- FIN TARJETA ALUMNO -->
     </div>
   </div>
 </div>
