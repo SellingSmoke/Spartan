@@ -13,6 +13,7 @@ export interface Goal {
   campo_metaY: number;    // Parametro Y del tipo (Minutos, Modalidad)
 
   // Modalidades:
+  // -> 0 (Vacio)
   // -> 1 Pecho
   // -> 2 Pierna
   // -> 3 ... (Por completar)

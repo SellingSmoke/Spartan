@@ -2,31 +2,31 @@
 
 <div class="row sp-container-lg col-md-offset-1 col-md-10">
   <div class="panel panel-default">
-    <div class="panel-heading mdl-typography--title sp-center">Alumnos</div>
+    <div class="panel-heading mdl-typography--title sp-center">students</div>
     <div class="panel-body ui four stackable cards">
-      <!-- INICIO TARJETA ALUMNO -->
-      <div *ngFor="#alumno of alumnos" [class.selected]="alumno === selectedAlumno" [class.blue]="alumno === selectedAlumno" class="ui red link card fluid card">
+      <!-- INICIO TARJETA student -->
+      <div *ngFor="#student of students" [class.selected]="student === selectedStudent" [class.blue]="student === selectedStudent" class="ui red link card fluid card">
         <div class="content">
-          <span class="header">{{alumno.name}} <small class="text-muted">{{alumno.lastname}}</small></span>
+          <span class="header">{{student.name}} <small class="text-muted">{{student.lastname}}</small></span>
         </div>
-        <!-- FOTO ALUMNO -->
-        <div *ngIf="selectedAlumno != alumno" class="image">
+        <!-- FOTO student -->
+        <div *ngIf="selectedStudent != student" class="image">
           <img src="https://account.socialbakers.com/default_user.png">
         </div>
-        <div *ngIf="selectedAlumno != alumno" class="content">
-          <button (click)="goToAlumnoTask(alumno)" class="btn btn-danger btn-raised btn-lg btn-block">
+        <div *ngIf="selectedStudent != student" class="content">
+          <button (click)="goToStudentTask(student)" class="btn btn-danger btn-raised btn-lg btn-block">
             <i class="material-icons">trending_up</i> Progreso</button>
-          <button (click)="onSelect(alumno)" class="btn btn-info btn-raised btn-lg btn-block">
+          <button (click)="onSelect(student)" class="btn btn-info btn-raised btn-lg btn-block">
             <i class="material-icons">face</i> Detalles</button>
         </div>
-        <!-- FIN FOTO ALUMNO -->
-        <!-- DETALLES ALUMNO -->
-        <div *ngIf="selectedAlumno == alumno" class="content">
-          <alumno-detail (back)='getBack($event)' [alumno]="selectedAlumno"></alumno-detail>
+        <!-- FIN FOTO student -->
+        <!-- DETALLES student -->
+        <div *ngIf="selectedStudent == student" class="content">
+          <student-detail (back)='getBack($event)' [student]="selectedStudent"></student-detail>
         </div>
-        <!-- FIN DETALLES ALUMNO -->
+        <!-- FIN DETALLES student -->
       </div>
-      <!-- FIN TARJETA ALUMNO -->
+      <!-- FIN TARJETA student -->
     </div>
   </div>
 </div>

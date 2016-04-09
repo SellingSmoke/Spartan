@@ -1,14 +1,15 @@
 import {Component, Output, EventEmitter} from 'angular2/core';
 import {Alumno} from '../dataTypes/alumno';
+import {Student} from '../dataTypes/student';
 import { Router } from 'angular2/router';
 
 @Component({
-  selector: 'alumno-detail',
+  selector: 'student-detail',
   templateUrl: 'app/alumnos/alumno-detail.html',
-  inputs: ['alumno']
+  inputs: ['student']
 })
 export class AlumnoDetailComponent {
-  alumno: Alumno;
+  student: Student;
 
   @Output()
   back = new EventEmitter<boolean>();
@@ -16,7 +17,7 @@ export class AlumnoDetailComponent {
   constructor(private _router: Router) { }
 
   goToAlumnoTask() {
-    this._router.navigate(['DashboardAlumno', { id: this.alumno.id }]);
+    this._router.navigate(['DashboardAlumno', { id: this.student.id }]);
   }
 
   goBack(){

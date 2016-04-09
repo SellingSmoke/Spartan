@@ -1,6 +1,7 @@
 import {Component, OnInit} from 'angular2/core';
 import {Router, Route, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import { Alumno } from '../dataTypes/alumno';
+import { Student } from '../dataTypes/student';
 import { AlumnoDetailComponent } from '../alumnos/alumno-detail';
 import { AlumnoService } from '../alumnos/alumno-service';
 
@@ -14,28 +15,37 @@ import { AlumnoService } from '../alumnos/alumno-service';
 
 export class DashboardEntrenador implements OnInit {
 
-  selectedAlumno: Alumno;
-	alumnos: Alumno[];
+	selectedStudent: Student;
+	students: Student[];
 
   constructor(private _alumnoService: AlumnoService, private _router: Router) { }
 
-  getAlumnos() {
-    this._alumnoService.getAlumnos().then(alumnos => this.alumnos = alumnos);
-  }
+	// OnInit Methods
 
-  ngOnInit() {
-    this.getAlumnos();
-  }
-
-  onSelect(alumno: Alumno) {
-		this.selectedAlumno = alumno;
+	getStudents(){
+		this._alumnoService.getStudents().then(students => this.students = students);
 	}
 
-	goToAlumnoTask(alumno: Alumno) {
-    this._router.navigate(['DashboardAlumno', { id: alumno.id }]);
+	getStudentsGoals(){
+		
+	}
+
+  ngOnInit() {
+		this.getStudents();
+		this.getStudentsGoals();
+  }
+
+	// Component Methods
+
+  onSelect(student: Student) {
+		this.selectedStudent = student;
+	}
+
+	goToStudentTask(student: Student) {
+    this._router.navigate(['DashboardAlumno', { id: student.id }]);
   }
 
 	getBack(back: boolean){
-	 	this.selectedAlumno = undefined;
+	 	this.selectedStudent = undefined;
 	}
 }

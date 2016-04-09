@@ -1,5 +1,7 @@
 import {Alumno} from '../dataTypes/alumno';
 import {ALUMNOS} from '../recursos-estaticos';
+import {Student} from '../dataTypes/student';
+import {STUDENTS} from '../recursos-estaticos';
 import {Injectable} from 'angular2/core';
 
 
@@ -7,6 +9,10 @@ import {Injectable} from 'angular2/core';
 export class AlumnoService {
   getAlumnos() {
     return Promise.resolve(ALUMNOS);
+  }
+
+  getStudents() {
+    return Promise.resolve(STUDENTS);
   }
 
   getAlumno(id: number) {
