@@ -23,7 +23,7 @@
               </div>
               <div id="botones-tarea" class="col-md-6 col-sm-6 col-xs-12">
                 <div class="pull-right">
-                  <a href="javascript:void(0)" onclick="crossOutText()" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"><i class="material-icons">done</i><div class="ripple-container"></div></a>
+                  <a href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"><i class="material-icons">done</i><div class="ripple-container"></div></a>
                   <a href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"><i class="material-icons">add circle outline</i><div class="ripple-container"></div></a>
                   <a href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"><i class="material-icons">chat</i><div class="ripple-container"></div></a>
                 </div>
@@ -270,7 +270,10 @@
 
         <!--SOLO ENTRENADOR -->
         <!--<a href="" class="btn btn-danger btn-lg btn-block"><i class="material-icons">add_circle_outline</i>  Añadir Tarea</a>-->
-        <a class='button glyphicon glyphicon-plus' onclick="showDialog()"></a>
+        <a id="tt1" class='button glyphicon glyphicon-plus' onclick="showDialog()"></a>
+        <div class="mdl-tooltip" for="tt1">
+          Follow
+        </div>
 
         <div class='wrap material-dialog'>
           <div class='content'>
@@ -296,5 +299,6 @@
     </div>
   </div>
   <div class="col-md-2"></div>
-
 </div>
+
+<div id="blurizable"></div>

@@ -97,6 +97,7 @@ input[type=checkbox]:checked ~ .accordion-child {
   transform: translateY(20px);
   transition: all 0.5s;
   visibility: hidden;
+  z-index: 100;
 }
 .material-dialog .content {
   opacity: 0;
@@ -156,11 +157,13 @@ a.glyphicon-plus {
   top: auto;
   margin-left: -25px;
   transition: transform 0.25s;
+  z-index: 100;
 }
 a.glyphicon-plus:hover {
   text-decoration: none;
   background: #EF5350;
   color: white;
+  cursor: pointer;
 }
 a.glyphicon-plus.active {
   transform: rotate(135deg);
@@ -170,4 +173,22 @@ a.glyphicon-plus.active {
 .blur-backgorund {
   -webkit-filter: blur(10px);
   filter: blur(10px);
+}
+
+#blurizable {
+      display: none;
+      height: 100%;
+      width: 100%;
+      top: 0px;
+      z-index: 90;
+      position: fixed;
+}
+
+.change-style-blur{
+  background-color: rgba(154, 154, 154, 0.41);
+  display: block !important;
+}
+
+.jumbotron {
+  z-index: 80;
 }
