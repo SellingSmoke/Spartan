@@ -1,14 +1,15 @@
 import { Component, OnInit, Output,Input, EventEmitter } from 'angular2/core';
-import { Goal } from '../dataTypes/goal';
 import { Student } from '../students/student';
 import { Router } from 'angular2/router';
+import * as GoalMethods from '../dataTypes/goal';
 
 @Component({
   selector: 'student-detail',
   templateUrl: 'app/students/student-detail.html',
   inputs: ['student']
 })
-export class StudentDetailComponent implements OnInit{
+
+export class StudentDetailComponent implements OnInit {
 
   @Input()
   student: Student;
@@ -22,49 +23,18 @@ export class StudentDetailComponent implements OnInit{
 
   ngOnInit(){
     if(this.student.goal != null){
-      this.goalDef = this.getGoalDef(this.student.goal);
+      this.goalDef = GoalMethods.getGoalDef(this.student.goal);
     }else{
       this.goalDef = "Sin meta";
     }
   }
 
-  goBack(){
-    this.back.emit(true);
-  }
-
   /**
-    -- REFACTORIZAR
-    Los siguientes métodos deberian colocarse en una clase externa, para ser utilizados por otros componentes
-    Si no, deberia usarse esta clase allí donde se quieran mostrar estos datos
+      Metodo que envia un evento al padre para poder dar la vuelta a la tarjeta
   */
 
-  getGoalDef(goal: Goal){
-    switch (goal.type) {
-      case 1:
-        return "Adelgazar " + goal.campo_metaX + " Kg";
-      case 2:
-        return "Ganar " + goal.campo_metaX + " Kg";
-      case 3:
-        return "Recorrer " + goal.campo_metaX + " Km en " + goal.campo_metaY + " minutos";
-      case 4:
-        return "Levantar " + goal.campo_metaX + " Kg " + this.getModalidad(goal.campo_metaY);
-      default:
-        console.log("Meta corrupta");
-    }
-  }
-
-  getModalidad(modalidad: number){
-    switch (modalidad) {
-      case 1:
-        return "de pecho";
-      case 2:
-        return "de pierna";
-      case 3:
-        return "de brazo";
-      default:
-        console.log("Modalidad no válida");
-        return "modalidad no registrada"
-    }
+  goBack(){
+    this.back.emit(true);
   }
 
 }
