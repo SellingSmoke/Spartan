@@ -18,4 +18,6 @@ export interface Goal {
   // -> 2 Pierna
   // -> 3 ... (Por completar)
 
+  diet_id?: number;       // Una meta puede o no llevar una dieta asociada
+
 }
