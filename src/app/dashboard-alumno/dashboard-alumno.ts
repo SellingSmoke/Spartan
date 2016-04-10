@@ -1,6 +1,6 @@
 import {Component, OnInit} from 'angular2/core';
 import {RouteParams} from 'angular2/router';
-import { Alumno } from '../alumnos/alumno'
+import { Alumno } from '../dataTypes/alumno';
 import { AlumnoService } from '../alumnos/alumno-service';
 
 @Component({
