@@ -1,7 +1,7 @@
 import {Alumno} from './dataTypes/alumno';
 import {Goal} from './dataTypes/goal';
 import {Task} from './dataTypes/task';
-import {Student} from './dataTypes/student';
+import {Student} from './students/student';
 
 // Datos estáticos para simular backend
 

@@ -1,15 +1,14 @@
-import {Component, OnInit, Output,Input, EventEmitter} from 'angular2/core';
-import {Alumno} from '../dataTypes/alumno';
+import { Component, OnInit, Output,Input, EventEmitter } from 'angular2/core';
 import { Goal } from '../dataTypes/goal';
-import {Student} from '../dataTypes/student';
+import { Student } from '../students/student';
 import { Router } from 'angular2/router';
 
 @Component({
   selector: 'student-detail',
-  templateUrl: 'app/alumnos/alumno-detail.html',
+  templateUrl: 'app/students/student-detail.html',
   inputs: ['student']
 })
-export class AlumnoDetailComponent implements OnInit{
+export class StudentDetailComponent implements OnInit{
 
   @Input()
   student: Student;

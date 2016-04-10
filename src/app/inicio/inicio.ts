@@ -1,8 +1,5 @@
 import {Component, OnInit} from 'angular2/core';
 import {Router, Route, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-import { Alumno } from '../dataTypes/alumno';
-import { AlumnoDetailComponent } from '../alumnos/alumno-detail';
-import { AlumnoService } from '../alumnos/alumno-service';
 import { DashboardEntrenador } from '../dashboard-entrenador/dashboard-entrenador';
 
 @Component({
