@@ -6,12 +6,12 @@ import {Student} from './dataTypes/student';
 // Datos estáticos para simular backend
 
 export var STUDENTS: Student[] = [
-  { id: 1, name: "Michel", lastname:"Maes Bermejo",email: "michel.maes95@gmail.com", gender:"Varón", age: 20, registration_date: "17/1/2016", goal: null, progress: null},
-  { id: 2, name: "Pablo", lastname:"Fuente Pérez",email: "michel.maes95@gmail.com", gender:"Varón", age: 20, registration_date: "17/1/2016", goal: null, progress: null},
-  { id: 3, name: "Enrique", lastname:"García Galán",email: "michel.maes95@gmail.com", gender:"Varón", age: 20, registration_date: "17/1/2016", goal: null, progress: null},
-  { id: 4, name: "Sergio", lastname:"Pérez Peló",email: "michel.maes95@gmail.com", gender:"Varón", age: 20, registration_date: "17/1/2016", goal: null, progress: null},
-  { id: 5, name: "Uno muy malo", lastname:"Maes",email: "michel.maes95@gmail.com", gender:"Varón", age: 20, registration_date: "17/1/2016", goal: null, progress: null},
-  { id: 6, name: "Otro mas malo aun", lastname:"Maes",email: "michel.maes95@gmail.com", gender:"Mujer", age: 20, registration_date: "17/1/2016", goal: null, progress: null}
+  { id: 1, name: "Michel", lastname:"Maes Bermejo",email: "michel.maes95@gmail.com", gender:"Varón", age: 20, registration_date: "17/1/2016", goal: null},
+  { id: 2, name: "Pablo", lastname:"Fuente Pérez",email: "michel.maes95@gmail.com", gender:"Varón", age: 20, registration_date: "17/1/2016", goal: null},
+  { id: 3, name: "Enrique", lastname:"García Galán",email: "michel.maes95@gmail.com", gender:"Varón", age: 20, registration_date: "17/1/2016", goal: null},
+  { id: 4, name: "Sergio", lastname:"Pérez Peló",email: "michel.maes95@gmail.com", gender:"Varón", age: 20, registration_date: "17/1/2016", goal: null},
+  { id: 5, name: "Uno muy malo", lastname:"Maes",email: "michel.maes95@gmail.com", gender:"Varón", age: 20, registration_date: "17/1/2016", goal: null},
+  { id: 6, name: "Otro mas malo aun", lastname:"Maes",email: "michel.maes95@gmail.com", gender:"Mujer", age: 20, registration_date: "17/1/2016", goal: null}
 ];
 
 export var ALUMNOS: Alumno[] = [
@@ -24,12 +24,12 @@ export var ALUMNOS: Alumno[] = [
 ];
 
 export var GOALS: Goal[] = [
-  { id: 1, id_alumno: 1, type: 3, campo_metaX: 30, campo_metaY: 120},
-  { id: 2, id_alumno: 2, type: 1, campo_metaX: 10, campo_metaY: 0},
-  { id: 3, id_alumno: 3, type: 2, campo_metaX: 10, campo_metaY: 0},
-  { id: 4, id_alumno: 4, type: 4, campo_metaX: 30, campo_metaY: 2},
-  { id: 5, id_alumno: 5, type: 4, campo_metaX: 10, campo_metaY: 1},
-  { id: 6, id_alumno: 6, type: 3, campo_metaX: 10, campo_metaY: 60}
+  { id: 1, student_id: 1, type: 3, campo_metaX: 30, campo_metaY: 120},
+  { id: 2, student_id: 2, type: 1, campo_metaX: 10, campo_metaY: 0},
+  { id: 3, student_id: 3, type: 2, campo_metaX: 10, campo_metaY: 0},
+  { id: 4, student_id: 4, type: 4, campo_metaX: 30, campo_metaY: 2},
+  { id: 5, student_id: 5, type: 4, campo_metaX: 10, campo_metaY: 1},
+  { id: 6, student_id: 7, type: 3, campo_metaX: 10, campo_metaY: 60}
 ];
 
 export var TASKS: Task[] = [

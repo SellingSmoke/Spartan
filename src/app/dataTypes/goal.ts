@@ -1,7 +1,7 @@
 export interface Goal {
 
   id: number;             // ID de la Meta
-  id_alumno: number;      // ID del alumno al que pertenece la meta
+  student_id: number;     // ID del alumno al que pertenece la meta
   type: number;
   // Tipo de meta:
   // -> 1 Adelgazar X Kg

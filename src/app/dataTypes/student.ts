@@ -1,3 +1,5 @@
+import {Goal} from '../dataTypes/goal';
+
 export interface Student {
 
   // Datos de la base de datos
@@ -12,6 +14,5 @@ export interface Student {
 
   // Datos calculados para evitar cargar datos a cada consulta
 
-  goal: string;
-  progress: number;
+  goal: Goal;
 }
