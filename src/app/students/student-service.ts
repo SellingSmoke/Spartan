@@ -1,4 +1,4 @@
-import { STUDENTS, GOALS } from '../recursos-estaticos';
+import { STUDENTS } from '../recursos-estaticos';
 import { Student } from '../students/student';
 import { Injectable } from 'angular2/core';
 
@@ -26,7 +26,7 @@ export class StudentService {
 
   /**
      Devuelve la meta del alumno, dado el id del alumno
-  */
+
 
   getStudentGoal(id: number){
     let goal = Promise.resolve(GOALS).then(
@@ -34,4 +34,5 @@ export class StudentService {
     );
     return goal;
   }
+  */
 }

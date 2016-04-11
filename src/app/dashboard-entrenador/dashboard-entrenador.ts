@@ -7,7 +7,7 @@ import { StudentService } from '../students/student-service';
 
 @Component({
 	selector: 'dashboard-entrenador',
-  styleUrls: ['app/inicio/inicio.css', 'app/main/app.main.css'],
+  styleUrls: ['app/dashboard-entrenador/dashboard-entrenador.css'],
   templateUrl: 'app/dashboard-entrenador/dashboard-entrenador.html',
 	directives: [StudentDetailComponent],
   providers: [StudentService]
@@ -64,7 +64,7 @@ export class DashboardEntrenador implements OnInit{
 
 	getStudents(){
 		this._studentService.getStudents().then(
-			students => this.getStudentsGoals(students)
+			students => this.students = students
 		);
 	}
 
@@ -72,7 +72,7 @@ export class DashboardEntrenador implements OnInit{
 		Método que para cada alumno lo insertará en la lista de alumnos.
 		Para cada alumno se buscará su meta.
 		Si extiste la meta, se asignara la meta al alumno.
-	*/
+
 
 	getStudentsGoals(students: Student[]){
 		for (var student of students) {
@@ -86,4 +86,5 @@ export class DashboardEntrenador implements OnInit{
 				});
 		 }
 	}
+	*/
 }
