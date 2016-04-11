@@ -4,4 +4,8 @@ function showDialog(){
     return false;
   }
 
+function detailToBackButton(e) {
+
+}
+
   //window.onload = showDialog;

@@ -205,6 +205,12 @@ a.glyphicon-plus.active {
   background-color: #03a9f4 !important;
 }
 
+.back-button {
+  float: right;
+  color: #9E9E9E !important;
+  background-color: #EEEEEE !important;
+}
+
 .custom-card-header {
     font-weight: bold;
     font-size: 1.28571429em;
