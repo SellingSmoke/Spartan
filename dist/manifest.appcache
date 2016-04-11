@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: 3ebeb8afc5cc00e388e9a9d9e8813addc1af4087
+# sw.version: de48beb500d1c37008f9649d351d2c406f663198
 # sw.file.hash: a7ecaa8c4e16c24da079e7f60d008b8e20d22a08
 /app/alumnos/alumno-detail.html
 # sw.file.hash: c3a9d68607298b9fa0162012245910862718a064
@@ -15,11 +15,11 @@ CACHE MANIFEST
 /app/alumnos/alumno-service.js.map
 # sw.file.hash: 652b5cb7fca04055243cc01492d80fc380994e2e
 /app/alumnos/alumno-service.ts
-# sw.file.hash: c298943ceaf37252cd65da124a89464f225e24ed
+# sw.file.hash: 8e7f3ab50b9d48a6e30db350acd7c85baeb07e77
 /app/autenticacion/autenticacion.js
-# sw.file.hash: 0e6df7d5ea50f7422dd862c34f576eac35dedf17
+# sw.file.hash: 8b9697ec167e8a84c206a9a1cdec6ff3730a5e7b
 /app/autenticacion/autenticacion.js.map
-# sw.file.hash: 283dfacab8f3e44e07ebb0c7548c3651492370b7
+# sw.file.hash: e8d8f30793646d777644ed37f02a8e5538ae6476
 /app/autenticacion/autenticacion.ts
 # sw.file.hash: 56ee0e3591df9c8ffe34242d355eb4aeb4c3b10d
 /app/autenticacion/router.js
@@ -89,17 +89,17 @@ CACHE MANIFEST
 /app/login/login.css
 # sw.file.hash: d464448dcf1764624abc78559b10fe7550a911ca
 /app/login/login.html
-# sw.file.hash: e61b65dd00b076f74e0f1aacacacc8865edac978
+# sw.file.hash: 93354ff09da9001dbba72646d197195a9d12e869
 /app/login/login.js
-# sw.file.hash: 58f207b1ccd7c99ab3c84f4edef47fa703991ef6
+# sw.file.hash: 5877f7ee6c65394b832c917f69da66cddf51c2c2
 /app/login/login.js.map
-# sw.file.hash: c385e37ea46b7ac38b24806db28c7e196ce5ceee
+# sw.file.hash: f273e279994baf8cf2efb7c3c42e8a73348c6737
 /app/login/login.ts
-# sw.file.hash: 9240336ad5f592c9006af54063c2d88257d7bdcc
+# sw.file.hash: e99211ce00fe9097849a62f3094d5613e68cfcfa
 /app/main/app.component.js
-# sw.file.hash: 3b75cd81473f996ac5de9d1be6ae3cb758168461
+# sw.file.hash: 79d1820e903ff5ef12568df3477ff9e31e3a3eb2
 /app/main/app.component.js.map
-# sw.file.hash: 3623c671554d9129e1c04dc917547bc6108ec008
+# sw.file.hash: c29156a2942ac54a1b99c8a043c7e336dbf8e1c0
 /app/main/app.component.ts
 # sw.file.hash: 85ec924807c065ca7b7ff00957ee55828d17aeda
 /app/main/app.main.css
