@@ -11,6 +11,8 @@ import * as GoalMethods from '../dataTypes/goal';
  *   formats to: ""
  *   {{ 65 |  BeautifyProgessBar }}
  *   formats to: "65% COMPLETADO"
+ *   {{ 100 |  BeautifyProgessBar }}
+ *   formats to: "META COMPLETADA"
 */
 @Pipe({name: 'BeautifyProgessBar'})
 export class BeautifyProgessBarPipe implements PipeTransform {
