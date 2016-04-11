@@ -37,12 +37,13 @@ export class AppComponent {
 
 		public isLogIn(){
 			// Comprobar si hay una sesión activa
-			return localStorage.getItem('spartan');
+			return (localStorage.getItem('spartan') || localStorage.getItem('alumno'));
 		}
 
     public logOut(){
         // Eliminar localstorage
         localStorage.removeItem('spartan');
+				localStorage.removeItem('alumno');
         this.router.navigateByUrl("/login");
     }
 }

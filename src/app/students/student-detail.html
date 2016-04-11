@@ -1,0 +1,22 @@
+<div class="content">
+    <div class="well well-sm">
+      <p><b>Meta del alumno</b></p>
+      <p> {{ goalDef }}</p>
+      <div *ngIf="true" class="progress">
+        <div class="progress-bar" [style.width.%]="80">
+          <span class="sp-label">80%</span>
+        </div>
+      </div>
+      <p *ngIf="false" class="sp-label2 text-muted">Sin tareas completadas</p>
+    </div>
+      <p><b>Datos personales</b></p>
+      <span class="label label-default">Corre electrónico</span>
+      <p>{{student.email}}</p>
+      <span class="label label-default">Sexo</span>
+      <p>{{student.gender}}</p>
+      <span class="label label-default">Edad</span>
+      <p>{{student.age}}</p>
+      <span class="label label-default">Fecha matriculación</span>
+      <p>{{student.registration_date}}</p>
+
+</div>

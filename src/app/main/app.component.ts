@@ -10,7 +10,7 @@ import {Login} from '../login/login';
 import {RegistroEntrenador} from '../registroEntrenador/registroEntrenador';
 import {RegistroAlumno} from '../registroAlumno/registroAlumno';
 import {Meta} from '../meta/meta';
-import {Dietas} from '../dietas/dietas';
+import {Dietas} from '../diets/diets';
 
 @Component({
 	selector: 'spartan',
@@ -37,12 +37,13 @@ export class AppComponent {
 
 		public isLogIn(){
 			// Comprobar si hay una sesión activa
-			return localStorage.getItem('spartan');
+			return (localStorage.getItem('spartan') || localStorage.getItem('alumno'));
 		}
 
     public logOut(){
         // Eliminar localstorage
         localStorage.removeItem('spartan');
+				localStorage.removeItem('alumno');
         this.router.navigateByUrl("/login");
     }
 }
