@@ -1,26 +1,20 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: 38830fe9d949a8e21b83dadbcdae9da084ac7cef
-# sw.file.hash: dad86a08174a1c2cccdc1a024044313b6534792a
+# sw.version: 3ebeb8afc5cc00e388e9a9d9e8813addc1af4087
+# sw.file.hash: a7ecaa8c4e16c24da079e7f60d008b8e20d22a08
 /app/alumnos/alumno-detail.html
-# sw.file.hash: b38466c41920bf248f68bf05c4f5c2be2df708c5
+# sw.file.hash: c3a9d68607298b9fa0162012245910862718a064
 /app/alumnos/alumno-detail.js
-# sw.file.hash: 124e90662f0535701036136b118e097efa4e339d
+# sw.file.hash: 18c9c78e0aa59d9692c34955eda20ea58cb84efd
 /app/alumnos/alumno-detail.js.map
-# sw.file.hash: 780634f461e7e034f88febae857e322e310509ed
+# sw.file.hash: 598d008118e3a68cd48efd49816343b94696373c
 /app/alumnos/alumno-detail.ts
-# sw.file.hash: a8a317ee6d4de3bb8f1a6e32f444e359fde02536
+# sw.file.hash: 7d9a649d752faa80b1edf6992c2c5289e63c64fa
 /app/alumnos/alumno-service.js
-# sw.file.hash: 784dde36cec0d80b239f195f7351f99f71ddf9a9
+# sw.file.hash: 62213ddbdea9d1e28b2afe78be418e2951499e36
 /app/alumnos/alumno-service.js.map
-# sw.file.hash: 1ac8d02f5246b00365e0d92a268707e943d54f8c
+# sw.file.hash: 652b5cb7fca04055243cc01492d80fc380994e2e
 /app/alumnos/alumno-service.ts
-# sw.file.hash: 50b6967ea0372d5220677473f457f47d23277c14
-/app/alumnos/alumno.js
-# sw.file.hash: cdf1bf6cdf15eda9c83ecca8471c750f004458f9
-/app/alumnos/alumno.js.map
-# sw.file.hash: 27a020de94939416de167dea7eef18a2ef55afd9
-/app/alumnos/alumno.ts
 # sw.file.hash: c298943ceaf37252cd65da124a89464f225e24ed
 /app/autenticacion/autenticacion.js
 # sw.file.hash: 0e6df7d5ea50f7422dd862c34f576eac35dedf17
@@ -33,22 +27,46 @@ CACHE MANIFEST
 /app/autenticacion/router.js.map
 # sw.file.hash: a19abdb6a57366df2ac095f1cbc631fe91a28921
 /app/autenticacion/router.ts
-# sw.file.hash: 213b242735e2c9bbaf1f74000f79805cb2450dbf
+# sw.file.hash: 68ba2f8bbb44309b1afb4d146ff15c433e5a21bc
 /app/dashboard-alumno/dashboard-alumno.html
 # sw.file.hash: e12cccaf1c769e063b45d8a3dad6964362693273
 /app/dashboard-alumno/dashboard-alumno.js
 # sw.file.hash: b1fe0b7f90f0b2a3217316181728d92cee80036a
 /app/dashboard-alumno/dashboard-alumno.js.map
-# sw.file.hash: be19592a4fefebc98bf27cb2e695faa6d2a45f54
+# sw.file.hash: e2b76debdf1ec6411016a271e8c585cd4a2d95b8
 /app/dashboard-alumno/dashboard-alumno.ts
-# sw.file.hash: 122a958c684b6599049e72704bdb8fffc17c7d82
+# sw.file.hash: 9a311a86f112ee9b33263308e8627698e82c11f8
 /app/dashboard-entrenador/dashboard-entrenador.html
-# sw.file.hash: 5a9bceb48d2b0ce68bfc4e841394e5ece1056258
+# sw.file.hash: e251990b218daeebbcc8ff49d078acb9decdb916
 /app/dashboard-entrenador/dashboard-entrenador.js
-# sw.file.hash: 5c0aabd98e23a381e09e1b8e6d32eb00887b6b4c
+# sw.file.hash: ba9555299cbeada0e948821daaa3bf412422d47e
 /app/dashboard-entrenador/dashboard-entrenador.js.map
-# sw.file.hash: 56c5b48294cfed9ab615985446473912863f58d8
+# sw.file.hash: 3002306430ef43dc1147d848b093356ec8a020b2
 /app/dashboard-entrenador/dashboard-entrenador.ts
+# sw.file.hash: e2a3c4eccc6a7ff851df9962f2da930a2e565b7a
+/app/dataTypes/alumno.js
+# sw.file.hash: bbb9193e1f7b599487759d57509b2ca02374d687
+/app/dataTypes/alumno.js.map
+# sw.file.hash: 27a020de94939416de167dea7eef18a2ef55afd9
+/app/dataTypes/alumno.ts
+# sw.file.hash: 961cae93726077bb76fe6a9f14ea435137a78ca8
+/app/dataTypes/goal.js
+# sw.file.hash: 8d1bf93b0b3e233d26466964500ea6d58a57faf4
+/app/dataTypes/goal.js.map
+# sw.file.hash: 327cba2d29aec437976e27d6694752d755edad82
+/app/dataTypes/goal.ts
+# sw.file.hash: 9acb846124796b191c56b27537294e59bfb56288
+/app/dataTypes/student.js
+# sw.file.hash: 49eace737976e6985f10268e1993c6e655c375fa
+/app/dataTypes/student.js.map
+# sw.file.hash: 1c95ce12b14b6f2559a978ce0a8097b5377384c6
+/app/dataTypes/student.ts
+# sw.file.hash: c62ef6fb063d76ccf2a1075e6546b3afe468c8c2
+/app/dataTypes/task.js
+# sw.file.hash: 7ffbcda1a8ebb0c9549ee7ba2c8688e30777406c
+/app/dataTypes/task.js.map
+# sw.file.hash: a24639431c351f9f2819b09646a27522ac829356
+/app/dataTypes/task.ts
 # sw.file.hash: 07ccad5d415017e22cff9f1e7a17ca92cc31d289
 /app/dietas/dietas.html
 # sw.file.hash: bf5192bdb516aca5462b8aaaf62d7afd4a327ba0
@@ -65,7 +83,7 @@ CACHE MANIFEST
 /app/inicio/inicio.js
 # sw.file.hash: 03ab36a6a987205b5c0a18c86e9d1ae270bac75e
 /app/inicio/inicio.js.map
-# sw.file.hash: 0abd8b6855a2bfa092b21f447cbb1609eb0d931d
+# sw.file.hash: 0df28a8568b90f4bf26301ce5cd523b3fac46407
 /app/inicio/inicio.ts
 # sw.file.hash: 31fa7068369aa1de3334c99a5fd3b63bcdcc7df8
 /app/login/login.css
@@ -85,7 +103,7 @@ CACHE MANIFEST
 /app/main/app.component.ts
 # sw.file.hash: 85ec924807c065ca7b7ff00957ee55828d17aeda
 /app/main/app.main.css
-# sw.file.hash: 8b54814433f6c3d056cc52c32e18b1166406e28d
+# sw.file.hash: f68afba6d2f72c5751ca740ba501adfa9214c078
 /app/main/app.main.html
 # sw.file.hash: a5aade0d7bff9ca9729acf53c7156392f92bfa5e
 /app/main/main.js
@@ -117,9 +135,9 @@ CACHE MANIFEST
 /app/meta/meta.js.map
 # sw.file.hash: c20cb8cd3487540030ef57310edbb69a0c44f409
 /app/meta/meta.ts
-# sw.file.hash: 8fe4bd5760c49cc456a48a7685ae71cea1f14a2d
+# sw.file.hash: 44d3385e03083954dd470f4780fa4f00410f8405
 /app/perfil/perfil.css
-# sw.file.hash: 77222ae6c6bc20e2721e55b13d4e84f9dc2732ff
+# sw.file.hash: 868599ed3e73a626cbffb5c74ea278eb11a0b512
 /app/perfil/perfil.html
 # sw.file.hash: 760ad1d64c113d3ba83b2e52ea498e6e5d992a91
 /app/perfil/perfil.js
@@ -127,11 +145,11 @@ CACHE MANIFEST
 /app/perfil/perfil.js.map
 # sw.file.hash: 51d50c4219f0e7d30ad6e3b0343093521d521e5b
 /app/perfil/perfil.ts
-# sw.file.hash: 4c6774943eb23d33993d02ee6aa653d68e9b8a8e
+# sw.file.hash: 230fdf4435c9551de185a39c0b6355f2b651764e
 /app/recursos-estaticos.js
-# sw.file.hash: 3762959037f294d26278cd1e1e50871c20ced300
+# sw.file.hash: 2a85502f45c78f730af10dcbe05293510e5b4480
 /app/recursos-estaticos.js.map
-# sw.file.hash: 51984ad2b1c3c5c65321999f9cbb6e791bd4d938
+# sw.file.hash: 2b4054536b1485ddc70b5cbfb0124d51f62843ad
 /app/recursos-estaticos.ts
 # sw.file.hash: 613e445f883254b8e542b80a97cd0141b3e9423a
 /app/registroAlumno/registroAlumno.html
@@ -151,9 +169,9 @@ CACHE MANIFEST
 /app/registroEntrenador/registroEntrenador.ts
 # sw.file.hash: 84161b857f5c547e3699ddfbffc6d8d737542e01
 /favicon.ico
-# sw.file.hash: 6f725bb14a7de9ab52f662375506d847c6505d75
+# sw.file.hash: 3dd978e547bceca7cfc818024fcd6514ef49571a
 /index.html
-# sw.file.hash: 35e633e7055c0e636ef0092e8eb6e45e67da1e4a
+# sw.file.hash: f19e19ba474fd11a3fffd55ea728338df07a39bd
 /main.css
 # sw.file.hash: cdcb96342eb9439009a52083d03bf88009703f55
 /materialD/CONTRIBUTING.md
@@ -383,7 +401,7 @@ CACHE MANIFEST
 /materialD/test/ripplesSpec.js
 # sw.file.hash: 4c4315e2e593eab7422a242dec799ae50319000b
 /materialD/testcase.html
-# sw.file.hash: 3bbba79235ddec0080cbab5926b844a91fb3e090
+# sw.file.hash: b148aec74206d64f0da3e388e34812e0fd998286
 /pure-css-accordion/style.css
 # sw.file.hash: 9f2d5f45393742f4c1bdb3b05b1e5b3680679eaf
 /scripts/Rx.js
@@ -403,6 +421,8 @@ CACHE MANIFEST
 /scripts/jquery.min.js
 # sw.file.hash: d6be72f514cdba1647ac8bfa659e24ebbb5a3b2b
 /scripts/router.js
+# sw.file.hash: 6584aa8c15b335636260f3c9ac934f53b59a61e7
+/scripts/scripts-pablo.js
 # sw.file.hash: 064ab212cfd9e125474ae3bbb600c366b31e79cb
 /scripts/system-polyfills.js
 # sw.file.hash: ea2d7cecbce9a5de1b6777fa755578976b7f3e2b
