@@ -8,11 +8,11 @@ import { Alumno } from './dataTypes/alumno'; // Por borrar
 // Base de datos simulada
 
 export var STUDENTS: Student[] = [
-  { id: 1, name: "Michel", lastname:"Maes Bermejo",email: "michel.maes95@gmail.com", gender:"Varón", age: 20, registration_date: "17/1/2016", goal: { id: 1, student_id: 1, type: 3, campo_metaX: 30, campo_metaY: 120, diet_id: 1}},
-  { id: 2, name: "Pablo", lastname:"Fuente Pérez",email: "michel.maes95@gmail.com", gender:"Varón", age: 20, registration_date: "17/1/2016", goal: { id: 2, student_id: 2, type: 1, campo_metaX: 10, campo_metaY: 0}},
-  { id: 3, name: "Enrique", lastname:"García Galán",email: "michel.maes95@gmail.com", gender:"Varón", age: 20, registration_date: "17/1/2016", goal: {id: 3, student_id: 3, type: 2, campo_metaX: 10, campo_metaY: 0}},
-  { id: 4, name: "Sergio", lastname:"Pérez Peló",email: "michel.maes95@gmail.com", gender:"Varón", age: 20, registration_date: "17/1/2016", goal: { id: 4, student_id: 4, type: 4, campo_metaX: 30, campo_metaY: 2}},
-  { id: 5, name: "Uno muy malo", lastname:"Maes",email: "michel.maes95@gmail.com", gender:"Varón", age: 20, registration_date: "17/1/2016", goal: { id: 5, student_id: 5, type: 4, campo_metaX: 10, campo_metaY: 1}},
+  { id: 1, name: "Michel", lastname:"Maes Bermejo",email: "michel.maes95@gmail.com", gender:"Varón", age: 20, registration_date: "17/1/2016", goal: { id: 1, student_id: 1, type: 3, progress: 70, campo_metaX: 30, campo_metaY: 120, diet_id: 1}},
+  { id: 2, name: "Pablo", lastname:"Fuente Pérez",email: "michel.maes95@gmail.com", gender:"Varón", age: 20, registration_date: "17/1/2016", goal: { id: 2, student_id: 2, type: 1, progress: 50, campo_metaX: 10, campo_metaY: 0}},
+  { id: 3, name: "Enrique", lastname:"García Galán",email: "michel.maes95@gmail.com", gender:"Varón", age: 20, registration_date: "17/1/2016", goal: {id: 3, student_id: 3, type: 2, progress: 100, campo_metaX: 10, campo_metaY: 0}},
+  { id: 4, name: "Sergio", lastname:"Pérez Peló",email: "michel.maes95@gmail.com", gender:"Varón", age: 20, registration_date: "17/1/2016", goal: { id: 4, student_id: 4, type: 4, progress: 30, campo_metaX: 30, campo_metaY: 2}},
+  { id: 5, name: "Uno muy malo", lastname:"Maes",email: "michel.maes95@gmail.com", gender:"Varón", age: 20, registration_date: "17/1/2016", goal: { id: 5, student_id: 5, type: 4, progress: 10, campo_metaX: 10, campo_metaY: 1}},
   { id: 6, name: "Otro mas malo aun", lastname:"Maes",email: "michel.maes95@gmail.com", gender:"Mujer", age: 20, registration_date: "17/1/2016", goal: null}
 ];
 

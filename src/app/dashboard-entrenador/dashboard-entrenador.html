@@ -4,7 +4,7 @@
     <div class="panel panel-default">
         <div class="panel-heading mdl-typography--title sp-center">Alumnos</div>
         <div class="panel-body ui four stackable cards">
-            <!-- INICIO TARJETA student -->
+            <!-- INICIO TARJETA ALUMNO -->
             <div *ngFor="#student of students" [class.selected]="student === selectedStudent"
                 [class.blue]="student === selectedStudent" class="ui red link card fluid card">
                 <div class="content">
@@ -25,28 +25,41 @@
                       </button>
                     </span>
                 </div>
-                <!-- FOTO student -->
+                <!-- FOTO ALUMNO -->
                 <div *ngIf="selectedStudent != student" class="image">
                     <img src="https://account.socialbakers.com/default_user.png">
                 </div>
+                <!-- FIN FOTO ALUMNO -->
+
+                <!-- BOTON PROGRESO -->
                 <div *ngIf="selectedStudent != student" class="content">
-                    <button (click)="goToStudentTask(student)" class="btn btn-danger btn-raised btn-lg btn-block">
+                    <button *ngIf="student.goal != null" (click)="goToStudentTask(student)" class="btn btn-danger btn-raised btn-lg btn-block">
                         <i class="material-icons">trending_up</i> Progreso
-                        <div class="progress progress-button">
-                            <div class="progress-bar" [style.width.%]="80">
+                        <div class="progress progress-button" >
+                            <div class="progress-bar" [style.width.%]="student.goal.progress">
                                 <span class="sp-label">80%</span>
                             </div>
                         </div>
                     </button>
+                    <fieldset *ngIf="student.goal === null" disabled>
+                      <button class="btn btn-danger btn-raised btn-lg btn-block">
+                          <i class="material-icons">trending_up</i> Sin Meta
+                          <div class="progress progress-button" >
+                              <div class="progress-bar" [style.width.%]="0">
+                              </div>
+                          </div>
+                      </button>
+                    </fieldset>
                 </div>
-                <!-- FIN FOTO student -->
-                <!-- DETALLES student -->
+                <!-- FIN BOTON PROGRESO -->
+
+                <!-- DETALLES ALUMNO -->
                 <div *ngIf="selectedStudent == student" class="content">
-                    <student-detail (back)='getBack($event)' [student]="selectedStudent"></student-detail>
+                    <student-detail [student]="selectedStudent"></student-detail>
                 </div>
-                <!-- FIN DETALLES student -->
+                <!-- FIN DETALLES ALUMNO -->
             </div>
-            <!-- FIN TARJETA student -->
+            <!-- FIN TARJETA ALUMNO -->
         </div>
     </div>
 </div>

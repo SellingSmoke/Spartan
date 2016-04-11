@@ -1,10 +1,10 @@
 <div class="content">
     <div class="well well-sm">
       <p><b>Meta del alumno</b></p>
-      <p> {{ goalDef }}</p>
-      <div *ngIf="true" class="progress">
-        <div class="progress-bar" [style.width.%]="80">
-          <span class="sp-label">80%</span>
+      <p> {{ student.goal | GoalName }}</p>
+      <div *ngIf="student.goal != null" class="progress">
+        <div class="progress-bar" [style.width.%]="student.goal.progress">
+          <span class="sp-label">{{ student.goal.progress | BeautifyProgessBar }}</span>
         </div>
       </div>
       <p *ngIf="false" class="sp-label2 text-muted">Sin tareas completadas</p>
