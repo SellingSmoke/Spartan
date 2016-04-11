@@ -1,32 +1,54 @@
 <!-- Dasboard entrenador -->
 
 <div class="row sp-container-lg col-md-offset-1 col-md-10">
-  <div class="panel panel-default">
-    <div class="panel-heading mdl-typography--title sp-center">Alumnos</div>
-    <div class="panel-body ui four stackable cards">
-      <!-- INICIO TARJETA student -->
-      <div *ngFor="#student of students" [class.selected]="student === selectedStudent" [class.blue]="student === selectedStudent" class="ui red link card fluid card">
-        <div class="content">
-          <span class="header">{{student.name}} <small class="text-muted">{{student.lastname}}</small></span>
+    <div class="panel panel-default">
+        <div class="panel-heading mdl-typography--title sp-center">Alumnos</div>
+        <div class="panel-body ui four stackable cards">
+            <!-- INICIO TARJETA student -->
+            <div *ngFor="#student of students" [class.selected]="student === selectedStudent" [class.blue]="student === selectedStudent" class="ui red link card fluid card">
+
+                <!--<div class="content">
+                    <span class="header">{{student.name}} <small class="text-muted">{{student.lastname}}</small></span>
+                    <button (click)="onSelect(student)" class="btn btn-info btn-raised btn-xs btn-block">
+                        <i class="material-icons">face</i> Detalles
+                      </button>
+                </div>-->
+
+                <div class="content">
+                    <span class="col-md-8 col-xs-8">
+                      <span class="header custom-card-header">{{student.name}} <small class="text-muted custom-card-subheader">{{student.lastname}}</small></span>
+                    </span>
+                    <span class="col-md-4 col-xs-4">
+                      <button (click)="onSelect(student)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored detail-button">
+                        <i class="material-icons">face</i>
+                      </button>
+                    </span>
+                </div>
+
+                <!-- FOTO student -->
+                <div *ngIf="selectedStudent != student" class="image">
+                    <img src="https://account.socialbakers.com/default_user.png">
+                </div>
+                <div *ngIf="selectedStudent != student" class="content">
+                    <button (click)="goToStudentTask(student)" class="btn btn-danger btn-raised btn-lg btn-block">
+                        <i class="material-icons">trending_up</i> Progreso
+                        <div class="progress progress-button">
+                            <div (click)="onSelect(student)" class="progress-bar" [style.width.%]="80">
+                                <span class="sp-label">80%</span>
+                            </div>
+                        </div>
+                    </button>
+
+
+                </div>
+                <!-- FIN FOTO student -->
+                <!-- DETALLES student -->
+                <div *ngIf="selectedStudent == student" class="content">
+                    <student-detail (back)='getBack($event)' [student]="selectedStudent"></student-detail>
+                </div>
+                <!-- FIN DETALLES student -->
+            </div>
+            <!-- FIN TARJETA student -->
         </div>
-        <!-- FOTO student -->
-        <div *ngIf="selectedStudent != student" class="image">
-          <img src="https://account.socialbakers.com/default_user.png">
-        </div>
-        <div *ngIf="selectedStudent != student" class="content">
-          <button (click)="goToStudentTask(student)" class="btn btn-danger btn-raised btn-lg btn-block">
-            <i class="material-icons">trending_up</i> Progreso</button>
-          <button (click)="onSelect(student)" class="btn btn-info btn-raised btn-lg btn-block">
-            <i class="material-icons">face</i> Detalles</button>
-        </div>
-        <!-- FIN FOTO student -->
-        <!-- DETALLES student -->
-        <div *ngIf="selectedStudent == student" class="content">
-          <student-detail (back)='getBack($event)' [student]="selectedStudent"></student-detail>
-        </div>
-        <!-- FIN DETALLES student -->
-      </div>
-      <!-- FIN TARJETA student -->
     </div>
-  </div>
 </div>
