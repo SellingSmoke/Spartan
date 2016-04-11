@@ -1,7 +1,7 @@
 import { Goal } from './dataTypes/goal';
 import { Task } from './dataTypes/task';
 import { Student } from './students/student';
-import { Diet } from './dataTypes/diet';
+import { Diet } from './diets/diet';
 
 import { Alumno } from './dataTypes/alumno'; // Por borrar
 
@@ -32,7 +32,7 @@ export var TASKS: Task[] = [
 
 export var DIETS: Diet[] = [
   { id: 1, id_trainer: 1, name: "Dieta para perder peso",  description: "Descripcion de la dieta",
-    matrix:[
+    matrix:[           /**                            DESAYUNO                                  |                         COMIDA                        |      MERIENDA      |                                  CENA                                 |
       /** Lunes     */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja", "Menestra de verduras - Conejo al tomillo - 1 manzana", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
       /** Martes    */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja", "Menestra de verduras - Conejo al tomillo - 1 manzana", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
       /** Miercoles */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja", "Menestra de verduras - Conejo al tomillo - 1 manzana", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],

@@ -10,7 +10,7 @@ import {Login} from '../login/login';
 import {RegistroEntrenador} from '../registroEntrenador/registroEntrenador';
 import {RegistroAlumno} from '../registroAlumno/registroAlumno';
 import {Meta} from '../meta/meta';
-import {Dietas} from '../dietas/dietas';
+import {Dietas} from '../diets/diets';
 
 @Component({
 	selector: 'spartan',
