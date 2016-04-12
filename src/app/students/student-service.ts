@@ -24,15 +24,4 @@ export class StudentService {
     return student;
   }
 
-  /**
-     Devuelve la meta del alumno, dado el id del alumno
-
-
-  getStudentGoal(id: number){
-    let goal = Promise.resolve(GOALS).then(
-      goals => goals.filter(goal => goal.student_id === id)[0]
-    );
-    return goal;
-  }
-  */
 }

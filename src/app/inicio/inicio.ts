@@ -19,10 +19,10 @@ export class Inicio{
  student: Student;
  seeStudentTasks: boolean;
 
- constructor(private aut: Autenticacion, private _alumnoService: StudentService) {
+ constructor(private aut: Autenticacion, private _studentService: StudentService) {
    this.seeStudentTasks = false;
      if(aut.esAlumno()){
-       this._alumnoService.getStudent(1)
+       this._studentService.getStudent(1)
          .then(student => this.student = student);
      }else{
        this.student = undefined;

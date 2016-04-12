@@ -23,8 +23,6 @@ export class DashboardEntrenador implements OnInit{
 
   constructor(private _studentService: StudentService, private _router: Router) { }
 
-	// COMPONENT METHODS
-
 	/**
 		Método marca como seleccionado a un alumno, mostrando sus detalles
 	*/
@@ -49,45 +47,14 @@ export class DashboardEntrenador implements OnInit{
 	 	this.selectedStudent = undefined;
 	}
 
-	// OnInit METHODS -> Por refactorizar
-
-
 	/**
 		Método que se llama inmediatamente después del OnInit
 	*/
 
   ngOnInit() {
-		this.students = new Array<Student>();
-		this.getStudents();
-  }
-
-	/**
-		Método que pedirá los alumnos y al recibirlos los pasará al método para obtener sus metas
-	*/
-
-	getStudents(){
 		this._studentService.getStudents().then(
 			students => this.students = students
 		);
-	}
+  }
 
-	/**
-		Método que para cada alumno lo insertará en la lista de alumnos.
-		Para cada alumno se buscará su meta.
-		Si extiste la meta, se asignara la meta al alumno.
-
-
-	getStudentsGoals(students: Student[]){
-		for (var student of students) {
-			this.students.push(student);
-			this._studentService.getStudentGoal(student.id).then(
-				goal => {
-					if(goal != null){
-						var student = students.filter(alumno => alumno.id === goal.id)[0];
-						student.goal = goal;
-					}
-				});
-		 }
-	}
-	*/
 }

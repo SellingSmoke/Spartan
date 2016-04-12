@@ -22,7 +22,9 @@ export class DashboardAlumno{
 	@Output()
   trainer_dashboard_event = new EventEmitter<any>();
 
-	constructor(private _alumnoService: StudentService) {}
+	/*
+	 *	Método que permite volver al DashboardEntrenador
+   */
 
 	goBack() {
 		this.trainer_dashboard_event.emit(null);
