@@ -4,12 +4,14 @@ import { StudentService } from '../students/student-service';
 import { Student } from '../students/student';
 import { BeautifyProgessBarPipe, GoalNamePipe } from '../students/student-pipes.pipe';
 
+import { Autenticacion } from '../autenticacion/autenticacion';
+
 
 @Component({
 	selector: 'dashboard-alumno',
   styleUrls: ['app/inicio/inicio.css'],
   templateUrl: 'app/dashboard-alumno/dashboard-alumno.html',
-  providers: [StudentService],
+  providers: [Autenticacion, StudentService],
   pipes: [BeautifyProgessBarPipe, GoalNamePipe],
 	inputs: ['student']
 })
@@ -21,6 +23,10 @@ export class DashboardAlumno{
 
 	@Output()
   trainer_dashboard_event = new EventEmitter<any>();
+
+	constructor(private aut: Autenticacion, private _studentService: StudentService) {
+
+	 }
 
 	/*
 	 *	Método que permite volver al DashboardEntrenador

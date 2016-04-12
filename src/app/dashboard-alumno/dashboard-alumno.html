@@ -270,7 +270,7 @@
 
         <!--SOLO ENTRENADOR -->
         <!--<a href="" class="btn btn-danger btn-lg btn-block"><i class="material-icons">add_circle_outline</i>  Añadir Tarea</a>-->
-        <a id="tt1" class='button glyphicon glyphicon-plus' onclick="showDialog()"></a>
+        <a *ngIf="aut.esProfesor()" id="tt1" class='button glyphicon glyphicon-plus' onclick="showDialog()"></a>
         <div class="mdl-tooltip" for="tt1">
           Follow
         </div>
@@ -294,7 +294,7 @@
 
         <!--FIN SOLO ENTRENADOR -->
 
-        <button (click)="goBack()" class="btn btn-primary">Atrás</button>
+        <button *ngIf="aut.esProfesor()" (click)="goBack()" class="btn btn-primary">Atrás</button>
       </div>
     </div>
   </div>
