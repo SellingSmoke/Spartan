@@ -1,31 +1,31 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component, OnInit, Input, Output, EventEmitter } from 'angular2/core';
 import {RouteParams} from 'angular2/router';
-import { Alumno } from '../dataTypes/alumno';
-import { AlumnoService } from '../alumnos/alumno-service';
+import { StudentService } from '../students/student-service';
+import { Student } from '../students/student';
+import { BeautifyProgessBarPipe, GoalNamePipe } from '../students/student-pipes.pipe';
+
 
 @Component({
 	selector: 'dashboard-alumno',
   styleUrls: ['app/inicio/inicio.css'],
   templateUrl: 'app/dashboard-alumno/dashboard-alumno.html',
-  providers: [AlumnoService]
+  providers: [StudentService],
+  pipes: [BeautifyProgessBarPipe, GoalNamePipe],
+	inputs: ['student']
 })
 
 export class DashboardAlumno{
 
-	alumno: Alumno;
+	@Input()
+	student: Student;
 
-	constructor(
-		private _alumnoService: AlumnoService,
-		private _routeParams: RouteParams) {
+	@Output()
+  trainer_dashboard_event = new EventEmitter<any>();
 
-			let id = +this._routeParams.get('id');
-			console.log(id);
-			this._alumnoService.getAlumno(id)
-				.then(alumno => this.alumno = alumno);
-	}
+	constructor(private _alumnoService: StudentService) {}
 
 	goBack() {
-    window.history.back();
+		this.trainer_dashboard_event.emit(null);
   }
 
 }

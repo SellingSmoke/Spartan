@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 import {Router, Route, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
-import {DashboardAlumno} from '../dashboard-alumno/dashboard-alumno';
+// import {DashboardAlumno} from '../dashboard-alumno/dashboard-alumno';
 import {Inicio} from '../inicio/inicio';
 import {Perfil} from '../perfil/perfil';
 import {Mensajes} from '../mensajes/mensajes';
@@ -21,7 +21,7 @@ import {Dietas} from '../diets/diets';
 
 @RouteConfig([
   new Route({ path: '/inicio', component: Inicio, name: 'Inicio', useAsDefault: true}),
-	new Route({ path: '/alumno/:id', component: DashboardAlumno, name: 'DashboardAlumno'}),
+	// new Route({ path: '/alumno/:id', component: DashboardAlumno, name: 'DashboardAlumno'}),
   new Route({ path: '/perfil', component: Perfil, name: 'Perfil'}),
   new Route({ path: '/mensajes', component: Mensajes, name: 'Mensajes'}),
   new Route({ path: '/login', component: Login, name: 'Login'}),

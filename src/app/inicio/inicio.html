@@ -1,3 +1,7 @@
+<!-- Distinguiremos 2 dashboard distintos -->
 
-<!-- <dashboard-alumno></dashboard-alumno> -->
-<dashboard-entrenador></dashboard-entrenador>
+<dashboard-alumno (trainer_dashboard_event)='getTrainerDashBoard($event)'
+    [student]="student" *ngIf="aut.esAlumno() || seeStudentTasks"></dashboard-alumno>
+
+<dashboard-entrenador (student_dashboard_event)='getStudentDashBoard($event)'
+    *ngIf="aut.esProfesor() && !seeStudentTasks"></dashboard-entrenador>
