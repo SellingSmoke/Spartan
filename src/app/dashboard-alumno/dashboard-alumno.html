@@ -5,14 +5,14 @@
   <div class="col-md-8">
     <div class="container">
       <div class="jumbotron">
-        <h1 id="goal-title"> {{ alumno.goal }}</h1>
+        <h1 id="goal-title"> {{ student.goal | GoalName }}</h1>
 
-        <div *ngIf="alumno.progreso != 0" class="progress">
-          <div class="progress-bar" [style.width.%]="alumno.progreso">
-            <span class="sp-label">{{alumno.progreso}} % COMPLETADO</span>
+        <div *ngIf="student.goal.progress != 0" class="progress">
+          <div class="progress-bar" [style.width.%]="student.goal.progress">
+            <span class="sp-label">{{ student.goal.progress | BeautifyProgessBar }}</span>
           </div>
         </div>
-        <p *ngIf="alumno.progreso == 0" class="sp-label2 text-muted">Sin tareas completadas</p>
+        <p *ngIf="student.goal.progress == 0" class="sp-label2 text-muted">Sin tareas completadas</p>
 
         <ul class="accordion">
           <li class="accordion-item">

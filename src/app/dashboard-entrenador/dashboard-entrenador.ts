@@ -1,9 +1,9 @@
-import { Component, OnInit } from 'angular2/core';
+import { Component, OnInit, Output, EventEmitter } from 'angular2/core';
 import { Router, Route, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
-import { Student } from '../students/student';
 import { Goal } from '../dataTypes/goal';
 import { StudentDetailComponent } from '../students/student-detail';
 import { StudentService } from '../students/student-service';
+import { Student } from '../students/student';
 
 @Component({
 	selector: 'dashboard-entrenador',
@@ -14,6 +14,9 @@ import { StudentService } from '../students/student-service';
 })
 
 export class DashboardEntrenador implements OnInit{
+
+	@Output()
+  student_dashboard_event = new EventEmitter<Student>();
 
 	selectedStudent: Student;
 	students: Student[];
@@ -35,7 +38,7 @@ export class DashboardEntrenador implements OnInit{
 	*/
 
 	goToStudentTask(student: Student) {
-    this._router.navigate(['DashboardAlumno', { id: student.id }]);
+		this.student_dashboard_event.emit(student);
   }
 
 	/**
