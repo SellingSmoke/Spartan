@@ -16,8 +16,8 @@ export var STUDENTS: Student[] = [
 ];
 
 export var TASKS: Task[] = [
-  { id: 1, name: "Repeticiones", id_meta: 4, description: "Esta tarea hay que hacerla asi", type: 2, objective1:15, format1:"repeticiones", result1: 10, objective2:40, format2:"Kg", result2: 35 },
-  { id: 2, name: "Recorrido", id_meta: 1, description: "Esta tarea hay que hacerla de este modo", type: 1, objective1:5, format1:"Km", result1: 5, objective2:20, format2:"minutos", result2:18 }
+  { id: 1, name: "Repeticiones", goal_id: 4, description: "Esta tarea hay que hacerla asi", type: 2, objective1:15, format1:"repeticiones", result1: 10, objective2:40, format2:"Kg", result2: 35 },
+  { id: 2, name: "Recorrido", goal_id: 1, description: "Esta tarea hay que hacerla de este modo", type: 1, objective1:5, format1:"Km", result1: 5, objective2:20, format2:"minutos", result2:18 }
 ];
 
 export var DIETS: Diet[] = [

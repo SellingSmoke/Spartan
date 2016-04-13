@@ -2,7 +2,7 @@ export interface Task {
 
   id: number;             // ID de la Tarea
   name: string;           // Nombre de la Tarea
-  id_meta: number;        // ID de la meta a la que pertenece
+  goal_id: number;        // ID de la meta a la que pertenece
   description: string;    // Descripcion de la Tarea
   type: number;           // Tipo de Tarea (1 para aerobicas, 2 para anaeróbicas)
 
