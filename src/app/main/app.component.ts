@@ -11,12 +11,14 @@ import {RegistroEntrenador} from '../registroEntrenador/registroEntrenador';
 import {RegistroAlumno} from '../registroAlumno/registroAlumno';
 import {Meta} from '../meta/meta';
 import {Dietas} from '../diets/diets';
+import { Autenticacion } from '../autenticacion/autenticacion';
 
 @Component({
-	selector: 'spartan',
+	  selector: 'spartan',
     templateUrl: 'app/main/app.main.html',
     styleUrls: ['app/main/app.main.css'],
     directives: [ROUTER_DIRECTIVES,LoggedInRouterOutlet],
+		providers: [Autenticacion]
 })
 
 @RouteConfig([
@@ -33,17 +35,11 @@ import {Dietas} from '../diets/diets';
 
 export class AppComponent {
 
-    constructor(private router:Router){}
-
-		public isLogIn(){
-			// Comprobar si hay una sesión activa
-			return (localStorage.getItem('spartan') || localStorage.getItem('alumno'));
-		}
+    constructor(private router:Router, private aut: Autenticacion){}
 
     public logOut(){
         // Eliminar localstorage
-        localStorage.removeItem('spartan');
-				localStorage.removeItem('alumno');
+        this.aut.logOut;
         this.router.navigateByUrl("/login");
     }
 }

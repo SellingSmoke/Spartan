@@ -18,8 +18,7 @@ export class Login {
         pass : ""
     }
 
-    constructor(public router: Router) {
-    }
+    constructor(public router: Router) {}
 
 
     logIn(){
@@ -31,6 +30,10 @@ export class Login {
         }else if(this.model.user==="alumno" && this.model.pass==="alumno"){
 					  localStorage.setItem('spartan', "Somos Espartanos");
 						localStorage.setItem('rol', "2");
+						this.router.parent.navigateByUrl('/inicio');
+				}else if(this.model.user==="admin" && this.model.pass==="admin"){
+						localStorage.setItem('spartan', "Somos Espartanos");
+						localStorage.setItem('rol', "0");
 						this.router.parent.navigateByUrl('/inicio');
 				}
     }

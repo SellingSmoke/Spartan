@@ -23,7 +23,6 @@ export class LoggedInRouterOutlet extends RouterOutlet {
     }
 
     activate(instruction:ComponentInstruction){
-        console.log(this.autenticacion.isLogIn());
         var url = instruction.urlPath;
         if (!this.rutasPublicas[url] && !localStorage.getItem('spartan')) {
             // todo: redir ect to Login, may be there a better way?
@@ -31,7 +30,7 @@ export class LoggedInRouterOutlet extends RouterOutlet {
         }
 
         if (this.rutasPublicas[url] && localStorage.getItem('spartan')){
-            this.padre.navigateByUrl('/perfil');
+            this.padre.navigateByUrl('/inicio');
         }
         return super.activate(instruction);
     }
