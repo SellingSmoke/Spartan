@@ -17,6 +17,11 @@ div.sp-link{
 
 }
 
+.sp-label-statistic{
+	background-color: transparent !important;
+	font-size: 1em !important;
+}
+
 span.sp-link{
 	cursor: pointer;
 	text-align: center;

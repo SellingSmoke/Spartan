@@ -39,7 +39,7 @@ export class AppComponent {
 
     public logOut(){
         // Eliminar localstorage
-        this.aut.logOut;
+        this.aut.logOut();
         this.router.navigateByUrl("/login");
     }
 }
