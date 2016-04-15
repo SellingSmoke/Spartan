@@ -1,3 +1,4 @@
+/// <reference path="../../../typings/jquery/jquery.d.ts" />
 import { Component, OnInit } from 'angular2/core';
 import { Router } from 'angular2/router';
 import { Goal } from '../dataTypes/goal';
@@ -8,13 +9,12 @@ import { Student } from '../students/student';
 import { Autenticacion } from '../autenticacion/autenticacion';
 import { GoalNamePipe } from '../students/student-pipes.pipe';
 
-// declare var jQuery:JQueryStatic;
+declare var $:JQueryStatic;
 
 @Component({
 	selector: 'dashboard-admin',
   styleUrls: ['app/dashboard-admin/table.css'],
   templateUrl: 'app/dashboard-admin/dashboard-admin.html',
-	//directives: [StudentDetailComponent],
 	pipes: [GoalNamePipe],
   providers: [TrainerService, Autenticacion]
 })
@@ -29,10 +29,18 @@ export class DashboardAdmin implements OnInit{
 
   constructor(private _trainerService: TrainerService, private aut: Autenticacion, private router: Router) {
 		this.studentNum = 0;
-		/**$('.ui.rating').rating({
-	      initialRating: 0,
-	      maxRating: 5
-	   });*/
+
+	}
+
+	/*
+	 *	Al cargar la vista
+	 */
+
+	ngAfterViewInit() {
+		$('.ui.rating').rating({
+			 initialRating: 0,
+			 maxRating: 5
+		});
 	}
 
   ngOnInit() {
