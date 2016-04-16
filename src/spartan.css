@@ -12,24 +12,57 @@
 
 div.sp-link{
 	padding-top: 1em;
-	cursor: pointer;
 	text-align: center;
-
 }
+
+td.sp-link:hover{
+	text-align: center;
+	color: #00B5AD;
+}
+
+span.sp-link{
+
+	text-align: center;
+}
+
+.sp-link:hover{
+	cursor: pointer;
+	font-weight: bold;
+}
+
+
+td:not(.sp-not){
+  text-align: center !important;
+}
+
+.sp-text{
+	font-size: 1.5rem;
+	font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  line-height: 1em;
+  color: #1B1C1D;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.sp-text.mini{
+	font-size: 1.2rem;
+}
+
 
 .sp-label-statistic{
 	background-color: transparent !important;
 	font-size: 1em !important;
 }
 
-span.sp-link{
-	cursor: pointer;
-	text-align: center;
+.ui.mini.statistics .statistic > .value, .ui.mini.statistic > .value{
+	font-size: 0.7rem !important;
 }
 
-.sp-link:hover{
-	font-weight: bold;
+div.sp-label-statistic{
+	font-size: 0.8em !important;
 }
+
 
 .sp-container-lg{
 	margin-top: 40px;

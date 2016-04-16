@@ -1,4 +1,7 @@
-/// <reference path="../../../typings/jquery/jquery.d.ts" />
+/// <reference path="../../scripts/jquery.d.ts" />
+declare var jQuery:JQueryStatic;
+
+import { bootstrap }    from 'angular2/platform/browser';
 import { Component, OnInit } from 'angular2/core';
 import { Router } from 'angular2/router';
 import { Goal } from '../dataTypes/goal';
@@ -9,7 +12,6 @@ import { Student } from '../students/student';
 import { Autenticacion } from '../autenticacion/autenticacion';
 import { GoalNamePipe } from '../students/student-pipes.pipe';
 
-declare var $:JQueryStatic;
 
 @Component({
 	selector: 'dashboard-admin',
@@ -29,7 +31,6 @@ export class DashboardAdmin implements OnInit{
 
   constructor(private _trainerService: TrainerService, private aut: Autenticacion, private router: Router) {
 		this.studentNum = 0;
-
 	}
 
 	/*
@@ -37,10 +38,7 @@ export class DashboardAdmin implements OnInit{
 	 */
 
 	ngAfterViewInit() {
-		$('.ui.rating').rating({
-			 initialRating: 0,
-			 maxRating: 5
-		});
+
 	}
 
   ngOnInit() {
@@ -58,6 +56,10 @@ export class DashboardAdmin implements OnInit{
 	public logOut(){
 			this.aut.logOut();
 			this.router.navigateByUrl("/login");
+	}
+
+	goToDetails(){
+			alert("Esto te deberia mostrar algo del alumno");
 	}
 
 }
