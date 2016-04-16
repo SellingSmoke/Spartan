@@ -1,5 +1,4 @@
-/// <reference path="../../scripts/jquery.d.ts" />
-declare var jQuery:JQueryStatic;
+// /// <reference path="../../scripts/jquery.d.ts" />
 
 import { bootstrap }    from 'angular2/platform/browser';
 import { Component, OnInit } from 'angular2/core';
@@ -12,6 +11,7 @@ import { Student } from '../students/student';
 import { Autenticacion } from '../autenticacion/autenticacion';
 import { GoalNamePipe } from '../students/student-pipes.pipe';
 
+declare var jQuery:JQueryStatic;
 
 @Component({
 	selector: 'dashboard-admin',
@@ -25,6 +25,8 @@ export class DashboardAdmin implements OnInit{
 
 	students: Student[];
 	trainers: Trainer[];
+
+	studentSelected: Student;
 
 	trainersNum: number;
 	studentNum: number;
@@ -58,8 +60,8 @@ export class DashboardAdmin implements OnInit{
 			this.router.navigateByUrl("/login");
 	}
 
-	goToDetails(){
-			alert("Esto te deberia mostrar algo del alumno");
+	goToDetails(student: Student){
+			this.studentSelected = student;
 	}
 
 }

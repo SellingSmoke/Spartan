@@ -25,6 +25,10 @@ span.sp-link{
 	text-align: center;
 }
 
+.sp-lg{
+	font-size: 4em !important;
+}
+
 .sp-link:hover{
 	cursor: pointer;
 	font-weight: bold;
