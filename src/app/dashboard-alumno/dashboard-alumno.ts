@@ -47,4 +47,8 @@ export class DashboardAlumno implements OnInit{
 		this.trainer_dashboard_event.emit(null);
   }
 
+	completeTask(task){
+		task.completed = true;
+	}
+
 }

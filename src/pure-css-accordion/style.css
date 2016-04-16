@@ -29,6 +29,16 @@
   font-size: 18px;
   color: inherit;
 }
+
+.accordion-label-completed{
+  padding: 20px 0px 10px 30px;
+  width: 100%;
+  display: block;
+  font-size: 18px;
+  color: inherit;
+  display: inline;
+}
+
 .accordion-label:hover {
   cursor: pointer;
 }
@@ -156,6 +166,7 @@ a.glyphicon-plus {
   bottom: 20px;
   top: auto;
   margin-left: -25px;
+  margin-top: 20px;
   transition: transform 0.25s;
   z-index: 100;
 }
@@ -191,4 +202,9 @@ a.glyphicon-plus.active {
 
 .jumbotron {
   z-index: 80;
+}
+
+.task-completed {
+  background-color: rgba(0, 150, 136, 0.12);
+  color: rgba(153, 153, 153, 0.79);
 }
