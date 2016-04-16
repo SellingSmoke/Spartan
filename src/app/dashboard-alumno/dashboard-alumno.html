@@ -15,11 +15,12 @@
         <p *ngIf="student.goal.progress == 0" class="sp-label2 text-muted">Sin tareas completadas</p>
 
         <ul class="accordion">
-          <li class="accordion-item">
-            <input id="s1" class="hide" type="checkbox">
+
+          <li *ngFor="#task of tasks" class="accordion-item">
+            <input id="{{ 's' + task.id}}" class="hide" type="checkbox">
             <div class="col-md-12 col-xs-12	col-sm-12 margin-row">
               <div class="col-md-6 col-sm-6 col-xs-12">
-                <label for="s1" class="accordion-label">Elíptica</label>
+                <label [attr.for]="'s'+task.id" class="accordion-label">{{task.name}}</label>
               </div>
               <div id="botones-tarea" class="col-md-6 col-sm-6 col-xs-12">
                 <div class="pull-right">
@@ -30,7 +31,7 @@
               </div>
             </div>
             <ul class="accordion-child">
-              15 km en 1 hora
+              {{task.description}}
               <form class="form-horizontal">
                 <div class="form-group">
                   <label class="col-md-2 control-label">Opciones</label>
@@ -77,200 +78,12 @@
               </form>
             </ul>
           </li>
-
-          <li class="accordion-item">
-            <input id="s2" class="hide" type="checkbox">
-            <div class="col-md-12 col-xs-12	col-sm-12 margin-row">
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <label for="s2" class="accordion-label">Press de Pecho</label>
-              </div>
-              <div id="botones-tarea" class="col-md-6 col-sm-6 col-xs-12">
-                <div class="pull-right">
-                  <a href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"><i class="material-icons">done</i><div class="ripple-container"></div></a>
-                  <a href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"><i class="material-icons">add circle outline</i><div class="ripple-container"></div></a>
-                  <a href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"><i class="material-icons">chat</i><div class="ripple-container"></div></a>
-                </div>
-              </div>
-            </div>
-            <ul class="accordion-child">
-              Realizar 10 series de 5 repeticiones con 65 kg
-              <form class="form-horizontal">
-                <div class="form-group">
-                  <label class="col-md-2 control-label">Opciones</label>
-
-                  <div class="col-md-10">
-                    <div class="radio radio-primary">
-                      <label>
-                        <input type="radio" name="sample1" value="option1" checked=""><span class="circle"></span><span class="check"></span> Opción 1
-                      </label>
-                    </div>
-                    <div class="radio">
-                      <label>
-                        <input type="radio" name="sample1" value="option1"><span class="circle"></span><span class="check"></span> Opción 2
-                      </label>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <div class="col-md-offset-2 col-md-10">
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox"><span class="checkbox-material"><span class="check"></span></span> ¿Completado?
-                      </label>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label for="select111" class="col-md-2 control-label">¿Cuánto?</label>
-
-                  <div class="col-md-10">
-                    <select id="select111" class="form-control">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </select>
-                  </div>
-                </div>
-
-                <a href="javascript:void(0)" class="btn btn-raised pull-right">Enviar</a>
-              </form>
-            </ul>
-
-            <li class="accordion-item">
-              <input id="s3" class="hide" type="checkbox">
-              <div class="col-md-12 col-xs-12	col-sm-12 margin-row">
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                  <label for="s3" class="accordion-label">Dominadas de espalda</label>
-                </div>
-                <div id="botones-tarea" class="col-md-6 col-sm-6 col-xs-12">
-                  <div class="pull-right">
-                    <a href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"><i class="material-icons">done</i><div class="ripple-container"></div></a>
-                    <a href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"><i class="material-icons">add circle outline</i><div class="ripple-container"></div></a>
-                    <a href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"><i class="material-icons">chat</i><div class="ripple-container"></div></a>
-                  </div>
-                </div>
-              </div>
-              <ul class="accordion-child">
-                5 series de 5 repeticiones
-                <form class="form-horizontal">
-                  <div class="form-group">
-                    <label class="col-md-2 control-label">Opciones</label>
-
-                    <div class="col-md-10">
-                      <div class="radio radio-primary">
-                        <label>
-                          <input type="radio" name="sample1" value="option1" checked=""><span class="circle"></span><span class="check"></span> Opción 1
-                        </label>
-                      </div>
-                      <div class="radio">
-                        <label>
-                          <input type="radio" name="sample1" value="option1"><span class="circle"></span><span class="check"></span> Opción 2
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"><span class="checkbox-material"><span class="check"></span></span> ¿Completado?
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="select111" class="col-md-2 control-label">¿Cuánto?</label>
-
-                    <div class="col-md-10">
-                      <select id="select111" class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <a href="javascript:void(0)" class="btn btn-raised pull-right">Enviar</a>
-                </form>
-              </ul>
-            </li>
-
-            <li class="accordion-item">
-              <input id="s4" class="hide" type="checkbox">
-              <div class="col-md-12 col-xs-12	col-sm-12 margin-row">
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                  <label for="s4" class="accordion-label">Largos a Crawl</label>
-                </div>
-                <div id="botones-tarea" class="col-md-6 col-sm-6 col-xs-12">
-                  <div class="pull-right">
-                    <a href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"><i class="material-icons">done</i><div class="ripple-container"></div></a>
-                    <a href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"><i class="material-icons">add circle outline</i><div class="ripple-container"></div></a>
-                    <a href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"><i class="material-icons">chat</i><div class="ripple-container"></div></a>
-                  </div>
-                </div>
-              </div>
-              <ul class="accordion-child">
-                20 largos en 15 minutos
-                <form class="form-horizontal">
-                  <div class="form-group">
-                    <label class="col-md-2 control-label">Opciones</label>
-
-                    <div class="col-md-10">
-                      <div class="radio radio-primary">
-                        <label>
-                          <input type="radio" name="sample1" value="option1" checked=""><span class="circle"></span><span class="check"></span> Opción 1
-                        </label>
-                      </div>
-                      <div class="radio">
-                        <label>
-                          <input type="radio" name="sample1" value="option1"><span class="circle"></span><span class="check"></span> Opción 2
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"><span class="checkbox-material"><span class="check"></span></span> ¿Completado?
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="select111" class="col-md-2 control-label">¿Cuánto?</label>
-
-                    <div class="col-md-10">
-                      <select id="select111" class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <a href="javascript:void(0)" class="btn btn-raised pull-right">Enviar</a>
-                </form>
-              </ul>
-            </li>
-
+          
         </ul>
 
         <!--SOLO ENTRENADOR -->
         <!--<a href="" class="btn btn-danger btn-lg btn-block"><i class="material-icons">add_circle_outline</i>  Añadir Tarea</a>-->
-        <a id="tt1" class='button glyphicon glyphicon-plus' onclick="showDialog()"></a>
+        <a *ngIf="aut.esProfesor()" id="tt1" class='button glyphicon glyphicon-plus' onclick="showDialog()"></a>
         <div class="mdl-tooltip" for="tt1">
           Follow
         </div>
@@ -294,7 +107,7 @@
 
         <!--FIN SOLO ENTRENADOR -->
 
-        <button (click)="goBack()" class="btn btn-primary">Atrás</button>
+        <button *ngIf="aut.esProfesor()" (click)="goBack()" class="btn btn-primary">Atrás</button>
       </div>
     </div>
   </div>
