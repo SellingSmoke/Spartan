@@ -1,4 +1,4 @@
-<nav *ngIf="isLogIn()" class="navbar navbar-default navbar-fixed-top sp-menu">
+<nav *ngIf="aut.isLogIn() && !aut.isAdmin()" class="navbar navbar-default navbar-fixed-top sp-menu">
   <div class="container-fluid">
     <!-- Cuando se reduce el tamaño de la página -->
     <div class="navbar-header">

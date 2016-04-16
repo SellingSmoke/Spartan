@@ -2,6 +2,7 @@ import {Component, OnInit} from 'angular2/core';
 import {Router, Route, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import { DashboardEntrenador } from '../dashboard-entrenador/dashboard-entrenador';
 import { DashboardAlumno } from '../dashboard-alumno/dashboard-alumno';
+import { DashboardAdmin } from '../dashboard-admin/dashboard-admin';
 import { Autenticacion } from '../autenticacion/autenticacion';
 import { StudentService } from '../students/student-service';
 import { Student } from '../students/student';
@@ -10,7 +11,7 @@ import { Student } from '../students/student';
  selector: 'inicio',
  styleUrls: ['app/inicio/inicio.css'],
  templateUrl: 'app/inicio/inicio.html',
- directives: [DashboardEntrenador, DashboardAlumno],
+ directives: [DashboardEntrenador, DashboardAlumno, DashboardAdmin],
  providers: [Autenticacion, StudentService]
 })
 

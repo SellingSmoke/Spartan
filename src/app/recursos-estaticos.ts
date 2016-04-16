@@ -1,18 +1,19 @@
 import { Goal } from './dataTypes/goal';
 import { Task } from './dataTypes/task';
+import { Trainer } from './dataTypes/trainer';
 import { Student } from './students/student';
 import { Diet } from './diets/diet';
 
 // Base de datos simulada
 
 export var STUDENTS: Student[] = [
-  { id: 1, name: "Michel", lastname:"Maes Bermejo",email: "michel.maes95@gmail.com", gender:"Varón", age: 20, registration_date: "17/1/2016", goal: { id: 1, student_id: 1, type: 3, progress: 70, campo_metaX: 30, campo_metaY: 120, diet_id: 1}},
-  { id: 2, name: "Pablo", lastname:"Fuente Pérez",email: "michel.maes95@gmail.com", gender:"Varón", age: 20, registration_date: "17/1/2016", goal: { id: 2, student_id: 2, type: 1, progress: 50, campo_metaX: 10, campo_metaY: 0}},
-  { id: 3, name: "Enrique", lastname:"García Galán",email: "michel.maes95@gmail.com", gender:"Varón", age: 20, registration_date: "17/1/2016", goal: {id: 3, student_id: 3, type: 2, progress: 100, campo_metaX: 10, campo_metaY: 0}},
-  { id: 4, name: "Sergio", lastname:"Pérez Peló",email: "michel.maes95@gmail.com", gender:"Varón", age: 20, registration_date: "17/1/2016", goal: { id: 4, student_id: 4, type: 4, progress: 30, campo_metaX: 30, campo_metaY: 2}},
-  { id: 5, name: "Paco", lastname:"Bar Born",email: "michel.maes95@gmail.com", gender:"Varón", age: 20, registration_date: "17/1/2016", goal: { id: 5, student_id: 5, type: 4, progress: 10, campo_metaX: 10, campo_metaY: 1}},
-  { id: 6, name: "Alguien", lastname:"Muy malo",email: "michel.maes95@gmail.com", gender:"Varón", age: 20, registration_date: "17/1/2016", goal: null},
-  { id: 5, name: "Efigencia", lastname:"Bonifacia",email: "michel.maes95@gmail.com", gender:"Mujer", age: 20, registration_date: "17/1/2016", goal: { id: 5, student_id: 5, type: 4, progress: 90, campo_metaX: 10, campo_metaY: 1}}
+  { id: 1, name: "Michel", lastname:"Maes Bermejo",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: { id: 1, student_id: 1, type: 3, progress: 70, campo_metaX: 30, campo_metaY: 120, diet_id: 1}},
+  { id: 2, name: "Pablo", lastname:"Fuente Pérez",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: { id: 2, student_id: 2, type: 1, progress: 50, campo_metaX: 10, campo_metaY: 0}},
+  { id: 3, name: "Enrique", lastname:"García Galán",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: {id: 3, student_id: 3, type: 2, progress: 100, campo_metaX: 10, campo_metaY: 0}},
+  { id: 4, name: "Sergio", lastname:"Pérez Peló",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: { id: 4, student_id: 4, type: 4, progress: 30, campo_metaX: 30, campo_metaY: 2}},
+  { id: 5, name: "Paco", lastname:"Bar Born",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: { id: 5, student_id: 5, type: 4, progress: 10, campo_metaX: 10, campo_metaY: 1}},
+  { id: 6, name: "Alguien", lastname:"Muy malo",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: null},
+  { id: 5, name: "Efigencia", lastname:"Bonifacia",email: "michel.maes95@gmail.com", gender:1, age: 20, registration_date: "17/1/2016", goal: { id: 5, student_id: 5, type: 4, progress: 90, campo_metaX: 10, campo_metaY: 1}}
 ];
 
 export var TASKS: Task[] = [
@@ -23,6 +24,11 @@ export var TASKS: Task[] = [
   { id: 5, name: "Recorrido 2", goal_id: 1, completed: true, description: "Te queda esta también", type: 1, objective1:5, format1:"Km", result1: 5, objective2:20, format2:"minutos", result2:18 },
   { id: 6, name: "Repeticiones 2", goal_id: 1, completed: false, description: "Esta tarea hay que hacerla de este modo FIN", type: 1, objective1:5, format1:"Km", result1: 5, objective2:20, format2:"minutos", result2:18 }
 ];
+
+export var TRAINERS: Trainer[] = [
+  {id: 1, name: "Mica", lastname:"Gallego",email: "michel.maes95@gmail.com", gender:0, age: 35, registration_date: "17/1/2016", students: [{ id: 1, name: "Michel", lastname:"Maes Bermejo",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: { id: 1, student_id: 1, type: 3, progress: 70, campo_metaX: 30, campo_metaY: 120, diet_id: 1}},{ id: 2, name: "Pablo", lastname:"Fuente Pérez",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: { id: 2, student_id: 2, type: 1, progress: 50, campo_metaX: 10, campo_metaY: 0}}, { id: 3, name: "Enrique", lastname:"García Galán",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: {id: 3, student_id: 3, type: 2, progress: 100, campo_metaX: 10, campo_metaY: 0}}, { id: 4, name: "Sergio", lastname:"Pérez Peló",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: { id: 4, student_id: 4, type: 4, progress: 30, campo_metaX: 30, campo_metaY: 2}},]},
+  {id: 1, name: "Carlos", lastname:"Cuesta",email: "michel.maes95@gmail.com", gender:0, age: 35, registration_date: "17/1/2016", students: [{ id: 5, name: "Paco", lastname:"Bar Born",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: { id: 5, student_id: 5, type: 4, progress: 10, campo_metaX: 10, campo_metaY: 1}}, { id: 6, name: "Alguien", lastname:"Muy malo",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: null}, { id: 5, name: "Efigencia", lastname:"Bonifacia",email: "michel.maes95@gmail.com", gender:1, age: 20, registration_date: "17/1/2016", goal: { id: 5, student_id: 5, type: 4, progress: 90, campo_metaX: 10, campo_metaY: 1}}]}
+]
 
 export var DIETS: Diet[] = [
   { id: 1, id_trainer: 1, name: "Dieta para perder peso",  description: "Descripcion de la dieta",

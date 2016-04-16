@@ -8,7 +8,7 @@ export interface Student {
   name: string;
   lastname: string;
   email: string;
-  gender: string;
+  gender: number;
   age: number;
   registration_date: string;
 
