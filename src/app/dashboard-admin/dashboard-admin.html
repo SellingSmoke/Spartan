@@ -29,7 +29,7 @@
             <td class="two wide active"><i class="mail teal icon"></i> Correo Electrónico</td>
           </tr>
           <tr *ngFor="#student of trainer.students">
-            <td (click)="goToDetails()" class="sp-not sp-link"><i [class]="student.gender ? 'pink female icon large' : 'blue male icon large'"></i><b>{{ student.name}}</b> {{student.lastname}}</td>
+            <td (click)="goToDetails(student)" class="sp-not sp-link"><i [class]="student.gender ? 'pink female icon large' : 'blue male icon large'"></i><b>{{ student.name}}</b> {{student.lastname}}</td>
             <td>
               <!-- METAS -->
               <span class="sp-text">{{ student.name.length }}</span>
@@ -115,11 +115,19 @@
         <!-- FIN COLUMNA ROJA -->
 
         <!-- COLUMNA AZUL -->
-        <div class="four wide column">
+        <div *ngIf="!studentSelected" class="four wide column">
           <div class="ui blue segment">
-            <h4 class="ui header"><a class="ui blue ribbon label sp-label-statistic">Otros</a></h4>
-            <div class="btn btn-lg btn-block btn-raised btn-info">Añadir Entrenador</div>
-            <div class="btn btn-lg btn-block btn-raised btn-default">Opciones </div>
+            <span class="sp-text text-muted sp-center"><i class="material-icons sp-lg">face</i><br>Selecciona un alumno</span>
+          </div>
+        </div>
+        <!-- FIN COLUMNA AZUL -->
+
+        <!-- COLUMNA AZUL -->
+        <div *ngIf="studentSelected" class="four wide column">
+          <div class="ui teal segment">
+          <h4 class="ui header"><a class="ui teal ribbon label sp-label-statistic">{{ studentSelected.name + " " + studentSelected.lastname}}</a></h4>
+            <div class="btn btn-lg btn-block btn-raised btn-info">Editar alumno</div>
+            <div class="btn btn-lg btn-block btn-raised btn-danger">Borrar alumno</div>
           </div>
         </div>
         <!-- FIN COLUMNA AZUL -->
