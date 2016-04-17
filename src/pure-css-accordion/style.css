@@ -1,210 +1,278 @@
 .hide {
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  position: absolute;
-  width: 1px;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    position: absolute;
+    width: 1px;
 }
 
 .accordion {
-  background: #fff;
-  /*border: 1px solid #e0e0e0;*/
-  padding-left: 1px;
+    background: #fff;
+    /*border: 1px solid #e0e0e0;*/
+    padding-left: 1px;
 }
 
 .accordion-item {
-  position: relative;
-  width: 100%;
-  border-bottom: 1px solid #e0e0e0;
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #e0e0e0;
 }
+
 .accordion-item:last-child {
-  border-bottom: none;
+    border-bottom: none;
 }
 
 .accordion-label {
-  padding: 20px 0px 10px 30px;
-  width: 100%;
-  display: block;
-  font-size: 18px;
-  color: inherit;
+    padding: 20px 0px 10px 30px;
+    width: 100%;
+    display: block;
+    font-size: 18px;
+    color: inherit;
 }
 
-.accordion-label-completed{
-  padding: 20px 0px 10px 30px;
-  width: 100%;
-  display: block;
-  font-size: 18px;
-  color: inherit;
-  display: inline;
+.accordion-label-completed {
+    padding: 20px 0px 10px 30px;
+    width: 100%;
+    display: block;
+    font-size: 18px;
+    color: inherit;
+    display: inline;
 }
 
 .accordion-label:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .accordion-label:before {
-  content: '';
-  position: absolute;
-  height: 5px;
-  width: 5px;
-  top: 22px;
-  left: 12px;
-  display: inline-block;
-  border-left: 5px solid #999;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    top: 22px;
+    left: 12px;
+    display: inline-block;
+    border-left: 5px solid #999;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
 }
+
 input[type=checkbox]:checked ~ div .accordion-label:before {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
 }
 
 .accordion-child {
-  margin: 0;
-  overflow: hidden;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  opacity: 0;
-  height: 0;
-  -webkit-transform: scale(1, 0);
-          transform: scale(1, 0);
-  -webkit-transform-origin: center top;
-          transform-origin: center top;
+    margin: 0;
+    overflow: hidden;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    opacity: 0;
+    height: 0;
+    -webkit-transform: scale(1, 0);
+    transform: scale(1, 0);
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
 }
+
 input[type=checkbox]:checked ~ .accordion-child {
-  border: 1px solid #e0e0e0;
-  margin: 0 20px 15px 20px;
-  background: #fff;
-  box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.16);
-  padding: 30px;
-  height: auto;
-  opacity: 1;
-  -webkit-transform: scale(1, 1);
-          transform: scale(1, 1);
+    border: 1px solid #e0e0e0;
+    margin: 0 20px 15px 20px;
+    background: #fff;
+    box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.16);
+    padding: 30px;
+    height: auto;
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
 }
 
 #botones-tarea {
-  padding: 10px 15px 10px 15px;
+    padding: 10px 15px 10px 15px;
 }
 
 .margin-row {
-  padding-bottom: 10px;
-  padding-top: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
-
 
 .material-dialog {
-  position: absolute;
-  overflow: hidden;
-  top: 10%;
-  right: 10%;
-  bottom: 150px;
-  left: 10%;
-  padding: 20px 50px;
-  display: block;
-  border-radius: 4px;
-  transform: translateY(20px);
-  transition: all 0.5s;
-  visibility: hidden;
-  z-index: 100;
+    position: absolute;
+    margin-bottom: 30px;
+    overflow: hidden;
+    top: 10%;
+    right: 10%;
+    bottom: 150px;
+    left: 10%;
+    min-height: 350px;
+    padding: 20px 50px;
+    display: block;
+    border-radius: 4px;
+    transform: translateY(20px);
+    transition: all 0.5s;
+    visibility: hidden;
+    z-index: 100;
+    max-height: 550px;
+    margin-top: 60px;
 }
+
 .material-dialog .content {
-  opacity: 0;
+    opacity: 0;
 }
+
 .material-dialog:before {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  background: white;
-  content: "";
-  bottom: 10px;
-  left: 50%;
-  top: 95%;
-  color: #fff;
-  border-radius: 50%;
-  -webkit-transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: white;
+    content: "";
+    bottom: 10px;
+    left: 50%;
+    top: 95%;
+    color: #fff;
+    border-radius: 50%;
+    -webkit-transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 2);
+    transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 2);
 }
+
 .material-dialog.active {
-  display: block;
-  visibility: visible;
-  box-shadow: 2px 3px 16px silver;
-  transition: all 600ms;
-  transform: translateY(0px);
-  transition: all 0.5s;
+    display: block;
+    visibility: visible;
+    box-shadow: 2px 3px 16px silver;
+    transition: all 600ms;
+    transform: translateY(0px);
+    transition: all 0.5s;
 }
+
 .material-dialog.active:before {
-  height: 2000px;
-  width: 2000px;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  margin-left: -1000px;
-  margin-top: -1000px;
-  display: block;
-  -webkit-transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    height: 2000px;
+    width: 2000px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    margin-left: -1000px;
+    margin-top: -1000px;
+    display: block;
+    -webkit-transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 2);
+    transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 2);
 }
+
 .material-dialog.active .content {
-  position: relative;
-  z-index: 1;
-  opacity: 1;
-  transition: all 600ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    position: relative;
+    z-index: 1;
+    opacity: 1;
+    transition: all 600ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
 a.glyphicon-plus {
-  padding: 11px 11px 13px 13px;
-  outline: none;
-  border-radius: 50%;
-  background: #B71C1C;
-  color: white;
-  font-size: 24px;
-  /*display: block;
+    float: right;
+    padding: 11px 11px 13px 13px;
+    outline: none;
+    border-radius: 50%;
+    background: #B71C1C;
+    color: white;
+    font-size: 24px;
+    /*display: block;
   position: fixed;*/
-  left: 50%;
-  bottom: 20px;
-  top: auto;
-  margin-left: -25px;
-  margin-top: 20px;
-  transition: transform 0.25s;
-  z-index: 100;
+    transition: transform 0.25s;
+    z-index: 100;
 }
+
 a.glyphicon-plus:hover {
-  text-decoration: none;
-  background: #EF5350;
-  color: white;
-  cursor: pointer;
+    text-decoration: none;
+    transform: scale(1.05);
+    transition: transform 0.2s;
+    background: #EF5350;
+    color: white;
+    cursor: pointer;
 }
+
 a.glyphicon-plus.active {
-  transform: rotate(135deg);
-  transition: transform 0.5s;
+    transform: rotate(135deg);
+    transition: transform 0.5s;
+    background-color: #EF5350;
 }
 
 .blur-backgorund {
-  -webkit-filter: blur(10px);
-  filter: blur(10px);
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+}
+
+#titulo-nueva-tarea {
+    text-align: center;
 }
 
 #blurizable {
-      display: none;
-      height: 100%;
-      width: 100%;
-      top: 0px;
-      z-index: 90;
-      position: fixed;
+    display: none;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    z-index: 90;
+    position: fixed;
 }
 
-.change-style-blur{
-  background-color: rgba(154, 154, 154, 0.41);
-  display: block !important;
+.change-style-blur {
+    background-color: rgba(154, 154, 154, 0.41);
+    display: block !important;
 }
 
 .jumbotron {
-  z-index: 80;
+    z-index: 80;
 }
 
 .task-completed {
-  background-color: rgba(0, 150, 136, 0.12);
-  color: rgba(153, 153, 153, 0.79);
+    background-color: rgba(0, 150, 136, 0.12);
+    color: rgba(153, 153, 153, 0.79);
+}
+
+.form-radio-button {
+    text-align: center;
+}
+
+.radio-button-tarea {
+    display: inline !important;
+}
+
+#boton-back {
+    position: absolute;
+    margin-left: -40px;
+    background-color: rgb(200, 200, 200);
+}
+
+#titulo-meta {
+    text-align: center;
+}
+
+.titulo-meta-prof {
+    margin-left: 30px;
+}
+
+#container-boton-anyadir-tarea {
+  text-align: center;
+}
+
+/*Las siguientes consultas @media hacen responsive dinámicamente ante los cambios el dialog de añadir tarea*/
+@media screen and (min-width: 768px) and (max-width: 992px){
+    #dialog-mat {
+       min-height: 620px;
+    }
+}
+
+@media screen and (max-width: 767px){
+    #dialog-mat {
+       min-height: 700px;
+    }
+}
+
+#form-aerobico {
+  display: none;
+}
+
+#form-anaerobico {
+  display: none;
+}
+
+.breadcrumb {
+  margin-top: 73px !important;
+  margin-bottom: 0px !important;
 }
