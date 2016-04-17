@@ -6,6 +6,8 @@ import { BeautifyProgessBarPipe, GoalNamePipe } from '../students/student-pipes.
 import { TaskService } from '../services/task-service';
 import { Autenticacion } from '../autenticacion/autenticacion';
 
+declare var jQuery:JQueryStatic;
+
 
 @Component({
 	selector: 'dashboard-alumno',
@@ -59,8 +61,35 @@ export class DashboardAlumno implements OnInit{
 		if (mode){
 			this.tasks.push(this.task);
 		}
-
 		this.task = new Task(this.student.goal.id);
+	}
+
+	setType(type: number){
+		this.task.setType(type);
+		jQuery(".breadcrumb").hide();
+		if (type) {
+			jQuery("#form-aerobico").hide();
+			jQuery("#form-anaerobico").show();
+    }else{
+      jQuery("#form-anaerobico").hide();
+      jQuery("#form-aerobico").show();
+    }
+	}
+
+	showDialog() {
+	    jQuery('#dialog-mat').toggleClass('position-changed');
+	    jQuery('.wrap').toggleClass('active'); //Activar y desactivar el dialog
+	    jQuery('#blurizable').toggleClass('blur-backgorund change-style-blur'); //Activar y desactivar el fondo oscuro tras el dialog
+	    jQuery('.boton-de-radio').prop('checked', false); //Desmarcar los radio-button de añadir tarea al pulsar Aceptar o Cancelar
+	    jQuery("#form-anaerobico").hide();
+	    jQuery("#form-aerobico").hide();
+	    jQuery(".breadcrumb").show();
+
+	    jQuery('html, body').animate({
+	        scrollTop: jQuery("#dialog-mat").offset().top - 150
+	    }, 250);
+
+	    return false;
 	}
 
 }

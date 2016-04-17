@@ -28,12 +28,12 @@
                             <div class="form-group form-radio-button">
                                 <div class="radio radio-button-tarea">
                                     <label>
-                                        <input (click)="task.setType(0)" class="boton-de-radio" type="radio" name="sample1" value="1" onclick="radioClicked(this)"><span class="circle"></span><span class="check"></span> AERÓBICA
+                                        <input (click)="setType(0)" class="boton-de-radio" type="radio" name="sample1" value="1"><span class="circle"></span><span class="check"></span> AERÓBICA
                                     </label>
                                 </div>
                                 <div class="radio radio-button-tarea">
                                     <label>
-                                        <input (click)="task.setType(1)" class="boton-de-radio" type="radio" name="sample1" value="2" onclick="radioClicked(this)"><span class="circle"></span><span class="check"></span> ANAERÓBICA
+                                        <input (click)="setType(1)" class="boton-de-radio" type="radio" name="sample1" value="2"><span class="circle"></span><span class="check"></span> ANAERÓBICA
                                     </label>
                                 </div>
                             </div>
@@ -88,10 +88,10 @@
 
                             <div class="row">
                                 <div class="col-md-6 col-xs-6 col-botones-dialog">
-                                    <button (click)="saveTask(false)" *ngIf="aut.esProfesor()" onclick="showDialog()" class="boton-dialog btn btn-danger">Cancelar</button>
+                                    <button (click)="saveTask(false)" *ngIf="aut.esProfesor()" (click)="showDialog()" class="boton-dialog btn btn-danger">Cancelar</button>
                                 </div>
                                 <div class="col-md-6 col-xs-6 col-botones-dialog">
-                                    <button (click)="saveTask(true)" *ngIf="aut.esProfesor()" onclick="showDialog()" class="boton-dialog btn btn-success pull-right">Aceptar</button>
+                                    <button (click)="saveTask(true)" *ngIf="aut.esProfesor()" (click)="showDialog()" class="boton-dialog btn btn-success pull-right">Aceptar</button>
                                 </div>
                             </div>
 
@@ -186,7 +186,7 @@
                     </ul>
 
                     <div id="container-boton-anyadir-tarea">
-                        <button *ngIf="aut.esProfesor()" onclick="showDialog()" class="btn btn-primary">Añadir tarea</button>
+                        <button *ngIf="aut.esProfesor()" (click)="showDialog()" class="btn btn-primary">Añadir tarea</button>
                     </div>
                 </div>
             </div>
