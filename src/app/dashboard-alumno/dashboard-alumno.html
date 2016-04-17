@@ -19,6 +19,85 @@
                     </div>
                     <p *ngIf="student.goal.progress == 0" class="sp-label2 text-muted">Sin tareas completadas</p>
 
+
+                    <div id="dialog-mat" class='wrap material-dialog'>
+                        <div id="dialog-mat-content" class='content'>
+                            <h3 id="titulo-nueva-tarea">Nueva tarea</h3>
+
+                            <div class="form-group form-radio-button">
+                                <div class="radio radio-button-tarea">
+                                    <label>
+                                        <input class="boton-de-radio" type="radio" name="sample1" value="option1" onclick="radioClicked(this)"><span class="circle"></span><span class="check"></span> AERÓBICA
+                                    </label>
+                                </div>
+                                <div class="radio radio-button-tarea">
+                                    <label>
+                                        <input class="boton-de-radio" type="radio" name="sample1" value="option2" onclick="radioClicked(this)"><span class="circle"></span><span class="check"></span> ANAERÓBICA
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="nombreTarea" class="col-md-2 control-label">Nombre</label>
+                                <div class="col-md-10">
+                                    <input class="form-control" id="nombreTarea" placeholder="Nombre de la tarea" type="text">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="descripcionTarea" class="col-md-2 control-label">Descripción</label>
+                                <div class="col-md-10">
+                                    <textarea class="form-control" id="descripcionTarea" placeholder="Decripción de la tarea" type="text"></textarea>
+                                </div>
+                            </div>
+
+                            <ul class="breadcrumb">
+                                <li class="active">Escoja el tipo de ejercicio...</li>
+                            </ul>
+
+                            <div id="form-anaerobico" class="form-group">
+                                <div class="col-md-6">
+                                    <label for="repeticiones-tarea" class="col-md-2 control-label">Repets.</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" id="repeteiciones-tarea" placeholder="Num. repeticiones" type="number">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="peso-tarea" class="col-md-2 control-label">Peso</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" id="peso-tarea" placeholder="Peso Kg" type="number">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="form-aerobico" class="form-group">
+                                <div class="col-md-6">
+                                    <label for="distancia-tarea" class="col-md-2 control-label">Distancia</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" id="distancia-tarea" placeholder="Distancia" type="number">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="tiempo-tarea" class="col-md-2 control-label">Tiempo</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" id="tiempo-tarea" placeholder="Tiempo" type="number">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 col-xs-6 col-botones-dialog">
+                                    <button *ngIf="aut.esProfesor()" onclick="showDialog()" class="boton-dialog btn btn-danger">Cancelar</button>
+                                </div>
+                                <div class="col-md-6 col-xs-6 col-botones-dialog">
+                                    <button *ngIf="aut.esProfesor()" onclick="showDialog()" class="boton-dialog btn btn-success pull-right">Aceptar</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
                     <ul class="accordion">
 
                         <li *ngFor="#task of tasks" class="accordion-item">
@@ -102,82 +181,6 @@
                         </li>
 
                     </ul>
-
-                    <!--SOLO ENTRENADOR -->
-                    <!--<a href="" class="btn btn-danger btn-lg btn-block"><i class="material-icons">add_circle_outline</i>  Añadir Tarea</a>-->
-
-
-                    <div id="dialog-mat" class='wrap material-dialog'>
-                        <div id="dialog-mat-content" class='content'>
-                            <h3 id="titulo-nueva-tarea">Nueva tarea</h3>
-
-
-                            <div class="form-group form-radio-button">
-                                <div class="radio radio-button-tarea">
-                                    <label>
-                                        <input class="boton-de-radio" type="radio" name="sample1" value="option1" onclick="radioClicked(this)"><span class="circle"></span><span class="check"></span> AERÓBICA
-                                    </label>
-                                </div>
-                                <div class="radio radio-button-tarea">
-                                    <label>
-                                        <input class="boton-de-radio" type="radio" name="sample1" value="option2" onclick="radioClicked(this)"><span class="circle"></span><span class="check"></span> ANAERÓBICA
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="nombreTarea" class="col-md-2 control-label">Nombre</label>
-                                <div class="col-md-10">
-                                    <input class="form-control" id="nombreTarea" placeholder="Nombre de la tarea" type="text">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="descripcionTarea" class="col-md-2 control-label">Descripción</label>
-                                <div class="col-md-10">
-                                    <textarea class="form-control" id="descripcionTarea" placeholder="Decripción de la tarea" type="text"></textarea>
-                                </div>
-                            </div>
-
-                                <ul class="breadcrumb">
-                                    <li class="active">Escoja el tipo de ejericio...</li>
-                                </ul>
-
-                            <div id="form-anaerobico" class="form-group">
-                                <div class="col-md-6">
-                                    <label for="repeticiones-tarea" class="col-md-2 control-label">Repets.</label>
-                                    <div class="col-md-10">
-                                        <input class="form-control" id="repeteiciones-tarea" placeholder="Num. repeticiones" type="number">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="peso-tarea" class="col-md-2 control-label">Peso</label>
-                                    <div class="col-md-10">
-                                        <input class="form-control" id="peso-tarea" placeholder="Peso Kg" type="number">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div id="form-aerobico" class="form-group">
-                                <div class="col-md-6">
-                                    <label for="distancia-tarea" class="col-md-2 control-label">Distancia</label>
-                                    <div class="col-md-10">
-                                        <input class="form-control" id="distancia-tarea" placeholder="Distancia" type="number">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="tiempo-tarea" class="col-md-2 control-label">Tiempo</label>
-                                    <div class="col-md-10">
-                                        <input class="form-control" id="tiempo-tarea" placeholder="Tiempo" type="number">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <button *ngIf="aut.esProfesor()" onclick="showDialog()" class="btn btn-success pull-right">Aceptar</button>
-                            <button *ngIf="aut.esProfesor()" onclick="showDialog()" class="btn btn-danger">Cancelar</button>
-
-                        </div>
-                    </div>
 
                     <div id="container-boton-anyadir-tarea">
                         <button *ngIf="aut.esProfesor()" onclick="showDialog()" class="btn btn-primary">Añadir tarea</button>

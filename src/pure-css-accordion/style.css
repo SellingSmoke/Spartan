@@ -100,20 +100,16 @@ input[type=checkbox]:checked ~ .accordion-child {
     position: absolute;
     margin-bottom: 30px;
     overflow: hidden;
-    top: 10%;
-    right: 10%;
-    bottom: 150px;
-    left: 10%;
-    min-height: 350px;
+    top: 0;
+
     padding: 20px 50px;
     display: block;
     border-radius: 4px;
     transform: translateY(20px);
-    transition: all 0.5s;
     visibility: hidden;
     z-index: 100;
-    max-height: 550px;
-    margin-top: 60px;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
 .material-dialog .content {
@@ -131,8 +127,6 @@ input[type=checkbox]:checked ~ .accordion-child {
     top: 95%;
     color: #fff;
     border-radius: 50%;
-    -webkit-transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 2);
-    transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 2);
 }
 
 .material-dialog.active {
@@ -252,15 +246,16 @@ a.glyphicon-plus.active {
 }
 
 /*Las siguientes consultas @media hacen responsive dinámicamente ante los cambios el dialog de añadir tarea*/
-@media screen and (min-width: 768px) and (max-width: 992px){
-    #dialog-mat {
-       min-height: 620px;
+@media screen and (max-width: 992px){
+    .breadcrumb {
+      margin-top: 0px !important;
     }
 }
 
 @media screen and (max-width: 767px){
-    #dialog-mat {
-       min-height: 700px;
+
+    .boton-dialog {
+      padding: 20px 0 20px 0 !important;
     }
 }
 
@@ -273,6 +268,14 @@ a.glyphicon-plus.active {
 }
 
 .breadcrumb {
-  margin-top: 73px !important;
+  margin-top: 100px;
   margin-bottom: 0px !important;
+}
+
+.position-changed {
+  position: relative;
+}
+
+.col-botones-dialog {
+  padding: 0 0 0 0 !important;
 }
