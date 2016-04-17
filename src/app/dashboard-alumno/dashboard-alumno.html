@@ -114,7 +114,7 @@
                                     <label class="accordion-label-completed">{{task.name}}</label>
                                 </div>
                                 <div id="botones-tarea" class="col-md-6 col-sm-6 col-xs-12">
-                                    <div *ngIf="!task.completed" class="pull-right">
+                                    <div *ngIf="!task.completed" id="botones-tarea-inside" class="pull-right">
                                         <a *ngIf="!aut.esProfesor()" href="javascript:void(0)" (click)="completeTask(task)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
                                             <i class="material-icons">done</i>
                                             <div class="ripple-container"></div>
