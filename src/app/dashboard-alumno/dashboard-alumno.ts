@@ -26,6 +26,13 @@ export class DashboardAlumno implements OnInit{
 
 	tasks: Task[];
 
+	t = {
+		nombre: "",
+		descripcion: "",
+		objetivo1: "",
+		objetivo2: ""
+	}
+
 	constructor(private aut: Autenticacion, private _taskService: TaskService) {}
 
 	/*
