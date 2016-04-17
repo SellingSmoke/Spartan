@@ -26,12 +26,7 @@ export class DashboardAlumno implements OnInit{
 
 	tasks: Task[];
 
-	t = {
-		nombre: "",
-		descripcion: "",
-		objetivo1: "",
-		objetivo2: ""
-	}
+	task: Task;
 
 	constructor(private aut: Autenticacion, private _taskService: TaskService) {}
 
@@ -41,6 +36,7 @@ export class DashboardAlumno implements OnInit{
    */
 
 	ngOnInit(){
+		this.task = new Task(this.student.goal.id);
 		this._taskService.getTasks(this.student.goal.id).then(
 			tasks => this.tasks = tasks
 		);
@@ -56,6 +52,15 @@ export class DashboardAlumno implements OnInit{
 
 	completeTask(task){
 		task.completed = true;
+	}
+
+	saveTask(mode){
+		// AQUI SE LLAMARÁ A GUARDAR EN LA BDD
+		if (mode){
+			this.tasks.push(this.task);
+		}
+
+		this.task = new Task(this.student.goal.id);
 	}
 
 }

@@ -19,6 +19,7 @@
                     </div>
                     <p *ngIf="student.goal.progress == 0" class="sp-label2 text-muted">Sin tareas completadas</p>
 
+                    <!-- NUEVA TAREA -->
 
                     <div id="dialog-mat" class='wrap material-dialog'>
                         <div id="dialog-mat-content" class='content'>
@@ -27,12 +28,12 @@
                             <div class="form-group form-radio-button">
                                 <div class="radio radio-button-tarea">
                                     <label>
-                                        <input class="boton-de-radio" type="radio" name="sample1" value="option1" onclick="radioClicked(this)"><span class="circle"></span><span class="check"></span> AERÓBICA
+                                        <input (click)="task.setType(0)" class="boton-de-radio" type="radio" name="sample1" value="1" onclick="radioClicked(this)"><span class="circle"></span><span class="check"></span> AERÓBICA
                                     </label>
                                 </div>
                                 <div class="radio radio-button-tarea">
                                     <label>
-                                        <input class="boton-de-radio" type="radio" name="sample1" value="option2" onclick="radioClicked(this)"><span class="circle"></span><span class="check"></span> ANAERÓBICA
+                                        <input (click)="task.setType(1)" class="boton-de-radio" type="radio" name="sample1" value="2" onclick="radioClicked(this)"><span class="circle"></span><span class="check"></span> ANAERÓBICA
                                     </label>
                                 </div>
                             </div>
@@ -40,14 +41,14 @@
                             <div class="form-group">
                                 <label for="nombreTarea" class="col-md-2 control-label">Nombre</label>
                                 <div class="col-md-10">
-                                    <input class="form-control" id="nombreTarea" placeholder="Nombre de la tarea" type="text">
+                                    <input [(ngModel)]="task.name" class="form-control" id="nombreTarea" placeholder="Nombre de la tarea" type="text">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="descripcionTarea" class="col-md-2 control-label">Descripción</label>
                                 <div class="col-md-10">
-                                    <textarea class="form-control" id="descripcionTarea" placeholder="Decripción de la tarea" type="text"></textarea>
+                                    <textarea [(ngModel)]="task.description" class="form-control" id="descripcionTarea" placeholder="Decripción de la tarea" type="text"></textarea>
                                 </div>
                             </div>
 
@@ -59,13 +60,13 @@
                                 <div class="col-md-6">
                                     <label for="repeticiones-tarea" class="col-md-2 control-label">Repets.</label>
                                     <div class="col-md-10">
-                                        <input class="form-control" id="repeteiciones-tarea" placeholder="Num. repeticiones" type="number">
+                                        <input [(ngModel)]="task.objective1" class="form-control" id="repeteiciones-tarea" placeholder="Num. repeticiones" type="number">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="peso-tarea" class="col-md-2 control-label">Peso</label>
                                     <div class="col-md-10">
-                                        <input class="form-control" id="peso-tarea" placeholder="Peso Kg" type="number">
+                                        <input [(ngModel)]="task.objective2" class="form-control" id="peso-tarea" placeholder="Peso Kg" type="number">
                                     </div>
                                 </div>
                             </div>
@@ -74,28 +75,30 @@
                                 <div class="col-md-6">
                                     <label for="distancia-tarea" class="col-md-2 control-label">Distancia</label>
                                     <div class="col-md-10">
-                                        <input class="form-control" id="distancia-tarea" placeholder="Distancia" type="number">
+                                        <input [(ngModel)]="task.objective1" class="form-control" id="distancia-tarea" placeholder="Distancia" type="number">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="tiempo-tarea" class="col-md-2 control-label">Tiempo</label>
                                     <div class="col-md-10">
-                                        <input class="form-control" id="tiempo-tarea" placeholder="Tiempo" type="number">
+                                        <input [(ngModel)]="task.objective2" class="form-control" id="tiempo-tarea" placeholder="Tiempo" type="number">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-6 col-xs-6 col-botones-dialog">
-                                    <button *ngIf="aut.esProfesor()" onclick="showDialog()" class="boton-dialog btn btn-danger">Cancelar</button>
+                                    <button (click)="saveTask(false)" *ngIf="aut.esProfesor()" onclick="showDialog()" class="boton-dialog btn btn-danger">Cancelar</button>
                                 </div>
                                 <div class="col-md-6 col-xs-6 col-botones-dialog">
-                                    <button *ngIf="aut.esProfesor()" onclick="showDialog()" class="boton-dialog btn btn-success pull-right">Aceptar</button>
+                                    <button (click)="saveTask(true)" *ngIf="aut.esProfesor()" onclick="showDialog()" class="boton-dialog btn btn-success pull-right">Aceptar</button>
                                 </div>
                             </div>
 
                         </div>
                     </div>
+
+                    <!-- FIN NUEVA TAREA -->
 
 
                     <ul class="accordion">

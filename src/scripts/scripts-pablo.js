@@ -15,12 +15,12 @@ function showDialog() {
 }
 
 function radioClicked(e) {
-    if (e.value == "option1") {
+    if (e.value == "1") {
         $(".breadcrumb").hide();
         $("#form-anaerobico").hide();
         $("#form-aerobico").show();
     }
-    if (e.value == "option2") {
+    if (e.value == "2") {
         $(".breadcrumb").hide();
         $("#form-aerobico").hide();
         $("#form-anaerobico").show();

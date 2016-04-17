@@ -1,5 +1,5 @@
 import { Goal } from './dataTypes/goal';
-import { Task } from './dataTypes/task';
+import { Task, ITask } from './dataTypes/task';
 import { Trainer } from './dataTypes/trainer';
 import { Student } from './students/student';
 import { Diet } from './diets/diet';
@@ -16,7 +16,7 @@ export var STUDENTS: Student[] = [
   { id: 5, name: "Efigencia", lastname:"Bonifacia",email: "michel.maes95@gmail.com", gender:1, age: 20, registration_date: "17/1/2016", goal: { id: 5, student_id: 5, type: 4, progress: 90, campo_metaX: 10, campo_metaY: 1}}
 ];
 
-export var TASKS: Task[] = [
+export var TASKS: ITask[] = [
   { id: 1, name: "Repeticiones", goal_id: 4, completed: false, description: "Esta tarea hay que hacerla asi", type: 2, objective1:15, format1:"repeticiones", result1: 10, objective2:40, format2:"Kg", result2: 35 },
   { id: 2, name: "Recorrido", goal_id: 4, completed: false, description: "Esta tarea hay que hacerla pues de esta manera", type: 1, objective1:5, format1:"Km", result1: 5, objective2:20, format2:"minutos", result2:18 },
   { id: 3, name: "Recorrido 1", goal_id: 1, completed: true, description: "Esta tarea hay que hacerla de esta otra", type: 1, objective1:5, format1:"Km", result1: 5, objective2:20, format2:"minutos", result2:18 },
