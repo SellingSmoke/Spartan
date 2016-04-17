@@ -1,11 +1,26 @@
 function showDialog(){
-    $('.wrap, .glyphicon-plus').toggleClass('active');
-    $('#blurizable').toggleClass('blur-backgorund change-style-blur');
+    let h = $('#dialog-mat-content').outerHeight();
+    $('#dialog-mat').height(h);
+    $('.wrap').toggleClass('active'); //Activar y desactivar el dialog
+    $('#blurizable').toggleClass('blur-backgorund change-style-blur'); //Activar y desactivar el fondo oscuro tras el dialog
+    $('.boton-de-radio').prop('checked', false); //Desmarcar los radio-button de añadir tarea al pulsar Aceptar o Cancelar
+    $("#form-anaerobico").hide();
+    $("#form-aerobico").hide();
+    $(".breadcrumb").show();
     return false;
   }
 
-function detailToBackButton(e) {
-
+function radioClicked(e){
+  if(e.value=="option1"){
+      $(".breadcrumb").hide();
+      $("#form-anaerobico").hide();
+      $("#form-aerobico").show();
+  }
+  if(e.value=="option2"){
+    $(".breadcrumb").hide();
+    $("#form-aerobico").hide();
+    $("#form-anaerobico").show();
+  }
 }
 
 function setUpUI() {
