@@ -8,27 +8,24 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <span class="navbar-brand mdl-typography--title" href="index.html"><i class="material-icons">fitness_center</i> Spartan</span>
+      <span id="spartan" class="navbar-brand mdl-typography--title sp-font" href="index.html"><i class="renren large icon"></i> Spartan</span>
     </div>
 
     <!-- Links de la cabecera -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
 
-        <li role="presentation" [routerLink]="['/Inicio']" class="sp-nav hidden-xs"><a><i class="material-icons">timeline</i> Dashboard</a></li>
-        <li role="presentation" [routerLink]="['/Inicio']" class="sp-nav visible-xs"><a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><i class="material-icons">timeline</i> Dashboard</a></li>
+        <li role="presentation" [routerLink]="['/Inicio']" class="sp-nav hidden-xs"><a><span class="sp-font"><i class="material-icons">timeline</i> Dashboard</span></a></li>
+        <li role="presentation" [routerLink]="['/Inicio']" class="sp-nav visible-xs"><a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><span class="sp-font"><i class="material-icons">timeline</i> Dashboard</span></a></li>
 
-        <li role="presentation" [routerLink]="['/Perfil']" class="sp-nav hidden-xs"><a><i class="material-icons">person</i> Mi Perfil</a></li>
-        <li role="presentation" [routerLink]="['/Perfil']" class="sp-nav visible-xs"><a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><i class="material-icons">person</i> Mi Perfil</a></li>
+        <li role="presentation" [routerLink]="['/Perfil']" class="sp-nav hidden-xs"><a><span class="sp-font"><i class="material-icons">person</i> Mi Perfil</span></a></li>
+        <li role="presentation" [routerLink]="['/Perfil']" class="sp-nav visible-xs"><a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><span class="sp-font"><i class="material-icons">person</i> Mi Perfil</span></a></li>
 
-        <li role="presentation" [routerLink]="['/Mensajes']" class="sp-nav hidden-xs"><a><i class="material-icons">forum</i> Mensajes</a></li>
-        <li role="presentation" [routerLink]="['/Mensajes']" class="sp-nav visible-xs"><a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><i class="material-icons">forum</i> Mensajes</a></li>
-
-        <li role="presentation" [routerLink]="['/Dietas']" class="sp-nav hidden-xs"><a><i class="material-icons">local_dining</i> Dietas</a></li>
-        <li role="presentation" [routerLink]="['/Dietas']" class="sp-nav visible-xs"><a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><i class="material-icons">local_dining</i> Dietas</a></li>
+        <li role="presentation" [routerLink]="['/Dietas']" class="sp-nav hidden-xs"><a><span class="sp-font"><i class="material-icons">local_dining</i> Dietas</span></a></li>
+        <li role="presentation" [routerLink]="['/Dietas']" class="sp-nav visible-xs"><a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><span class="sp-font"><i class="material-icons">local_dining</i> Dietas</span></a></li>
 
         <li role="presentation" (click)="logOut()" class="sp-nav hidden-xs"><a><i class="material-icons">subdirectory_arrow_left</i></a></li>
-        <li role="presentation" (click)="logOut()" class="sp-nav visible-xs"><a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><i class="material-icons">subdirectory_arrow_left</i> Logout</a></li>
+        <li role="presentation" (click)="logOut()" class="sp-nav visible-xs"><a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><span class="sp-font"><i class="material-icons">subdirectory_arrow_left</i> Logout</span></a></li>
 
       </ul>
     </div>

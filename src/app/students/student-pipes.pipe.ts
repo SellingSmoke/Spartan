@@ -1,6 +1,5 @@
 import { Pipe, PipeTransform } from 'angular2/core';
 import { Goal } from '../dataTypes/goal';
-import * as GoalMethods from '../dataTypes/goal';
 /*
  * Beautify the progess bar if value is under 20
  *
@@ -11,7 +10,7 @@ import * as GoalMethods from '../dataTypes/goal';
  *   formats to: ""
  *   {{ 65 |  BeautifyProgessBar }}
  *   formats to: "65% COMPLETADO"
- *   {{ 100 |  BeautifyProgessBar }}
+ *   {{ 100 | BeautifyProgessBar }}
  *   formats to: "META COMPLETADA"
 */
 @Pipe({name: 'BeautifyProgessBar'})
@@ -24,6 +23,27 @@ export class BeautifyProgessBarPipe implements PipeTransform {
         return value + "% COMPLETADO";
       }
       return null;
+    }
+}
+
+/*
+ * Transform number in gender
+ *
+ * Usage:
+ *   value | Gender
+ * Example:
+ *   {{ 0 |  Gender }}
+ *   formats to: "Varón"
+ *   {{ 1 |  Gender }}
+ *   formats to: "Mujer"
+*/
+@Pipe({name: 'Gender'})
+export class GenderPipe implements PipeTransform {
+    transform(value:number) : string {
+      if (value === 0){
+          return "Varón";
+      }
+      return "Mujer";
     }
 }
 

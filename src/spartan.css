@@ -49,6 +49,16 @@ td:not(.sp-not){
   text-align: center;
 }
 
+.sp-font{
+	font-size: 1.5rem;
+	font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+}
+
+#spartan.sp-font{
+	font-size: 2rem !important;
+	text-transform: uppercase;
+}
+
 .sp-text.mini{
 	font-size: 1.2rem;
 }
