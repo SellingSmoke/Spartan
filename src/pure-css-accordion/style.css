@@ -235,6 +235,7 @@ a.glyphicon-plus.active {
 
 #titulo-meta {
     text-align: center;
+    margin-top: 0px;
 }
 
 .titulo-meta-prof {
@@ -253,9 +254,13 @@ a.glyphicon-plus.active {
 }
 
 @media screen and (max-width: 767px){
-
     .boton-dialog {
       padding: 20px 0 20px 0 !important;
+    }
+
+    #botones-tarea-inside {
+      float: none !important;
+      text-align:center;
     }
 }
 
