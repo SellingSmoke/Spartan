@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../dashboard-alumno/dashboard-alumno', '../inicio/inicio', '../perfil/perfil', '../mensajes/mensajes', '../autenticacion/router', '../login/login', '../registroEntrenador/registroEntrenador', '../registroAlumno/registroAlumno', '../meta/meta', '../dietas/dietas'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', '../inicio/inicio', '../perfil/perfil', '../mensajes/mensajes', '../autenticacion/router', '../login/login', '../registroEntrenador/registroEntrenador', '../registroAlumno/registroAlumno', '../meta/meta', '../diets/diets', '../autenticacion/autenticacion'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', 'angular2/router', '../dashboard-alumno/dashbo
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, dashboard_alumno_1, inicio_1, perfil_1, mensajes_1, router_2, login_1, registroEntrenador_1, registroAlumno_1, meta_1, dietas_1;
+    var core_1, router_1, inicio_1, perfil_1, mensajes_1, router_2, login_1, registroEntrenador_1, registroAlumno_1, meta_1, diets_1, autenticacion_1;
     var AppComponent;
     return {
         setters:[
@@ -17,9 +17,6 @@ System.register(['angular2/core', 'angular2/router', '../dashboard-alumno/dashbo
             },
             function (router_1_1) {
                 router_1 = router_1_1;
-            },
-            function (dashboard_alumno_1_1) {
-                dashboard_alumno_1 = dashboard_alumno_1_1;
             },
             function (inicio_1_1) {
                 inicio_1 = inicio_1_1;
@@ -45,22 +42,21 @@ System.register(['angular2/core', 'angular2/router', '../dashboard-alumno/dashbo
             function (meta_1_1) {
                 meta_1 = meta_1_1;
             },
-            function (dietas_1_1) {
-                dietas_1 = dietas_1_1;
+            function (diets_1_1) {
+                diets_1 = diets_1_1;
+            },
+            function (autenticacion_1_1) {
+                autenticacion_1 = autenticacion_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
-                function AppComponent(router) {
+                function AppComponent(router, aut) {
                     this.router = router;
+                    this.aut = aut;
                 }
-                AppComponent.prototype.isLogIn = function () {
-                    // Comprobar si hay una sesión activa
-                    return (localStorage.getItem('spartan') || localStorage.getItem('alumno'));
-                };
                 AppComponent.prototype.logOut = function () {
                     // Eliminar localstorage
-                    localStorage.removeItem('spartan');
-                    localStorage.removeItem('alumno');
+                    this.aut.logOut();
                     this.router.navigateByUrl("/login");
                 };
                 AppComponent = __decorate([
@@ -69,19 +65,20 @@ System.register(['angular2/core', 'angular2/router', '../dashboard-alumno/dashbo
                         templateUrl: 'app/main/app.main.html',
                         styleUrls: ['app/main/app.main.css'],
                         directives: [router_1.ROUTER_DIRECTIVES, router_2.LoggedInRouterOutlet],
+                        providers: [autenticacion_1.Autenticacion]
                     }),
                     router_1.RouteConfig([
                         new router_1.Route({ path: '/inicio', component: inicio_1.Inicio, name: 'Inicio', useAsDefault: true }),
-                        new router_1.Route({ path: '/alumno/:id', component: dashboard_alumno_1.DashboardAlumno, name: 'DashboardAlumno' }),
+                        // new Route({ path: '/alumno/:id', component: DashboardAlumno, name: 'DashboardAlumno'}),
                         new router_1.Route({ path: '/perfil', component: perfil_1.Perfil, name: 'Perfil' }),
                         new router_1.Route({ path: '/mensajes', component: mensajes_1.Mensajes, name: 'Mensajes' }),
                         new router_1.Route({ path: '/login', component: login_1.Login, name: 'Login' }),
                         new router_1.Route({ path: '/registroEntrenador', component: registroEntrenador_1.RegistroEntrenador, name: 'RegistroEntrenador' }),
                         new router_1.Route({ path: '/registroAlumno', component: registroAlumno_1.RegistroAlumno, name: 'RegistroAlumno' }),
                         new router_1.Route({ path: '/meta', component: meta_1.Meta, name: 'Meta' }),
-                        new router_1.Route({ path: '/dietas', component: dietas_1.Dietas, name: 'Dietas' }),
+                        new router_1.Route({ path: '/dietas', component: diets_1.Dietas, name: 'Dietas' }),
                     ]), 
-                    __metadata('design:paramtypes', [router_1.Router])
+                    __metadata('design:paramtypes', [router_1.Router, autenticacion_1.Autenticacion])
                 ], AppComponent);
                 return AppComponent;
             })();

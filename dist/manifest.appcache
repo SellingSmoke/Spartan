@@ -1,109 +1,113 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: de48beb500d1c37008f9649d351d2c406f663198
-# sw.file.hash: a7ecaa8c4e16c24da079e7f60d008b8e20d22a08
-/app/alumnos/alumno-detail.html
-# sw.file.hash: c3a9d68607298b9fa0162012245910862718a064
-/app/alumnos/alumno-detail.js
-# sw.file.hash: 18c9c78e0aa59d9692c34955eda20ea58cb84efd
-/app/alumnos/alumno-detail.js.map
-# sw.file.hash: 598d008118e3a68cd48efd49816343b94696373c
-/app/alumnos/alumno-detail.ts
-# sw.file.hash: 7d9a649d752faa80b1edf6992c2c5289e63c64fa
-/app/alumnos/alumno-service.js
-# sw.file.hash: 62213ddbdea9d1e28b2afe78be418e2951499e36
-/app/alumnos/alumno-service.js.map
-# sw.file.hash: 652b5cb7fca04055243cc01492d80fc380994e2e
-/app/alumnos/alumno-service.ts
-# sw.file.hash: 8e7f3ab50b9d48a6e30db350acd7c85baeb07e77
+# sw.version: a6a6160dadd7f1bb998a78e088105a212ece4484
+# sw.file.hash: 65f7bf8d8768cd23577ac7e0ad55efcb74aa41a7
 /app/autenticacion/autenticacion.js
-# sw.file.hash: 8b9697ec167e8a84c206a9a1cdec6ff3730a5e7b
+# sw.file.hash: 0e25ea37b140196e1f031a32f3a78a93eee6e277
 /app/autenticacion/autenticacion.js.map
-# sw.file.hash: e8d8f30793646d777644ed37f02a8e5538ae6476
+# sw.file.hash: f68a4c876930765612e10ae7e1c9de99a22b024e
 /app/autenticacion/autenticacion.ts
-# sw.file.hash: 56ee0e3591df9c8ffe34242d355eb4aeb4c3b10d
+# sw.file.hash: e24e71d3d95e046e1d510b71ea25bb2e80ad0da1
 /app/autenticacion/router.js
-# sw.file.hash: f8e98ca0b4f0b1e8dba31fb9faf5c8bc2931b570
+# sw.file.hash: af20d63810bfe8297f24ca16b0ccd7d668e59c86
 /app/autenticacion/router.js.map
-# sw.file.hash: a19abdb6a57366df2ac095f1cbc631fe91a28921
+# sw.file.hash: c419d2e337e10b4a3f890fb02cf9cbd1a57d1d3d
 /app/autenticacion/router.ts
-# sw.file.hash: 68ba2f8bbb44309b1afb4d146ff15c433e5a21bc
+# sw.file.hash: d139c3078acd830e30bdee4e5b425f41e9ada803
+/app/dashboard-admin/dashboard-admin.html
+# sw.file.hash: 74c2b22cd4ea1aa3a23d5618ef4da7009d63198c
+/app/dashboard-admin/dashboard-admin.js
+# sw.file.hash: 35ea937eba0fbd4d95f89713173ba50552278f5d
+/app/dashboard-admin/dashboard-admin.js.map
+# sw.file.hash: bce15ef62f655d0f49a624a1ff16f683adc6bc9f
+/app/dashboard-admin/dashboard-admin.ts
+# sw.file.hash: 061e797af2cc0744bd8bdf70eebd81da820b9bdf
+/app/dashboard-admin/table.css
+# sw.file.hash: 96893b0531ff08cd96082968a3db0e31e0b3012c
 /app/dashboard-alumno/dashboard-alumno.html
-# sw.file.hash: e12cccaf1c769e063b45d8a3dad6964362693273
+# sw.file.hash: 3d13d8235b907d7a6f8672e4f84af6c2aad08a40
 /app/dashboard-alumno/dashboard-alumno.js
-# sw.file.hash: b1fe0b7f90f0b2a3217316181728d92cee80036a
+# sw.file.hash: 90584a8d8e5db3f6f6c8b42631248a1f28ba9ed2
 /app/dashboard-alumno/dashboard-alumno.js.map
-# sw.file.hash: e2b76debdf1ec6411016a271e8c585cd4a2d95b8
+# sw.file.hash: dca241727491f53af41a61183c399d5904d36f54
 /app/dashboard-alumno/dashboard-alumno.ts
-# sw.file.hash: 9a311a86f112ee9b33263308e8627698e82c11f8
+# sw.file.hash: 0ae118d5f6d8cd9231817408ccf828fe0fbd347f
+/app/dashboard-entrenador/dashboard-entrenador.css
+# sw.file.hash: c49aaefe0c92fdf48684b6e8f3d75130f19b5436
 /app/dashboard-entrenador/dashboard-entrenador.html
-# sw.file.hash: e251990b218daeebbcc8ff49d078acb9decdb916
+# sw.file.hash: 789708eac5e4c3e39bb615bc6a0d860e74cc2d91
 /app/dashboard-entrenador/dashboard-entrenador.js
-# sw.file.hash: ba9555299cbeada0e948821daaa3bf412422d47e
+# sw.file.hash: 52274697dd59f4fdddcca2e18c83ec46029d4650
 /app/dashboard-entrenador/dashboard-entrenador.js.map
-# sw.file.hash: 3002306430ef43dc1147d848b093356ec8a020b2
+# sw.file.hash: 4b1dfc5aff8c04bbf4d0bbe723fb65cbb81b75d6
 /app/dashboard-entrenador/dashboard-entrenador.ts
-# sw.file.hash: e2a3c4eccc6a7ff851df9962f2da930a2e565b7a
-/app/dataTypes/alumno.js
-# sw.file.hash: bbb9193e1f7b599487759d57509b2ca02374d687
-/app/dataTypes/alumno.js.map
-# sw.file.hash: 27a020de94939416de167dea7eef18a2ef55afd9
-/app/dataTypes/alumno.ts
 # sw.file.hash: 961cae93726077bb76fe6a9f14ea435137a78ca8
 /app/dataTypes/goal.js
 # sw.file.hash: 8d1bf93b0b3e233d26466964500ea6d58a57faf4
 /app/dataTypes/goal.js.map
-# sw.file.hash: 327cba2d29aec437976e27d6694752d755edad82
+# sw.file.hash: 0324743c14dc7a47b09a33dcade24ae6c7c4a3a0
 /app/dataTypes/goal.ts
-# sw.file.hash: 9acb846124796b191c56b27537294e59bfb56288
-/app/dataTypes/student.js
-# sw.file.hash: 49eace737976e6985f10268e1993c6e655c375fa
-/app/dataTypes/student.js.map
-# sw.file.hash: 1c95ce12b14b6f2559a978ce0a8097b5377384c6
-/app/dataTypes/student.ts
-# sw.file.hash: c62ef6fb063d76ccf2a1075e6546b3afe468c8c2
+# sw.file.hash: 3702ba5200352ba284eb0acd5e906e18a5eeeb5c
 /app/dataTypes/task.js
-# sw.file.hash: 7ffbcda1a8ebb0c9549ee7ba2c8688e30777406c
+# sw.file.hash: e0e78ba16a0b2886c192a93bb74fe08393e26236
 /app/dataTypes/task.js.map
-# sw.file.hash: a24639431c351f9f2819b09646a27522ac829356
+# sw.file.hash: cd9ad212abac486eaeb3a25ab0724eb2f3e363b6
 /app/dataTypes/task.ts
-# sw.file.hash: 07ccad5d415017e22cff9f1e7a17ca92cc31d289
-/app/dietas/dietas.html
-# sw.file.hash: bf5192bdb516aca5462b8aaaf62d7afd4a327ba0
-/app/dietas/dietas.js
-# sw.file.hash: 5ba0b9c55aff1b9cbab46fcfa82647e3e6e859c1
-/app/dietas/dietas.js.map
-# sw.file.hash: 321bdaa4b60bf8a8e16112a6c109da6b6a871c5a
-/app/dietas/dietas.ts
+# sw.file.hash: 4b88e35aacf3ffcc903e527f9fe7c0fb1d68a869
+/app/dataTypes/trainer.js
+# sw.file.hash: 34d67d7aff44b01ecdfdffd8d7fca2d598f6053f
+/app/dataTypes/trainer.js.map
+# sw.file.hash: 60e64955564e398c232947276ad4003ce3d8d8ea
+/app/dataTypes/trainer.ts
+# sw.file.hash: 2a966f99e6273ebb8c3bad457d1318f35971af7f
+/app/diets/diet-service.js
+# sw.file.hash: 03f79b1c914a58d4e0a3407c022355ec65476d75
+/app/diets/diet-service.js.map
+# sw.file.hash: a81f73a94abfe8cb6f8802e82defd8c937f90304
+/app/diets/diet-service.ts
+# sw.file.hash: 6ff9c473dc9fc7d14f75c91f6da65fb42a64cb81
+/app/diets/diet.js
+# sw.file.hash: ae97813bfab51b472b18a2793597368e366cce5b
+/app/diets/diet.js.map
+# sw.file.hash: 0b24f1d95e2f75e97304c7b26e066dccb9daa531
+/app/diets/diet.ts
+# sw.file.hash: be73a533a4b1558c08b2f6d0e88331fc31ec9e51
+/app/diets/diets.html
+# sw.file.hash: 104d5a3ab6b1c722eb0072d76947553f5dafc9d4
+/app/diets/diets.js
+# sw.file.hash: 21933739bb6a7c3cf559a1d63612e8c580e163d0
+/app/diets/diets.js.map
+# sw.file.hash: 746949940917c2659746b446d0f938c7c50de031
+/app/diets/diets.ts
 # sw.file.hash: d44d29ce0f99be31ec6b108901df895199128f94
 /app/inicio/inicio.css
-# sw.file.hash: dec93cafc99b6dbd6c7306a4cae808ede85bedcc
+# sw.file.hash: ad03b0e3ef0c90044e94f16d7f070f8c509dd5f2
 /app/inicio/inicio.html
-# sw.file.hash: 11402426c035ad095edfddc10c07e5f200ad42d6
+# sw.file.hash: bcc0cdc0869cebfd9b7a773ee8010decbfe8eb6b
 /app/inicio/inicio.js
-# sw.file.hash: 03ab36a6a987205b5c0a18c86e9d1ae270bac75e
+# sw.file.hash: 5b56ffa17294892fba9a1c633be830e48a07f1a3
 /app/inicio/inicio.js.map
-# sw.file.hash: 0df28a8568b90f4bf26301ce5cd523b3fac46407
+# sw.file.hash: 31cb202d0d3804c7835a36c14b4c317d16e8e6f3
 /app/inicio/inicio.ts
 # sw.file.hash: 31fa7068369aa1de3334c99a5fd3b63bcdcc7df8
 /app/login/login.css
 # sw.file.hash: d464448dcf1764624abc78559b10fe7550a911ca
 /app/login/login.html
-# sw.file.hash: 93354ff09da9001dbba72646d197195a9d12e869
+# sw.file.hash: 87ec87e2d0e03b7853d8d550a5db50bce56901a8
 /app/login/login.js
-# sw.file.hash: 5877f7ee6c65394b832c917f69da66cddf51c2c2
+# sw.file.hash: 14e59afde6d787665298ae3f70c15d71c9a4e51b
 /app/login/login.js.map
-# sw.file.hash: f273e279994baf8cf2efb7c3c42e8a73348c6737
+# sw.file.hash: db7610d9b659bc077b286fe07f6689c07ce45856
 /app/login/login.ts
-# sw.file.hash: e99211ce00fe9097849a62f3094d5613e68cfcfa
+# sw.file.hash: 778a6c3d1da8bf7c6f6383d4f1702ba70cf8433c
 /app/main/app.component.js
-# sw.file.hash: 79d1820e903ff5ef12568df3477ff9e31e3a3eb2
+# sw.file.hash: f76568034ad9d10a6c6af39116edb544bc68b588
 /app/main/app.component.js.map
-# sw.file.hash: c29156a2942ac54a1b99c8a043c7e336dbf8e1c0
+# sw.file.hash: 04e8e100eb07b80e92f10499a12f924bc9f9982e
 /app/main/app.component.ts
 # sw.file.hash: 85ec924807c065ca7b7ff00957ee55828d17aeda
 /app/main/app.main.css
-# sw.file.hash: f68afba6d2f72c5751ca740ba501adfa9214c078
+# sw.file.hash: b7658c0e04d7d8eb7f894ea0056d0d7f8481eeeb
 /app/main/app.main.html
 # sw.file.hash: a5aade0d7bff9ca9729acf53c7156392f92bfa5e
 /app/main/main.js
@@ -145,11 +149,11 @@ CACHE MANIFEST
 /app/perfil/perfil.js.map
 # sw.file.hash: 51d50c4219f0e7d30ad6e3b0343093521d521e5b
 /app/perfil/perfil.ts
-# sw.file.hash: 230fdf4435c9551de185a39c0b6355f2b651764e
+# sw.file.hash: 47c45b787f9111efcb3acb2276fd28b6dd20b5b9
 /app/recursos-estaticos.js
-# sw.file.hash: 2a85502f45c78f730af10dcbe05293510e5b4480
+# sw.file.hash: e8489e257e50ecd1e1faa2f14233f150ef16f4cf
 /app/recursos-estaticos.js.map
-# sw.file.hash: 2b4054536b1485ddc70b5cbfb0124d51f62843ad
+# sw.file.hash: 7fcea3fa3dc378af87f3275a4331785c82e41658
 /app/recursos-estaticos.ts
 # sw.file.hash: 613e445f883254b8e542b80a97cd0141b3e9423a
 /app/registroAlumno/registroAlumno.html
@@ -167,11 +171,49 @@ CACHE MANIFEST
 /app/registroEntrenador/registroEntrenador.js.map
 # sw.file.hash: 37d8c63a52f9ce2a6260e2a2ec0d0105dba08421
 /app/registroEntrenador/registroEntrenador.ts
+# sw.file.hash: 825383b089a55e4be78b659307a6883bfa1af35e
+/app/services/task-service.js
+# sw.file.hash: e7be56e1ffff2c5f7337d19935e9cc80907dc3ee
+/app/services/task-service.js.map
+# sw.file.hash: 79fb6f2c7b135ce150514d735b72a9f6a42348ae
+/app/services/task-service.ts
+# sw.file.hash: fe08a461c08e418cc45369dcd0146a119cf6d4a2
+/app/services/trainer-service.js
+# sw.file.hash: b201b86f3d64768652a660ffe91e059a36cc5c47
+/app/services/trainer-service.js.map
+# sw.file.hash: bdceb0446eb0232dbe300cfddf8667846671703a
+/app/services/trainer-service.ts
+# sw.file.hash: 6796376592c7c8c3ce48ee9c1ca8d6fa79df82cf
+/app/students/student-detail.html
+# sw.file.hash: 496516e4839be47b67016c1f3228491297c7807d
+/app/students/student-detail.js
+# sw.file.hash: 5bc4a49a98961e23829b1632f276b62a526834b6
+/app/students/student-detail.js.map
+# sw.file.hash: 7ae476e84879198f6078fed2874ed541193f4dea
+/app/students/student-detail.ts
+# sw.file.hash: 3c8a633de3d20d9dbc2f88b93e2fdd7549a23512
+/app/students/student-pipes.pipe.js
+# sw.file.hash: d845c7083bae8170edf0284f765b1dfbf2db56c0
+/app/students/student-pipes.pipe.js.map
+# sw.file.hash: b2abe11da55db5a97d27ce7c33893c1d6f1efffd
+/app/students/student-pipes.pipe.ts
+# sw.file.hash: 756ed051cd95aa0fb2da02a58269101dcec57393
+/app/students/student-service.js
+# sw.file.hash: b995d67f1bc6d4855a9dc8b87370281630db1b0f
+/app/students/student-service.js.map
+# sw.file.hash: 3b07d1893931a5fa317d9e1d8bae39a5d94fc3f8
+/app/students/student-service.ts
+# sw.file.hash: ab432c7a59ebd68f4e0b3f2b6da69c7e63b1e36c
+/app/students/student.js
+# sw.file.hash: cad3ebea670c1d08fd85e2236988446df5341480
+/app/students/student.js.map
+# sw.file.hash: 2cc9dfa771b818c4703e2865ec3d6a2f8ef897d0
+/app/students/student.ts
 # sw.file.hash: 84161b857f5c547e3699ddfbffc6d8d737542e01
 /favicon.ico
-# sw.file.hash: 3dd978e547bceca7cfc818024fcd6514ef49571a
+# sw.file.hash: e5c83555f11125462cebe065a43555f0a1ac0dfe
 /index.html
-# sw.file.hash: f19e19ba474fd11a3fffd55ea728338df07a39bd
+# sw.file.hash: cfa24690cceb47b4431d3e720add0bc49af95783
 /main.css
 # sw.file.hash: cdcb96342eb9439009a52083d03bf88009703f55
 /materialD/CONTRIBUTING.md
@@ -401,7 +443,7 @@ CACHE MANIFEST
 /materialD/test/ripplesSpec.js
 # sw.file.hash: 4c4315e2e593eab7422a242dec799ae50319000b
 /materialD/testcase.html
-# sw.file.hash: b148aec74206d64f0da3e388e34812e0fd998286
+# sw.file.hash: 4ecffacf13af9061d8827e2c22447e41c21b2f41
 /pure-css-accordion/style.css
 # sw.file.hash: 9f2d5f45393742f4c1bdb3b05b1e5b3680679eaf
 /scripts/Rx.js
@@ -417,11 +459,13 @@ CACHE MANIFEST
 /scripts/es6-shim.min.js
 # sw.file.hash: bd9d4ea52039521ba48a45ee5a20a24f1673388a
 /scripts/http.js
+# sw.file.hash: 369450ec7fc3a28a74f1c803968c3e9805aaf41a
+/scripts/jquery.d.ts
 # sw.file.hash: 37b1db88b57438f1072a8ebc7559c909c9d3a682
 /scripts/jquery.min.js
 # sw.file.hash: d6be72f514cdba1647ac8bfa659e24ebbb5a3b2b
 /scripts/router.js
-# sw.file.hash: 6584aa8c15b335636260f3c9ac934f53b59a61e7
+# sw.file.hash: b8615f2dd0fd9337e6883deea526e946451bb3f0
 /scripts/scripts-pablo.js
 # sw.file.hash: 064ab212cfd9e125474ae3bbb600c366b31e79cb
 /scripts/system-polyfills.js
@@ -445,6 +489,54 @@ CACHE MANIFEST
 /semantic-ui-card/package.js
 # sw.file.hash: 4ffdf4f7d4e76c957daad94c3a15385f46ea9d51
 /semantic-ui-card/package.json
+# sw.file.hash: 53ab9de7b25b7718dd4b2c8e56f81c2445a57804
+/semantic-ui-icons/README.md
+# sw.file.hash: b9308f89eb508e9f5ecf839624a91e12219a8480
+/semantic-ui-icons/RELEASE-NOTES.md
+# sw.file.hash: 3e63fc9b3de4580f1f3bec0631436f755b80f167
+/semantic-ui-icons/assets/fonts/icons.eot
+# sw.file.hash: 26bb1c5ef100a1cd71923f1d5dc29fc797ef4639
+/semantic-ui-icons/assets/fonts/icons.svg
+# sw.file.hash: 9088143b19979779b2116cef38b661f72d982e19
+/semantic-ui-icons/assets/fonts/icons.ttf
+# sw.file.hash: 56ce13e71c2150d81bc972940584915181bd6081
+/semantic-ui-icons/assets/fonts/icons.woff
+# sw.file.hash: 1075231650f579955905bb2f6527148a8e2b4b16
+/semantic-ui-icons/assets/fonts/icons.woff2
+# sw.file.hash: 87a50d03925464789570a55de54b306071d7266d
+/semantic-ui-icons/bower.json
+# sw.file.hash: 499341d088eb66a3f8b4ecd25f1491a5248a7312
+/semantic-ui-icons/composer.json
+# sw.file.hash: ceb3c18150bd5f375f349b7b1548c212d33bbb73
+/semantic-ui-icons/icon.css
+# sw.file.hash: 9e743f908eacca6a268f43fded02ee1a1f5c5a91
+/semantic-ui-icons/icon.min.css
+# sw.file.hash: ad01d3e3bb5f2c4453290c4c10222e182d10437a
+/semantic-ui-icons/package.js
+# sw.file.hash: 7665499475cad7d01b60b9e698525a2666de38de
+/semantic-ui-icons/package.json
+# sw.file.hash: d0872138b6e1680665fdad41704a9813e7d4bbbd
+/semantic-ui-tab/README.md
+# sw.file.hash: b5acc708d5af34a230b589ef5b0cdbe2473e5cc9
+/semantic-ui-tab/RELEASE-NOTES.md
+# sw.file.hash: 1b09b273d46cf5727996cf50aecc1fd5a4a82f66
+/semantic-ui-tab/bower.json
+# sw.file.hash: cd389f1862c238cc02e431da70ea786e834f737a
+/semantic-ui-tab/composer.json
+# sw.file.hash: d2f62b844541878c4d1c44d5c878cccfad6ca13c
+/semantic-ui-tab/index.js
+# sw.file.hash: 74f0c7d7aa1e10d796eb94e7a02e890e73566988
+/semantic-ui-tab/package.js
+# sw.file.hash: be4fc7e670ad876910b4ba4db0bf3e7df8f0a35c
+/semantic-ui-tab/package.json
+# sw.file.hash: da2200f9c03d8d77db2b4a4602a4f88d9bb2ccc6
+/semantic-ui-tab/tab.css
+# sw.file.hash: 2a8c2a3027e5c80689a2c389ccec00553e31bac8
+/semantic-ui-tab/tab.js
+# sw.file.hash: eb1683231cf67dfbfe4182fc11b0acfaba0e6b2a
+/semantic-ui-tab/tab.min.css
+# sw.file.hash: 1092cea4f2065dc82fa4132de49874533067e7e0
+/semantic-ui-tab/tab.min.js
 # sw.file.hash: ba7107eb391ad6577c90ff44e303bf7e9fd71f4f
 /semantic-ui-transition/README.md
 # sw.file.hash: 2837c32b4189e3eed2120ea03d490d9de5f376f9
@@ -467,7 +559,7 @@ CACHE MANIFEST
 /semantic-ui-transition/transition.min.css
 # sw.file.hash: 34a3b90c78ce62eac1e561fa1c2cec013e4758e4
 /semantic-ui-transition/transition.min.js
-# sw.file.hash: d0f3b2f39b7e25d8ce6ac6fb213e42c910083350
+# sw.file.hash: 2054688501ceff28d327cec14d72f262ddac6503
 /spartan.css
 # sw.file.hash: da39a3ee5e6b4b0d3255bfef95601890afd80709
 /thirdparty/libs.js
