@@ -1,16 +1,16 @@
 import {Component, OnInit} from 'angular2/core';
-import {Router, Route, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-import { DashboardEntrenador } from '../dashboard-entrenador/dashboard-entrenador';
-import { DashboardAlumno } from '../dashboard-alumno/dashboard-alumno';
-import { DashboardAdmin } from '../dashboard-admin/dashboard-admin';
-import { AutenticacionService } from '../services/autenticacion.service';
-import { StudentService } from '../services/student.service';
-import { Student } from '../models/student';
+import { Router, Route, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import { DashboardEntrenador } from './dashboard-entrenador/dashboard-entrenador';
+import { DashboardAlumno } from './dashboard-alumno/dashboard-alumno';
+import { DashboardAdmin } from './dashboard-admin/dashboard-admin';
+import { AutenticacionService } from '../../services/autenticacion.service';
+import { StudentService } from '../../services/student.service';
+import { Student } from '../../models/student';
 
 @Component({
  selector: 'inicio',
- styleUrls: ['app/inicio/inicio.css'],
- templateUrl: 'app/inicio/inicio.html',
+ styleUrls: ['app/components/dashboard/inicio.css'],
+ templateUrl: 'app/components/dashboard/inicio.html',
  directives: [DashboardEntrenador, DashboardAlumno, DashboardAdmin],
  providers: [AutenticacionService, StudentService]
 })

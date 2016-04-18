@@ -1,18 +1,17 @@
 import {Component, OnInit, Input, Output, EventEmitter } from 'angular2/core';
 import { RouteParams } from 'angular2/router';
-import { Student } from '../models/student';
-import { Task } from '../models/task';
-import { BeautifyProgessBarPipe, GoalNamePipe } from '../pipes/student-pipes.pipe';
-import { TaskService } from '../services/task.service';
-import { AutenticacionService } from '../services/autenticacion.service';
+import { Student } from '../../../models/student';
+import { Task } from '../../../models/task';
+import { BeautifyProgessBarPipe, GoalNamePipe } from '../../../pipes/student-pipes.pipe';
+import { TaskService } from '../../../services/task.service';
+import { AutenticacionService } from '../../../services/autenticacion.service';
 
 declare var jQuery:JQueryStatic;
 
 
 @Component({
 	selector: 'dashboard-alumno',
-  styleUrls: ['app/inicio/inicio.css'],
-  templateUrl: 'app/dashboard-alumno/dashboard-alumno.html',
+  templateUrl: 'app/components/dashboard/dashboard-alumno/dashboard-alumno.html',
   providers: [AutenticacionService, TaskService],
   pipes: [BeautifyProgessBarPipe, GoalNamePipe],
 	inputs: ['student']

@@ -1,10 +1,10 @@
 import { Component } from 'angular2/core';
-import { Diet } from '../models/diet';
-import { DietService } from '../services/diet.service';
+import { Diet } from '../../models/diet';
+import { DietService } from '../../services/diet.service';
 
 @Component({
 	selector: 'diets',
-  templateUrl: 'app/diets/diets.html',
+  templateUrl: 'app/components/diets/diets.html',
   providers: [DietService]
 })
 

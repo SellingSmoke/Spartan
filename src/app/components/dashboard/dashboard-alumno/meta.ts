@@ -1,11 +1,11 @@
 import {Component} from 'angular2/core';
 import {FORM_DIRECTIVES} from 'angular2/common';
-import {Goal} from "../models/goal";
+import {Goal} from "../../../models/goal";
 
 @Component({
     selector: 'inicio',
-    styleUrls: ['app/meta/meta.css'],
-    templateUrl: 'app/meta/meta.html',
+    styleUrls: ['app/components/dashboard/dashboard-alumno/meta.css'],
+    templateUrl: 'app/dashboard/dashboard-alumno/meta.html',
     directives: [FORM_DIRECTIVES]
 })
 

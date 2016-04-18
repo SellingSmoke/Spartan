@@ -2,20 +2,10 @@ import {Component} from 'angular2/core';
 
 @Component({
 	selector: 'perfil',
-    templateUrl: 'app/perfil/perfil.html',
-		styleUrls: ['app/perfil/perfil.css']
+    templateUrl: 'app/components/perfil/perfil.html',
+		styleUrls: ['app/components/perfil/perfil.css']
 })
 
-/*
-export interface Persona {
-  id: number;
-  nombre: string;
-  apellido: string;
-  genero: string;
-  edad: string;
-	email: string;
-}
-*/
 export class Perfil {
 	public modelo;
 	public cambiarPassword:string;
@@ -70,7 +60,7 @@ export class Perfil {
 	cambiarCorreo():boolean{
 		return this.cambiarCorreoE!==undefined;
 	}
-	
+
 	guardarCorreo(){
 		this.cambiarCorreoE=undefined;
 	}

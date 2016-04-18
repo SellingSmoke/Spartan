@@ -3,20 +3,19 @@
 import { bootstrap }    from 'angular2/platform/browser';
 import { Component, OnInit } from 'angular2/core';
 import { Router } from 'angular2/router';
-import { Goal } from '../models/goal';
-import { Trainer } from '../models/trainer';
-import { StudentDetailComponent } from '../students/student-detail';
-import { TrainerService } from '../services/trainer.service';
-import { Student } from '../models/student';
-import { AutenticacionService } from '../services/autenticacion.service';
-import { GoalNamePipe } from '../pipes/student-pipes.pipe';
+import { Goal } from '../../../models/goal';
+import { Trainer } from '../../../models/trainer';
+import { TrainerService } from '../../../services/trainer.service';
+import { Student } from '../../../models/student';
+import { AutenticacionService } from '../../../services/autenticacion.service';
+import { GoalNamePipe } from '../../../pipes/student-pipes.pipe';
 
 declare var jQuery:JQueryStatic;
 
 @Component({
 	selector: 'dashboard-admin',
-  styleUrls: ['app/dashboard-admin/table.css'],
-  templateUrl: 'app/dashboard-admin/dashboard-admin.html',
+  styleUrls: ['app/components/dashboard/dashboard-admin/table.css'],
+  templateUrl: 'app/components/dashboard/dashboard-admin/dashboard-admin.html',
 	pipes: [GoalNamePipe],
   providers: [TrainerService, AutenticacionService]
 })

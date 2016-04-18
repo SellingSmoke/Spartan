@@ -4,8 +4,8 @@ import {RouterLink} from "angular2/router";
 
 @Component({
 	selector: 'login',
-    templateUrl: 'app/login/login.html',
-		styleUrls: ['app/login/login.css'],
+    templateUrl: 'app/components/session/login/login.html',
+		styleUrls: ['app/components/session/login/login.css'],
     directives: [RouterLink]
 
 })
