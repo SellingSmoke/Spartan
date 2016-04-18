@@ -1,7 +1,7 @@
 import {Injectable} from 'angular2/core';
 
 @Injectable()
-export class Autenticacion {
+export class AutenticacionService {
 
     private _rol:string; // 0 -> Admin / 1 -> Trainer / 2 -> Student
     private _logIn;

@@ -3,8 +3,8 @@ import { RouteParams } from 'angular2/router';
 import { Student } from '../models/student';
 import { Task } from '../models/task';
 import { BeautifyProgessBarPipe, GoalNamePipe } from '../pipes/student-pipes.pipe';
-import { TaskService } from '../services/task-service';
-import { Autenticacion } from '../autenticacion/autenticacion';
+import { TaskService } from '../services/task.service';
+import { AutenticacionService } from '../services/autenticacion.service';
 
 declare var jQuery:JQueryStatic;
 
@@ -13,7 +13,7 @@ declare var jQuery:JQueryStatic;
 	selector: 'dashboard-alumno',
   styleUrls: ['app/inicio/inicio.css'],
   templateUrl: 'app/dashboard-alumno/dashboard-alumno.html',
-  providers: [Autenticacion, TaskService],
+  providers: [AutenticacionService, TaskService],
   pipes: [BeautifyProgessBarPipe, GoalNamePipe],
 	inputs: ['student']
 })
@@ -30,7 +30,7 @@ export class DashboardAlumno implements OnInit{
 
 	task: Task;
 
-	constructor(private aut: Autenticacion, private _taskService: TaskService) {}
+	constructor(private aut: AutenticacionService, private _taskService: TaskService) {}
 
 	/*
 	 *	Al iniciarse el componente, se cargaran las tareas que debe realizar el alumno

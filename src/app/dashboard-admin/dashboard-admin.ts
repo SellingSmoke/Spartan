@@ -6,9 +6,9 @@ import { Router } from 'angular2/router';
 import { Goal } from '../models/goal';
 import { Trainer } from '../models/trainer';
 import { StudentDetailComponent } from '../students/student-detail';
-import { TrainerService } from '../services/trainer-service';
+import { TrainerService } from '../services/trainer.service';
 import { Student } from '../models/student';
-import { Autenticacion } from '../autenticacion/autenticacion';
+import { AutenticacionService } from '../services/autenticacion.service';
 import { GoalNamePipe } from '../pipes/student-pipes.pipe';
 
 declare var jQuery:JQueryStatic;
@@ -18,7 +18,7 @@ declare var jQuery:JQueryStatic;
   styleUrls: ['app/dashboard-admin/table.css'],
   templateUrl: 'app/dashboard-admin/dashboard-admin.html',
 	pipes: [GoalNamePipe],
-  providers: [TrainerService, Autenticacion]
+  providers: [TrainerService, AutenticacionService]
 })
 
 export class DashboardAdmin implements OnInit{
@@ -31,7 +31,7 @@ export class DashboardAdmin implements OnInit{
 	trainersNum: number;
 	studentNum: number;
 
-  constructor(private _trainerService: TrainerService, private aut: Autenticacion, private router: Router) {
+  constructor(private _trainerService: TrainerService, private aut: AutenticacionService, private router: Router) {
 		this.studentNum = 0;
 	}
 

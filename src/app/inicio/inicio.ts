@@ -3,8 +3,8 @@ import {Router, Route, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import { DashboardEntrenador } from '../dashboard-entrenador/dashboard-entrenador';
 import { DashboardAlumno } from '../dashboard-alumno/dashboard-alumno';
 import { DashboardAdmin } from '../dashboard-admin/dashboard-admin';
-import { Autenticacion } from '../autenticacion/autenticacion';
-import { StudentService } from '../students/student-service';
+import { AutenticacionService } from '../services/autenticacion.service';
+import { StudentService } from '../services/student.service';
 import { Student } from '../models/student';
 
 @Component({
@@ -12,7 +12,7 @@ import { Student } from '../models/student';
  styleUrls: ['app/inicio/inicio.css'],
  templateUrl: 'app/inicio/inicio.html',
  directives: [DashboardEntrenador, DashboardAlumno, DashboardAdmin],
- providers: [Autenticacion, StudentService]
+ providers: [AutenticacionService, StudentService]
 })
 
 export class Inicio{
@@ -20,7 +20,7 @@ export class Inicio{
  student: Student;
  seeStudentTasks: boolean;
 
- constructor(private aut: Autenticacion, private _studentService: StudentService) {
+ constructor(private aut: AutenticacionService, private _studentService: StudentService) {
    this.seeStudentTasks = false;
      if(aut.esAlumno()){
        this._studentService.getStudent(1)

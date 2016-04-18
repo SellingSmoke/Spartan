@@ -1,5 +1,4 @@
 import {Component} from 'angular2/core';
-import {Autenticacion} from "../autenticacion/autenticacion";
 import {Router} from "angular2/router";
 import {RouterLink} from "angular2/router";
 

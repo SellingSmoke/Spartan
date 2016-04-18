@@ -1,10 +1,10 @@
 import {Directive, Attribute, ElementRef, DynamicComponentLoader} from 'angular2/core';
 import {Router, RouterOutlet, ComponentInstruction} from 'angular2/router';
-import {Autenticacion} from "./autenticacion";
+import {AutenticacionService} from "./autenticacion.service";
 
 @Directive({
     selector: 'router-outlet',
-    providers: [Autenticacion],
+    providers: [AutenticacionService],
 })
 export class LoggedInRouterOutlet extends RouterOutlet {
     rutasPublicas:any;
@@ -12,7 +12,7 @@ export class LoggedInRouterOutlet extends RouterOutlet {
     private padre:Router;
 
     constructor(_elementRef:ElementRef, _loader:DynamicComponentLoader,
-                _parentRouter:Router, @Attribute('name') nameAttr:string, private autenticacion:Autenticacion) {
+                _parentRouter:Router, @Attribute('name') nameAttr:string, private autenticacion:AutenticacionService) {
         super(_elementRef, _loader, _parentRouter, nameAttr);
 
         this.padre = _parentRouter;
