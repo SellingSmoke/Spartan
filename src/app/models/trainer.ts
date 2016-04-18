@@ -1,4 +1,4 @@
-import { Student } from '../students/student';
+import { Student } from './student';
 
 export interface Trainer {
 

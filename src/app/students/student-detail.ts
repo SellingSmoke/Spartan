@@ -1,7 +1,7 @@
 import { Component,Input } from 'angular2/core';
-import { Student } from '../students/student';
+import { Student } from '../models/student';
 import { Router } from 'angular2/router';
-import { BeautifyProgessBarPipe, GoalNamePipe, GenderPipe } from './student-pipes.pipe';
+import { BeautifyProgessBarPipe, GoalNamePipe, GenderPipe } from '../pipes/student-pipes.pipe';
 
 @Component({
   selector: 'student-detail',

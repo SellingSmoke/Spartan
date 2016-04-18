@@ -5,7 +5,7 @@ import { DashboardAlumno } from '../dashboard-alumno/dashboard-alumno';
 import { DashboardAdmin } from '../dashboard-admin/dashboard-admin';
 import { Autenticacion } from '../autenticacion/autenticacion';
 import { StudentService } from '../students/student-service';
-import { Student } from '../students/student';
+import { Student } from '../models/student';
 
 @Component({
  selector: 'inicio',

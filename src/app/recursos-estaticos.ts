@@ -1,8 +1,8 @@
-import { Goal } from './dataTypes/goal';
-import { Task, ITask } from './dataTypes/task';
-import { Trainer } from './dataTypes/trainer';
-import { Student } from './students/student';
-import { Diet } from './diets/diet';
+import { Goal } from './models/goal';
+import { Task, ITask } from './models/task';
+import { Trainer } from './models/trainer';
+import { Student } from './models/student';
+import { Diet } from './models/diet';
 
 // Base de datos simulada
 

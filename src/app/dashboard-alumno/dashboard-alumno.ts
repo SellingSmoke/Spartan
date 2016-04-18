@@ -1,8 +1,8 @@
 import {Component, OnInit, Input, Output, EventEmitter } from 'angular2/core';
 import { RouteParams } from 'angular2/router';
-import { Student } from '../students/student';
-import { Task } from '../dataTypes/task';
-import { BeautifyProgessBarPipe, GoalNamePipe } from '../students/student-pipes.pipe';
+import { Student } from '../models/student';
+import { Task } from '../models/task';
+import { BeautifyProgessBarPipe, GoalNamePipe } from '../pipes/student-pipes.pipe';
 import { TaskService } from '../services/task-service';
 import { Autenticacion } from '../autenticacion/autenticacion';
 

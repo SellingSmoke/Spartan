@@ -3,13 +3,13 @@
 import { bootstrap }    from 'angular2/platform/browser';
 import { Component, OnInit } from 'angular2/core';
 import { Router } from 'angular2/router';
-import { Goal } from '../dataTypes/goal';
-import { Trainer } from '../dataTypes/trainer';
+import { Goal } from '../models/goal';
+import { Trainer } from '../models/trainer';
 import { StudentDetailComponent } from '../students/student-detail';
 import { TrainerService } from '../services/trainer-service';
-import { Student } from '../students/student';
+import { Student } from '../models/student';
 import { Autenticacion } from '../autenticacion/autenticacion';
-import { GoalNamePipe } from '../students/student-pipes.pipe';
+import { GoalNamePipe } from '../pipes/student-pipes.pipe';
 
 declare var jQuery:JQueryStatic;
 

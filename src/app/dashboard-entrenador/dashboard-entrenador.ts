@@ -1,9 +1,9 @@
 import { Component, OnInit, Output, EventEmitter } from 'angular2/core';
 import { Router, Route, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
-import { Goal } from '../dataTypes/goal';
+import { Goal } from '../models/goal';
 import { StudentDetailComponent } from '../students/student-detail';
 import { StudentService } from '../students/student-service';
-import { Student } from '../students/student';
+import { Student } from '../models/student';
 
 @Component({
 	selector: 'dashboard-entrenador',

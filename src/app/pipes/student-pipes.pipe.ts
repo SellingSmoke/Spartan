@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from 'angular2/core';
-import { Goal } from '../dataTypes/goal';
+import { Goal } from '../models/goal';
 /*
  * Beautify the progess bar if value is under 20
  *

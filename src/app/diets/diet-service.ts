@@ -1,5 +1,5 @@
 import { DIETS } from '../recursos-estaticos';
-import { Diet } from '../diets/diet';
+import { Diet } from '../models/diet';
 import { Injectable } from 'angular2/core';
 
 @Injectable()

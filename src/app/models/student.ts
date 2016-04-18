@@ -1,4 +1,4 @@
-import {Goal} from '../dataTypes/goal';
+import {Goal} from './goal';
 
 export interface Student {
 

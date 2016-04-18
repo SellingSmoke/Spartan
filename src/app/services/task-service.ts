@@ -1,5 +1,5 @@
 import { TASKS } from '../recursos-estaticos';
-import { Task, parseArray } from '../dataTypes/task';
+import { Task, parseArray } from '../models/task';
 import { Injectable } from 'angular2/core';
 
 @Injectable()
