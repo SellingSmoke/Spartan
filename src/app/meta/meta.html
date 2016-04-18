@@ -15,4 +15,7 @@
         <h1>Como meta me gustaría  <span class="click" (click)="nuevaSeleccion()">{{seleccionado}}</span></h1>
         <h1 *ngIf="seleccionado2"><span *ngIf="frase" >{{frase}}</span> <br *ngIf="esOtro()" /> <span class="click" (click)="nuevaSeleccion2()">{{seleccionado2}}</span> <span *ngIf="frase2" >{{frase2}}</span></h1>
     </div>
+    <div>
+        <a class="btn btn-ln btn-raised btn-danger" (click)="guardar()">Guardar Meta</a>
+    </div>
 </div>

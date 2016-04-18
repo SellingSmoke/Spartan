@@ -5,13 +5,10 @@ export interface Goal {
   progress: number;       // Progreso de la Meta (Calculada en el servidor por tareas completadas)
   type: number;
   // Tipo de meta:
-  // -> 1 Adelgazar X Kg
-  // -> 2 Ganar X Kg
-  // -> 3 Recorrer X Km en Y minutos
-  // -> 4 Levantar X Kg en Y modalidad
+  // ["perder peso","ganar musculo", "ganar resistencia" , "trabajar especificamente", "mejorar en", "otra"];
 
-  campo_metaX: number;    // Parametro X del tipo (Kg,Km)
-  campo_metaY: number;    // Parametro Y del tipo (Minutos, Modalidad)
+  campo_metaX: string;    // Parametro X del tipo (Kg,Km)
+  // campo_metaY: number;    // Parametro Y del tipo (Minutos, Modalidad)
 
   // Modalidades:
   // -> 0 (Vacio)

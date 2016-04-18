@@ -75,36 +75,23 @@ export class GoalNamePipe implements PipeTransform {
     */
 
     private getGoalDef(goal: Goal){
+        //["perder peso","ganar musculo", "ganar resistencia" , "trabajar especificamente", "mejorar en", "otra"];
       switch (goal.type) {
+        case 0:
+          return "Perder " + goal.campo_metaX + " de peso";
         case 1:
-          return "Adelgazar " + goal.campo_metaX + " Kg";
+          return "Ganar masa muscular aumentado " + goal.campo_metaX;
         case 2:
-          return "Ganar " + goal.campo_metaX + " Kg";
+          return "Ganar resistencia corriendo aproximadamente " + goal.campo_metaX ;
         case 3:
-          return "Recorrer " + goal.campo_metaX + " Km en " + goal.campo_metaY + " minutos";
+          return "Trabajar específicamente la " + goal.campo_metaX + " del cuerpo";
         case 4:
-          return "Levantar " + goal.campo_metaX + " Kg " + this.getModalidad(goal.campo_metaY);
+          return "Mejorar en "+goal.campo_metaX;
+        case 5:
+          return goal.campo_metaX;
         default:
           console.log("Meta corrupta");
           return "Meta no válida"
-      }
-    }
-
-    /*
-     *  Metodo que dada una modalidad de meta, devuelve un String con la modalidad decodificada
-     *  Ver modalidad en goal.ts
-    */
-
-    private getModalidad(modalidad: number){
-      switch (modalidad) {
-        case 1:
-          return "de pecho";
-        case 2:
-          return "de pierna";
-        case 3:
-          return "de brazo";
-        default:
-          return "modalidad no registrada";
       }
     }
 
