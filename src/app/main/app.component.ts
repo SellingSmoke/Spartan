@@ -26,8 +26,8 @@ import { Autenticacion } from '../autenticacion/autenticacion';
   new Route({ path: '/login', component: Login, name: 'Login'}),
   new Route({ path: '/registroEntrenador', component: RegistroEntrenador, name: 'RegistroEntrenador'}),
   new Route({ path: '/registroAlumno', component: RegistroAlumno, name: 'RegistroAlumno'}),
-	new Route({ path: '/meta', component: Meta, name: 'Meta'}),
-	new Route({ path: '/dietas', component: Dietas, name: 'Dietas'}),
+  new Route({ path: '/meta', component: Meta, name: 'Meta'}),
+  new Route({ path: '/dietas', component: Dietas, name: 'Dietas'}),
 ])
 
 export class AppComponent {
