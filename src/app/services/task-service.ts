@@ -12,7 +12,7 @@ export class TaskService {
   getTasks(id: number) {
     let tasks= Promise.resolve(TASKS).then(
       jTasks => {
-        jTasks.filter(task => task.goal_id === id);
+        jTasks = jTasks.filter(task => task.goal_id === id);
         return parseArray(jTasks);
       }
     );

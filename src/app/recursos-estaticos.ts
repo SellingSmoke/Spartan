@@ -13,7 +13,7 @@ export var STUDENTS: Student[] = [
   { id: 4, name: "Sergio", lastname:"Pérez Peló",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: { id: 4, student_id: 4, type: 4, progress: 30, campo_metaX: 30, campo_metaY: 2}},
   { id: 5, name: "Paco", lastname:"Bar Born",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: { id: 5, student_id: 5, type: 4, progress: 10, campo_metaX: 10, campo_metaY: 1}},
   { id: 6, name: "Alguien", lastname:"Muy malo",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: null},
-  { id: 7, name: "Efigencia", lastname:"Bonifacia",email: "michel.maes95@gmail.com", gender:1, age: 20, registration_date: "17/1/2016", goal: { id: 5, student_id: 5, type: 4, progress: 90, campo_metaX: 10, campo_metaY: 1}}
+  { id: 7, name: "Efigencia", lastname:"Bonifacia",email: "michel.maes95@gmail.com", gender:1, age: 20, registration_date: "17/1/2016", goal: { id: 7, student_id: 7, type: 4, progress: 90, campo_metaX: 10, campo_metaY: 1}}
 ];
 
 export var TASKS: ITask[] = [
