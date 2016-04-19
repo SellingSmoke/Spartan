@@ -63,7 +63,7 @@ Implementado en Angular2. Probada la funcionalidad en Windows, Mac y Linux.
 ![Dieta](CapturasPantallas/dieta.png)
 
 ## Diagrama de clases Typescript utilizadas en Angular2
-![Diagrama de clases y estructura básica](CapturasPAntallas/photo546502020135233531.jpg)
+![Diagrama de clases y estructura básica](CapturasPantallas/photo546502020135233531.jpg)
 
 ## Integrantes del equipo de desarrollo:
 
