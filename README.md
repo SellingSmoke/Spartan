@@ -62,6 +62,9 @@ Implementado en Angular2. Probada la funcionalidad en Windows, Mac y Linux.
 <b>Dieta</b>
 ![Dieta](CapturasPantallas/dieta.png)
 
+## Diagrama de clases Typescript utilizadas en Angular2
+![Diagrama de clases y estructura básica](CapturasPAntallas/photo546502020135233531.jpg)
+
 ## Integrantes del equipo de desarrollo:
 
 <!-- Tabla -->
