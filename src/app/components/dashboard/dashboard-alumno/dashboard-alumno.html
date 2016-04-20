@@ -135,7 +135,12 @@
                                 </div>
                             </div>
                             <ul class="accordion-child">
-                                {{task.description}}
+                                <a class="ui teal right corner label label-corner">
+                                    <i *ngIf="task.type === 0" class="material-icons icon-label-corner">directions_run</i>
+                                    <i *ngIf="task.type === 1" class="material-icons icon-label-corner">fitness_center</i>
+                                </a>
+                                <h5>{{task.description}}</h5>
+
                                 <form class="form-horizontal">
                                     <div class="form-group">
                                         <label class="col-md-2 control-label">Opciones</label>
@@ -178,7 +183,7 @@
                                         </div>
                                     </div>
 
-                                    <a href="javascript:void(0)" class="btn btn-raised pull-right">Enviar</a>
+                                    <a href="javascript:void(0)" class="btn btn-raised pull-right hint--top hint--success hint--medium" data-hint="Enviar a tu entrenador">Enviar</a>
                                 </form>
                             </ul>
                         </li>
