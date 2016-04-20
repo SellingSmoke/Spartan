@@ -52,9 +52,6 @@ export class DashboardAlumno implements OnInit{
 		this.trainer_dashboard_event.emit(null);
   }
 
-	completeTask(task){
-		task.completed = true;
-	}
 
 	saveComment(text: string){
 		var comment = new Comment(text);
@@ -67,6 +64,8 @@ export class DashboardAlumno implements OnInit{
 			this.tasks.push(this.task);
 		}
 		this.task = new Task(this.student.goal.id);
+		// Para cerrar el dialog
+		this.showDialog();
 	}
 
 	setType(type: number){

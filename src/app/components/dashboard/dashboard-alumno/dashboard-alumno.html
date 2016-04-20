@@ -1,198 +1,197 @@
 <div class="sp-container-lg">
-    <br>
+  <br>
 
-    <div class="col-md-1"></div>
-    <div class="col-md-10">
-        <div class="container">
-            <div class="panel panel-default">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <div class="container">
+      <div class="panel panel-default">
 
-                <div class="panel-heading mdl-typography--title">
-                    <button *ngIf="aut.esProfesor()" id="boton-back" (click)="goBack()" class="btn btn-raised pull-right btn-fab"><i class="material-icons">arrow_back</i></button>
-                    <h1 id="titulo-meta" [class.titulo-meta-prof]="aut.esProfesor()">{{ student.goal | GoalName }}</h1>
-                </div>
-
-                <div id="cuerpo-panel" class="panel-body">
-                    <div *ngIf="student.goal.progress != 0" class="progress">
-                        <div class="progress-bar" [style.width.%]="student.goal.progress">
-                            <span class="sp-label">{{ student.goal.progress | BeautifyProgessBar }}</span>
-                        </div>
-                    </div>
-                    <p *ngIf="student.goal.progress == 0" class="sp-label2 text-muted">Sin tareas completadas</p>
-
-                    <!-- NUEVA TAREA -->
-
-                    <div id="dialog-mat" class='wrap material-dialog'>
-                        <div id="dialog-mat-content" class='content'>
-                            <h3 id="titulo-nueva-tarea">Nueva tarea</h3>
-
-                            <div class="form-group form-radio-button">
-                                <div class="radio radio-button-tarea">
-                                    <label>
-                                        <input (click)="setType(0)" class="boton-de-radio" type="radio" name="sample1" value="1"><span class="circle"></span><span class="check"></span> AERÓBICA
-                                    </label>
-                                </div>
-                                <div class="radio radio-button-tarea">
-                                    <label>
-                                        <input (click)="setType(1)" class="boton-de-radio" type="radio" name="sample1" value="2"><span class="circle"></span><span class="check"></span> ANAERÓBICA
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="nombreTarea" class="col-md-2 control-label">Nombre</label>
-                                <div class="col-md-10">
-                                    <input [(ngModel)]="task.name" class="form-control" id="nombreTarea" placeholder="Nombre de la tarea" type="text">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="descripcionTarea" class="col-md-2 control-label">Descripción</label>
-                                <div class="col-md-10">
-                                    <textarea [(ngModel)]="task.description" class="form-control" id="descripcionTarea" placeholder="Decripción de la tarea" type="text"></textarea>
-                                </div>
-                            </div>
-
-                            <ul class="breadcrumb">
-                                <li class="active">Escoja el tipo de ejercicio...</li>
-                            </ul>
-
-                            <div id="form-anaerobico" class="form-group">
-                                <div class="col-md-6">
-                                    <label for="repeticiones-tarea" class="col-md-2 control-label">Repets.</label>
-                                    <div class="col-md-10">
-                                        <input [(ngModel)]="task.objective1" class="form-control" id="repeteiciones-tarea" placeholder="Num. repeticiones" type="number">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="peso-tarea" class="col-md-2 control-label">Peso</label>
-                                    <div class="col-md-10">
-                                        <input [(ngModel)]="task.objective2" class="form-control" id="peso-tarea" placeholder="Peso Kg" type="number">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div id="form-aerobico" class="form-group">
-                                <div class="col-md-6">
-                                    <label for="distancia-tarea" class="col-md-2 control-label">Distancia</label>
-                                    <div class="col-md-10">
-                                        <input [(ngModel)]="task.objective1" class="form-control" id="distancia-tarea" placeholder="Distancia" type="number">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="tiempo-tarea" class="col-md-2 control-label">Tiempo</label>
-                                    <div class="col-md-10">
-                                        <input [(ngModel)]="task.objective2" class="form-control" id="tiempo-tarea" placeholder="Tiempo" type="number">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6 col-xs-6 col-botones-dialog">
-                                    <button (click)="saveTask(false)" *ngIf="aut.esProfesor()" (click)="showDialog()" class="boton-dialog btn btn-danger">Cancelar</button>
-                                </div>
-                                <div class="col-md-6 col-xs-6 col-botones-dialog">
-                                    <button (click)="saveTask(true)" *ngIf="aut.esProfesor()" (click)="showDialog()" class="boton-dialog btn btn-success pull-right">Aceptar</button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- FIN NUEVA TAREA -->
-
-
-                    <ul class="accordion">
-
-                        <li *ngFor="#task of tasks" class="accordion-item">
-                            <input *ngIf="!task.completed" id="{{ 's' + task.id}}" class="hide" type="checkbox">
-                            <div class="col-md-12 col-xs-12	col-sm-12 margin-row" [class.task-completed]="task.completed">
-                                <div *ngIf="!task.completed" class="col-md-6 col-sm-6 col-xs-12">
-                                    <label [attr.for]="'s'+task.id" class="accordion-label">{{task.name}}</label>
-                                </div>
-                                <div *ngIf="task.completed" class="col-md-6 col-sm-6 col-xs-12">
-                                    <i class="material-icons">done</i>
-                                    <label class="accordion-label-completed">{{task.name}}</label>
-                                </div>
-                                <div id="botones-tarea" class="col-md-6 col-sm-6 col-xs-12">
-                                    <div *ngIf="!task.completed" id="botones-tarea-inside" class="pull-right">
-                                        <a *ngIf="!aut.esProfesor()" href="javascript:void(0)" (click)="completeTask(task)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
-                                            <i class="material-icons">done</i>
-                                            <div class="ripple-container"></div>
-                                        </a>
-                                        <a *ngIf="aut.esProfesor()" href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
-                                            <i class="material-icons">mode_edit</i>
-                                            <div class="ripple-container"></div>
-                                        </a>
-                                        <a *ngIf="aut.esProfesor()" href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
-                                            <i class="material-icons">close</i>
-                                            <div class="ripple-container"></div>
-                                        </a>
-                                        <a href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
-                                            <i class="material-icons">chat</i>
-                                            <div class="ripple-container"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <ul class="accordion-child">
-                                {{task.description}}
-                                <form class="form-horizontal">
-                                    <div class="form-group">
-                                        <label class="col-md-2 control-label">Opciones</label>
-
-                                        <div class="col-md-10">
-                                            <div class="radio radio-primary">
-                                                <label>
-                                                    <input type="radio" name="sample1" value="option1" checked=""><span class="circle"></span><span class="check"></span> Opción 1
-                                                </label>
-                                            </div>
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="sample1" value="option1"><span class="circle"></span><span class="check"></span> Opción 2
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <div class="col-md-offset-2 col-md-10">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox"><span class="checkbox-material"><span class="check"></span></span> ¿Completado?
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="select111" class="col-md-2 control-label">¿Cuánto?</label>
-
-                                        <div class="col-md-10">
-                                            <select id="select111" class="form-control">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <a href="javascript:void(0)" class="btn btn-raised pull-right">Enviar</a>
-                                </form>
-                            </ul>
-                        </li>
-
-                    </ul>
-
-                    <div id="container-boton-anyadir-tarea">
-                        <button *ngIf="aut.esProfesor()" (click)="showDialog()" class="btn btn-primary">Añadir tarea</button>
-                    </div>
-                </div>
-            </div>
+        <div class="panel-heading mdl-typography--title">
+          <button *ngIf="aut.esProfesor()" id="boton-back" (click)="goBack()" class="btn btn-raised pull-right btn-fab"><i class="material-icons">arrow_back</i></button>
+          <h1 id="titulo-meta" [class.titulo-meta-prof]="aut.esProfesor()">{{ student.goal | GoalName }}</h1>
         </div>
+
+        <div id="cuerpo-panel" class="panel-body">
+          <div *ngIf="student.goal.progress != 0" class="progress">
+            <div class="progress-bar" [style.width.%]="student.goal.progress">
+              <span class="sp-label">{{ student.goal.progress | BeautifyProgessBar }}</span>
+            </div>
+          </div>
+          <p *ngIf="student.goal.progress == 0" class="sp-label2 text-muted">Sin tareas completadas</p>
+
+          <!-- NUEVA TAREA -->
+
+          <div id="dialog-mat" class='wrap material-dialog'>
+            <div id="dialog-mat-content" class='content'>
+              <h3 id="titulo-nueva-tarea">Nueva tarea</h3>
+
+              <div class="form-group form-radio-button">
+                <div class="radio radio-button-tarea">
+                  <label>
+                    <input (click)="setType(0)" class="boton-de-radio" type="radio" name="sample1" value="1"><span class="circle"></span><span class="check"></span> AERÓBICA
+                  </label>
+                </div>
+                <div class="radio radio-button-tarea">
+                  <label>
+                    <input (click)="setType(1)" class="boton-de-radio" type="radio" name="sample1" value="2"><span class="circle"></span><span class="check"></span> ANAERÓBICA
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="nombreTarea" class="col-md-2 control-label">Nombre</label>
+                <div class="col-md-10">
+                  <input [(ngModel)]="task.name" class="form-control" id="nombreTarea" placeholder="Nombre de la tarea" type="text">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="descripcionTarea" class="col-md-2 control-label">Descripción</label>
+                <div class="col-md-10">
+                  <textarea [(ngModel)]="task.description" class="form-control" id="descripcionTarea" placeholder="Decripción de la tarea" type="text"></textarea>
+                </div>
+              </div>
+
+              <ul class="breadcrumb">
+                <li class="active">Escoja el tipo de ejercicio...</li>
+              </ul>
+
+              <div id="form-anaerobico" class="form-group">
+                <div class="col-md-6">
+                  <label for="repeticiones-tarea" class="col-md-2 control-label">Repets.</label>
+                  <div class="col-md-10">
+                    <input [(ngModel)]="task.objective1" class="form-control" id="repeteiciones-tarea" placeholder="Num. repeticiones" type="number">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="peso-tarea" class="col-md-2 control-label">Peso</label>
+                  <div class="col-md-10">
+                    <input [(ngModel)]="task.objective2" class="form-control" id="peso-tarea" placeholder="Peso Kg" type="number">
+                  </div>
+                </div>
+              </div>
+
+              <div id="form-aerobico" class="form-group">
+                <div class="col-md-6">
+                  <label for="distancia-tarea" class="col-md-2 control-label">Distancia</label>
+                  <div class="col-md-10">
+                    <input [(ngModel)]="task.objective1" class="form-control" id="distancia-tarea" placeholder="Distancia" type="number">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="tiempo-tarea" class="col-md-2 control-label">Tiempo</label>
+                  <div class="col-md-10">
+                    <input [(ngModel)]="task.objective2" class="form-control" id="tiempo-tarea" placeholder="Tiempo" type="number">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 col-xs-6 col-botones-dialog">
+                  <button (click)="saveTask(false)" class="boton-dialog btn btn-danger">Cancelar</button>
+                </div>
+                <div class="col-md-6 col-xs-6 col-botones-dialog">
+                  <button (click)="saveTask(true)" class="boton-dialog btn btn-success pull-right">Aceptar</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- FIN NUEVA TAREA -->
+
+
+          <ul class="accordion">
+
+            <li *ngFor="#task of tasks" class="accordion-item">
+              <input *ngIf="!task.completed" id="{{ 's' + task.id}}" class="hide" type="checkbox">
+              <div class="col-md-12 col-xs-12	col-sm-12 margin-row" [class.task-completed]="task.completed">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <i *ngIf="task.completed" class="material-icons">done</i>
+                  <label [attr.for]="'s'+task.id" [class]="task.completed ? 'accordion-label-completed' : 'accordion-label'">
+                    {{task.name}}
+                  </label>
+                </div>
+                <div id="botones-tarea" class="col-md-6 col-sm-6 col-xs-12">
+                  <div *ngIf="!task.completed" id="botones-tarea-inside" class="pull-right">
+                    <a *ngIf="!aut.esProfesor()" (click)="task.completed = true" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                      <i class="material-icons">done</i>
+                      <div class="ripple-container"></div>
+                    </a>
+                    <a *ngIf="aut.esProfesor()" href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                      <i class="material-icons">mode_edit</i>
+                      <div class="ripple-container"></div>
+                    </a>
+                    <a *ngIf="aut.esProfesor()" href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                      <i class="material-icons">close</i>
+                      <div class="ripple-container"></div>
+                    </a>
+                    <a href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                      <i class="material-icons">chat</i>
+                      <div class="ripple-container"></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <ul class="accordion-child">
+                {{task.description}}
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label class="col-md-2 control-label">Opciones</label>
+
+                    <div class="col-md-10">
+                      <div class="radio radio-primary">
+                        <label>
+                          <input type="radio" name="sample1" value="option1" checked=""><span class="circle"></span><span class="check"></span> Opción 1
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="sample1" value="option1"><span class="circle"></span><span class="check"></span> Opción 2
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"><span class="checkbox-material"><span class="check"></span></span> ¿Completado?
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="select111" class="col-md-2 control-label">¿Cuánto?</label>
+
+                    <div class="col-md-10">
+                      <select id="select111" class="form-control">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <a href="javascript:void(0)" class="btn btn-raised pull-right">Enviar</a>
+                </form>
+              </ul>
+            </li>
+
+          </ul>
+
+          <div id="container-boton-anyadir-tarea">
+            <button *ngIf="aut.esProfesor()" (click)="showDialog()" class="btn btn-primary">Añadir tarea</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-md-2"></div>
+  </div>
+  <div class="col-md-2"></div>
 </div>
 
 <div id="blurizable"></div>
