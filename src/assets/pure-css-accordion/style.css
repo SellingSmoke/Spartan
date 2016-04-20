@@ -284,3 +284,12 @@ a.glyphicon-plus.active {
 .col-botones-dialog {
   padding: 0 0 0 0 !important;
 }
+
+.icon-label-corner {
+  margin-left: 20px;
+  margin-top: 2px;
+}
+
+.ui.teal.right.corner.label.label-corner {
+  border-color: #009688 !important;
+}

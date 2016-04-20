@@ -44,7 +44,6 @@
                   <input [(ngModel)]="task.name" class="form-control" id="nombreTarea" placeholder="Nombre de la tarea" type="text">
                 </div>
               </div>
-
               <div class="form-group">
                 <label for="descripcionTarea" class="col-md-2 control-label">Descripción</label>
                 <div class="col-md-10">
@@ -134,7 +133,10 @@
                 </div>
               </div>
               <ul class="accordion-child">
-                {{task.description}}
+                <a class="ui teal right corner label label-corner">
+                  <i class="material-icons icon-label-corner">{{ task.type ? 'fitness_center' : 'directions_run' }}</i>
+                </a>
+                <h5>{{task.description}}</h5>
                 <form class="form-horizontal">
                   <div class="form-group">
                     <label class="col-md-2 control-label">Opciones</label>
@@ -177,7 +179,7 @@
                     </div>
                   </div>
 
-                  <a href="javascript:void(0)" class="btn btn-raised pull-right">Enviar</a>
+                  <a class="btn btn-raised pull-right hint--top hint--success hint--medium" data-hint="Enviar a tu entrenador">Enviar</a>
                 </form>
               </ul>
             </li>
