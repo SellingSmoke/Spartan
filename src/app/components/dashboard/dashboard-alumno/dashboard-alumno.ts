@@ -1,6 +1,7 @@
 import {Component, OnInit, Input, Output, EventEmitter } from 'angular2/core';
 import { RouteParams } from 'angular2/router';
 import { Student } from '../../../models/student';
+import { Comment } from '../../../models/comment';
 import { Task } from '../../../models/task';
 import { BeautifyProgessBarPipe, GoalNamePipe } from '../../../pipes/student-pipes.pipe';
 import { TaskService } from '../../../services/task.service';
@@ -53,6 +54,11 @@ export class DashboardAlumno implements OnInit{
 
 	completeTask(task){
 		task.completed = true;
+	}
+
+	saveComment(text: string){
+		var comment = new Comment(text);
+		this.student.goal.comments.push(comment);
 	}
 
 	saveTask(mode){

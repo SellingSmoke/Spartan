@@ -1,4 +1,6 @@
-export interface Goal {
+import { IComment } from './comment';
+
+export interface IGoal {
 
   id: number;             // ID de la Meta
   student_id: number;     // ID del alumno al que pertenece la meta
@@ -16,6 +18,29 @@ export interface Goal {
   // -> 2 Pierna
   // -> 3 ... (Por completar)
 
+  acepted: boolean;
+
   diet_id?: number;       // Una meta puede o no llevar una dieta asociada
+  comments: IComment[];
+
+}
+
+export class Goal implements Goal{
+    id:number;
+    student_id:number;
+    progress:number;
+    type:number;
+    campo_metaX:string;
+    acepted: boolean;
+    comments: IComment[];
+
+    constructor(s_id: number, type: number, c_x: string){
+      this.student_id = s_id;
+      this.progress = 0;
+      this.type = type;
+      this.campo_metaX = c_x;
+      this.acepted = false;
+      this.comments = [];
+    }
 
 }

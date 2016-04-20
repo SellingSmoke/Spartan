@@ -1,4 +1,4 @@
-import {Goal} from './goal';
+import {IGoal} from './goal';
 
 export interface Student {
 
@@ -14,5 +14,5 @@ export interface Student {
 
   // Datos calculados para evitar cargar datos a cada consulta
 
-  goal: Goal;
+  goal: IGoal;
 }

@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core';
 import {FORM_DIRECTIVES} from 'angular2/common';
-import {Goal} from "../../../models/goal";
+import { Goal } from "../../../models/goal";
 
 @Component({
     selector: 'inicio',
@@ -107,27 +107,13 @@ export class Meta {
     }
 
     guardar(){
+        // Declaro variables para dejar claros los cambios, refactoriza como quieras
         var meta:Goal;
-        meta = new MetaEnrique();
-        meta.id = 1; // Poner numero
-        meta.student_id = 3;     // ID del alumno al que pertenece la meta
-        meta.progress= 0;       // Al crearse 0
-        meta.type= this.selecciones.indexOf(this.seleccionado);
-
-        meta.campo_metaX= this.seleccionado2;    // Parametro X del tipo (Kg,Km)
-
+        var indexMeta = this.selecciones.indexOf(this.seleccionado);
+        var campoX = this.seleccionado2;    // Parametro X del tipo (Kg,Km)
+        var student_id = 3;     // ID del alumno al que pertenece la meta
+        // meta.id = 1; (Lo pone la base de datos)
+        meta = new Goal(student_id, indexMeta, campoX);
         console.log(meta);
     }
 };
-
-class MetaEnrique implements Goal{
-    id:number;
-    student_id:number;
-    progress:number;
-    type:number;
-    campo_metaX:string;
-    constructor(){
-
-    }
-
-}
