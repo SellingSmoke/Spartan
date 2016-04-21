@@ -1,8 +1,10 @@
-import {Component, OnInit, Input, Output, EventEmitter } from 'angular2/core';
+import { Component, OnInit, Input, Output, EventEmitter } from 'angular2/core';
 import { RouteParams } from 'angular2/router';
 import { Student } from '../../../models/student';
 import { Comment } from '../../../models/comment';
 import { Task } from '../../../models/task';
+import { Goal } from '../../../models/goal';
+import { Meta } from './meta'
 import { BeautifyProgessBarPipe, GoalNamePipe } from '../../../pipes/student-pipes.pipe';
 import { TaskService } from '../../../services/task.service';
 import { AutenticacionService } from '../../../services/autenticacion.service';
@@ -14,6 +16,7 @@ declare var jQuery:JQueryStatic;
 	selector: 'dashboard-alumno',
   templateUrl: 'app/components/dashboard/dashboard-alumno/dashboard-alumno.html',
   providers: [AutenticacionService, TaskService],
+	directives:  [Meta],
   pipes: [BeautifyProgessBarPipe, GoalNamePipe],
 	inputs: ['student']
 })
@@ -38,10 +41,15 @@ export class DashboardAlumno implements OnInit{
    */
 
 	ngOnInit(){
-		this.task = new Task(this.student.goal.id);
-		this._taskService.getTasks(this.student.goal.id).then(
-			tasks => this.tasks = tasks
-		);
+		this.tasks = [];
+
+		if (this.student.goal){
+			this.task = new Task(this.student.goal.id);
+			this._taskService.getTasks(this.student.goal.id).then(
+				tasks => this.tasks = tasks
+			);
+		}
+
 	}
 
 	/*
@@ -51,6 +59,13 @@ export class DashboardAlumno implements OnInit{
 	goBack() {
 		this.trainer_dashboard_event.emit(null);
   }
+
+	getGoal(goal: Goal){
+		console.log("LLEGO LA META");
+		this.student.goal = goal;
+		this.task = new Task(this.student.goal.id);
+		console.log("LLEGO LA META"+this.student.goal.campo_metaX);
+	}
 
 
 	saveComment(text: string){

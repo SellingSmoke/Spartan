@@ -1,4 +1,6 @@
-<div class="sp-container-lg">
+<goal-form *ngIf="!student.goal" (new_goal)='getGoal($event)'></goal-form>
+
+<div *ngIf="student.goal" class="sp-container-lg">
   <br>
 
   <div class="col-md-1"></div>

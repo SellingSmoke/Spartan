@@ -1,11 +1,11 @@
-import {Component} from 'angular2/core';
+import { Component, Output, EventEmitter } from 'angular2/core';
 import {FORM_DIRECTIVES} from 'angular2/common';
 import { Goal } from "../../../models/goal";
 
 @Component({
-    selector: 'inicio',
+    selector: 'goal-form',
     styleUrls: ['app/components/dashboard/dashboard-alumno/meta.css'],
-    templateUrl: 'app/dashboard/dashboard-alumno/meta.html',
+    templateUrl: 'app/components/dashboard/dashboard-alumno/meta.html',
     directives: [FORM_DIRECTIVES]
 })
 
@@ -21,6 +21,9 @@ export class Meta {
 
     public frase:string;
     public frase2:string;
+
+    @Output()
+    new_goal = new EventEmitter<Goal>();
 
     constructor(){
         this.seleccionado=" ( ··· ) ";
@@ -115,5 +118,6 @@ export class Meta {
         // meta.id = 1; (Lo pone la base de datos)
         meta = new Goal(student_id, indexMeta, campoX);
         console.log(meta);
+        this.new_goal.emit(meta);
     }
 };
