@@ -24,8 +24,6 @@ export class LoggedInRouterOutlet extends RouterOutlet {
         this.rutasPrivadas = {
             'inicio': true,
             'perfil': true,
-            'dietas': true,
-            'meta': true
         };
     }
 

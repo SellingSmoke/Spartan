@@ -1,8 +1,10 @@
-import {Component, OnInit, Input, Output, EventEmitter } from 'angular2/core';
+import { Component, OnInit, Input, Output, EventEmitter } from 'angular2/core';
 import { RouteParams } from 'angular2/router';
 import { Student } from '../../../models/student';
 import { Comment } from '../../../models/comment';
 import { Task } from '../../../models/task';
+import { Goal } from '../../../models/goal';
+import { Meta } from './meta'
 import { BeautifyProgessBarPipe, GoalNamePipe } from '../../../pipes/student-pipes.pipe';
 import { TaskService } from '../../../services/task.service';
 import { AutenticacionService } from '../../../services/autenticacion.service';
@@ -14,6 +16,7 @@ declare var jQuery:JQueryStatic;
 	selector: 'dashboard-alumno',
   templateUrl: 'app/components/dashboard/dashboard-alumno/dashboard-alumno.html',
   providers: [AutenticacionService, TaskService],
+	directives:  [Meta],
   pipes: [BeautifyProgessBarPipe, GoalNamePipe],
 	inputs: ['student']
 })
@@ -30,6 +33,12 @@ export class DashboardAlumno implements OnInit{
 
 	task: Task;
 
+	comment: Comment;
+
+	tab: number;
+
+	rol: number;
+
 	constructor(private aut: AutenticacionService, private _taskService: TaskService) {}
 
 	/*
@@ -38,10 +47,18 @@ export class DashboardAlumno implements OnInit{
    */
 
 	ngOnInit(){
+		this.tasks = [];
+		this.tab = 1;
 		this.task = new Task(this.student.goal.id);
-		this._taskService.getTasks(this.student.goal.id).then(
-			tasks => this.tasks = tasks
-		);
+		this.comment = new Comment();
+		this.rol = localStorage.getItem('rol');
+
+		if (this.student.goal){
+			this._taskService.getTasks(this.student.goal.id).then(
+				tasks => this.tasks = tasks
+			);
+		}
+
 	}
 
 	/*
@@ -52,10 +69,15 @@ export class DashboardAlumno implements OnInit{
 		this.trainer_dashboard_event.emit(null);
   }
 
+	getGoal(goal: Goal){
+		this.student.goal = goal;
+		this.task = new Task(this.student.goal.id);
+	}
+
 
 	saveComment(text: string){
-		var comment = new Comment(text);
-		this.student.goal.comments.push(comment);
+		this.student.goal.comments.push(this.comment);
+		this.comment = new Comment();
 	}
 
 	saveTask(mode){
