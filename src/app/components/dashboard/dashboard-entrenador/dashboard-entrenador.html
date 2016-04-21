@@ -27,7 +27,8 @@
                 </div>
                 <!-- FOTO ALUMNO -->
                 <div *ngIf="selectedStudent != student" class="image">
-                    <img src="https://account.socialbakers.com/default_user.png">
+                    <img [src]="images[student.id -1]">
+                    <!-- <img src="https://account.socialbakers.com/default_user.png"> -->
                 </div>
                 <!-- FIN FOTO ALUMNO -->
 

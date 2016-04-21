@@ -30,30 +30,32 @@
   top: 40%;
   background-color: white;
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-
 }
 h2 {
   text-transform: capitalize;
 }
 .demo-card-wide > .mdl-card__title {
-  color: #000;
   height: 176px;
   /*background: url('../assets/demos/welcome_card.jpg') center / cover;*/
 }
 
-.mdl-card__title {
-  opacity: 0.5;
+.mdl-card__title{
+  color: white;
+}
+
+.mdl-card__title:hover{
+  font-size: 1.2em;
 }
 
 .mdl-card__title-text{
   opacity: 1.0 !important;
+  font-size: 2em !important;
 }
 .mdl-card {
   margin: 1em !important;
   display: inline-block;
 }
 .mdl-card:hover {
-  color: red;
+  color: white;
   cursor: pointer;
 }

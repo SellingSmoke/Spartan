@@ -34,11 +34,11 @@ export class Meta {
         this.seleccion="spartan";
         this.selecciones = [
           {id: 0, title: "perder peso", img: "url('../assets/imagenes/perderPeso.jpg') center / cover", icon: "fitness_center",description: "Librate de esos kilos de mas en cuestión de semanas"},
-          {id: 1,title: "ganar masa muscular", icon: "fitness_center", img: "url('../assets/imagenes/perderPeso.jpg') center / cover", description: "Deja de ser un tirillas sin doparte, repartiras como el de mas"},
-          {id: 2,title: "ganar resistencia", icon: "fitness_center", img: "url('../assets/imagenes/perderPeso.jpg') center / cover", description: "Para poder bajar las escaleras sin axfixiarte"} ,
-          {id: 3,title: "trabajar especificamente", icon: "fitness_center", img: "url('../assets/imagenes/perderPeso.jpg') center / cover", description: "Elije un ejecicio determinado para trabajar una zona específica"},
-          {id: 4,title: "mejorar en", icon: "fitness_center", img: "url('../assets/imagenes/perderPeso.jpg') center / cover", description: "Trata de mejorar en tu deporte para rendir al máximo"},
-          {id: 5,title: "otra", icon: "fitness_center", img: "url('../assets/imagenes/perderPeso.jpg') center / cover", description: "Proponos una meta propia, solo tú puedes marcar tus limites"}];
+          {id: 1,title: "ganar masa muscular", icon: "fitness_center", img: "url('../assets/imagenes/ganarMusculo.jpg') center / cover", description: "Deja de ser un tirillas sin doparte, repartiras como el de mas"},
+          {id: 2,title: "ganar resistencia", icon: "fitness_center", img: "url('../assets/imagenes/resistencia.jpg') center / cover", description: "Para poder bajar las escaleras sin axfixiarte"} ,
+          {id: 3,title: "trabajar especificamente", icon: "fitness_center", img: "url('../assets/imagenes/trabajoEspecifico.jpg') center / cover", description: "Elije un ejecicio determinado para trabajar una zona específica"},
+          {id: 4,title: "mejorar en", icon: "fitness_center", img: "url('../assets/imagenes/mejorar.jpg') center / cover", description: "Trata de mejorar en tu deporte para rendir al máximo"},
+          {id: 5,title: "otra", icon: "fitness_center", img: "url('../assets/imagenes/otra.jpg') center / cover", description: "Proponos una meta propia, solo tú puedes marcar tus limites"}];
     }
 
     noSeleccion(){
