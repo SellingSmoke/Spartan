@@ -11,18 +11,18 @@
         <div class="panel-heading mdl-typography--title" id="sp-heading">
           <button *ngIf="aut.esProfesor()" id="boton-back" (click)="goBack()" class="btn btn-raised pull-right btn-fab"><i class="material-icons">arrow_back</i></button>
           <h3 id="titulo-meta" [class.titulo-meta-prof]="aut.esProfesor()">{{ student.goal | GoalName }}</h3>
-          <div *ngIf="student.goal.progress != 0" class="progress">
+          <div id="barra-progreso-meta"*ngIf="student.goal.progress != 0" class="progress">
             <div class="progress-bar" [style.width.%]="student.goal.progress">
               <span class="sp-label">{{ student.goal.progress | BeautifyProgessBar }}</span>
             </div>
           </div>
-          <!-- TABS -->
-          <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
-            <div class="mdl-layout__tab-bar">
-              <a class="mdl-layout__tab" (click)="tab = 1" [class.active]="tab === 1">Tareas</a>
-              <a class="mdl-layout__tab" (click)="tab = 2" [class.active]="tab === 2">Comentarios</a>
-              <a class="mdl-layout__tab" (click)="tab = 3" [class.active]="tab === 3">Dietas</a>
-            </div>
+        </div>
+        <!-- TABS -->
+        <div id="botones-tabs" class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+          <div id="botones-tabs-in" class="mdl-layout__tab-bar">
+            <a class="mdl-layout__tab" (click)="tab = 1" [class.active]="tab === 1">Tareas</a>
+            <a class="mdl-layout__tab" (click)="tab = 2" [class.active]="tab === 2">Comentarios</a>
+            <a class="mdl-layout__tab" (click)="tab = 3" [class.active]="tab === 3">Dietas</a>
           </div>
         </div>
 
@@ -110,7 +110,7 @@
 
           <!-- TAREAS -->
 
-          <ul class="accordion">
+          <ul id="ul-accordion" class="accordion">
 
             <div *ngIf="tasks.length === 0" class="ui icon warning message">
               <i class="comments icon"></i>
@@ -125,34 +125,39 @@
               </div>
             </div>
 
-            <li *ngFor="#task of tasks" class="accordion-item">
+            <li *ngFor="#task of tasks" class="accordion-item" [class.hover-transition]="!task.completed">
               <input *ngIf="!task.completed" id="{{ 's' + task.id}}" class="hide" type="checkbox">
               <div class="col-md-12 col-xs-12	col-sm-12 margin-row" [class.task-completed]="task.completed">
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                  <i *ngIf="task.completed" class="material-icons">done</i>
+                <div class="col-md-6 col-sm-6 col-xs-10">
+
                   <label [attr.for]="'s'+task.id" [class]="task.completed ? 'accordion-label-completed' : 'accordion-label'">
                     {{task.name}}
                   </label>
                 </div>
-                <div id="botones-tarea" class="col-md-6 col-sm-6 col-xs-12">
-                  <div *ngIf="!task.completed" id="botones-tarea-inside" class="pull-right">
-                    <a *ngIf="!aut.esProfesor()" (click)="task.completed = true" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                <div id="botones-tarea" class="col-md-6 col-sm-6 col-xs-2">
+                  <div id="botones-tarea-inside" class="pull-right">
+                    <a *ngIf="!aut.esProfesor() && !task.completed" (click)="task.completed = true" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
                       <i class="material-icons">done</i>
                       <div class="ripple-container"></div>
                     </a>
-                    <a *ngIf="aut.esProfesor()" href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                    <a *ngIf="task.completed" (click)="task.completed = true" class="only-check-no-button mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                      <i class="material-icons">done</i>
+                      <div class="ripple-container"></div>
+                    </a>
+                    <a *ngIf="aut.esProfesor() && !task.completed" href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
                       <i class="material-icons">mode_edit</i>
                       <div class="ripple-container"></div>
                     </a>
-                    <a *ngIf="aut.esProfesor()" href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                    <a *ngIf="aut.esProfesor() && !task.completed" href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
                       <i class="material-icons">close</i>
                       <div class="ripple-container"></div>
                     </a>
+                    <!--<i *ngIf="task.completed" class="material-icons pull-right">done</i>-->
                   </div>
                 </div>
               </div>
               <ul class="accordion-child">
-                <a class="ui teal right corner label label-corner">
+                <a class="ui teal right corner label label-corner" data-toggle="tooltip" [title]="'Ejercicio ' + (task.type ? 'Anaeróbico' : 'Aeróbico')">
                   <i class="material-icons icon-label-corner">{{ task.type ? 'fitness_center' : 'directions_run' }}</i>
                 </a>
                 <h5>{{task.description}}</h5>
@@ -289,32 +294,34 @@
               <p>Contacta con tu entrenador para que te asigne una dieta a tu meta</p>
             </div>
           </div>
-          <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-            <thead>
-              <tr>
-                <th class="mdl-data-table__cell--non-numeric">Material</th>
-                <th>Quantity</th>
-                <th>Unit price</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
-                <td>25</td>
-                <td>$2.90</td>
-              </tr>
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
-                <td>50</td>
-                <td>$1.25</td>
-              </tr>
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
-                <td>10</td>
-                <td>$2.35</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-responsive">
+            <table id="tabla-dieta" class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+              <thead>
+                <tr>
+                  <th class="mdl-data-table__cell--non-numeric">Material</th>
+                  <th>Quantity</th>
+                  <th>Unit price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
+                  <td>25</td>
+                  <td>$2.90</td>
+                </tr>
+                <tr>
+                  <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
+                  <td>50</td>
+                  <td>$1.25</td>
+                </tr>
+                <tr>
+                  <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
+                  <td>10</td>
+                  <td>$2.35</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
       </div>
