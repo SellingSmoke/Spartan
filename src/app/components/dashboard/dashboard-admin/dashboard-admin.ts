@@ -39,7 +39,7 @@ export class DashboardAdmin implements OnInit{
 	 */
 
 	ngAfterViewInit() {
-
+		
 	}
 
   ngOnInit() {
