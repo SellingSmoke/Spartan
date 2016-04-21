@@ -10,7 +10,7 @@
 .accordion {
     background: #fff;
     /*border: 1px solid #e0e0e0;*/
-    padding-left: 1px;
+    padding: 0 0 0 0;
 }
 
 .accordion-item {
@@ -19,12 +19,12 @@
     border-bottom: 1px solid #e0e0e0;
 }
 
-.accordion-item:last-child {
-    border-bottom: none;
+.accordion-item:first-child {
+    border-top: 1px #eeeeee;
 }
 
 .accordion-label {
-    padding: 20px 0px 10px 30px;
+    padding: 20px 0px 10px 18px;
     width: 100%;
     display: block;
     font-size: 18px;
@@ -37,30 +37,13 @@
     display: block;
     font-size: 18px;
     color: inherit;
-    display: inline;
 }
 
 .accordion-label:hover {
     cursor: pointer;
 }
 
-.accordion-label:before {
-    content: '';
-    position: absolute;
-    height: 5px;
-    width: 5px;
-    top: 22px;
-    left: 12px;
-    display: inline-block;
-    border-left: 5px solid #999;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-}
 
-input[type=checkbox]:checked ~ div .accordion-label:before {
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-}
 
 .accordion-child {
     margin: 0;
@@ -258,9 +241,12 @@ a.glyphicon-plus.active {
       padding: 20px 0 20px 0 !important;
     }
 
-    #botones-tarea-inside {
-      float: none !important;
-      text-align:center;
+    #col-botones-tarea {
+      padding: 10px 0 10px 0;
+    }
+
+    #col-nombre-tarea {
+      padding: 10px 0 10px 0;
     }
 }
 
@@ -292,4 +278,53 @@ a.glyphicon-plus.active {
 
 .ui.teal.right.corner.label.label-corner {
   border-color: #009688 !important;
+  cursor: default;
+}
+
+.only-check-no-button{
+  background: transparent;
+  box-shadow: none;
+  pointer-events: none;
+  color: #009688;
+}
+
+.hover-transition {
+  transition-duration: .28s;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-property: background-color;
+}
+
+.hover-transition:hover{
+  background-color: #eeeeee;
+}
+
+#tab-tarea{
+  padding: 0 0 0 0;
+}
+
+#ul-accordion {
+  margin: 0 0 0 0;
+}
+
+#dialog-mat {
+  margin-top: 20px;
+}
+
+#botones-tabs {
+  padding-bottom: 0 !important;
+  border-bottom: 1px solid;
+  border-color: #DCDCDC;
+  background-color: #eeeeee;
+}
+
+#botones-tabs-in {
+  margin-top: 20px;
+}
+
+#barra-progreso-meta {
+  margin: 0 0 0 0;
+}
+
+#tabla-dieta {
+  width: 100%;
 }

@@ -21,12 +21,12 @@
 	padding-bottom: 0 !important;
 }
 
-div.sp-link{
+div.sp-link {
 	padding-top: 1em;
 	text-align: center;
 }
 
-td.sp-link:hover{
+td.sp-link:hover {
 	text-align: center;
 	color: #00B5AD;
 }
