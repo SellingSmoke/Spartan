@@ -29,15 +29,15 @@ export class DashboardAlumno implements OnInit{
 	@Output()
   trainer_dashboard_event = new EventEmitter<any>();
 
-	tasks: Task[];
+	tasks: Task[];		  // Lista de tareas del usuario
 
-	task: Task;
+	tab: number;				// Tab actual
 
-	comment: Comment;
+	rol: number;				// Rol del usuario (Evita hacer multiples peticiones)
 
-	tab: number;
+	task: Task;					// Modelo de la nueva meta para el formulario
 
-	rol: number;
+	comment: Comment;   // Modelo de un nuevo comentario
 
 	constructor(private aut: AutenticacionService, private _taskService: TaskService) {}
 
@@ -49,16 +49,15 @@ export class DashboardAlumno implements OnInit{
 	ngOnInit(){
 		this.tasks = [];
 		this.tab = 1;
-		this.task = new Task(this.student.goal.id);
 		this.comment = new Comment();
 		this.rol = localStorage.getItem('rol');
-
+		console.log(this.student.goal);
 		if (this.student.goal){
 			this._taskService.getTasks(this.student.goal.id).then(
 				tasks => this.tasks = tasks
 			);
+			this.task = new Task(this.student.goal.id);
 		}
-
 	}
 
 	/*

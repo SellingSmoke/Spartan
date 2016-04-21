@@ -1,21 +1,33 @@
-<div class="general">
+<div class="row sp-container-lg col-md-offset-1 col-md-10">
+  <div class="general">
+
     <div *ngIf="seleccion" (click)="noSeleccion()" class="seleccion">
-        <h1 class="seleccionable" *ngFor="#meta of selecciones" (click)="noSeleccionArgumentos(meta)">{{meta}}</h1>
-    </div>
-    <div *ngIf="seleccion2" (click)="noSeleccion2($event.target)" class="seleccion">
-        <h1 *ngIf="! esOtro()" class="seleccionable" *ngFor="#meta of selecciones2" (click)="noSeleccionArgumentos2(meta)">{{meta}}</h1>
-        <div (click)="nada($event)" class="col-md-4 col-md-offset-4 form-horizontal divDeAñadir" *ngIf="esOtro()" >
-          <input [(ngModel)]="seleccionado2" class="form-control" placeholder="Añade tu propia meta" type="text">
-          <span class="material-input"></span>
-          <a class="btn btn-ln btn-raised btn-danger" (click)="noSeleccion2($event.target)">Guardar esta meta</a>
-        </div>
+
+      <card *ngFor="#meta of selecciones" [card]="meta" (click)="noSeleccionArgumentos(meta)"></card>
 
     </div>
-    <div>
-        <h1>Como meta me gustaría  <span class="click" (click)="nuevaSeleccion()">{{seleccionado}}</span></h1>
-        <h1 *ngIf="seleccionado2"><span *ngIf="frase" >{{frase}}</span> <br *ngIf="esOtro()" /> <span class="click" (click)="nuevaSeleccion2()">{{seleccionado2}}</span> <span *ngIf="frase2" >{{frase2}}</span></h1>
+
+    <div *ngIf="seleccion2" (click)="noSeleccion2($event.target)" class="seleccion">
+      <h2 *ngIf="! esOtro()" class="seleccionable" *ngFor="#meta of selecciones2" (click)="noSeleccionArgumentos2(meta)">{{meta}}</h2>
+      <div (click)="nada($event)" class="col-md-4 col-md-offset-4 form-horizontal divDeAñadir" *ngIf="esOtro()">
+        <div class="form-group">
+          <input [(ngModel)]="seleccionado2" class="form-control" placeholder="Añade tu propia meta" type="text">
+        </div>
+        <span class="material-input"></span>
+        <a class="btn btn-ln btn-raised btn-danger" (click)="noSeleccion2($event.target)">Guardar esta meta</a>
+      </div>
     </div>
+
     <div>
-        <a class="btn btn-ln btn-raised btn-danger" (click)="guardar()">Guardar Meta</a>
+      <h2>Como meta me gustaría  <span class="click" (click)="nuevaSeleccion()">{{seleccionado.title}}</span></h2>
+      <h2 *ngIf="seleccionado2"><span *ngIf="frase" >{{ frase }}</span> <br *ngIf="esOtro()" />
+          <span class="click" (click)="nuevaSeleccion2()">{{seleccionado2}}</span> <span *ngIf="frase2" >{{frase2}}</span>
+    </h2>
     </div>
+
+    <div>
+      <a class="btn btn-ln btn-raised btn-danger" (click)="guardar()">Guardar Meta</a>
+    </div>
+
+  </div>
 </div>
