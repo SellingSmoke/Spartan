@@ -1,79 +1,88 @@
 body {
-    padding-top: 3.5em !important;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5em;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
-    overflow: -moz-scrollbars-vertical;
-    overflow-y: scroll;
+  padding-top: 3.5em !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
+  overflow: -moz-scrollbars-vertical;
+  overflow-y: scroll;
 }
-
 h1, h2, h3, h4, h5, h6 {
-    color: #222;
-    font-weight: 600;
-    line-height: 1.3em;
+  color: #222;
+  font-weight: 600;
+  line-height: 1.3em;
 }
-
 h2 {
-    margin-top: 1.3em;
+  margin-top: 1.3em;
 }
-
 a {
-    color: #0083e8;
+  color: #0083e8;
 }
-
 b, strong {
-    font-weight: 600;
+  font-weight: 600;
 }
-
-
 @-webkit-keyframes colorize {
-    0% {
-        -webkit-filter: grayscale(100%);
-    }
-    100% {
-        -webkit-filter: grayscale(0%);
-    }
+  0% {
+    -webkit-filter: grayscale(100%);
+  }
+  100% {
+    -webkit-filter: grayscale(0%);
+  }
 }
-
 @keyframes colorize {
-    0% {
-        filter: grayscale(100%);
-    }
-    100% {
-        filter: grayscale(0%);
-    }
+  0% {
+    filter: grayscale(100%);
+  }
+  100% {
+    filter: grayscale(0%);
+  }
 }
-
 .progress {
   height: 30px;
   border-radius: 4px;
 }
-
 .progress-bar {
   /** background-color: #B71C1C !important; */
   line-height: 30px !important;
 }
-
 a.mdl-button--mini-fab {
   margin-right: 10px !important;
 }
-
 #goal-title {
   text-align: center;
 }
-
 .container {
   width: auto;
 }
-
 ul {
- list-style-type: none;
+  list-style-type: none;
+}
+.navbar-fixed-top {
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
 }
 
+/* TABS */
 
-.navbar-fixed-top {
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+.mdl-layout__tab-bar {
+  height: auto !important;
+  cursor: pointer;
+}
+.mdl-layout__tab {
+  color: black !important;
+}
+.mdl-layout__tab:hover {
+  color: #009688 !important;
+}
+.mdl-layout__tab.active {
+  border-bottom: #009688 solid 2px;
+  color: #009688 !important;
+}
+.mdl-layout__tab-bar {
+  background: none !important;
+}
+
+#tab-comentarios{
+  padding: 2em 2em !important;
 }

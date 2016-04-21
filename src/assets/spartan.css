@@ -10,6 +10,17 @@
 	border-radius: 5px;
 }
 
+.sp-img-comment{
+	background-color: transparent !important;
+	border-radius: 0 !important;
+  padding: 0 !important;
+	width: auto !important;
+}
+
+#sp-heading{
+	padding-bottom: 0 !important;
+}
+
 div.sp-link{
 	padding-top: 1em;
 	text-align: center;

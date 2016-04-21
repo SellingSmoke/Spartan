@@ -15,6 +15,8 @@ export interface ITask{
   result2: number;        // Resultado del alumno 2  (Peso/Tiempo)
 }
 
+var i = 5;
+
 export class Task implements ITask{
 
   id: number;             // ID de la Tarea
@@ -39,6 +41,8 @@ export class Task implements ITask{
       this.result2 = 0;
       this.completed = false;
       this.goal_id = goal_id;
+      this.id = i + 1;
+      i++;
     }
     if(task != null){
       this.fromJSON(task);

@@ -20,9 +20,10 @@ export class Comment implements IComment{
   comment: string;
   read: boolean;
 
-  constructor(comment: string){
+  constructor(){
+    this.comment = "";
     this.rol = localStorage.getItem('rol');
-    this.comment = comment;
+    console.log(this.rol);
     this.date = new Date().getTime();
     this.read = false;
   }

@@ -3,23 +3,30 @@
 <div *ngIf="student.goal" class="sp-container-lg">
   <br>
 
-  <div class="col-md-1"></div>
-  <div class="col-md-10">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
     <div class="container">
       <div class="panel panel-default">
 
-        <div class="panel-heading mdl-typography--title">
+        <div class="panel-heading mdl-typography--title" id="sp-heading">
           <button *ngIf="aut.esProfesor()" id="boton-back" (click)="goBack()" class="btn btn-raised pull-right btn-fab"><i class="material-icons">arrow_back</i></button>
-          <h1 id="titulo-meta" [class.titulo-meta-prof]="aut.esProfesor()">{{ student.goal | GoalName }}</h1>
-        </div>
-
-        <div id="cuerpo-panel" class="panel-body">
+          <h3 id="titulo-meta" [class.titulo-meta-prof]="aut.esProfesor()">{{ student.goal | GoalName }}</h3>
           <div *ngIf="student.goal.progress != 0" class="progress">
             <div class="progress-bar" [style.width.%]="student.goal.progress">
               <span class="sp-label">{{ student.goal.progress | BeautifyProgessBar }}</span>
             </div>
           </div>
-          <p *ngIf="student.goal.progress == 0" class="sp-label2 text-muted">Sin tareas completadas</p>
+          <!-- TABS -->
+          <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+            <div class="mdl-layout__tab-bar">
+              <a class="mdl-layout__tab" (click)="tab = 1" [class.active]="tab === 1">Tareas</a>
+              <a class="mdl-layout__tab" (click)="tab = 2" [class.active]="tab === 2">Comentarios</a>
+              <a class="mdl-layout__tab" (click)="tab = 3" [class.active]="tab === 3">Dietas</a>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="tab === 1" id="tab-tarea" class="panel-body">
 
           <!-- NUEVA TAREA -->
 
@@ -101,8 +108,22 @@
 
           <!-- FIN NUEVA TAREA -->
 
+          <!-- TAREAS -->
 
           <ul class="accordion">
+
+            <div *ngIf="tasks.length === 0" class="ui icon warning message">
+              <i class="comments icon"></i>
+              <div class="content">
+                <div class="header">
+                  Sin tareas
+                </div>
+                <ul class="list">
+                  <li *ngIf="!student.goal.acepted && rol == 2">Tu entrenador aún no ha aceptado tu meta</li>
+                  <li>{{ rol == 1 ? 'Añade nuevas tareas a tu alumno' : 'Espera a que tu entrenador te asigne tareas' }}</li>
+                </ul>
+              </div>
+            </div>
 
             <li *ngFor="#task of tasks" class="accordion-item">
               <input *ngIf="!task.completed" id="{{ 's' + task.id}}" class="hide" type="checkbox">
@@ -125,10 +146,6 @@
                     </a>
                     <a *ngIf="aut.esProfesor()" href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
                       <i class="material-icons">close</i>
-                      <div class="ripple-container"></div>
-                    </a>
-                    <a href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
-                      <i class="material-icons">chat</i>
                       <div class="ripple-container"></div>
                     </a>
                   </div>
@@ -188,10 +205,118 @@
 
           </ul>
 
+          <!-- FIN TAREAS -->
+
+          <!-- AÑADIR TAREA (ENTRENADOR) -->
           <div id="container-boton-anyadir-tarea">
             <button *ngIf="aut.esProfesor()" (click)="showDialog()" class="btn btn-primary">Añadir tarea</button>
           </div>
+
         </div>
+
+
+        <!-- COMENTARIOS -->
+
+
+        <div *ngIf="tab === 2" id="tab-comentarios" class="panel-body">
+          <div *ngIf="student.goal.comments.length === 0" class="ui icon info message">
+            <i class="comments icon"></i>
+            <div class="content">
+              <div class="header">
+                Sin comentarios
+              </div>
+              <p>Aqui podrás plantear añadir comentarios a la meta</p>
+            </div>
+          </div>
+
+          <div *ngFor="#comment of student.goal.comments" class="ui right aligned grid">
+            <div *ngIf="comment.rol == 2" class="left floated left aligned nine wide column">
+              <div class="ui feed">
+                <div class="event">
+                  <div class="label sp-img-comment">
+                    <img src="/assets/imagenes/student.jpg">
+                  </div>
+                  <div class="content">
+                    <div class="date">
+                      3 days ago
+                    </div>
+                    <div class="summary">
+                      {{ comment.comment }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="comment.rol == 1" class="right floated right aligned nine wide column">
+              <div class="ui feed pull-right">
+                <div class="event">
+                  <div class="label sp-img-comment">
+                    <img src="/assets/imagenes/trainer.jpg">
+                  </div>
+                  <div class="content">
+                    <div class="date">
+                      3 days ago
+                    </div>
+                    <div class="summary">
+                      {{ comment.comment }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="textArea" class="col-md-2 control-label">Añade tu comentario</label>
+            <div class="col-md-10">
+              <textarea [(ngModel)]="comment.comment" class="form-control" rows="3" id="textArea" required></textarea>
+              <button (click)="saveComment()" class="btn btn-primary btn-raised" type="submit">Enviar</button>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- DIETAS -->
+
+        <div *ngIf="tab === 3" id="tab-dieta" class="panel-body">
+          <div class="ui icon warning message">
+            <i class="table icon"></i>
+            <div class="content">
+              <div class="header">
+                Sin dieta disponible
+              </div>
+              <p>Contacta con tu entrenador para que te asigne una dieta a tu meta</p>
+            </div>
+          </div>
+          <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+            <thead>
+              <tr>
+                <th class="mdl-data-table__cell--non-numeric">Material</th>
+                <th>Quantity</th>
+                <th>Unit price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
+                <td>25</td>
+                <td>$2.90</td>
+              </tr>
+              <tr>
+                <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
+                <td>50</td>
+                <td>$1.25</td>
+              </tr>
+              <tr>
+                <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
+                <td>10</td>
+                <td>$2.35</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
       </div>
     </div>
   </div>

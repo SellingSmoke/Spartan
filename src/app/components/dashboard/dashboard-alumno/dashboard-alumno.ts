@@ -33,6 +33,12 @@ export class DashboardAlumno implements OnInit{
 
 	task: Task;
 
+	comment: Comment;
+
+	tab: number;
+
+	rol: number;
+
 	constructor(private aut: AutenticacionService, private _taskService: TaskService) {}
 
 	/*
@@ -42,9 +48,12 @@ export class DashboardAlumno implements OnInit{
 
 	ngOnInit(){
 		this.tasks = [];
+		this.tab = 1;
+		this.task = new Task(this.student.goal.id);
+		this.comment = new Comment();
+		this.rol = localStorage.getItem('rol');
 
 		if (this.student.goal){
-			this.task = new Task(this.student.goal.id);
 			this._taskService.getTasks(this.student.goal.id).then(
 				tasks => this.tasks = tasks
 			);
@@ -61,16 +70,14 @@ export class DashboardAlumno implements OnInit{
   }
 
 	getGoal(goal: Goal){
-		console.log("LLEGO LA META");
 		this.student.goal = goal;
 		this.task = new Task(this.student.goal.id);
-		console.log("LLEGO LA META"+this.student.goal.campo_metaX);
 	}
 
 
 	saveComment(text: string){
-		var comment = new Comment(text);
-		this.student.goal.comments.push(comment);
+		this.student.goal.comments.push(this.comment);
+		this.comment = new Comment();
 	}
 
 	saveTask(mode){
