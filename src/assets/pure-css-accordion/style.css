@@ -328,3 +328,12 @@ a.glyphicon-plus.active {
 #tabla-dieta {
   width: 100%;
 }
+
+.margin-tunned {
+  margin: 15px 15px 15px 15px !important;
+  width: auto !important;
+}
+
+.more-margin {
+  margin: 32px 32px 32px 32px !important;
+}
