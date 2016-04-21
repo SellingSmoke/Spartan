@@ -1,19 +1,20 @@
 import { Component, Output, EventEmitter } from 'angular2/core';
 import {FORM_DIRECTIVES} from 'angular2/common';
 import { Goal } from "../../../models/goal";
+import { Card, ICard } from './card'
 
 @Component({
     selector: 'goal-form',
     styleUrls: ['app/components/dashboard/dashboard-alumno/meta.css'],
     templateUrl: 'app/components/dashboard/dashboard-alumno/meta.html',
-    directives: [FORM_DIRECTIVES]
+    directives: [FORM_DIRECTIVES, Card]
 })
 
 export class Meta {
 
     public seleccion:string;
-    public selecciones:String[];
-    public seleccionado:string;
+    public selecciones:ICard[];
+    public seleccionado:ICard;
 
     public seleccion2:string;
     public selecciones2:String[];
@@ -26,22 +27,28 @@ export class Meta {
     new_goal = new EventEmitter<Goal>();
 
     constructor(){
-        this.seleccionado=" ( ··· ) ";
+        this.seleccionado = {id: 0, title: " ( ··· ) ", description: "", img: null};
     }
 
     nuevaSeleccion(){
         this.seleccion="spartan";
-        this.selecciones = ["perder peso","ganar masa muscular", "ganar resistencia" , "trabajar especificamente", "mejorar en", "otra"];
+        this.selecciones = [
+          {id: 0, title: "perder peso", img: "url('../assets/imagenes/perderPeso.jpg') center / cover", icon: "fitness_center",description: "Librate de esos kilos de mas en cuestión de semanas"},
+          {id: 1,title: "ganar masa muscular", icon: "fitness_center", img: "url('../assets/imagenes/perderPeso.jpg') center / cover", description: "Deja de ser un tirillas sin doparte, repartiras como el de mas"},
+          {id: 2,title: "ganar resistencia", icon: "fitness_center", img: "url('../assets/imagenes/perderPeso.jpg') center / cover", description: "Para poder bajar las escaleras sin axfixiarte"} ,
+          {id: 3,title: "trabajar especificamente", icon: "fitness_center", img: "url('../assets/imagenes/perderPeso.jpg') center / cover", description: "Elije un ejecicio determinado para trabajar una zona específica"},
+          {id: 4,title: "mejorar en", icon: "fitness_center", img: "url('../assets/imagenes/perderPeso.jpg') center / cover", description: "Trata de mejorar en tu deporte para rendir al máximo"},
+          {id: 5,title: "otra", icon: "fitness_center", img: "url('../assets/imagenes/perderPeso.jpg') center / cover", description: "Proponos una meta propia, solo tú puedes marcar tus limites"}];
     }
 
     noSeleccion(){
         this.seleccion=null;
     }
 
-    noSeleccionArgumentos(seleccion:string){
+    noSeleccionArgumentos(seleccion:ICard){
         this.seleccionado=seleccion;
         this.seleccion=null;
-        this.calcular2selector(seleccion);
+        this.calcular2selector(seleccion.title);
     }
 
     nuevaSeleccion2(){
@@ -60,7 +67,7 @@ export class Meta {
     }
 
     esOtro():boolean{
-      return this.seleccionado!==null && this.seleccionado==="otra";
+      return this.seleccionado!==null && this.seleccionado.title==="otra";
     }
 
     calcular2selector(seleccion:string) {
