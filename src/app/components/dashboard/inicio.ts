@@ -23,7 +23,7 @@ export class Inicio{
  constructor(private aut: AutenticacionService, private _studentService: StudentService) {
    this.seeStudentTasks = false;
      if(aut.esAlumno()){
-       this._studentService.getStudent(2)
+       this._studentService.getStudent(1)
          .then(student => this.student = student);
      }else{
        this.student = undefined;
