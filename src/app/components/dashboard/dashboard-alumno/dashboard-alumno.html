@@ -114,7 +114,7 @@
 
           <ul id="ul-accordion" class="accordion">
 
-            <div *ngIf="tasks.length === 0" class="ui icon warning message">
+            <div *ngIf="tasks.length === 0" class="ui icon warning message"  [class.margin-tunned]="tab === 1">
               <i class="comments icon"></i>
               <div class="content">
                 <div class="header">
@@ -225,7 +225,7 @@
         <!-- COMENTARIOS -->
 
 
-        <div *ngIf="tab === 2" id="tab-comentarios" class="panel-body">
+        <div *ngIf="tab === 2" class="panel-body" [class.more-margin]="student.goal.comments.length > 0">
           <div *ngIf="student.goal.comments.length === 0" class="ui icon info message">
             <i class="comments icon"></i>
             <div class="content">

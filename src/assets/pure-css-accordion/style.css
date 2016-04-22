@@ -48,8 +48,8 @@
 .accordion-child {
     margin: 0;
     overflow: hidden;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s cubic-bezier(0.33, 0.75, 0.56, 1.1);;
+    transition: all 0.3s cubic-bezier(0.33, 0.75, 0.56, 1.1);;
     opacity: 0;
     height: 0;
     -webkit-transform: scale(1, 0);
@@ -327,4 +327,13 @@ a.glyphicon-plus.active {
 
 #tabla-dieta {
   width: 100%;
+}
+
+.margin-tunned {
+  margin: 15px 15px 15px 15px !important;
+  width: auto !important;
+}
+
+.more-margin {
+  margin: 32px 32px 32px 32px !important;
 }
