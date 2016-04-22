@@ -2,13 +2,12 @@
   <div class="general">
 
     <div *ngIf="seleccion" (click)="noSeleccion()" class="seleccion">
-
       <card *ngFor="#meta of selecciones" [card]="meta" (click)="noSeleccionArgumentos(meta)"></card>
-
     </div>
 
     <div *ngIf="seleccion2" (click)="noSeleccion2($event.target)" class="seleccion">
-      <h2 *ngIf="! esOtro()" class="seleccionable" *ngFor="#meta of selecciones2" (click)="noSeleccionArgumentos2(meta)">{{meta}}</h2>
+      <!-- <h2 *ngIf="! esOtro()" class="seleccionable" *ngFor="#parametro of parametrosExtra" (click)="noSeleccionArgumentos2(parametro)">AQUI</h2> -->
+      <card *ngFor="#parametro of parametrosExtra" [card]="parametro" (click)="noSeleccionArgumentos2(parametro)"></card>
       <div (click)="nada($event)" class="col-md-4 col-md-offset-4 form-horizontal divDeAñadir" *ngIf="esOtro()">
         <div class="form-group">
           <input [(ngModel)]="seleccionado2" class="form-control" placeholder="Añade tu propia meta" type="text">
