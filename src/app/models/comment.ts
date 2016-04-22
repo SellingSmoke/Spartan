@@ -23,7 +23,6 @@ export class Comment implements IComment{
   constructor(){
     this.comment = "";
     this.rol = localStorage.getItem('rol');
-    console.log(this.rol);
     this.date = new Date().getTime();
     this.read = false;
   }

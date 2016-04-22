@@ -2,14 +2,13 @@
 <goal-form *ngIf="!student.goal" (newGoal)='getGoal($event)'></goal-form>
 <!-- FIN FORMULARIO NUEVA META -->
 
-<div *ngIf="student.goal" class="sp-container-lg">
-  <br>
+<div *ngIf="student.goal" class="sp-container-lg"><br>
 
   <div class="col-md-2"></div>
   <div class="col-md-8">
     <div class="container">
       <div class="panel panel-default">
-
+        <!-- CABECERA -->
         <div class="panel-heading mdl-typography--title" id="sp-heading">
           <button *ngIf="aut.esProfesor()" id="boton-back" (click)="goBack()" class="btn btn-raised pull-right btn-fab"><i class="material-icons">arrow_back</i></button>
           <h3 id="titulo-meta" [class.titulo-meta-prof]="aut.esProfesor()">{{ student.goal | GoalName }}</h3>
@@ -27,6 +26,8 @@
             <a class="mdl-layout__tab" (click)="tab = 3" [class.active]="tab === 3">Dietas</a>
           </div>
         </div>
+
+        <!-- TAB 1 -> TAREAS -->
 
         <div *ngIf="tab === 1" id="tab-tarea" class="panel-body">
 
@@ -115,7 +116,7 @@
           <ul id="ul-accordion" class="accordion">
 
             <div *ngIf="tasks.length === 0" class="ui icon warning message"  [class.margin-tunned]="tab === 1">
-              <i class="comments icon"></i>
+              <i class="tasks icon"></i>
               <div class="content">
                 <div class="header">
                   Sin tareas
@@ -222,10 +223,12 @@
         </div>
 
 
-        <!-- COMENTARIOS -->
+        <!-- TAB 2 -> COMENTARIOS -->
 
 
         <div *ngIf="tab === 2" class="panel-body" [class.more-margin]="student.goal.comments.length > 0">
+
+          <!-- ALERTAS -->
           <div *ngIf="student.goal.comments.length === 0" class="ui icon info message">
             <i class="comments icon"></i>
             <div class="content">
@@ -236,94 +239,30 @@
             </div>
           </div>
 
-          <div *ngFor="#comment of student.goal.comments" class="ui right aligned grid">
-            <div *ngIf="comment.rol == 2" class="left floated left aligned nine wide column">
-              <div class="ui feed">
-                <div class="event">
-                  <div class="label sp-img-comment">
-                    <img src="/assets/imagenes/student.jpg">
-                  </div>
-                  <div class="content">
-                    <div class="date">
-                      {{ comment.date | date }}
-                    </div>
-                    <div class="summary">
-                      {{ comment.comment }}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div *ngIf="comment.rol == 1" class="right floated right aligned nine wide column">
-              <div class="ui feed pull-right">
-                <div class="event">
-                  <div class="label sp-img-comment">
-                    <img src="/assets/imagenes/trainer.jpg">
-                  </div>
-                  <div class="content">
-                    <div class="date">
-                      {{ comment.date | date }}
-                    </div>
-                    <div class="summary">
-                      {{ comment.comment }}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="textArea" class="col-md-2 control-label">Añade tu comentario</label>
-            <div class="col-md-10">
-              <textarea [(ngModel)]="comment.comment" class="form-control" rows="3" id="textArea" required></textarea>
-              <button (click)="saveComment()" class="btn btn-primary btn-raised" type="submit">Enviar</button>
-            </div>
-          </div>
+          <!-- FORMULARIO Y VISTA DE COMENTARIOS -->
+          <comment [(comments)]="student.goal.comments"></comment>
 
         </div>
 
 
-        <!-- DIETAS -->
+        <!-- TAB 3 -> DIETAS -->
 
         <div *ngIf="tab === 3" id="tab-dieta" class="panel-body">
+
+          <!-- ALERTAS -->
           <div class="ui icon warning message">
             <i class="table icon"></i>
             <div class="content">
               <div class="header">
-                Sin dieta disponible
+                Sin dieta asignada
               </div>
-              <p>Contacta con tu entrenador para que te asigne una dieta a tu meta</p>
+              <p>{{ rol == 1 ? 'Puedes añadir una dieta a tu alumno' : 'Contacta con tu entrenador para que te asigne una dieta a tu meta' }}</p>
             </div>
           </div>
-          <div class="table-responsive">
-            <table id="tabla-dieta" class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-              <thead>
-                <tr>
-                  <th class="mdl-data-table__cell--non-numeric">Material</th>
-                  <th>Quantity</th>
-                  <th>Unit price</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
-                  <td>25</td>
-                  <td>$2.90</td>
-                </tr>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
-                  <td>50</td>
-                  <td>$1.25</td>
-                </tr>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
-                  <td>10</td>
-                  <td>$2.35</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+
+          <!-- FORMULARIO Y VISTA DE LA DIETA -->
+
+
         </div>
 
       </div>
