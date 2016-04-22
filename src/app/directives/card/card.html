@@ -1,9 +1,9 @@
 <div class="demo-card-wide mdl-card mdl-shadow--2dp"
   (click)="noSeleccionArgumentos(meta)">
   <div class="mdl-card__title" [style.background]="card.img">
-    <h2 class="mdl-card__title-text">{{ card.title }}</h2>
+    <h2 class="mdl-card__title-text sp-text">{{ card.title }}</h2>
   </div>
-  <div class="mdl-card__supporting-text">
+  <div *ngIf="card.description" class="mdl-card__supporting-text">
     {{ card.description }}
   </div>
   <div class="mdl-card__menu">

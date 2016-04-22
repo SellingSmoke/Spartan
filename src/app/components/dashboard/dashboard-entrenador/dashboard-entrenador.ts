@@ -15,11 +15,14 @@ import { Student } from '../../../models/student';
 
 export class DashboardEntrenador implements OnInit{
 
+
+
 	@Output()
   student_dashboard_event = new EventEmitter<Student>();
 
 	selectedStudent: Student;
 	students: Student[];
+	images:string[];
 
   constructor(private _studentService: StudentService, private _router: Router) { }
 
@@ -52,9 +55,20 @@ export class DashboardEntrenador implements OnInit{
 	*/
 
   ngOnInit() {
+		this.images = IMAGES;
 		this._studentService.getStudents().then(
-			students => this.students = students
+			students => {
+				this.students = students;
+			}
 		);
   }
-
 }
+
+
+var IMAGES = ["http://semantic-ui.com/images/avatar/large/steve.jpg",
+	           "http://semantic-ui.com/images/avatar2/large/matthew.png",
+	           "http://semantic-ui.com/images/avatar/large/daniel.jpg",
+	           "http://semantic-ui.com/images/avatar/large/elliot.jpg",
+	           "http://semantic-ui.com/images/avatar/large/jenny.jpg",
+	           "http://semantic-ui.com/images/avatar/large/stevie.jpg",
+						 "http://semantic-ui.com/images/avatar/large/helen.jpg"];

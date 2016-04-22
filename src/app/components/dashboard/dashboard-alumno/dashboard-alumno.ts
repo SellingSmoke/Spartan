@@ -4,7 +4,7 @@ import { Student } from '../../../models/student';
 import { Comment } from '../../../models/comment';
 import { Task } from '../../../models/task';
 import { Goal } from '../../../models/goal';
-import { Meta } from './meta'
+import { GoalForm } from '../../../directives/goalForm/goal-form'
 import { BeautifyProgessBarPipe, GoalNamePipe } from '../../../pipes/student-pipes.pipe';
 import { TaskService } from '../../../services/task.service';
 import { AutenticacionService } from '../../../services/autenticacion.service';
@@ -16,7 +16,7 @@ declare var jQuery:JQueryStatic;
 	selector: 'dashboard-alumno',
   templateUrl: 'app/components/dashboard/dashboard-alumno/dashboard-alumno.html',
   providers: [AutenticacionService, TaskService],
-	directives:  [Meta],
+	directives:  [GoalForm],
   pipes: [BeautifyProgessBarPipe, GoalNamePipe],
 	inputs: ['student']
 })
@@ -51,7 +51,6 @@ export class DashboardAlumno implements OnInit{
 		this.tab = 1;
 		this.comment = new Comment();
 		this.rol = localStorage.getItem('rol');
-		console.log(this.student.goal);
 		if (this.student.goal){
 			this._taskService.getTasks(this.student.goal.id).then(
 				tasks => this.tasks = tasks

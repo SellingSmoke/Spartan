@@ -15,4 +15,5 @@ export interface Student {
   // Datos calculados para evitar cargar datos a cada consulta
 
   goal: IGoal;
+  img_url?:string;
 }
