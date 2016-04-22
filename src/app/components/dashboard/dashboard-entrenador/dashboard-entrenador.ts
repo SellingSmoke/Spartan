@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from 'angular2/core';
 import { Router, Route, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
 import { Goal } from '../../../models/goal';
-import { StudentDetailComponent } from './student-detail';
+import { StudentDetailComponent } from '../../../directives/studentDetail/student-detail';
 import { StudentService } from '../../../services/student.service';
 import { Student } from '../../../models/student';
 

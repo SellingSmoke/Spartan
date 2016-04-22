@@ -10,7 +10,7 @@ export interface Student {
   email: string;
   gender: number;
   age: number;
-  registration_date: string;
+  registration_date: number;
 
   // Datos calculados para evitar cargar datos a cada consulta
 

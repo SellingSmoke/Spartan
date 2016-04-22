@@ -1,4 +1,6 @@
-<goal-form *ngIf="!student.goal" (new_goal)='getGoal($event)'></goal-form>
+<!-- FORMULARIO NUEVA META -->
+<goal-form *ngIf="!student.goal" (newGoal)='getGoal($event)'></goal-form>
+<!-- FIN FORMULARIO NUEVA META -->
 
 <div *ngIf="student.goal" class="sp-container-lg">
   <br>

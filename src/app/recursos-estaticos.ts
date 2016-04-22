@@ -7,14 +7,14 @@ import { Diet } from './models/diet';
 // Base de datos simulada
 
 export var STUDENTS: Student[] = [
-  { id: 1, name: "Michel", lastname:"Maes Bermejo",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: { id: 1, student_id: 1, type: 3, progress: 70, campo_metaX: "parte superior", diet_id: 1, acepted: true,
+  { id: 1, name: "Michel", lastname:"Maes Bermejo",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: { id: 1, student_id: 1, type: 3, progress: 70, campo_metaX: "parte superior", diet_id: 1, acepted: true,
     comments: [{id: 1, rol: 2, date: 1461111590589, comment: "Oye, y esto ... como se hace", read: true}, {id: 2, rol: 1, date: 1461111590589, comment: "Mira que eres malo, esto se hace asi asi y asi", read: false}]}},
-  { id: 2, name: "Pablo", lastname:"Fuente Pérez",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: { id: 2, student_id: 2, type: 1, progress: 50, campo_metaX: "10kg", acepted: false, comments: []}},
-  { id: 3, name: "Enrique", lastname:"García Galán",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: {id: 3, student_id: 3, type: 2, progress: 100, campo_metaX: "10km", acepted: true, comments: []}},
-  { id: 4, name: "Sergio", lastname:"Pérez Peló",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: { id: 4, student_id: 4, type: 4, progress: 30, campo_metaX:"fútbol", acepted: true, comments: []}},
-  { id: 5, name: "Paco", lastname:"Bar Born",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: { id: 5, student_id: 5, type: 5, progress: 10, campo_metaX: "Tener el culo de Kimmy", acepted: true, comments: []}},
-  { id: 6, name: "Alguien", lastname:"Muy malo",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: null},
-  { id: 7, name: "Efigencia", lastname:"Bonifacia",email: "michel.maes95@gmail.com", gender:1, age: 20, registration_date: "17/1/2016", goal: { id: 7, student_id: 7, type: 4, progress: 90, campo_metaX: "golf", acepted: true, comments: []}}
+  { id: 2, name: "Pablo", lastname:"Fuente Pérez",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: { id: 2, student_id: 2, type: 1, progress: 50, campo_metaX: "10kg", acepted: false, comments: []}},
+  { id: 3, name: "Enrique", lastname:"García Galán",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: {id: 3, student_id: 3, type: 2, progress: 100, campo_metaX: "10km", acepted: true, comments: []}},
+  { id: 4, name: "Sergio", lastname:"Pérez Peló",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: { id: 4, student_id: 4, type: 4, progress: 30, campo_metaX:"fútbol", acepted: true, comments: []}},
+  { id: 5, name: "Paco", lastname:"Bar Born",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: { id: 5, student_id: 5, type: 5, progress: 10, campo_metaX: "Tener el culo de Kimmy", acepted: true, comments: []}},
+  { id: 6, name: "Alguien", lastname:"Muy malo",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: null},
+  { id: 7, name: "Efigencia", lastname:"Bonifacia",email: "michel.maes95@gmail.com", gender:1, age: 20, registration_date: 1461111590589, goal: { id: 7, student_id: 7, type: 4, progress: 90, campo_metaX: "golf", acepted: true, comments: []}}
 ];
 
 export var TASKS: ITask[] = [
@@ -27,19 +27,19 @@ export var TASKS: ITask[] = [
 ];
 
 export var TRAINERS: Trainer[] = [
-  {id: 1, name: "Mica", lastname:"Gallego",email: "michel.maes95@gmail.com", gender:0, age: 35, registration_date: "17/1/2016",
+  {id: 1, name: "Mica", lastname:"Gallego",email: "michel.maes95@gmail.com", gender:0, age: 35, registration_date: 1461111590589,
     students: [
-      { id: 1, name: "Michel", lastname:"Maes Bermejo",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: { id: 1, student_id: 1, type: 3, progress: 70, campo_metaX: "parte superior", diet_id: 1, acepted: true, comments: []}},
-      { id: 2, name: "Pablo", lastname:"Fuente Pérez",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: { id: 2, student_id: 2, type: 1, progress: 50, campo_metaX: "10kg", acepted: true, comments: []}},
-      { id: 3, name: "Enrique", lastname:"García Galán",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: {id: 3, student_id: 3, type: 2, progress: 100, campo_metaX: "10km", acepted: true, comments: []}},
-      { id: 4, name: "Sergio", lastname:"Pérez Peló",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: { id: 4, student_id: 4, type: 4, progress: 30, campo_metaX:"fútbol", acepted: true, comments: []}},
+      { id: 1, name: "Michel", lastname:"Maes Bermejo",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: { id: 1, student_id: 1, type: 3, progress: 70, campo_metaX: "parte superior", diet_id: 1, acepted: true, comments: []}},
+      { id: 2, name: "Pablo", lastname:"Fuente Pérez",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: { id: 2, student_id: 2, type: 1, progress: 50, campo_metaX: "10kg", acepted: true, comments: []}},
+      { id: 3, name: "Enrique", lastname:"García Galán",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: {id: 3, student_id: 3, type: 2, progress: 100, campo_metaX: "10km", acepted: true, comments: []}},
+      { id: 4, name: "Sergio", lastname:"Pérez Peló",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: { id: 4, student_id: 4, type: 4, progress: 30, campo_metaX:"fútbol", acepted: true, comments: []}},
     ]
   },
-  {id: 2, name: "Carlos", lastname:"Cuesta",email: "michel.maes95@gmail.com", gender:0, age: 35, registration_date: "17/1/2016",
+  {id: 2, name: "Carlos", lastname:"Cuesta",email: "michel.maes95@gmail.com", gender:0, age: 35, registration_date: 1461111590589,
     students: [
-      { id: 5, name: "Paco", lastname:"Bar Born",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: { id: 5, student_id: 5, type: 5, progress: 10, campo_metaX: "Tener el culo de Kimmy", acepted: true, comments: []}},
-      { id: 6, name: "Alguien", lastname:"Muy malo",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: "17/1/2016", goal: null},
-      { id: 7, name: "Efigencia", lastname:"Bonifacia",email: "michel.maes95@gmail.com", gender:1, age: 20, registration_date: "17/1/2016", goal: { id: 7, student_id: 7, type: 4, progress: 90, campo_metaX: "golf", acepted: true, comments: []}}
+      { id: 5, name: "Paco", lastname:"Bar Born",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: { id: 5, student_id: 5, type: 5, progress: 10, campo_metaX: "Tener el culo de Kimmy", acepted: true, comments: []}},
+      { id: 6, name: "Alguien", lastname:"Muy malo",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: null},
+      { id: 7, name: "Efigencia", lastname:"Bonifacia",email: "michel.maes95@gmail.com", gender:1, age: 20, registration_date: 1461111590589, goal: { id: 7, student_id: 7, type: 4, progress: 90, campo_metaX: "golf", acepted: true, comments: []}}
     ]
   }
 ]
