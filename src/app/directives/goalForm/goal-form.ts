@@ -72,6 +72,7 @@ export class GoalForm {
         var texto = seleccion.title;
         if (seleccion.text)
             texto = seleccion.text;
+        console.log(texto);
         this.calcular2selector(texto);
     }
 
@@ -91,7 +92,7 @@ export class GoalForm {
     }
 
     esOtro():boolean{
-      return this.seleccionado!==null && this.seleccionado.title==="otra";
+      return this.seleccionado!==null && this.seleccionado.text==="otra";
     }
 
     calcular2selector(seleccion:string) {
