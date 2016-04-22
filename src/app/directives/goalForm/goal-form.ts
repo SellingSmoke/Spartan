@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from 'angular2/core';
+import { Component, Output, Input, EventEmitter } from 'angular2/core';
 import {FORM_DIRECTIVES} from 'angular2/common';
 import { Goal } from "../../models/goal";
 import { Card, ICard } from '../card/card'
@@ -29,7 +29,7 @@ export class GoalForm {
     public especificos_elegibles:ICard[];
 
     @Output()
-    new_goal = new EventEmitter<Goal>();
+    newGoal = new EventEmitter<Goal>();
 
     constructor(){
         this.seleccionado = {id: 0, title: " ( ··· ) ", description: null, img: null};
@@ -141,7 +141,7 @@ export class GoalForm {
         }
     }
 
-    guardar(){
+    saveGoal(){
         // Declaro variables para dejar claros los cambios, refactoriza como quieras
         var meta:Goal;
         var indexMeta = this.selecciones.indexOf(this.seleccionado);
@@ -150,6 +150,6 @@ export class GoalForm {
         // meta.id = 1; (Lo pone la base de datos)
         meta = new Goal(student_id, indexMeta, campoX);
         console.log(meta);
-        this.new_goal.emit(meta);
+        this.newGoal.emit(meta);
     }
 };

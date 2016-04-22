@@ -10,7 +10,7 @@ export interface Trainer {
   email: string;
   gender: number;
   age: number;
-  registration_date: string;
+  registration_date: number;
 
   students: Student[];
 
