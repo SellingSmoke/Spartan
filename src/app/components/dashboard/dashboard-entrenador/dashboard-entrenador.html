@@ -35,15 +35,16 @@
 
                 <!-- BOTON PROGRESO -->
                 <div *ngIf="selectedStudent != student" class="content">
-                    <button *ngIf="student.goal != null" (click)="goToStudentTask(student)" class="btn btn-default btn-raised btn-lg btn-block">
-                        <i class="material-icons">trending_up</i> Progreso
-                        <div class="progress progress-button" >
+                    <button *ngIf="student.goal" (click)="goToStudentTask(student)" [class]="student.goal.acepted ? 'btn btn-default btn-raised btn-lg btn-block':'btn btn-danger btn-raised btn-lg btn-block'">
+                        <i [class]="student.goal.acepted ? 'material-icons':'warning middle aligned icon'">{{student.goal.acepted ? 'trending_up' : ''}}</i>
+                        {{ student.goal.acepted ? 'Progreso' : 'Meta pendiente'}}
+                        <div *ngIf="student.goal.acepted" class="progress progress-button" >
                             <div class="progress-bar" [style.width.%]="student.goal.progress">
                                 <span class="sp-label">80%</span>
                             </div>
                         </div>
                     </button>
-                    <fieldset *ngIf="student.goal === null" disabled>
+                    <fieldset *ngIf="!student.goal" disabled>
                       <button class="btn btn-default btn-raised btn-lg btn-block">
                           <i class="material-icons">trending_up</i> Sin Meta
                           <div class="progress progress-button" >

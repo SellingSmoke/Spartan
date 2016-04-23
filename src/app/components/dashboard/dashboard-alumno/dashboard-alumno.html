@@ -3,7 +3,6 @@
 <!-- FIN FORMULARIO NUEVA META -->
 
 <div *ngIf="student.goal" class="sp-container-lg">
-  <br>
 
   <div class="col-md-2"></div>
   <div class="col-md-8">
@@ -12,13 +11,16 @@
 
         <div class="panel-heading mdl-typography--title" id="sp-heading">
           <button *ngIf="aut.esProfesor()" id="boton-back" (click)="goBack()" class="btn btn-raised pull-right btn-fab"><i class="material-icons">arrow_back</i></button>
+          <span *ngIf="aut.esProfesor()" class="ui teal right ribbon label"><i class="user icon"></i> <b>{{ student.name }}</b> {{student.lastname}}</span>
           <h3 id="titulo-meta" [class.titulo-meta-prof]="aut.esProfesor()">{{ student.goal | GoalName }}</h3>
+
           <!-- PROGRESO -->
-          <div id="barra-progreso-meta"*ngIf="student.goal.acepted" class="progress">
+          <div id="barra-progreso-meta" *ngIf="student.goal.acepted" class="progress">
             <div class="progress-bar" [style.width.%]="student.goal.progress">
               <span class="sp-label">{{ student.goal.progress | BeautifyProgessBar }}</span>
             </div>
           </div>
+          
           <!-- ACEPTACION DE META -->
           <div *ngIf="!student.goal.acepted" class="ui icon info message">
             <i class="trophy icon"></i>
@@ -30,321 +32,277 @@
               <ul *ngIf="rol == 1" class="list">
                 <li>Acepta la meta para poder mandar tareas al alumno</li>
                 <li>Pudes rechazar la meta si no la consideras correcta</li>
-                  <button *ngIf="aut.esProfesor()" (click)="goalResponse(true)" class="btn btn-success"><i class="check icon"></i> Aceptar Meta</button>
-                  <button *ngIf="aut.esProfesor()" (click)="goalResponse(false)" class="btn btn-danger"><i class="remove icon"></i> Rechazar Meta</button>
+                <button *ngIf="aut.esProfesor()" (click)="goalResponse(true)" class="btn btn-success"><i class="check icon"></i> Aceptar Meta</button>
+                <button *ngIf="aut.esProfesor()" (click)="goalResponse(false)" class="btn btn-danger"><i class="remove icon"></i> Rechazar Meta</button>
               </ul>
             </div>
           </div>
 
+          <br *ngIf="!student.goal.acepted">
         </div>
-        <!-- TABS -->
-        <div id="botones-tabs" class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
-          <div id="botones-tabs-in" class="mdl-layout__tab-bar">
-            <a class="mdl-layout__tab" (click)="tab = 1" [class.active]="tab === 1">Tareas</a>
-            <a class="mdl-layout__tab" (click)="tab = 2" [class.active]="tab === 2">Comentarios</a>
-            <a class="mdl-layout__tab" (click)="tab = 3" [class.active]="tab === 3">Dietas</a>
+
+        <div *ngIf="student.goal.acepted">
+          <!-- TABS -->
+          <div id="botones-tabs" class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+            <div id="botones-tabs-in" class="mdl-layout__tab-bar">
+              <a class="mdl-layout__tab" (click)="tab = 1" [class.active]="tab === 1">Tareas</a>
+              <a class="mdl-layout__tab" (click)="tab = 2" [class.active]="tab === 2">Comentarios</a>
+              <a class="mdl-layout__tab" (click)="tab = 3" [class.active]="tab === 3">Dietas</a>
+            </div>
           </div>
-        </div>
 
-        <div *ngIf="tab === 1" id="tab-tarea" class="panel-body">
+          <!-- TAB 1 -> TAREAS -->
 
-          <!-- NUEVA TAREA -->
+          <div *ngIf="tab === 1" id="tab-tarea" class="panel-body">
 
-          <div id="dialog-mat" class='wrap material-dialog'>
-            <div id="dialog-mat-content" class='content'>
-              <h3 id="titulo-nueva-tarea">Nueva tarea</h3>
+            <!-- NUEVA TAREA -->
 
-              <div class="form-group form-radio-button">
-                <div class="radio radio-button-tarea">
-                  <label>
-                    <input (click)="setType(0)" class="boton-de-radio" type="radio" name="sample1" value="1"><span class="circle"></span><span class="check"></span> AERÓBICA
-                  </label>
-                </div>
-                <div class="radio radio-button-tarea">
-                  <label>
-                    <input (click)="setType(1)" class="boton-de-radio" type="radio" name="sample1" value="2"><span class="circle"></span><span class="check"></span> ANAERÓBICA
-                  </label>
-                </div>
-              </div>
+            <div id="dialog-mat" class='wrap material-dialog'>
+              <div id="dialog-mat-content" class='content'>
+                <h3 id="titulo-nueva-tarea">Nueva tarea</h3>
 
-              <div class="form-group">
-                <label for="nombreTarea" class="col-md-2 control-label">Nombre</label>
-                <div class="col-md-10">
-                  <input [(ngModel)]="task.name" class="form-control" id="nombreTarea" placeholder="Nombre de la tarea" type="text">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="descripcionTarea" class="col-md-2 control-label">Descripción</label>
-                <div class="col-md-10">
-                  <textarea [(ngModel)]="task.description" class="form-control" id="descripcionTarea" placeholder="Decripción de la tarea" type="text"></textarea>
-                </div>
-              </div>
-
-              <ul class="breadcrumb">
-                <li class="active">Escoja el tipo de ejercicio...</li>
-              </ul>
-
-              <div id="form-anaerobico" class="form-group">
-                <div class="col-md-6">
-                  <label for="repeticiones-tarea" class="col-md-2 control-label">Repets.</label>
-                  <div class="col-md-10">
-                    <input [(ngModel)]="task.objective1" class="form-control" id="repeteiciones-tarea" placeholder="Num. repeticiones" type="number">
+                <div class="form-group form-radio-button">
+                  <div class="radio radio-button-tarea">
+                    <label>
+                      <input (click)="setType(0)" class="boton-de-radio" type="radio" name="sample1" value="1"><span class="circle"></span><span class="check"></span> AERÓBICA
+                    </label>
+                  </div>
+                  <div class="radio radio-button-tarea">
+                    <label>
+                      <input (click)="setType(1)" class="boton-de-radio" type="radio" name="sample1" value="2"><span class="circle"></span><span class="check"></span> ANAERÓBICA
+                    </label>
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <label for="peso-tarea" class="col-md-2 control-label">Peso</label>
+
+                <div class="form-group">
+                  <label for="nombreTarea" class="col-md-2 control-label">Nombre</label>
                   <div class="col-md-10">
-                    <input [(ngModel)]="task.objective2" class="form-control" id="peso-tarea" placeholder="Peso Kg" type="number">
+                    <input [(ngModel)]="task.name" class="form-control" id="nombreTarea" placeholder="Nombre de la tarea" type="text">
                   </div>
                 </div>
-              </div>
-
-              <div id="form-aerobico" class="form-group">
-                <div class="col-md-6">
-                  <label for="distancia-tarea" class="col-md-2 control-label">Distancia</label>
+                <div class="form-group">
+                  <label for="descripcionTarea" class="col-md-2 control-label">Descripción</label>
                   <div class="col-md-10">
+                    <textarea [(ngModel)]="task.description" class="form-control" id="descripcionTarea" placeholder="Decripción de la tarea" type="text"></textarea>
+                  </div>
+                </div>
+
+                <ul class="breadcrumb">
+                  <li class="active">Escoja el tipo de ejercicio...</li>
+                </ul>
+
+                <div id="form-anaerobico">
+                  <div class="col-md-4 form-group">
+                    <input [(ngModel)]="task.objective1" class="form-control" id="repeticiones-tarea" placeholder="Num. repeticiones" type="number">
+                  </div>
+                  <div class="col-md-2 form-group">
+                    <select [(ngModel)]="task.format1" class="form-control" id="formato-repeticiones">
+                      <option value="repeticiones">Repeticiones</option>
+                      <option value="series">Series</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4 form-group">
+                    <input [(ngModel)]="task.objective2" class="form-control" id="peso-tarea" placeholder="Peso" type="number">
+                  </div>
+                  <div class="col-md-2 form-group">
+                    <select [(ngModel)]="task.format2" class="form-control" id="formato-peso">
+                      <option value="repeticiones">Kg</option>
+                      <option value="series">Peso propio</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div id="form-aerobico">
+                  <div class="col-md-4 form-group">
                     <input [(ngModel)]="task.objective1" class="form-control" id="distancia-tarea" placeholder="Distancia" type="number">
                   </div>
-                </div>
-                <div class="col-md-6">
-                  <label for="tiempo-tarea" class="col-md-2 control-label">Tiempo</label>
-                  <div class="col-md-10">
+                  <div class="col-md-2 form-group">
+                    <select [(ngModel)]="task.format1" class="form-control" id="formato-distancia">
+                      <option value="km">Km</option>
+                      <option value="metros">Metros</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4 form-group">
                     <input [(ngModel)]="task.objective2" class="form-control" id="tiempo-tarea" placeholder="Tiempo" type="number">
                   </div>
+                  <div class="col-md-2 form-group">
+                    <select [(ngModel)]="task.format2" class="form-control" id="formato-tiempo">
+                      <option value="minutos">Minutos</option>
+                      <option value="horas">Horas</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 col-xs-6 col-botones-dialog">
+                    <button (click)="saveTask(false)" class="boton-dialog btn btn-danger">Cancelar</button>
+                  </div>
+                  <div class="col-md-6 col-xs-6 col-botones-dialog">
+                    <button (click)="saveTask(true)" class="boton-dialog btn btn-success pull-right">Aceptar</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- FIN NUEVA TAREA -->
+
+            <!-- TAREAS -->
+
+            <ul id="ul-accordion" class="accordion">
+
+              <div *ngIf="tasks.length === 0" class="ui icon warning message" [class.margin-tunned]="tab === 1">
+                <i class="tasks icon"></i>
+                <div class="content">
+                  <div class="header">
+                    Sin tareas
+                  </div>
+                  <p>{{ rol == 1 ? 'Añade nuevas tareas a tu alumno' : 'Espera a que tu entrenador te asigne tareas' }}</p>
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-md-6 col-xs-6 col-botones-dialog">
-                  <button (click)="saveTask(false)" class="boton-dialog btn btn-danger">Cancelar</button>
-                </div>
-                <div class="col-md-6 col-xs-6 col-botones-dialog">
-                  <button (click)="saveTask(true)" class="boton-dialog btn btn-success pull-right">Aceptar</button>
-                </div>
-              </div>
+              <li *ngFor="#task of tasks" class="accordion-item" [class.hover-transition]="!task.completed">
+                <input *ngIf="!task.completed" id="{{ 's' + task.id}}" class="hide" type="checkbox">
+                <div class="col-md-12 col-xs-12	col-sm-12 margin-row" [class.task-completed]="task.completed">
+                  <div class="col-md-6 col-sm-6 col-xs-10">
 
+                    <label [attr.for]="'s'+task.id" [class]="task.completed ? 'accordion-label-completed' : 'accordion-label'">
+                      {{task.name}}
+                    </label>
+                  </div>
+                  <div id="botones-tarea" class="col-md-6 col-sm-6 col-xs-2">
+                    <div id="botones-tarea-inside" class="pull-right">
+                      <a *ngIf="!aut.esProfesor() && !task.completed" (click)="task.completed = true" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                        <i class="material-icons">done</i>
+                        <div class="ripple-container"></div>
+                      </a>
+                      <a *ngIf="task.completed" (click)="task.completed = true" class="only-check-no-button mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                        <i class="material-icons">done</i>
+                        <div class="ripple-container"></div>
+                      </a>
+                      <a *ngIf="aut.esProfesor() && !task.completed" href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                        <i class="material-icons">mode_edit</i>
+                        <div class="ripple-container"></div>
+                      </a>
+                      <a *ngIf="aut.esProfesor() && !task.completed" href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                        <i class="material-icons">close</i>
+                        <div class="ripple-container"></div>
+                      </a>
+                      <!--<i *ngIf="task.completed" class="material-icons pull-right">done</i>-->
+                    </div>
+                  </div>
+                </div>
+                <ul class="accordion-child">
+                  <a class="ui teal right corner label label-corner" data-toggle="tooltip" [title]="'Ejercicio ' + (task.type ? 'Anaeróbico' : 'Aeróbico')">
+                    <i class="material-icons icon-label-corner">{{ task.type ? 'fitness_center' : 'directions_run' }}</i>
+                  </a>
+                  <h5>{{task.description}}</h5>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <label class="col-md-2 control-label">Opciones</label>
+
+                      <div class="col-md-10">
+                        <div class="radio radio-primary">
+                          <label>
+                            <input type="radio" name="sample1" value="option1" checked=""><span class="circle"></span><span class="check"></span> Opción 1
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="sample1" value="option1"><span class="circle"></span><span class="check"></span> Opción 2
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="col-md-offset-2 col-md-10">
+                        <div class="checkbox">
+                          <label>
+                            <input type="checkbox"><span class="checkbox-material"><span class="check"></span></span> ¿Completado?
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="select111" class="col-md-2 control-label">¿Cuánto?</label>
+
+                      <div class="col-md-10">
+                        <select id="select111" class="form-control">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <a class="btn btn-raised pull-right hint--top hint--success hint--medium" data-hint="Enviar a tu entrenador">Enviar</a>
+                  </form>
+                </ul>
+              </li>
+
+            </ul>
+
+            <!-- FIN TAREAS -->
+
+            <!-- AÑADIR TAREA (ENTRENADOR) -->
+            <div id="container-boton-anyadir-tarea">
+              <button *ngIf="aut.esProfesor()" (click)="showDialog()" class="btn btn-primary">Añadir tarea</button>
             </div>
           </div>
 
-          <!-- FIN NUEVA TAREA -->
 
-          <!-- TAREAS -->
 
-          <ul id="ul-accordion" class="accordion">
+          <!-- TAB 2 -> COMENTARIOS -->
 
-            <div *ngIf="tasks.length === 0" class="ui icon warning message"  [class.margin-tunned]="tab === 1">
+
+          <div *ngIf="tab === 2" class="panel-body" [class.more-margin]="student.goal.comments.length > 0">
+
+            <!-- ALERTAS -->
+            <div *ngIf="student.goal.comments.length === 0" class="ui icon info message">
               <i class="comments icon"></i>
               <div class="content">
                 <div class="header">
-                  Sin tareas
+                  Sin comentarios
                 </div>
-                  <p>{{ rol == 1 ? 'Añade nuevas tareas a tu alumno' : 'Espera a que tu entrenador te asigne tareas' }}</p>
+                <p>Aqui podrás plantear añadir comentarios a la meta</p>
               </div>
             </div>
 
-            <li *ngFor="#task of tasks" class="accordion-item" [class.hover-transition]="!task.completed">
-              <input *ngIf="!task.completed" id="{{ 's' + task.id}}" class="hide" type="checkbox">
-              <div class="col-md-12 col-xs-12	col-sm-12 margin-row" [class.task-completed]="task.completed">
-                <div class="col-md-6 col-sm-6 col-xs-10">
+            <!-- FORMULARIO Y VISTA DE COMENTARIOS -->
+            <comment [(comments)]="student.goal.comments"></comment>
 
-                  <label [attr.for]="'s'+task.id" [class]="task.completed ? 'accordion-label-completed' : 'accordion-label'">
-                    {{task.name}}
-                  </label>
+          </div>
+
+
+          <!-- TAB 3 -> DIETAS -->
+
+          <div *ngIf="tab === 3" id="tab-dieta" class="panel-body">
+
+            <!-- ALERTAS -->
+            <div class="ui icon warning message">
+              <i class="table icon"></i>
+              <div class="content">
+                <div class="header">
+                  Sin dieta asignada
                 </div>
-                <div id="botones-tarea" class="col-md-6 col-sm-6 col-xs-2">
-                  <div id="botones-tarea-inside" class="pull-right">
-                    <a *ngIf="!aut.esProfesor() && !task.completed" (click)="task.completed = true" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
-                      <i class="material-icons">done</i>
-                      <div class="ripple-container"></div>
-                    </a>
-                    <a *ngIf="task.completed" (click)="task.completed = true" class="only-check-no-button mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
-                      <i class="material-icons">done</i>
-                      <div class="ripple-container"></div>
-                    </a>
-                    <a *ngIf="aut.esProfesor() && !task.completed" href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
-                      <i class="material-icons">mode_edit</i>
-                      <div class="ripple-container"></div>
-                    </a>
-                    <a *ngIf="aut.esProfesor() && !task.completed" href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
-                      <i class="material-icons">close</i>
-                      <div class="ripple-container"></div>
-                    </a>
-                    <!--<i *ngIf="task.completed" class="material-icons pull-right">done</i>-->
-                  </div>
-                </div>
+                <p>{{ rol == 1 ? 'Puedes añadir una dieta a tu alumno' : 'Contacta con tu entrenador para que te asigne una dieta a tu meta' }}</p>
               </div>
-              <ul class="accordion-child">
-                <a class="ui teal right corner label label-corner" data-toggle="tooltip" [title]="'Ejercicio ' + (task.type ? 'Anaeróbico' : 'Aeróbico')">
-                  <i class="material-icons icon-label-corner">{{ task.type ? 'fitness_center' : 'directions_run' }}</i>
-                </a>
-                <h5>{{task.description}}</h5>
-                <form class="form-horizontal">
-                  <div class="form-group">
-                    <label class="col-md-2 control-label">Opciones</label>
+            </div>
 
-                    <div class="col-md-10">
-                      <div class="radio radio-primary">
-                        <label>
-                          <input type="radio" name="sample1" value="option1" checked=""><span class="circle"></span><span class="check"></span> Opción 1
-                        </label>
-                      </div>
-                      <div class="radio">
-                        <label>
-                          <input type="radio" name="sample1" value="option1"><span class="circle"></span><span class="check"></span> Opción 2
-                        </label>
-                      </div>
-                    </div>
-                  </div>
+            <!-- FORMULARIO Y VISTA DE LA DIETA -->
 
-                  <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"><span class="checkbox-material"><span class="check"></span></span> ¿Completado?
-                        </label>
-                      </div>
-                    </div>
-                  </div>
 
-                  <div class="form-group">
-                    <label for="select111" class="col-md-2 control-label">¿Cuánto?</label>
-
-                    <div class="col-md-10">
-                      <select id="select111" class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <a class="btn btn-raised pull-right hint--top hint--success hint--medium" data-hint="Enviar a tu entrenador">Enviar</a>
-                </form>
-              </ul>
-            </li>
-
-          </ul>
-
-          <!-- FIN TAREAS -->
-
-          <!-- AÑADIR TAREA (ENTRENADOR) -->
-          <div id="container-boton-anyadir-tarea">
-            <button *ngIf="aut.esProfesor()" (click)="showDialog()" class="btn btn-primary">Añadir tarea</button>
           </div>
 
         </div>
-
-
-        <!-- COMENTARIOS -->
-
-
-        <div *ngIf="tab === 2" class="panel-body" [class.more-margin]="student.goal.comments.length > 0">
-          <div *ngIf="student.goal.comments.length === 0" class="ui icon info message">
-            <i class="comments icon"></i>
-            <div class="content">
-              <div class="header">
-                Sin comentarios
-              </div>
-              <p>Aqui podrás plantear añadir comentarios a la meta</p>
-            </div>
-          </div>
-
-          <div *ngFor="#comment of student.goal.comments" class="ui right aligned grid">
-            <div *ngIf="comment.rol == 2" class="left floated left aligned nine wide column">
-              <div class="ui feed">
-                <div class="event">
-                  <div class="label sp-img-comment">
-                    <img src="/assets/imagenes/student.jpg">
-                  </div>
-                  <div class="content">
-                    <div class="date">
-                      {{ comment.date | date }}
-                    </div>
-                    <div class="summary">
-                      {{ comment.comment }}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div *ngIf="comment.rol == 1" class="right floated right aligned nine wide column">
-              <div class="ui feed pull-right">
-                <div class="event">
-                  <div class="label sp-img-comment">
-                    <img src="/assets/imagenes/trainer.jpg">
-                  </div>
-                  <div class="content">
-                    <div class="date">
-                      {{ comment.date | date }}
-                    </div>
-                    <div class="summary">
-                      {{ comment.comment }}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="textArea" class="col-md-2 control-label">Añade tu comentario</label>
-            <div class="col-md-10">
-              <textarea [(ngModel)]="comment.comment" class="form-control" rows="3" id="textArea" required></textarea>
-              <button (click)="saveComment()" class="btn btn-primary btn-raised" type="submit">Enviar</button>
-            </div>
-          </div>
-
+        <div>
         </div>
-
-
-        <!-- DIETAS -->
-
-        <div *ngIf="tab === 3" id="tab-dieta" class="panel-body">
-          <div class="ui icon warning message">
-            <i class="table icon"></i>
-            <div class="content">
-              <div class="header">
-                Sin dieta disponible
-              </div>
-              <p>Contacta con tu entrenador para que te asigne una dieta a tu meta</p>
-            </div>
-          </div>
-          <div class="table-responsive">
-            <table id="tabla-dieta" class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-              <thead>
-                <tr>
-                  <th class="mdl-data-table__cell--non-numeric">Material</th>
-                  <th>Quantity</th>
-                  <th>Unit price</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
-                  <td>25</td>
-                  <td>$2.90</td>
-                </tr>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
-                  <td>50</td>
-                  <td>$1.25</td>
-                </tr>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
-                  <td>10</td>
-                  <td>$2.35</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
       </div>
+      <div class="col-md-2"></div>
     </div>
-  </div>
-  <div class="col-md-2"></div>
-</div>
 
-<div id="blurizable"></div>
+    <div id="blurizable"></div>
