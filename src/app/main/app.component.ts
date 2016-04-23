@@ -7,7 +7,7 @@ import {Login} from '../components/session/login/login';
 import {RegistroEntrenador} from '../components/session/registroEntrenador/registroEntrenador';
 import {RegistroAlumno} from '../components/session/registroAlumno/registroAlumno';
 import {Dietas} from '../components/diets/diets';
-
+import {MainPage} from '../components/mainpage/mainpage'
 import { AutenticacionService } from '../services/autenticacion.service';
 import {LoggedInRouterOutlet} from '../services/router.service';
 
@@ -26,6 +26,7 @@ import {LoggedInRouterOutlet} from '../services/router.service';
   new Route({ path: '/registroEntrenador', component: RegistroEntrenador, name: 'RegistroEntrenador'}),
   new Route({ path: '/registroAlumno', component: RegistroAlumno, name: 'RegistroAlumno'}),
   new Route({ path: '/dietas', component: Dietas, name: 'Dietas'}),
+	new Route({ path: '/mainpage', component: MainPage, name: 'MainPage'}),
 ])
 
 export class AppComponent {
