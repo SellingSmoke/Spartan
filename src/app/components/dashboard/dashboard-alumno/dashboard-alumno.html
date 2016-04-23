@@ -182,10 +182,10 @@
                 <!-- El elemento "input" activa el desplegable. Si la tarea tiene "status = 1", el input permanecerá deshabilitado-->
                 <input *ngIf="task.status != 1" id="{{ 's' + task.id}}" class="hide" type="checkbox">
                 <div class="col-md-12 col-xs-12	col-sm-12 margin-row" [class.task-completed]="task.status === 1">
-                  <div class="col-md-6 col-sm-6 col-xs-10">
+                  <div class="one-line-left">
                     <label [attr.for]="'s'+task.id" [class]="task.status === 1 ? 'accordion-label-completed' : 'accordion-label'">{{task.name}}</label>
                   </div>
-                  <div id="botones-tarea" class="col-md-6 col-sm-6 col-xs-2">
+                  <div id="botones-tarea" class="one-line-right">
                     <div id="botones-tarea-inside" class="pull-right">
                       <a *ngIf="!aut.esProfesor() && task.status === 0" (click)="task.status = 1" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab" title="Completar tarea al 100%">
                         <i class="material-icons">done</i>

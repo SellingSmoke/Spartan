@@ -256,6 +256,11 @@ a.glyphicon-plus.active {
     #col-nombre-tarea {
       padding: 10px 0 10px 0;
     }
+
+    .one-line-right {
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+    }
 }
 
 .start-no-display {
@@ -390,8 +395,8 @@ input[type=range]::-webkit-slider-thumb {
   cursor: pointer;
 }
 input[type=range]::-moz-range-thumb {
-  width: 1.5em;
-  height: 1.5em;
+  width: 1em;
+  height: 1em;
   margin-top: 0;
   background-color: #009688;
   border-radius: 1em;
@@ -399,8 +404,8 @@ input[type=range]::-moz-range-thumb {
   cursor: pointer;
 }
 input[type=range]::-ms-thumb {
-  width: 1.5em;
-  height: 1.5em;
+  width: 1em;
+  height: 1em;
   margin-top: 0;
   background-color: #009688;
   border-radius: 1em;
@@ -479,4 +484,13 @@ input[type=range]::-ms-track {
 
 .icon-pending-message {
   margin-right: 0.6em;
+}
+
+.one-line-left {
+  display: inline-block;
+}
+
+.one-line-right {
+  display: inline-flex;
+  float: right !important;
 }
