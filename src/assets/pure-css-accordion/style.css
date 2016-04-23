@@ -258,12 +258,8 @@ a.glyphicon-plus.active {
     }
 }
 
-#form-aerobico {
-  display: none;
-}
-
-#form-anaerobico {
-  display: none;
+.start-no-display {
+  display:none;
 }
 
 .breadcrumb {

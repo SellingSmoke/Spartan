@@ -108,7 +108,7 @@
                   <li class="active">Escoja el tipo de ejercicio...</li>
                 </ul>
 
-                <div id="form-anaerobico">
+                <div class="start-no-display" id="form-anaerobico">
                   <div class="col-md-4 form-group">
                     <input [(ngModel)]="task.objective1" class="form-control" id="repeticiones-tarea" placeholder="Num. repeticiones" type="number">
                   </div>
@@ -129,7 +129,7 @@
                   </div>
                 </div>
 
-                <div id="form-aerobico">
+                <div class="start-no-display" id="form-aerobico">
                   <div class="col-md-4 form-group">
                     <input [(ngModel)]="task.objective1" class="form-control" id="distancia-tarea" placeholder="Distancia" type="number">
                   </div>
@@ -199,7 +199,7 @@
                         <i class="material-icons">watch_later</i>
                         <div class="ripple-container"></div>
                       </a>
-                      <a *ngIf="aut.esProfesor() && task.status === 0" href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                      <a *ngIf="aut.esProfesor() && task.status === 0" (click)=editTrigger(task) class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
                         <i class="material-icons">mode_edit</i>
                         <div class="ripple-container"></div>
                       </a>
@@ -267,33 +267,118 @@
                   <a class="ui teal right corner label label-corner" data-toggle="tooltip" [title]="'Ejercicio ' + (task.type ? 'Anaeróbico' : 'Aeróbico')">
                     <i class="material-icons icon-label-corner">{{ task.type ? 'fitness_center' : 'directions_run' }}</i>
                   </a>
-                  <div class="row">
-                    <h5 class="col-md-6">{{task.description}}</h5>
-                    <h5 *ngIf="task.type === 0" class="col-md-12 text-pending">Tus objetivos eran {{task.objective1}} {{task.format1}} en {{task.objective2}} {{task.format2}}</h5>
-                    <h5 *ngIf="task.type === 1" class="col-md-12 text-pending">Tus objetivos eran {{task.objective2}} {{task.format2}} con {{task.objective1}} {{task.format1}}</h5>
-                    <h5 *ngIf="task.type === 0" class="col-md-12 text-pending-2">Conseguiste completar {{task.result1}} {{task.format1}} en {{task.result2}} {{task.format2}}</h5>
-                    <h5 *ngIf="task.type === 1" class="col-md-12 text-pending-2">Conseguiste completar {{task.result2}} {{task.format2}} con {{task.result1}} {{task.format1}}</h5>
-                  </div>
-                  <div *ngIf="!aut.esProfesor()" class="ui icon warning message pending-message">
-                    <i class="material-icons icon-pending-message">watch_later</i>
-                    <div class="content">
-                      <div class="header">
-                        Tarea pendiente de aprobación
+
+                  <!--PARTE ALUMNO-->
+                  <div *ngIf="!aut.esProfesor()">
+                    <div class="row">
+                      <h5 class="col-md-6">{{task.description}}</h5>
+                      <h5 *ngIf="task.type === 0" class="col-md-12 text-pending">Tus objetivos eran {{task.objective1}} {{task.format1}} en {{task.objective2}} {{task.format2}}</h5>
+                      <h5 *ngIf="task.type === 1" class="col-md-12 text-pending">Tus objetivos eran {{task.objective2}} {{task.format2}} con {{task.objective1}} {{task.format1}}</h5>
+                      <h5 *ngIf="task.type === 0" class="col-md-12 text-pending-2">Conseguiste completar {{task.result1}} {{task.format1}} en {{task.result2}} {{task.format2}}</h5>
+                      <h5 *ngIf="task.type === 1" class="col-md-12 text-pending-2">Conseguiste completar {{task.result2}} {{task.format2}} con {{task.result1}} {{task.format1}}</h5>
+                    </div>
+                    <div class="ui icon warning message pending-message">
+                      <i class="material-icons icon-pending-message">watch_later</i>
+                      <div class="content">
+                        <div class="header">
+                          Tarea pendiente de aprobación
+                        </div>
+                        <p>Espera a que tu entrenador te dé el visto bueno o te cambie los objetivos de la tarea</p>
                       </div>
-                      <p>Espera a que tu entrenador te dé el visto bueno o te cambie los objetivos de la tarea</p>
                     </div>
                   </div>
-                  <div *ngIf="aut.esProfesor()" class="row task-treatment-buttons">
-                    <button (click)="task.status = 1" class="btn btn-success"><i class="check icon"></i> Dar como completada</button>
-                    <button class="btn btn-danger"><i class="remove icon"></i> Editar tarea</button>
+                  <!--FIN PARTE ALUMNO-->
+
+                  <!--PARTE PROFESOR-->
+                  <div *ngIf="aut.esProfesor()">
+                    <div class="row">
+                      <h5 class="col-md-6">{{task.description}}</h5>
+                      <h5 *ngIf="task.type === 0" class="col-md-12 text-pending">Los objetivos eran {{task.objective1}} {{task.format1}} en {{task.objective2}} {{task.format2}}</h5>
+                      <h5 *ngIf="task.type === 1" class="col-md-12 text-pending">Los objetivos eran {{task.objective2}} {{task.format2}} con {{task.objective1}} {{task.format1}}</h5>
+                      <h5 *ngIf="task.type === 0" class="col-md-12 text-pending-2">{{student.name}} consiguió completar {{task.result1}} {{task.format1}} en {{task.result2}} {{task.format2}}</h5>
+                      <h5 *ngIf="task.type === 1" class="col-md-12 text-pending-2">{{student.name}} consiguió completar {{task.result2}} {{task.format2}} con {{task.result1}} {{task.format1}}</h5>
+                    </div>
+                    <div class="row task-treatment-buttons">
+                      <button (click)="task.status = 1" class="btn btn-success"><i class="material-icons">done</i> Dar como completada</button>
+                      <button (click)=editTrigger(task) class="btn btn-danger"><i class="material-icons">mode_edit</i> Editar tarea</button>
+                    </div>
                   </div>
                 </ul>
-                <!-- FIN TAREAS EN ESTADO PENDIENTE-->
+                <!--FIN PARTE PROFESOR-->
+            <!-- FIN TAREAS EN ESTADO PENDIENTE-->
 
-              </li>
+                <!--MODO EDITAR (solo profesor)-->
+                <ul id="{{'edit-window-' + task.id}}" *ngIf="aut.esProfesor()" class="accordion-child start-no-display">
+                  <h3 id="titulo-editar-tarea">Editar tarea</h3>
+
+                  <div class="form-group">
+                    <label for="nombreTarea" class="col-md-2 control-label">Nombre</label>
+                    <div class="col-md-10">
+                      <input [(ngModel)]="task.name" class="form-control" id="nombreTarea-EDITAR" placeholder="Nombre de la tarea" type="text">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="descripcionTarea" class="col-md-2 control-label">Descripción</label>
+                    <div class="col-md-10">
+                      <textarea [(ngModel)]="task.description" class="form-control" id="descripcionTarea-EDITAR" placeholder="Decripción de la tarea" type="text"></textarea>
+                    </div>
+                  </div>
+
+                  <div *ngIf="!task.type" id="{{'form-aerobico-EDITAR-' + task.id}}">
+                    <div class="col-md-4 form-group">
+                      <input [(ngModel)]="task.objective1" class="form-control" id="repeticiones-tarea-EDITAR" placeholder="Num. repeticiones" type="number">
+                    </div>
+                    <div class="col-md-2 form-group">
+                      <select [(ngModel)]="task.format1" class="form-control" id="formato-repeticiones-EDITAR">
+                        <option value="repeticiones">Repeticiones</option>
+                        <option value="series">Series</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4 form-group">
+                      <input [(ngModel)]="task.objective2" class="form-control" id="peso-tarea-EDITAR" placeholder="Peso" type="number">
+                    </div>
+                    <div class="col-md-2 form-group">
+                      <select [(ngModel)]="task.format2" class="form-control" id="formato-peso-EDITAR">
+                        <option value="repeticiones">Kg</option>
+                        <option value="series">Peso propio</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div *ngIf="task.type" id="{{'form-anaerobico-EDITAR-' + task.id}}">
+                    <div class="col-md-4 form-group">
+                      <input [(ngModel)]="task.objective1" class="form-control" id="distancia-tarea-EDITAR" placeholder="Distancia" type="number">
+                    </div>
+                    <div class="col-md-2 form-group">
+                      <select [(ngModel)]="task.format1" class="form-control" id="formato-distancia-EDITAR">
+                        <option value="km">Km</option>
+                        <option value="metros">Metros</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4 form-group">
+                      <input [(ngModel)]="task.objective2" class="form-control" id="tiempo-tarea-EDITAR" placeholder="Tiempo" type="number">
+                    </div>
+                    <div class="col-md-2 form-group">
+                      <select [(ngModel)]="task.format2" class="form-control" id="formato-tiempo-EDITAR">
+                        <option value="minutos">Minutos</option>
+                        <option value="horas">Horas</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 col-xs-6 col-botones-dialog">
+                      <button (click)=editTrigger(task) class="boton-dialog btn btn-danger">Cancelar</button>
+                    </div>
+                    <div class="col-md-6 col-xs-6 col-botones-dialog">
+                      <button  class="boton-dialog btn btn-success pull-right">Aceptar</button>
+                    </div>
+                  </div>
+
+                </ul>
+              <!--FIN MODO EDITAR-->
 
             </ul>
-
             <!-- FIN TAREAS -->
 
             <!-- AÑADIR TAREA (ENTRENADOR) -->

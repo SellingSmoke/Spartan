@@ -36,7 +36,7 @@ export class DashboardAlumno implements OnInit{
 
 	task: Task;					// Modelo de la nueva meta para el formulario
 
-	taskAuxFeedback: Task;
+	edit_mode: boolean;
 
 	constructor(private aut: AutenticacionService, private _taskService: TaskService) {}
 
@@ -54,6 +54,7 @@ export class DashboardAlumno implements OnInit{
 			);
 			this.task = new Task(this.student.goal.id);
 		}
+		this.edit_mode = false;
 	}
 
 	/*
@@ -128,5 +129,13 @@ export class DashboardAlumno implements OnInit{
 
 	colorlabel (e){
 		  jQuery(e).toggleClass('add-color-label');
+	}
+
+	editTrigger(t) {
+		jQuery("#edit-window-" + t.id).toggleClass("start-no-display");
+		if (!(jQuery('#s' + t.id).is(':checked'))){
+			jQuery("#edit-window-" + t.id).removeClass("start-no-display");
+		 	jQuery('#s'+t.id).trigger("click");
+	  }
 	}
 }
