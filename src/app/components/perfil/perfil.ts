@@ -1,33 +1,25 @@
 import {Component} from 'angular2/core';
-
+import { StudentService } from '../../services/student.service';
+import { Student } from '../../models/student';
 @Component({
 	selector: 'perfil',
     templateUrl: 'app/components/perfil/perfil.html',
-		styleUrls: ['app/components/perfil/perfil.css']
+		styleUrls: ['app/components/perfil/perfil.css'],
+		providers: [StudentService]
 })
 
 export class Perfil {
-	public modelo;
+	public student:Student;
 	public cambiarPassword:string;
 	public cambiarCorreoE:string;
-	public cambiarAge:string;
-	constructor(){
+
+	constructor(private _studentService: StudentService){
 		this.cambiarPassword = undefined;
 		this.cambiarCorreoE = undefined;
-		this.cambiarAge = undefined;
-		this.modelo = {
-			id: 2,
-			nombre: "Sergio",
-			apellido: "Pérez Peló",
-			genero: "Masculino",
-			edad: 20,
-			email: "spartanos@spartan.com",
-			entrenador : "Arnold suaseneguer"
-		};
+		this._studentService.getStudent(1)
+			.then(student => this.student = student);
 	}
-	esMasculino():boolean{
-		return this.modelo.genero==="Masculino";
-	}
+
 	cambiarPassClick(){
 		this.cambiarPassword="cambiar";
 	}
@@ -35,22 +27,10 @@ export class Perfil {
 		return this.cambiarPassword!==undefined;
 	}
 	cambiarAlgo():boolean{
-		return this.cambiarPassword!==undefined || this.cambiarCorreoE!==undefined || this.cambiarAge!==undefined;
+		return this.cambiarPassword!==undefined || this.cambiarCorreoE!==undefined;
 	}
 	guardarPass(){
 		this.cambiarPassword=undefined;
-	}
-
-	cambiarEdadClick(){
-		this.cambiarAge="cambiar";
-	}
-
-	cambiarEdad():boolean{
-		return this.cambiarAge!==undefined;
-	}
-
-	guardarEdad(){
-		this.cambiarAge=undefined;
 	}
 
 	cambiarCorreoClick(){

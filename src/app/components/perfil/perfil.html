@@ -20,21 +20,81 @@
   <!-- Perfil visible-->
   <div *ngIf="!cambiarAlgo()" class="panel panel-default col-md-6 col-md-offset-3">
     <div class="panel-body">
-      <div class="col-md-2">
-        <img class="img-circle img-responsive" src="https://www.ucl.ac.uk/steapp/images/people-images/user_icon.jpg" alt="Foto de perfil">
+      <div class="row">
+        <div class="col-md-2">
+          <img class="img-circle img-responsive" src="http://semantic-ui.com/images/avatar/large/daniel.jpg" alt="Foto de perfil">
+        </div>
       </div>
-      <div class="col-md-9">
-        <h4><span class="glyphicon glyphicon-user"></span> Nombre y apellidos: <span>{{modelo.nombre + " " + modelo.apellido}}</span></h4>
-        <h4><span class="glyphicon glyphicon-envelope"></span> Correo electrónico: <span>{{modelo.email}}</span></h4><span (click)="cambiarCorreoClick()" class="sp-link">  Modificar</span>
-        <h4><span class="glyphicon glyphicon-eye-open"></span> Nombre de mi entrenador: <span>{{modelo.entrenador}}</span></h4>
-        <h4><span class="glyphicon glyphicon-road"></span> Edad: <span>{{modelo.edad}}</span></h4>
-        <h4><span [class]="esMasculino() ? 'glyphicon glyphicon-king' : 'glyphicon glyphicon-queen'"></span> Genero: <span>{{modelo.genero}}</span></h4>
+
+      <hr>
+      <div class="ui relaxed divided list">
+        <div class="item">
+          <i class="large user outline middle aligned icon"></i>
+          <div class="content">
+            <a class="header">Nombre y apellidos</a>
+            <div class="description"><small>{{student.name + " " + student.lastname}}</small></div>
+          </div>
+        </div>
+        <div class="item">
+          <i class="large mail outline middle aligned icon"></i>
+          <div class="content">
+            <a class="header">Email</a>
+            <div class="description"><small>{{student.email}}</small></div>
+            <div class="description"><span (click)="cambiarCorreoClick()" class="sp-link">  Modificar</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <i class="large birthday middle aligned icon"></i>
+          <div class="content">
+            <a class="header">Edad</a>
+            <div class="description">{{student.age}}</div>
+          </div>
+        </div>
+        <div class="item">
+          <i [class]="student.gender ? 'pink female icon large' : 'blue male icon large'"></i>
+          <div class="content">
+            <a class="header">Género</a>
+            <div class="description"><small>{{student.gender ? 'Femenino' : 'Masculino'}}</small></div>
+          </div>
+        </div>
+        <div class="item">
+          <i class="large calendar middle aligned icon"></i>
+          <div class="content">
+            <a class="header">Matriculación</a>
+            <div class="description">{{student.registration_date | date }}</div>
+          </div>
+        </div>
       </div>
+
       <div *ngIf="!cambiarAlgo()" (click)="cambiarPassClick()" class="sp-link">
         <h5>Cambiar contraseña</h5>
       </div>
     </div>
   </div>
   <!-- Fin perfil visible-->
-
+<!--
+ Perfil version Michel
+<div class="ui relaxed divided list">
+  <div class="item">
+    <i class="large mail outline middle aligned icon"></i>
+    <div class="content">
+      <a class="header">Email</a>
+      <div class="description"><small>{{student.email}}</small></div>
+    </div>
+  </div>
+  <div class="item">
+    <i class="large birthday middle aligned icon"></i>
+    <div class="content">
+      <a class="header">Edad</a>
+      <div class="description">{{student.age}}</div>
+    </div>
+  </div>
+  <div class="item">
+    <i class="large calendar middle aligned icon"></i>
+    <div class="content">
+      <a class="header">Matriculación</a>
+      <div class="description">{{student.registration_date | date }}</div>
+    </div>
+  </div>
+</div>-->
 </div>
