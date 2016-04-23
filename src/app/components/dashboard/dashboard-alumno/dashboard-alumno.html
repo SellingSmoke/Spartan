@@ -179,6 +179,7 @@
               </div>
 
               <li *ngFor="#task of tasks" class="accordion-item" [class.hover-transition-to-do]="task.status === 0" [class.hover-transition-pending]="task.status === 2" [class.accordion-pending]="task.status === 2">
+                <!-- El elemento "input" activa el desplegable. Si la tarea tiene "status = 1", el input permanecerá deshabilitado-->
                 <input *ngIf="task.status != 1" id="{{ 's' + task.id}}" class="hide" type="checkbox">
                 <div class="col-md-12 col-xs-12	col-sm-12 margin-row" [class.task-completed]="task.status === 1">
                   <div class="col-md-6 col-sm-6 col-xs-10">
@@ -198,7 +199,7 @@
                         <i class="material-icons">watch_later</i>
                         <div class="ripple-container"></div>
                       </a>
-                      <a *ngIf="aut.esProfesor() && task.status != 1" href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                      <a *ngIf="aut.esProfesor() && task.status === 0" href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
                         <i class="material-icons">mode_edit</i>
                         <div class="ripple-container"></div>
                       </a>
@@ -211,37 +212,57 @@
                   </div>
                 </div>
 
+                <!-- TAREAS EN ESTADO SIN HACER (también para las completadas, pero el desplegable permanece deshabilitado)-->
                 <ul *ngIf="task.status != 2" class="accordion-child">
                   <a class="ui teal right corner label label-corner" data-toggle="tooltip" [title]="'Ejercicio ' + (task.type ? 'Anaeróbico' : 'Aeróbico')">
                     <i class="material-icons icon-label-corner">{{ task.type ? 'fitness_center' : 'directions_run' }}</i>
                   </a>
-                  <div class="row">
-                    <h5 class="col-md-6">{{task.description}}</h5>
-                    <h6 *ngIf="task.type === 0" class="col-md-6 h6-no-margin-top">Tus objetivos eran {{task.objective1}} {{task.format1}} en {{task.objective2}} {{task.format2}}</h6>
-                    <h6 *ngIf="task.type === 1" class="col-md-6 h6-no-margin-top">Tus objetivos eran {{task.objective2}} {{task.format2}} con {{task.objective1}} {{task.format1}}</h6>
+
+                  <!--PARTE ALUMNO-->
+                  <div *ngIf="!aut.esProfesor()">
+                    <div class="row">
+                      <h5 class="col-md-6">{{task.description}}</h5>
+                      <h6 *ngIf="task.type === 0" class="col-md-6 h6-no-margin-top">Tus objetivos eran {{task.objective1}} {{task.format1}} en {{task.objective2}} {{task.format2}}</h6>
+                      <h6 *ngIf="task.type === 1" class="col-md-6 h6-no-margin-top">Tus objetivos eran {{task.objective2}} {{task.format2}} con {{task.objective1}} {{task.format1}}</h6>
+                    </div>
+                    <form class="form-horizontal">
+                      <div class="form-group">
+                        <label class="col-md-2 {{'colorize1'+task.id}}">{{task.format1}}</label>
+                        <div class="col-md-8">
+                          <input class="slider-result"  [(ngModel)]="task.result1" type="range" min="0" [max]="task.objective1" (mousedown)="colorlabel('.colorize1'+task.id)" (mouseup)="colorlabel('.colorize1'+task.id)"/>
+                        </div>
+                        <label id="{{'label-result-1' + task.id}}" class="col-md-2  slider-result {{'colorize1'+task.id}}">{{task.result1}}</label>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="col-md-2 {{'colorize2'+task.id}}">{{task.format2}}</label>
+                        <div class="col-md-8">
+                          <input *ngIf="task.type === 0" class="slider-result" [(ngModel)]="task.result2" type="range" [min]="task.objective2" [max]="task.objective2 * 2" (mousedown)="colorlabel('.colorize2'+task.id)" (mouseup)="colorlabel('.colorize2'+task.id)"/>
+                          <input *ngIf="task.type === 1" class="slider-result"  [(ngModel)]="task.result2" type="range" min="0" [max]="task.objective2" (mousedown)="colorlabel('.colorize2'+task.id)" (mouseup)="colorlabel('.colorize2'+task.id)"/>
+                        </div>
+                        <label id="{{'label-result-2' + task.id}}" class="col-md-2 slider-result {{'colorize2'+task.id}}">{{task.result2}}</label>
+                      </div>
+
+                      <a class="btn btn-raised pull-right hint--top hint--success hint--medium" (click)="taskToPending(task)" data-hint="Enviar a tu entrenador">Enviar</a>
+                    </form>
                   </div>
-                  <form class="form-horizontal">
-                    <div class="form-group">
-                      <label class="col-md-2 {{'colorize1'+task.id}}">{{task.format1}}</label>
-                      <div class="col-md-8">
-                        <input class="slider-result"  [(ngModel)]="task.result1" type="range" min="0" [max]="task.objective1" (mousedown)="colorlabel('.colorize1'+task.id)" (mouseup)="colorlabel('.colorize1'+task.id)"/>
-                      </div>
-                      <label id="{{'label-result-1' + task.id}}" class="col-md-2  slider-result {{'colorize1'+task.id}}">{{task.result1}}</label>
-                    </div>
 
-                    <div class="form-group">
-                      <label class="col-md-2 {{'colorize2'+task.id}}">{{task.format2}}</label>
-                      <div class="col-md-8">
-                        <input *ngIf="task.type === 0" class="slider-result" [(ngModel)]="task.result2" type="range" [min]="task.objective2" [max]="task.objective2 * 2" (mousedown)="colorlabel('.colorize2'+task.id)" (mouseup)="colorlabel('.colorize2'+task.id)"/>
-                        <input *ngIf="task.type === 1" class="slider-result"  [(ngModel)]="task.result2" type="range" min="0" [max]="task.objective2" (mousedown)="colorlabel('.colorize2'+task.id)" (mouseup)="colorlabel('.colorize2'+task.id)"/>
-                      </div>
-                      <label id="{{'label-result-2' + task.id}}" class="col-md-2 slider-result {{'colorize2'+task.id}}">{{task.result2}}</label>
-                    </div>
+                  <!--FIN PARTE ALUMNO-->
 
-                    <a class="btn btn-raised pull-right hint--top hint--success hint--medium" (click)="taskToPending(task)" data-hint="Enviar a tu entrenador">Enviar</a>
-                  </form>
+                  <!--PARTE PROFESOR-->
+                  <div *ngIf="aut.esProfesor()">
+                    <div class="row">
+                      <h5 class="col-md-6">{{task.description}}</h5>
+                      <h6 *ngIf="task.type === 0" class="col-md-6 h6-no-margin-top">Los objetivos son {{task.objective1}} {{task.format1}} en {{task.objective2}} {{task.format2}}</h6>
+                      <h6 *ngIf="task.type === 1" class="col-md-6 h6-no-margin-top">Los objetivos son {{task.objective2}} {{task.format2}} con {{task.objective1}} {{task.format1}}</h6>
+                    </div>
+                  </div>
+                  <!--FIN PARTE PROFESOR-->
+
                 </ul>
+              <!--FIN TAREAS EN ESTADO SIN HACER | COMPLETADAS-->
 
+              <!-- TAREAS EN ESTADO PENDIENTE-->
                 <ul *ngIf="task.status === 2" class="accordion-child">
                   <a class="ui teal right corner label label-corner" data-toggle="tooltip" [title]="'Ejercicio ' + (task.type ? 'Anaeróbico' : 'Aeróbico')">
                     <i class="material-icons icon-label-corner">{{ task.type ? 'fitness_center' : 'directions_run' }}</i>
@@ -253,8 +274,21 @@
                     <h5 *ngIf="task.type === 0" class="col-md-12 text-pending-2">Conseguiste completar {{task.result1}} {{task.format1}} en {{task.result2}} {{task.format2}}</h5>
                     <h5 *ngIf="task.type === 1" class="col-md-12 text-pending-2">Conseguiste completar {{task.result2}} {{task.format2}} con {{task.result1}} {{task.format1}}</h5>
                   </div>
+                  <div *ngIf="!aut.esProfesor()" class="ui icon warning message pending-message">
+                    <i class="material-icons icon-pending-message">watch_later</i>
+                    <div class="content">
+                      <div class="header">
+                        Tarea pendiente de aprobación
+                      </div>
+                      <p>Espera a que tu entrenador te dé el visto bueno o te cambie los objetivos de la tarea</p>
+                    </div>
+                  </div>
+                  <div *ngIf="aut.esProfesor()" class="row task-treatment-buttons">
+                    <button (click)="task.status = 1" class="btn btn-success"><i class="check icon"></i> Dar como completada</button>
+                    <button class="btn btn-danger"><i class="remove icon"></i> Editar tarea</button>
+                  </div>
                 </ul>
-
+                <!-- FIN TAREAS EN ESTADO PENDIENTE-->
 
               </li>
 

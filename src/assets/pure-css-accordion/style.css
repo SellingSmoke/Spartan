@@ -1,3 +1,7 @@
+*:focus {
+  outline: none;
+}
+
 .hide {
     clip: rect(0 0 0 0);
     height: 1px;
@@ -466,4 +470,17 @@ input[type=range]::-ms-track {
 .text-pending-2 {
   text-align: center;
   color:  #009688;
+}
+
+.task-treatment-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pending-message {
+  margin-top: 2em !important;
+}
+
+.icon-pending-message {
+  margin-right: 0.6em;
 }
