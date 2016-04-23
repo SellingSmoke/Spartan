@@ -121,6 +121,11 @@ export class DashboardAlumno implements OnInit{
 	    return false;
 	}
 
+	taskToPending(t){
+		jQuery('#s'+t.id).trigger("click");
+		t.status = 2;
+	}
+
 	colorlabel (e){
 		  jQuery(e).toggleClass('add-color-label');
 	}

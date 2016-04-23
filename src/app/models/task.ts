@@ -2,7 +2,7 @@ export interface ITask{
   id: number;             // ID de la Tarea
   name: string;           // Nombre de la Tarea
   goal_id: number;        // ID de la meta a la que pertenece
-  completed: boolean;
+  status: number;         // 0: to do | 1: completed | 2: pending
   description: string;    // Descripcion de la Tarea
   type: number;           // Tipo de Tarea (0 para aerobicas, 1 para anaeróbicas)
 
@@ -22,7 +22,7 @@ export class Task implements ITask{
   id: number;             // ID de la Tarea
   name: string;           // Nombre de la Tarea
   goal_id: number;        // ID de la meta a la que pertenece
-  completed: boolean;
+  status: number;         // 0: to do | 1: completed | 2: pending
   description: string;    // Descripcion de la Tarea
   type: number;           // Tipo de Tarea (0 para aerobicas, 1 para anaeróbicas)
 
@@ -39,7 +39,7 @@ export class Task implements ITask{
     if(goal_id != null){
       this.result1 = 0;
       this.result2 = 0;
-      this.completed = false;
+      this.status = 0;
       this.goal_id = goal_id;
       this.id = i + 1;
       i++;
@@ -67,7 +67,7 @@ export class Task implements ITask{
           id: -1,
           name: this.name,
           goal_id:  this.goal_id,
-          completed: this.completed,
+          status: this.status,
           description: this.description,
           type: this.type,
           objective1: this.objective1,
@@ -82,7 +82,7 @@ export class Task implements ITask{
   fromJSON(task: ITask) {
     this.id = task.id;
     this.goal_id = task.goal_id;
-    this.completed = task.completed;
+    this.status = task.status;
     this.name = task.name;
     this.description = task.description;
     this.type = task.type;

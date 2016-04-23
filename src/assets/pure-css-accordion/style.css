@@ -202,6 +202,10 @@ a.glyphicon-plus.active {
     color: rgba(153, 153, 153, 0.79);
 }
 
+.accordion-pending {
+    background-color: rgba(255, 135, 0, 0.15);
+}
+
 .form-radio-button {
     text-align: center;
 }
@@ -288,14 +292,24 @@ a.glyphicon-plus.active {
   color: #009688;
 }
 
-.hover-transition {
+.hover-transition-to-do {
   transition-duration: .28s;
   transition-timing-function: cubic-bezier(.4,0,.2,1);
   transition-property: background-color;
 }
 
-.hover-transition:hover{
+.hover-transition-to-do:hover{
   background-color: #eeeeee;
+}
+
+.hover-transition-pending {
+  transition-duration: .28s;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-property: background-color;
+}
+
+.hover-transition-pending:hover{
+  background-color: rgba(185, 128, 65, 0.25);
 }
 
 #tab-tarea{
@@ -431,8 +445,8 @@ input[type=range]::-ms-track {
 }
 
 .slider-result {
-  text-align: left;
-  font-size: 20px;
+  text-align: left !important;
+  font-size: 20px !important;
 }
 
 .add-color-label {
@@ -442,4 +456,14 @@ input[type=range]::-ms-track {
 
 .h6-no-margin-top {
   margin-top: 0;
+}
+
+.text-pending {
+  text-align: center;
+  color:  #6a6a6a;
+}
+
+.text-pending-2 {
+  text-align: center;
+  color:  #009688;
 }
