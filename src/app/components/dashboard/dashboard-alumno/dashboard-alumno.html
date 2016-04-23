@@ -13,11 +13,29 @@
         <div class="panel-heading mdl-typography--title" id="sp-heading">
           <button *ngIf="aut.esProfesor()" id="boton-back" (click)="goBack()" class="btn btn-raised pull-right btn-fab"><i class="material-icons">arrow_back</i></button>
           <h3 id="titulo-meta" [class.titulo-meta-prof]="aut.esProfesor()">{{ student.goal | GoalName }}</h3>
-          <div id="barra-progreso-meta"*ngIf="student.goal.progress != 0" class="progress">
+          <!-- PROGRESO -->
+          <div id="barra-progreso-meta"*ngIf="student.goal.acepted" class="progress">
             <div class="progress-bar" [style.width.%]="student.goal.progress">
               <span class="sp-label">{{ student.goal.progress | BeautifyProgessBar }}</span>
             </div>
           </div>
+          <!-- ACEPTACION DE META -->
+          <div *ngIf="!student.goal.acepted" class="ui icon info message">
+            <i class="trophy icon"></i>
+            <div class="content">
+              <div class="header">
+                Petición de meta
+              </div>
+              <p *ngIf="rol == 2">Tu entrenador aún no ha aceptado tu meta aún</p>
+              <ul *ngIf="rol == 1" class="list">
+                <li>Acepta la meta para poder mandar tareas al alumno</li>
+                <li>Pudes rechazar la meta si no la consideras correcta</li>
+                  <button *ngIf="aut.esProfesor()" (click)="goalResponse(true)" class="btn btn-success"><i class="check icon"></i> Aceptar Meta</button>
+                  <button *ngIf="aut.esProfesor()" (click)="goalResponse(false)" class="btn btn-danger"><i class="remove icon"></i> Rechazar Meta</button>
+              </ul>
+            </div>
+          </div>
+
         </div>
         <!-- TABS -->
         <div id="botones-tabs" class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
@@ -120,10 +138,7 @@
                 <div class="header">
                   Sin tareas
                 </div>
-                <ul class="list">
-                  <li *ngIf="!student.goal.acepted && rol == 2">Tu entrenador aún no ha aceptado tu meta</li>
-                  <li>{{ rol == 1 ? 'Añade nuevas tareas a tu alumno' : 'Espera a que tu entrenador te asigne tareas' }}</li>
-                </ul>
+                  <p>{{ rol == 1 ? 'Añade nuevas tareas a tu alumno' : 'Espera a que tu entrenador te asigne tareas' }}</p>
               </div>
             </div>
 

@@ -72,6 +72,11 @@ export class DashboardAlumno implements OnInit{
 		this.task = new Task(this.student.goal.id);
 	}
 
+	goalResponse(acepted:boolean){
+		this.student.goal.acepted = acepted;
+		// LLAMAR A GUARDAR 
+	}
+
 
 	saveComment(text: string){
 		this.student.goal.comments.push(this.comment);

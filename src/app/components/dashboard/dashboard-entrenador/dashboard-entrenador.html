@@ -9,7 +9,8 @@
                 [class.blue]="student === selectedStudent" class="ui red link card fluid card">
                 <div class="content">
                     <span class="col-md-8 col-xs-8">
-                      <div class="header custom-card-header">{{student.name}} <br><small class="text-muted custom-card-subheader">{{student.lastname}}</small></div>
+                      <div class="header custom-card-header">{{student.name}} <br><small class="text-muted custom-card-subheader">{{student.lastname}}</small>
+                      </div>
                     </span>
                     <!--BOTÓN DE DETALLE-->
                     <span *ngIf="selectedStudent != student" class="col-md-4 col-xs-4">
@@ -34,7 +35,7 @@
 
                 <!-- BOTON PROGRESO -->
                 <div *ngIf="selectedStudent != student" class="content">
-                    <button *ngIf="student.goal != null" (click)="goToStudentTask(student)" class="btn btn-danger btn-raised btn-lg btn-block">
+                    <button *ngIf="student.goal != null" (click)="goToStudentTask(student)" class="btn btn-default btn-raised btn-lg btn-block">
                         <i class="material-icons">trending_up</i> Progreso
                         <div class="progress progress-button" >
                             <div class="progress-bar" [style.width.%]="student.goal.progress">
@@ -43,7 +44,7 @@
                         </div>
                     </button>
                     <fieldset *ngIf="student.goal === null" disabled>
-                      <button class="btn btn-danger btn-raised btn-lg btn-block">
+                      <button class="btn btn-default btn-raised btn-lg btn-block">
                           <i class="material-icons">trending_up</i> Sin Meta
                           <div class="progress progress-button" >
                               <div class="progress-bar" [style.width.%]="0">
