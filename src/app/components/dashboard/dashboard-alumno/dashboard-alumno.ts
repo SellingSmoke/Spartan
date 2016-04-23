@@ -34,8 +34,6 @@ export class DashboardAlumno implements OnInit{
 
 	tab: number;				// Tab actual
 
-	rol: number;				// Rol del usuario (Evita hacer multiples peticiones)
-
 	task: Task;					// Modelo de la nueva meta para el formulario
 
 	constructor(private aut: AutenticacionService, private _taskService: TaskService) {}
@@ -48,7 +46,6 @@ export class DashboardAlumno implements OnInit{
 	ngOnInit(){
 		this.tasks = [];
 		this.tab = 1;
-		this.rol = localStorage.getItem('rol');
 		if (this.student.goal){
 			this._taskService.getTasks(this.student.goal.id).then(
 				tasks => this.tasks = tasks
@@ -65,9 +62,23 @@ export class DashboardAlumno implements OnInit{
 		this.trainer_dashboard_event.emit(null);
   }
 
+	newGoal(){
+		this.student.goal = null;
+	}
+
 	getGoal(goal: Goal){
 		this.student.goal = goal;
 		this.task = new Task(this.student.goal.id);
+	}
+
+	goalResponse(acepted:boolean){
+		this.student.goal.acepted = acepted;
+		this.student.goal.canceled = !acepted;
+		// LLAMAR A GUARDAR
+		if(this.aut.esProfesor() && !acepted){
+			this.newGoal();
+			this.goBack();
+		}
 	}
 
 	saveTask(mode){
