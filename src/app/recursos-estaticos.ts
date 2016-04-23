@@ -19,11 +19,11 @@ export var STUDENTS: Student[] = [
 
 export var TASKS: ITask[] = [
   { id: 1, name: "Repeticiones", goal_id: 4, completed: false, description: "Esta tarea hay que hacerla asi", type: 1, objective1:15, format1:"repeticiones", result1: 10, objective2:40, format2:"Kg", result2: 35 },
-  { id: 2, name: "Recorrido", goal_id: 4, completed: false, description: "Esta tarea hay que hacerla pues de esta manera", type: 0, objective1:5, format1:"Km", result1: 5, objective2:20, format2:"minutos", result2:18 },
-  { id: 3, name: "Recorrido 1", goal_id: 1, completed: false, description: "Esta tarea hay que hacerla de esta otra", type: 0, objective1:5, format1:"Km", result1: 5, objective2:20, format2:"minutos", result2:18 },
-  { id: 4, name: "Repeticiones 1", goal_id: 1, completed: false, description: "Y esta como te dé la real gana", type: 1, objective1:5, format1:"Km", result1: 5, objective2:20, format2:"minutos", result2:18 },
-  { id: 5, name: "Recorrido 2", goal_id: 1, completed: true, description: "Te queda esta también", type: 0, objective1:5, format1:"Km", result1: 5, objective2:20, format2:"minutos", result2:18 },
-  { id: 6, name: "Repeticiones 2", goal_id: 1, completed: false, description: "Esta tarea hay que hacerla de este modo FIN", type: 1, objective1:5, format1:"Km", result1: 5, objective2:20, format2:"minutos", result2:18 }
+  { id: 2, name: "Recorrido", goal_id: 4, completed: false, description: "Esta tarea hay que hacerla pues de esta manera", type: 0, objective1:5, format1:"Km", result1: 0, objective2:20, format2:"minutos", result2:18 },
+  { id: 3, name: "Recorrido 1", goal_id: 1, completed: false, description: "Esta tarea hay que hacerla de esta otra", type: 0, objective1:10, format1:"Km", result1: 0, objective2:20, format2:"Minutos", result2:0 },
+  { id: 4, name: "Repeticiones 1", goal_id: 1, completed: false, description: "Y esta como te dé la real gana", type: 1, objective1:20, format1:"Kg", result1: 0, objective2:20, format2:"Repeticiones", result2:18 },
+  { id: 5, name: "Recorrido 2", goal_id: 1, completed: true, description: "Te queda esta también", type: 0, objective1:100, format1:"Km", result1: 0, objective2:20, format2:"minutos", result2:18 },
+  { id: 6, name: "Repeticiones 2", goal_id: 1, completed: false, description: "Esta tarea hay que hacerla de este modo FIN", type: 1, objective1:12, format1:"Kg", result1: 0, objective2:20, format2:"Repeticiones", result2:18 }
 ];
 
 export var TRAINERS: Trainer[] = [

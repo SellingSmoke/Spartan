@@ -54,10 +54,10 @@ export class Task implements ITask{
     if(type){
       this.type = 1;
       this.format1 = "Km"
-      this.format2 = "minutos"
+      this.format2 = "Minutos"
     }else{
       this.type = 0;
-      this.format1 = "repeticiones"
+      this.format1 = "Repeticiones"
       this.format2 = "Kg"
     }
   }
@@ -93,7 +93,6 @@ export class Task implements ITask{
     this.format2 = task.format2;
     this.result2 = task.result2;
   }
-
 
 }
 

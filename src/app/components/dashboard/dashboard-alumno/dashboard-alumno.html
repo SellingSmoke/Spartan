@@ -182,14 +182,11 @@
                 <input *ngIf="!task.completed" id="{{ 's' + task.id}}" class="hide" type="checkbox">
                 <div class="col-md-12 col-xs-12	col-sm-12 margin-row" [class.task-completed]="task.completed">
                   <div class="col-md-6 col-sm-6 col-xs-10">
-
-                    <label [attr.for]="'s'+task.id" [class]="task.completed ? 'accordion-label-completed' : 'accordion-label'">
-                      {{task.name}}
-                    </label>
+                    <label [attr.for]="'s'+task.id" [class]="task.completed ? 'accordion-label-completed' : 'accordion-label'">{{task.name}}</label>
                   </div>
                   <div id="botones-tarea" class="col-md-6 col-sm-6 col-xs-2">
                     <div id="botones-tarea-inside" class="pull-right">
-                      <a *ngIf="!aut.esProfesor() && !task.completed" (click)="task.completed = true" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                      <a *ngIf="!aut.esProfesor() && !task.completed" (click)="task.completed = true" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab" title="Completar tarea al 100%">
                         <i class="material-icons">done</i>
                         <div class="ripple-container"></div>
                       </a>
@@ -209,51 +206,32 @@
                     </div>
                   </div>
                 </div>
+
                 <ul class="accordion-child">
                   <a class="ui teal right corner label label-corner" data-toggle="tooltip" [title]="'Ejercicio ' + (task.type ? 'Anaeróbico' : 'Aeróbico')">
                     <i class="material-icons icon-label-corner">{{ task.type ? 'fitness_center' : 'directions_run' }}</i>
                   </a>
-                  <h5>{{task.description}}</h5>
+                  <div class="row">
+                    <h5 class="col-md-6">{{task.description}}</h5>
+                    <h6 *ngIf="task.type === 0" class="col-md-6 h6-no-margin-top">Tus objetivos eran {{task.objective1}} {{task.format1}} en {{task.objective2}} {{task.format2}}</h6>
+                    <h6 *ngIf="task.type === 1" class="col-md-6 h6-no-margin-top">Tus objetivos eran {{task.objective2}} {{task.format2}} con {{task.objective1}} {{task.format1}}</h6>
+                  </div>
                   <form class="form-horizontal">
                     <div class="form-group">
-                      <label class="col-md-2 control-label">Opciones</label>
-
-                      <div class="col-md-10">
-                        <div class="radio radio-primary">
-                          <label>
-                            <input type="radio" name="sample1" value="option1" checked=""><span class="circle"></span><span class="check"></span> Opción 1
-                          </label>
-                        </div>
-                        <div class="radio">
-                          <label>
-                            <input type="radio" name="sample1" value="option1"><span class="circle"></span><span class="check"></span> Opción 2
-                          </label>
-                        </div>
+                      <label class="col-md-2">{{task.format1}}</label>
+                      <div class="col-md-8">
+                        <input class="slider-result"  [(ngModel)]="task.result1" type="range" min="0" [max]="task.objective1" (mousedown)="colorlabel('#slider-label-result-1-' + task.id)" (mouseup)="colorlabel('#slider-label-result-1-' + task.id)"/>
                       </div>
+                      <label class="col-md-2" id="{{ 'slider-label-result-1-' + task.id}}">{{task.result1}}</label>
                     </div>
 
                     <div class="form-group">
-                      <div class="col-md-offset-2 col-md-10">
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox"><span class="checkbox-material"><span class="check"></span></span> ¿Completado?
-                          </label>
-                        </div>
+                      <label class="col-md-2">{{task.format2}}</label>
+                      <div class="col-md-8">
+                        <input *ngIf="task.type === 0" class="slider-result" [(ngModel)]="task.result2" type="range" [min]="task.objective2" [max]="task.objective2 * 2" (mousedown)="colorlabel('#slider-label-result-2-' + task.id)" (mouseup)="colorlabel('#slider-label-result-2-' + task.id)"/>
+                        <input *ngIf="task.type === 1" class="slider-result"  [(ngModel)]="task.result2" type="range" min="0" [max]="task.objective2" (mousedown)="colorlabel('#slider-label-result-2-' + task.id)" (mouseup)="colorlabel('#slider-label-result-2-' + task.id)"/>
                       </div>
-                    </div>
-
-                    <div class="form-group">
-                      <label for="select111" class="col-md-2 control-label">¿Cuánto?</label>
-
-                      <div class="col-md-10">
-                        <select id="select111" class="form-control">
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </select>
-                      </div>
+                      <label class="col-md-2" id="{{ 'slider-label-result-2-' + task.id}}">{{task.result2}}</label>
                     </div>
 
                     <a class="btn btn-raised pull-right hint--top hint--success hint--medium" data-hint="Enviar a tu entrenador">Enviar</a>
