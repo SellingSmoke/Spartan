@@ -32,7 +32,7 @@ export class LoggedInRouterOutlet extends RouterOutlet {
         var url = instruction.urlPath;
         if (!this.rutasPublicas[url] && !localStorage.getItem('spartan')) {
             //Ruta no publica sin token
-            this.padre.navigateByUrl('/login');
+            this.padre.navigateByUrl('/mainpage');
         }else if (this.rutasPublicas[url] && localStorage.getItem('spartan')){
             //Ruta publica con token
             this.padre.navigateByUrl('/inicio');
