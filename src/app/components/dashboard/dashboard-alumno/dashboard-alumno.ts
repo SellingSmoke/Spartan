@@ -36,6 +36,8 @@ export class DashboardAlumno implements OnInit{
 
 	task: Task;					// Modelo de la nueva meta para el formulario
 
+	taskAuxFeedback: Task;
+
 	constructor(private aut: AutenticacionService, private _taskService: TaskService) {}
 
 	/*
@@ -119,4 +121,7 @@ export class DashboardAlumno implements OnInit{
 	    return false;
 	}
 
+	colorlabel (e){
+		  jQuery(e).toggleClass('add-color-label');
+	}
 }

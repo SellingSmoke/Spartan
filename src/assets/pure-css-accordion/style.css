@@ -337,3 +337,109 @@ a.glyphicon-plus.active {
 .more-margin {
   margin: 32px 32px 32px 32px !important;
 }
+
+
+
+/*Pure CSS SLIDERS*/
+
+input[type=range] {
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 1;
+  height: 2em;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+  width: 100%;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border-color: #D2D2D2;
+  color: transparent;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1.5em;
+  height: 1.5em;
+  margin-top: 0;
+  background-color: #009688;
+  border-radius: 1em;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+input[type=range]::-moz-range-thumb {
+  width: 1.5em;
+  height: 1.5em;
+  margin-top: 0;
+  background-color: #009688;
+  border-radius: 1em;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+input[type=range]::-ms-thumb {
+  width: 1.5em;
+  height: 1.5em;
+  margin-top: 0;
+  background-color: #009688;
+  border-radius: 1em;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+input[type=range]:hover::-webkit-slider-thumb {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+input[type=range]:hover::-moz-range-thumb {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+input[type=range]:hover::-ms-thumb {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+input[type=range]:active::-webkit-slider-thumb {
+  border-color: #D2D2D2;
+}
+input[type=range]:active::-moz-range-thumb {
+  border-color: #D2D2D2;
+}
+input[type=range]:active::-ms-thumb {
+  border-color: #D2D2D2;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  cursor: pointer;
+  height: 1em;
+  border-bottom: 2px solid #D2D2D2;
+  background-color: transparent;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  cursor: pointer;
+  border-bottom: 2px solid #D2D2D2;
+  background-color: transparent;
+}
+input[type=range]::-ms-track {
+  background: transparent;
+  border-color: #D2D2D2;
+  color: transparent;
+}
+
+.slider-result {
+  text-align: left;
+  font-size: 20px;
+}
+
+.add-color-label {
+  color:  #009688 !important;
+  font-weight: bold !important;
+}
+
+.h6-no-margin-top {
+  margin-top: 0;
+}
