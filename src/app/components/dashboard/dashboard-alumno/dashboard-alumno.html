@@ -20,22 +20,39 @@
               <span class="sp-label">{{ student.goal.progress | BeautifyProgessBar }}</span>
             </div>
           </div>
-          
+
           <!-- ACEPTACION DE META -->
-          <div *ngIf="!student.goal.acepted" class="ui icon info message">
+          <div *ngIf="!student.goal.acepted && !student.goal.canceled" class="ui icon info message">
             <i class="trophy icon"></i>
             <div class="content">
               <div class="header">
                 Petición de meta
               </div>
-              <p *ngIf="rol == 2">Tu entrenador aún no ha aceptado tu meta aún</p>
-              <ul *ngIf="rol == 1" class="list">
+              <p *ngIf="aut.esAlumno()">Tu entrenador aún no ha aceptado tu meta aún</p>
+              <ul *ngIf="aut.esProfesor()" class="list">
                 <li>Acepta la meta para poder mandar tareas al alumno</li>
                 <li>Pudes rechazar la meta si no la consideras correcta</li>
-                <button *ngIf="aut.esProfesor()" (click)="goalResponse(true)" class="btn btn-success"><i class="check icon"></i> Aceptar Meta</button>
-                <button *ngIf="aut.esProfesor()" (click)="goalResponse(false)" class="btn btn-danger"><i class="remove icon"></i> Rechazar Meta</button>
+                <button (click)="goalResponse(true)" class="btn btn-success"><i class="check icon"></i> Aceptar Meta</button>
+                <button (click)="goalResponse(false)" class="btn btn-danger"><i class="remove icon"></i> Cancelar Meta</button>
               </ul>
             </div>
+            <button *ngIf="aut.esAlumno()" (click)="goalResponse(false)" class="btn btn-danger pull-right"><i class="remove icon"></i>Cancelar Meta</button>
+          </div>
+
+          <!-- CANCELACION DE META -->
+          <div *ngIf="student.goal.canceled" class="ui icon negative message">
+            <i class="red remove icon"></i>
+            <div class="content">
+              <div class="header">
+                Meta cancelada
+              </div>
+              <ul class="list">
+                <li>Tu meta ha sido cancelada</li>
+                <li>Puedes pedir una nueva meta</li>
+              </ul>
+
+            </div>
+            <button *ngIf="aut.esAlumno()" (click)="newGoal()" class="btn btn-info btn-raised"><i class="write icon"></i>Nueva Meta</button>
           </div>
 
           <br *ngIf="!student.goal.acepted">
