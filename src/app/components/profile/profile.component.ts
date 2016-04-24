@@ -10,7 +10,7 @@ import { Student } from '../../models/student.model';
 
 export class Profile {
 	public student:Student;
-	public editMode:number; // 0 nada - 1 mail - 2 pass
+	public editMode:number; // 0 nada - 1 mail - 2 pass  - 3 registro histórico de metas
 
 	constructor(private _studentService: StudentService){
 		this.editMode = 0;
@@ -24,6 +24,10 @@ export class Profile {
 
 	editMail(){
 		this.editMode = 1;
+	}
+
+	showGoals(){
+		this.editMode = 3;
 	}
 
 	saveChanges(save:boolean){
