@@ -5,6 +5,7 @@ import { Comment } from '../../../models/comment.model';
 import { Task } from '../../../models/task.model';
 import { Goal } from '../../../models/goal.model';
 import { GoalForm } from '../../../directives/goalForm/goal-form'
+import { Diets } from '../../../directives/diets/diets'
 import { CommentDirective } from '../../../directives/comments/comment.directive'
 import { BeautifyProgessBarPipe, GoalNamePipe } from '../../../pipes/student-pipes.pipe';
 import { TaskService } from '../../../services/task.service';
@@ -17,7 +18,7 @@ declare var jQuery:JQueryStatic;
 	selector: 'dashboard-alumno',
   templateUrl: 'app/components/dashboard/student-dashboard/student-dashboard.html',
   providers: [AutenticacionService, TaskService],
-	directives:  [GoalForm, CommentDirective],
+	directives:  [GoalForm, CommentDirective, Diets],
   pipes: [BeautifyProgessBarPipe, GoalNamePipe],
 	inputs: ['student']
 })
@@ -47,7 +48,7 @@ export class DashboardAlumno implements OnInit{
 
 	ngOnInit(){
 		this.tasks = [];
-		this.tab = 1;
+		this.tab = 3; // OJO CAMBIAR
 		if (this.student.goal){
 			this._taskService.getTasks(this.student.goal.id).then(
 				tasks => this.tasks = tasks

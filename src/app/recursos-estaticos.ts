@@ -46,8 +46,41 @@ export var TRAINERS: Trainer[] = [
 
 export var DIETS: Diet[] = [
   { id: 1, id_trainer: 1, name: "Dieta para perder peso",  description: "Descripcion de la dieta",
+    matrix:[
+      /** Desayunos     */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranjaS",
+                            " Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranjaS",
+                            " Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranjaS",
+                            " Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranjaS",
+                            " Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranjaS",
+                            " Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranjaS",
+                            " Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranjaS"],
+      /** Comidas    */     ["Menestra de verduras - Conejo al tomillo - 1 manzana",
+                             "Menestra de verduras - Conejo al tomillo - 1 manzana",
+                             "Menestra de verduras - Conejo al tomillo - 1 manzana",
+                             "Menestra de verduras - Conejo al tomillo - 1 manzana",
+                             "Menestra de verduras - Conejo al tomillo - 1 manzana",
+                             "Menestra de verduras - Conejo al tomillo - 1 manzana",
+                             "Menestra de verduras - Conejo al tomillo - 1 manzana",],
+      /** Meriendas */      ["1 yogur desnatado",
+                             "1 yogur desnatado",
+                             "1 yogur desnatado",
+                             "1 yogur desnatado",
+                             "1 yogur desnatado",
+                             "1 yogur desnatado",
+                             "1 yogur desnatado"],
+      /** Cenas    */       ["Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor",
+                             "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor",
+                             "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor",
+                             "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor",
+                             "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor",
+                             "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor",
+                             "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
+    ]
+  },
+  // MATRIZ ANTIGUA; NO USAR
+  { id: 2, id_trainer: 1, name: "Dieta para perder peso",  description: "Descripcion de la dieta",
     matrix:[           /**                            DESAYUNO                                  |                         COMIDA                        |      MERIENDA      |                                  CENA                                 |
-      /** Lunes     */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja", "Menestra de verduras - Conejo al tomillo - 1 manzana", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
+      /** Lunes     */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranjaS", "Menestra de verduras - Conejo al tomillo - 1 manzana", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
       /** Martes    */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja", "Menestra de verduras - Conejo al tomillo - 1 manzana", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
       /** Miercoles */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja", "Menestra de verduras - Conejo al tomillo - 1 manzana", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
       /** Jueves    */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja", "Menestra de verduras - Conejo al tomillo - 1 manzana", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
@@ -55,5 +88,5 @@ export var DIETS: Diet[] = [
       /** Sabado    */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja", "Menestra de verduras - Conejo al tomillo - 1 manzana", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
       /** Domingo   */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja", "Menestra de verduras - Conejo al tomillo - 1 manzana", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
     ]
-  }
+  },
 ];
