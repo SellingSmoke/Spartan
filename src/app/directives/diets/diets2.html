@@ -1,0 +1,54 @@
+<div clasa="btn btn-default" (click)="hideColumns(2)">{{ diet.name }}</div>
+
+<div class="table-responsive">
+  <table id="tabla-dieta" class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+    <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric">#</th>
+        <th>Domingo</th>
+        <th>Lunes</th>
+        <th>Martes</th>
+        <th>Miercoles</th>
+        <th>Jueves</th>
+        <th>Viernes</th>
+        <th>Sabado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Desayuno</td>
+        <td *ngFor="#course of diet.matrix[0]" [hidden]="diet.matrix[0].indexOf(course) != day">
+            {{ diet.matrix[0].indexOf(course) }} <!-- PROBLEMA: Si hacemos index of, si esta duplicado, a fregar -->
+            <p>{{ course | ShowFood:0 }}</p>
+            <p>{{ course | ShowFood:1 }}</p>
+            <p>{{ course | ShowFood:2 }}</p>
+        </td>
+      </tr>
+      <tr>
+        <td>Comida</td>
+        <td *ngFor="#course of diet.matrix[1]" [hidden]="diet.matrix[1].indexOf(course) != day">
+          {{ diet.matrix[1].indexOf(course) }}
+            <p>{{ course | ShowFood:0 }}</p>
+            <p>{{ course | ShowFood:1 }}</p>
+            <p>{{ course | ShowFood:2 }}</p>
+        </td>
+      </tr>
+      <tr>
+        <td>Merienda</td>
+        <td *ngFor="#course of diet.matrix[2]" [hidden]="diet.matrix[2].indexOf(course) != day">
+            <p>{{ course | ShowFood:0 }}</p>
+            <p>{{ course | ShowFood:1 }}</p>
+            <p>{{ course | ShowFood:2 }}</p>
+        </td>
+      </tr>
+      <tr>
+        <td>Cena</td>
+        <td *ngFor="#course of diet.matrix[3]" [hidden]="diet.matrix[3].indexOf(course) != day">
+            <p>{{ course | ShowFood:0 }}</p>
+            <p>{{ course | ShowFood:1 }}</p>
+            <p>{{ course | ShowFood:2 }}</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
