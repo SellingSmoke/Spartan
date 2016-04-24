@@ -203,7 +203,7 @@
                         <i class="material-icons">mode_edit</i>
                         <div class="ripple-container"></div>
                       </a>
-                      <a *ngIf="aut.esProfesor() && task.status != 1" href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                      <a *ngIf="aut.esProfesor() && task.status != 1" (click)="deleteTask(task)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
                         <i class="material-icons">close</i>
                         <div class="ripple-container"></div>
                       </a>

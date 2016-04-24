@@ -143,4 +143,9 @@ export class DashboardAlumno implements OnInit{
 		t.status = 0;
 		this.editTrigger(t);
 	}
+
+	deleteTask(t){
+		var x = this.tasks.indexOf(t);
+		this.tasks.splice(x, 1);
+	}
 }
