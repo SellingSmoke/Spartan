@@ -22,54 +22,54 @@ export class Diet implements IDiet{
     this.description = description;
     this.notes = "Sin anotaciones"
     this.matrix = [
-      /** Lunes     */ [" Desayunos", "Comida", "Merienda", "Cena"],
-      /** Martes    */ [" Desayunos", "Comida", "Merienda", "Cena"],
-      /** Miercoles */ [" Desayunos", "Comida", "Merienda", "Cena"],
-      /** Jueves    */ [" Desayunos", "Comida", "Merienda", "Cena"],
-      /** Viernes   */ [" Desayunos", "Comida", "Merienda", "Cena"],
-      /** Sabado    */ [" Desayunos", "Comida", "Merienda", "Cena"],
-      /** Domingo   */ [" Desayunos", "Comida", "Merienda", "Cena"]
+      /** Lunes     */ ["", "", "", ""],
+      /** Martes    */ ["", "", "", ""],
+      /** Miercoles */ ["", "", "", ""],
+      /** Jueves    */ ["", "", "", ""],
+      /** Viernes   */ ["", "", "", ""],
+      /** Sabado    */ ["", "", "", ""],
+      /** Domingo   */ ["", "", "", ""]
     ];
   }
 }
 //
 // var MATRIX1 : [
-//   /** Lunes     */ [" Desayunos", "Comida", "Merienda", "Cena"],
-//   /** Martes    */ [" Desayunos", "Comida", "Merienda", "Cena"],
-//   /** Miercoles */ [" Desayunos", "Comida", "Merienda", "Cena"],
-//   /** Jueves    */ [" Desayunos", "Comida", "Merienda", "Cena"],
-//   /** Viernes   */ [" Desayunos", "Comida", "Merienda", "Cena"],
-//   /** Sabado    */ [" Desayunos", "Comida", "Merienda", "Cena"],
-//   /** Domingo   */ [" Desayunos", "Comida", "Merienda", "Cena"]
+//   /** Lunes     */ ["", "", "", ""],
+//   /** Martes    */ ["", "", "", ""],
+//   /** Miercoles */ ["", "", "", ""],
+//   /** Jueves    */ ["", "", "", ""],
+//   /** Viernes   */ ["", "", "", ""],
+//   /** Sabado    */ ["", "", "", ""],
+//   /** Domingo   */ ["", "", "", ""]
 // ];
 //
 // var MATRIX2 : [
-//   /** Desayunos     */ ["Desayuno ",
+//   /**      */ ["Desayuno ",
 //                         "Desayuno ",
 //                         "Desayuno ",
 //                         "Desayuno ",
 //                         "Desayuno ",
 //                         "Desayuno ",
 //                         "Desayuno "],
-//   /** Comidas    */     ["Comida",
-//                          "Comida",
-//                          "Comida",
-//                          "Comida",
-//                          "Comida",
-//                          "Comida",
-//                          "Comida"],
-//   /** Comidas */      ["Merienda",
-//                          "Merienda",
-//                          "Merienda",
-//                          "Merienda",
-//                          "Merienda",
-//                          "Merienda",
-//                          "Merienda"],
-//   /** Cenas    */       ["Cena",
-//                          "Cena",
-//                          "Cena",
-//                          "Cena",
-//                          "Cena",
-//                          "Cena",
-//                          "Cena"]
+//   /** s    */     ["",
+//                          "",
+//                          "",
+//                          "",
+//                          "",
+//                          "",
+//                          ""],
+//   /** s */      ["",
+//                          "",
+//                          "",
+//                          "",
+//                          "",
+//                          "",
+//                          ""],
+//   /** s    */       ["",
+//                          "",
+//                          "",
+//                          "",
+//                          "",
+//                          "",
+//                          ""]
 // ];

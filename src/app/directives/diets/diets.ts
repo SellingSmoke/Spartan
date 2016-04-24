@@ -8,6 +8,7 @@ declare var jQuery:JQueryStatic;
 @Component({
 	selector: 'diets',
   templateUrl: 'app/directives/diets/diets.html',
+	styleUrls: ['app/directives/diets/diets.css'],
   providers: [DietService],
 	pipes: [ShowFoodPipe]
 })
@@ -23,9 +24,14 @@ export class Diets implements OnInit{
 	day: number;
 	day_s:string;
 
+	rol:boolean;
+	edit_mode:boolean;
+
 	constructor(private _dietService: DietService) {
-		this.diet = new Diet(1, "DIETA 1", "DESC");
+		this.diet = new Diet(1, "", "");
 		this.setDay(new Date().getDay() + 1);
+		this.edit_mode = false;
+		this.rol = localStorage.getItem("rol") === "1";
 		console.log(this.day);
 	}
 
@@ -34,11 +40,16 @@ export class Diets implements OnInit{
 	*/
 
   ngOnInit() {
-		this._dietService.getDiet(this.diet_id).then(
-			diet => {this.diet = diet;
-							 this.hideColumns(this.day);
-						 }
-		);
+		if (this.diet_id !== -1){ // Si existe la dieta
+			this._dietService.getDiet(this.diet_id).then(
+				diet => {
+								 this.diet = diet;
+								 this.hideColumns(this.day);
+							  }
+			);
+		}else{
+			this.hideColumns(this.day);
+		}
   }
 
 	/**
@@ -70,6 +81,18 @@ export class Diets implements OnInit{
 		}
 		this.day = day;
 		this.day_s = Diets.days[day - 1 ];
+	}
+
+	/**
+		 Cambiar el modo de edición
+	*/
+	editMode(save:boolean){
+		if(save){
+			// Aqui se hará PUT sobre la meta
+			this.diet.id = 1;
+			this.diet_id = 1;
+		}
+		this.edit_mode = !this.edit_mode;
 	}
 
 };

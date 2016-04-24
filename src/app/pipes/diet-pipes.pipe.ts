@@ -16,11 +16,14 @@ export class ShowFoodPipe implements PipeTransform {
 
       switch(course){
         case 0: // Primer plato
-                return values[0];
-        case 1: // Segundo plato
+                if(values.length == 1){
+                  return value;
+                }
                 return values[1];
+        case 1: // Segundo plato
+                return values[2];
         case 2: // Postre
-                return values[2]
+                return values[3]
         default:
                 return "Invalid food";
       }

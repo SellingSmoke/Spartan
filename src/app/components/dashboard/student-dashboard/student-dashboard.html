@@ -422,12 +422,16 @@
                 <div class="header">
                   Sin dieta asignada
                 </div>
-                <p>{{ rol == 1 ? 'Puedes añadir una dieta a tu alumno' : 'Contacta con tu entrenador para que te asigne una dieta a tu meta' }}</p>
+                <p>{{ aut.esProfesor() ? 'Puedes añadir una dieta a tu alumno' : 'Contacta con tu entrenador para que te asigne una dieta a tu meta' }}</p>
+                <ul  *ngIf="aut.esProfesor()" class="list">
+                  <li>Añade el contenido que consideres correcto para la dieta del alumno pulsando <code>editar</code></li>
+                  <li>Cuando acabes, pulsa <code>guardar</code></li>
+                </ul>
               </div>
             </div>
 
             <!-- FORMULARIO Y VISTA DE LA DIETA -->
-            <diets *ngIf="student.goal.diet_id !== -1 || aut.esProfesor()" [diet_id]="student.goal.diet_id"></diets>
+            <diets *ngIf="student.goal.diet_id !== -1 || aut.esProfesor()" [(diet_id)]="student.goal.diet_id"></diets>
 
           </div>
 
