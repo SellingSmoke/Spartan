@@ -56,7 +56,7 @@
               <a (click)="hideColumns(day - 1)" class="icon item">
                 <i class="left chevron icon"></i>
               </a>
-              <a class="item">{{ day_s }}</a>
+              <a class="item min-width-day"><span class="centered-day">{{ day_s }}</span></a>
               <a (click)="hideColumns(day + 1)" class="icon item">
                 <i class="right chevron icon"></i>
               </a>
@@ -78,7 +78,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr class="hover-transition-to-do">
           <td>Desayuno</td>
           <td>
               <p *ngIf="!edit_mode">{{ diet.matrix[0][0] | ShowFood:0 }}</p>
@@ -172,7 +172,7 @@
             </fieldset>
           </td>
         </tr>
-        <tr>
+        <tr class="hover-transition-to-do">
           <td>Comida</td>
           <td>
             <p *ngIf="!edit_mode">{{ diet.matrix[0][1] | ShowFood:0 }}</p>
@@ -266,7 +266,7 @@
             </fieldset>
           </td>
         </tr>
-        <tr>
+        <tr  class="hover-transition-to-do">
           <td>Merienda</td>
           <td>
             <p *ngIf="!edit_mode">{{ diet.matrix[0][2] | ShowFood:0 }}</p>
@@ -360,7 +360,7 @@
             </fieldset>
           </td>
         </tr>
-        <tr>
+        <tr class="hover-transition-to-do">
           <td>Cena</td>
           <td>
             <p *ngIf="!edit_mode">{{ diet.matrix[0][3] | ShowFood:0 }}</p>
