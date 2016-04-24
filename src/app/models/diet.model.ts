@@ -3,6 +3,7 @@ export interface IDiet {
   id_trainer: number;
   name: string;
   description: string;
+  notes:string;
   matrix: string[][];
 }
 
@@ -11,6 +12,7 @@ export class Diet implements IDiet{
   id_trainer: number;
   name: string;
   description: string;
+  notes:string;
   matrix: string[][];
 
   constructor(id_trainer:number, name:string, description:string){
@@ -18,6 +20,7 @@ export class Diet implements IDiet{
     this.id_trainer = id_trainer;
     this.name = name;
     this.description = description;
+    this.notes = "Sin anotaciones"
     this.matrix = [
       /** Lunes     */ [" Desayunos", "Comida", "Merienda", "Cena"],
       /** Martes    */ [" Desayunos", "Comida", "Merienda", "Cena"],

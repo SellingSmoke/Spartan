@@ -7,14 +7,14 @@ import { Diet } from './models/diet.model';
 // Base de datos simulada
 
 export var STUDENTS: Student[] = [
-  { id: 1, name: "Michel", lastname:"Maes Bermejo",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: { id: 1, student_id: 1, type: 3, progress: 70, campo_metaX: "parte superior", diet_id: 1, acepted: true, canceled:false,
+  { id: 1, name: "Michel", lastname:"Maes Bermejo",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: { id: 1, student_id: 1, type: 3, progress: 70, campo_metaX: "parte superior",  diet_id: 1, acepted: true, canceled:false,
     comments: [{id: 1, rol: 2, date: 1461111590589, comment: "Oye, y esto ... como se hace", read: true}, {id: 2, rol: 1, date: 1461111590589, comment: "Mira que eres malo, esto se hace asi asi y asi", read: false}]}},
-  { id: 2, name: "Pablo", lastname:"Fuente Pérez",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: { id: 2, student_id: 2, type: 1, progress: 50, campo_metaX: "10kg", acepted: true, canceled:false,comments: []}},
-  { id: 3, name: "Enrique", lastname:"García Galán",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: {id: 3, student_id: 3, type: 2, progress: 100, campo_metaX: "10km", acepted: true, canceled:false,comments: []}},
-  { id: 4, name: "Sergio", lastname:"Pérez Peló",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: { id: 4, student_id: 4, type: 4, progress: 30, campo_metaX:"fútbol", acepted: true, canceled:false,comments: []}},
-  { id: 5, name: "Paco", lastname:"Bar Born",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: { id: 5, student_id: 5, type: 5, progress: 10, campo_metaX: "Tener el culo de Kimmy", acepted: true, canceled:false,comments: []}},
+  { id: 2, name: "Pablo", lastname:"Fuente Pérez",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: { id: 2, student_id: 2, type: 1, progress: 50, campo_metaX: "10kg", acepted: true, canceled:false, diet_id: -1,comments: []}},
+  { id: 3, name: "Enrique", lastname:"García Galán",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: {id: 3, student_id: 3, type: 2, progress: 100, campo_metaX: "10km", acepted: true, canceled:false, diet_id: -1,comments: []}},
+  { id: 4, name: "Sergio", lastname:"Pérez Peló",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: { id: 4, student_id: 4, type: 4, progress: 30, campo_metaX:"fútbol", acepted: true, canceled:false, diet_id: -1,comments: []}},
+  { id: 5, name: "Paco", lastname:"Bar Born",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: { id: 5, student_id: 5, type: 5, progress: 10, campo_metaX: "Tener el culo de Kimmy", acepted: true, canceled:false, diet_id: -1,comments: []}},
   { id: 6, name: "Alguien", lastname:"Muy malo",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: null},
-  { id: 7, name: "Efigencia", lastname:"Bonifacia",email: "michel.maes95@gmail.com", gender:1, age: 20, registration_date: 1461111590589, goal: { id: 7, student_id: 7, type: 4, progress: 0, campo_metaX: "golf", acepted: false, canceled:false,comments: []}}
+  { id: 7, name: "Efigencia", lastname:"Bonifacia",email: "michel.maes95@gmail.com", gender:1, age: 20, registration_date: 1461111590589, goal: { id: 7, student_id: 7, type: 4, progress: 0, campo_metaX: "golf", acepted: false, canceled:false, diet_id: -1,comments: []}}
 ];
 
 export var TASKS: ITask[] = [
@@ -29,64 +29,76 @@ export var TASKS: ITask[] = [
 export var TRAINERS: Trainer[] = [
   {id: 1, name: "Mica", lastname:"Gallego",email: "michel.maes95@gmail.com", gender:0, age: 35, registration_date: 1461111590589,
     students: [
-      { id: 1, name: "Michel", lastname:"Maes Bermejo",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: { id: 1, student_id: 1, type: 3, progress: 70, campo_metaX: "parte superior", diet_id: 1, acepted: true, canceled:false,comments: []}},
-      { id: 2, name: "Pablo", lastname:"Fuente Pérez",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: { id: 2, student_id: 2, type: 1, progress: 50, campo_metaX: "10kg", acepted: true, canceled:false,comments: []}},
-      { id: 3, name: "Enrique", lastname:"García Galán",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: {id: 3, student_id: 3, type: 2, progress: 100, campo_metaX: "10km", acepted: true, canceled:false,comments: []}},
-      { id: 4, name: "Sergio", lastname:"Pérez Peló",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: { id: 4, student_id: 4, type: 4, progress: 30, campo_metaX:"fútbol", acepted: true, canceled:false,comments: []}},
+      { id: 1, name: "Michel", lastname:"Maes Bermejo",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: { id: 1, student_id: 1, type: 3, progress: 70, campo_metaX: "parte superior", acepted: true, canceled:false, diet_id: -1,comments: []}},
+      { id: 2, name: "Pablo", lastname:"Fuente Pérez",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: { id: 2, student_id: 2, type: 1, progress: 50, campo_metaX: "10kg", acepted: true, canceled:false,diet_id: -1,comments: []}},
+      { id: 3, name: "Enrique", lastname:"García Galán",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: {id: 3, student_id: 3, type: 2, progress: 100, campo_metaX: "10km", acepted: true, canceled:false, diet_id: -1,comments: []}},
+      { id: 4, name: "Sergio", lastname:"Pérez Peló",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: { id: 4, student_id: 4, type: 4, progress: 30, campo_metaX:"fútbol", acepted: true, canceled:false, diet_id: -1,comments: []}},
     ]
   },
   {id: 2, name: "Carlos", lastname:"Cuesta",email: "michel.maes95@gmail.com", gender:0, age: 35, registration_date: 1461111590589,
     students: [
-      { id: 5, name: "Paco", lastname:"Bar Born",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: { id: 5, student_id: 5, type: 5, progress: 10, campo_metaX: "Tener el culo de Kimmy", acepted: true, canceled:false,comments: []}},
+      { id: 5, name: "Paco", lastname:"Bar Born",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: { id: 5, student_id: 5, type: 5, progress: 10, campo_metaX: "Tener el culo de Kimmy", acepted: true, canceled:false, diet_id: -1,comments: []}},
       { id: 6, name: "Alguien", lastname:"Muy malo",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589, goal: null},
-      { id: 7, name: "Efigencia", lastname:"Bonifacia",email: "michel.maes95@gmail.com", gender:1, age: 20, registration_date: 1461111590589, goal: { id: 7, student_id: 7, type: 4, progress: 90, campo_metaX: "golf", acepted: true, canceled:false,comments: []}}
+      { id: 7, name: "Efigencia", lastname:"Bonifacia",email: "michel.maes95@gmail.com", gender:1, age: 20, registration_date: 1461111590589, goal: { id: 7, student_id: 7, type: 4, progress: 90, campo_metaX: "golf", acepted: true, canceled:false, diet_id: -1,comments: []}}
     ]
   }
 ]
 
 export var DIETS: Diet[] = [
-  { id: 1, id_trainer: 1, name: "Dieta para perder peso",  description: "Descripcion de la dieta",
-    matrix:[
-      /** Desayunos     */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranjaS",
-                            " Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranjaS",
-                            " Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranjaS",
-                            " Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranjaS",
-                            " Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranjaS",
-                            " Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranjaS",
-                            " Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranjaS"],
-      /** Comidas    */     ["Menestra de verduras - Conejo al tomillo - 1 manzana",
-                             "Menestra de verduras - Conejo al tomillo - 1 manzana",
-                             "Menestra de verduras - Conejo al tomillo - 1 manzana",
-                             "Menestra de verduras - Conejo al tomillo - 1 manzana",
-                             "Menestra de verduras - Conejo al tomillo - 1 manzana",
-                             "Menestra de verduras - Conejo al tomillo - 1 manzana",
-                             "Menestra de verduras - Conejo al tomillo - 1 manzana",],
-      /** Meriendas */      ["1 yogur desnatado",
-                             "1 yogur desnatado",
-                             "1 yogur desnatado",
-                             "1 yogur desnatado",
-                             "1 yogur desnatado",
-                             "1 yogur desnatado",
-                             "1 yogur desnatado"],
-      /** Cenas    */       ["Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor",
-                             "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor",
-                             "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor",
-                             "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor",
-                             "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor",
-                             "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor",
-                             "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
+  { id: 1, id_trainer: 1, name: "Dieta para perder peso",  description: "Esta dieta controlad las calorias sin descuidar vitaminas y proteinas", notes: "No apta para celiacos",
+    matrix:[           /**                            DESAYUNO                                  |                         COMIDA                        |      MERIENDA      |                                  CENA                                 |
+      /** Domingo   */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja", "Menestra de verduras - Conejo al tomillo - 1 clementina", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
+      /** Lunes     */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja", "Menestra de verduras - Conejo al tomillo - 1 manzana", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
+      /** Martes    */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja", "Menestra de verduras - Conejo al tomillo - 1 pera", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
+      /** Miercoles */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja", "Menestra de verduras - Conejo al tomillo - 1 platano", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
+      /** Jueves    */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja", "Menestra de verduras - Conejo al tomillo - 1 kiwi", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
+      /** Viernes   */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja", "Menestra de verduras - Conejo al tomillo - 2 mandarina", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
+      /** Sabado    */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja", "Menestra de verduras - Conejo al tomillo - 1 naranja", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"]
+
     ]
   },
-  // MATRIZ ANTIGUA; NO USAR
-  { id: 2, id_trainer: 1, name: "Dieta para perder peso",  description: "Descripcion de la dieta",
+  { id: 2, id_trainer: 1, name: "Dieta para perder peso",  description: "Esta dieta controlad las calorias sin descuidar vitaminas y proteinas", notes: "No apta para celiacos",
     matrix:[           /**                            DESAYUNO                                  |                         COMIDA                        |      MERIENDA      |                                  CENA                                 |
-      /** Lunes     */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranjaS", "Menestra de verduras - Conejo al tomillo - 1 manzana", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
+      /** Domingo   */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja", "Menestra de verduras - Conejo al tomillo - 1 manzana", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
+      /** Lunes     */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja", "Menestra de verduras - Conejo al tomillo - 1 manzana", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
       /** Martes    */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja", "Menestra de verduras - Conejo al tomillo - 1 manzana", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
       /** Miercoles */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja", "Menestra de verduras - Conejo al tomillo - 1 manzana", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
       /** Jueves    */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja", "Menestra de verduras - Conejo al tomillo - 1 manzana", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
       /** Viernes   */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja", "Menestra de verduras - Conejo al tomillo - 1 manzana", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
-      /** Sabado    */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja", "Menestra de verduras - Conejo al tomillo - 1 manzana", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
-      /** Domingo   */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja", "Menestra de verduras - Conejo al tomillo - 1 manzana", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
+      /** Sabado    */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja", "Menestra de verduras - Conejo al tomillo - 1 manzana", "1 yogur desnatado", "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"]
     ]
-  },
+  }
 ];
+
+// { id: 1, id_trainer: 1, name: "Dieta para perder peso",  description: "Descripcion de la dieta",
+//   matrix:[
+//     /** Desayunos     */ [" Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranjaS",
+//                           " Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranjaS",
+//                           " Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranjaS",
+//                           " Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranjaS",
+//                           " Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranjaS",
+//                           " Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranjaS",
+//                           " Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranjaS"],
+//     /** Comidas    */     ["Menestra de verduras - Conejo al tomillo - 1 manzana",
+//                            "Menestra de verduras - Conejo al tomillo - 1 manzana",
+//                            "Menestra de verduras - Conejo al tomillo - 1 manzana",
+//                            "Menestra de verduras - Conejo al tomillo - 1 manzana",
+//                            "Menestra de verduras - Conejo al tomillo - 1 manzana",
+//                            "Menestra de verduras - Conejo al tomillo - 1 manzana",
+//                            "Menestra de verduras - Conejo al tomillo - 1 manzana",],
+//     /** Meriendas */      ["1 yogur desnatado",
+//                            "1 yogur desnatado",
+//                            "1 yogur desnatado",
+//                            "1 yogur desnatado",
+//                            "1 yogur desnatado",
+//                            "1 yogur desnatado",
+//                            "1 yogur desnatado"],
+//     /** Cenas    */       ["Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor",
+//                            "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor",
+//                            "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor",
+//                            "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor",
+//                            "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor",
+//                            "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor",
+//                            "Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
+//   ]
+// },

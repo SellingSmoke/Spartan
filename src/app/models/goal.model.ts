@@ -21,7 +21,7 @@ export interface IGoal {
   acepted: boolean;
   canceled: boolean;
 
-  diet_id?: number;       // Una meta puede o no llevar una dieta asociada
+  diet_id: number;       // Una meta puede o no llevar una dieta asociada
   comments: IComment[];
 
 }
@@ -34,6 +34,7 @@ export class Goal implements Goal{
     campo_metaX:string;
     acepted: boolean;
     canceled: boolean;
+    diet_id: number; 
     comments: IComment[];
 
     constructor(s_id: number, type: number, c_x: string){
@@ -43,6 +44,7 @@ export class Goal implements Goal{
       this.campo_metaX = c_x;
       this.acepted = false;
       this.canceled = false;
+      this.diet_id = -1;
       this.comments = [];
     }
 

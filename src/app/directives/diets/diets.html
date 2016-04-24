@@ -1,185 +1,198 @@
-<div class="table-responsive">
-  <table id="tabla-dieta" class="ui celled table">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Domingo</th>
-        <th>Lunes</th>
-        <th>Martes</th>
-        <th>Miercoles</th>
-        <th>Jueves</th>
-        <th>Viernes</th>
-        <th>Sabado</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Desayuno</td>
-        <td>
-          <p>{{ diet.matrix[0][0] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[0][0] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[0][0] | ShowFood:2 }}</p>
-        </td>
-        <td>
-          <p>{{ diet.matrix[1][0] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[1][0] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[1][0] | ShowFood:2 }}</p>
-        </td>
-        <td>
-          <p>{{ diet.matrix[2][0] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[2][0] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[2][0] | ShowFood:2 }}</p>
-        </td>
-        <td>
-          <p>{{ diet.matrix[3][0] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[3][0] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[3][0] | ShowFood:2 }}</p>
-        </td>
-        <td>
-          <p>{{ diet.matrix[4][0] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[4][0] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[4][0] | ShowFood:2 }}</p>
-        </td>
-        <td>
-          <p>{{ diet.matrix[5][0] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[5][0] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[5][0] | ShowFood:2 }}</p>
-        </td>
-        <td>
-          <p>{{ diet.matrix[6][0] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[6][0] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[6][0] | ShowFood:2 }}</p>
-        </td>
-      </tr>
-      <tr>
-        <td>Comida</td>
-        <td>
-          <p>{{ diet.matrix[0][1] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[0][1] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[0][1] | ShowFood:2 }}</p>
-        </td>
-        <td>
-          <p>{{ diet.matrix[0][1] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[0][1] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[0][1] | ShowFood:2 }}</p>
-        </td>
-        <td>
-          <p>{{ diet.matrix[0][1] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[0][1] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[0][1] | ShowFood:2 }}</p>
-        </td>
-        <td>
-          <p>{{ diet.matrix[0][1] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[0][1] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[0][1] | ShowFood:2 }}</p>
-        </td>
-        <td>
-          <p>{{ diet.matrix[0][1] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[0][1] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[0][1] | ShowFood:2 }}</p>
-        </td>
-        <td>
-          <p>{{ diet.matrix[0][1] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[0][1] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[0][1] | ShowFood:2 }}</p>
-        </td>
-        <td>
-          <p>{{ diet.matrix[0][1] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[0][1] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[0][1] | ShowFood:2 }}</p>
-        </td>
-      </tr>
-      <tr>
-        <td>Merienda</td>
-        <td>
-          <p>{{ diet.matrix[0][2] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[0][2] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[0][2] | ShowFood:2 }}</p>
-        </td>
-        <td>
-          <p>{{ diet.matrix[0][2] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[0][2] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[0][2] | ShowFood:2 }}</p>
-        </td>
-        <td>
-          <p>{{ diet.matrix[0][2] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[0][2] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[0][2] | ShowFood:2 }}</p>
-        </td>
-        <td>
-          <p>{{ diet.matrix[0][2] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[0][2] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[0][2] | ShowFood:2 }}</p>
-        </td>
-        <td>
-          <p>{{ diet.matrix[0][2] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[0][2] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[0][2] | ShowFood:2 }}</p>
-        </td>
-        <td>
-          <p>{{ diet.matrix[0][2] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[0][2] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[0][2] | ShowFood:2 }}</p>
-        </td>
-        <td>
-          <p>{{ diet.matrix[0][2] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[0][2] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[0][2] | ShowFood:2 }}</p>
-        </td>
-      </tr>
-      <tr>
-        <td>Cena</td>
-        <td>
-          <p>{{ diet.matrix[0][3] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[0][3] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[0][3] | ShowFood:2 }}</p>
-        </td>
-        <td>
-          <p>{{ diet.matrix[0][3] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[0][3] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[0][3] | ShowFood:2 }}</p>
-        </td>
-        <td>
-          <p>{{ diet.matrix[0][3] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[0][3] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[0][3] | ShowFood:2 }}</p>
-        </td>
-        <td>
-          <p>{{ diet.matrix[0][3] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[0][3] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[0][3] | ShowFood:2 }}</p>
-        </td>
-        <td>
-          <p>{{ diet.matrix[0][3] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[0][3] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[0][3] | ShowFood:2 }}</p>
-        </td>
-        <td>
-          <p>{{ diet.matrix[0][3] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[0][3] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[0][3] | ShowFood:2 }}</p>
-        </td>
-        <td>
-          <p>{{ diet.matrix[0][3] | ShowFood:0 }}</p>
-          <p>{{ diet.matrix[0][3] | ShowFood:1 }}</p>
-          <p>{{ diet.matrix[0][3] | ShowFood:2 }}</p>
-        </td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <th colspan="2">
-          <div class="ui right floated pagination menu">
-            <a (click)="hideColumns(day - 1)" class="icon item">
-              <i class="left chevron icon"></i>
-            </a>
-            <a class="item">{{ day_s }}</a>
-            <a (click)="hideColumns(day + 1)" class="icon item">
-              <i class="right chevron icon"></i>
-            </a>
-          </div>
-        </th>
-      </tr>
-    </tfoot>
-  </table>
+<div class="row">
+  <div class="col-md-4">
+    <h5 class="ui top attached header">
+    Tipo
+  </h5>
+    <div class="ui attached segment">
+      <p>{{ diet.name }}</p>
+    </div>
+    <h5 class="ui attached header">
+    Descripcion
+  </h5>
+    <div class="ui attached segment">
+      <p>{{ diet.description }}</p>
+    </div>
+    <h5 class="ui attached header">
+    Notas
+  </h5>
+    <div class="ui attached segment">
+      <p>{{ diet.notes }}</p>
+    </div>
+    <div class="ui bottom attached warning message">
+      <i class="warning icon"></i> Ante cualquier alergia, contacta con tu entrenador
+    </div>
+  </div>
+  <div class="col-md-8">
+    <table id="tabla-dieta" class="ui celled table">
+      <thead>
+        <tr>
+          <th colspan="2">
+            <div class="ui pagination menu">
+              <a (click)="hideColumns(day - 1)" class="icon item">
+                <i class="left chevron icon"></i>
+              </a>
+              <a class="item">{{ day_s }}</a>
+              <a (click)="hideColumns(day + 1)" class="icon item">
+                <i class="right chevron icon"></i>
+              </a>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Desayuno</td>
+          <td>
+            <p>{{ diet.matrix[0][0] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[0][0] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[0][0] | ShowFood:2 }}</p>
+          </td>
+          <td>
+            <p>{{ diet.matrix[1][0] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[1][0] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[1][0] | ShowFood:2 }}</p>
+          </td>
+          <td>
+            <p>{{ diet.matrix[2][0] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[2][0] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[2][0] | ShowFood:2 }}</p>
+          </td>
+          <td>
+            <p>{{ diet.matrix[3][0] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[3][0] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[3][0] | ShowFood:2 }}</p>
+          </td>
+          <td>
+            <p>{{ diet.matrix[4][0] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[4][0] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[4][0] | ShowFood:2 }}</p>
+          </td>
+          <td>
+            <p>{{ diet.matrix[5][0] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[5][0] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[5][0] | ShowFood:2 }}</p>
+          </td>
+          <td>
+            <p>{{ diet.matrix[6][0] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[6][0] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[6][0] | ShowFood:2 }}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>Comida</td>
+          <td>
+            <p>{{ diet.matrix[0][1] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[0][1] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[0][1] | ShowFood:2 }}</p>
+          </td>
+          <td>
+            <p>{{ diet.matrix[1][1] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[1][1] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[1][1] | ShowFood:2 }}</p>
+          </td>
+          <td>
+            <p>{{ diet.matrix[2][1] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[2][1] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[2][1] | ShowFood:2 }}</p>
+          </td>
+          <td>
+            <p>{{ diet.matrix[3][1] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[3][1] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[3][1] | ShowFood:2 }}</p>
+          </td>
+          <td>
+            <p>{{ diet.matrix[4][1] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[4][1] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[4][1] | ShowFood:2 }}</p>
+          </td>
+          <td>
+            <p>{{ diet.matrix[5][1] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[5][1] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[5][1] | ShowFood:2 }}</p>
+          </td>
+          <td>
+            <p>{{ diet.matrix[6][1] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[6][1] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[6][1] | ShowFood:2 }}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>Merienda</td>
+          <td>
+            <p>{{ diet.matrix[0][2] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[0][2] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[0][2] | ShowFood:2 }}</p>
+          </td>
+          <td>
+            <p>{{ diet.matrix[1][2] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[1][2] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[1][2] | ShowFood:2 }}</p>
+          </td>
+          <td>
+            <p>{{ diet.matrix[2][2] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[2][2] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[2][2] | ShowFood:2 }}</p>
+          </td>
+          <td>
+            <p>{{ diet.matrix[3][2] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[3][2] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[3][2] | ShowFood:2 }}</p>
+          </td>
+          <td>
+            <p>{{ diet.matrix[4][2] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[4][2] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[4][2] | ShowFood:2 }}</p>
+          </td>
+          <td>
+            <p>{{ diet.matrix[5][2] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[5][2] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[5][2] | ShowFood:2 }}</p>
+          </td>
+          <td>
+            <p>{{ diet.matrix[6][2] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[6][2] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[6][2] | ShowFood:2 }}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>Cena</td>
+          <td>
+            <p>{{ diet.matrix[0][3] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[0][3] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[0][3] | ShowFood:2 }}</p>
+          </td>
+          <td>
+            <p>{{ diet.matrix[1][3] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[1][3] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[1][3] | ShowFood:2 }}</p>
+          </td>
+          <td>
+            <p>{{ diet.matrix[2][3] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[2][3] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[2][3] | ShowFood:2 }}</p>
+          </td>
+          <td>
+            <p>{{ diet.matrix[3][3] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[3][3] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[3][3] | ShowFood:2 }}</p>
+          </td>
+          <td>
+            <p>{{ diet.matrix[4][3] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[4][3] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[4][3] | ShowFood:2 }}</p>
+          </td>
+          <td>
+            <p>{{ diet.matrix[5][3] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[5][3] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[5][3] | ShowFood:2 }}</p>
+          </td>
+          <td>
+            <p>{{ diet.matrix[6][3] | ShowFood:0 }}</p>
+            <p>{{ diet.matrix[6][3] | ShowFood:1 }}</p>
+            <p>{{ diet.matrix[6][3] | ShowFood:2 }}</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
