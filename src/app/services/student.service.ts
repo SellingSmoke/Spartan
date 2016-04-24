@@ -1,5 +1,5 @@
 import { STUDENTS } from '../recursos-estaticos';
-import { Student } from '../models/student';
+import { Student } from '../models/student.model';
 import { Injectable } from 'angular2/core';
 
 @Injectable()

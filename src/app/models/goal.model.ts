@@ -1,4 +1,4 @@
-import { IComment } from './comment';
+import { IComment } from './comment.model';
 
 export interface IGoal {
 

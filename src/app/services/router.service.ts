@@ -20,26 +20,27 @@ export class LoggedInRouterOutlet extends RouterOutlet {
             'login': true,
             'registroAlumno': true,
             'registroEntrenador': true,
-            'mainpage':true
+            '':true
         };
         this.rutasPrivadas = {
-            'inicio': true,
+            'dashboard': true,
             'perfil': true,
         };
     }
 
     activate(instruction:ComponentInstruction){
         var url = instruction.urlPath;
+        console.log(url);
         if (!this.rutasPublicas[url] && !localStorage.getItem('spartan')) {
             //Ruta no publica sin token
-            this.padre.navigateByUrl('/mainpage');
+            this.padre.navigateByUrl('/');
         }else if (this.rutasPublicas[url] && localStorage.getItem('spartan')){
             //Ruta publica con token
-            this.padre.navigateByUrl('/inicio');
+            this.padre.navigateByUrl('/dashboard');
         }else if (localStorage.getItem('spartan') && !this.rutasPrivadas[url]){
             //Ruta no privada con token.
             // -> Después de pruebas nunca llega aquí
-            this.padre.navigateByUrl('/inicio');
+            this.padre.navigateByUrl('/dashboard');
         }
         return super.activate(instruction);
     }

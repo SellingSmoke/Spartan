@@ -1,4 +1,4 @@
-import {IGoal} from './goal';
+import {IGoal} from './goal.model';
 
 export interface Student {
 

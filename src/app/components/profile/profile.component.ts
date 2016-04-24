@@ -1,14 +1,14 @@
 import {Component} from 'angular2/core';
 import { StudentService } from '../../services/student.service';
-import { Student } from '../../models/student';
+import { Student } from '../../models/student.model';
 @Component({
-	selector: 'perfil',
-    templateUrl: 'app/components/perfil/perfil.html',
-		styleUrls: ['app/components/perfil/perfil.css'],
+	selector: 'profile',
+    templateUrl: 'app/components/profile/profile.html',
+		styleUrls: ['app/components/profile/profile.css'],
 		providers: [StudentService]
 })
 
-export class Perfil {
+export class Profile {
 	public student:Student;
 	public editMode:number; // 0 nada - 1 mail - 2 pass
 

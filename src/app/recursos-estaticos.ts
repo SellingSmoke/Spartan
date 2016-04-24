@@ -1,8 +1,8 @@
-import { Goal } from './models/goal';
-import { Task, ITask } from './models/task';
-import { Trainer } from './models/trainer';
-import { Student } from './models/student';
-import { Diet } from './models/diet';
+import { Goal } from './models/goal.model';
+import { Task, ITask } from './models/task.model';
+import { Trainer } from './models/trainer.model';
+import { Student } from './models/student.model';
+import { Diet } from './models/diet.model';
 
 // Base de datos simulada
 

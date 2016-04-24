@@ -1,9 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from 'angular2/core';
 import { RouteParams } from 'angular2/router';
-import { Student } from '../../../models/student';
-import { Comment } from '../../../models/comment';
-import { Task } from '../../../models/task';
-import { Goal } from '../../../models/goal';
+import { Student } from '../../../models/student.model';
+import { Comment } from '../../../models/comment.model';
+import { Task } from '../../../models/task.model';
+import { Goal } from '../../../models/goal.model';
 import { GoalForm } from '../../../directives/goalForm/goal-form'
 import { CommentDirective } from '../../../directives/comments/comment.directive'
 import { BeautifyProgessBarPipe, GoalNamePipe } from '../../../pipes/student-pipes.pipe';
@@ -15,7 +15,7 @@ declare var jQuery:JQueryStatic;
 
 @Component({
 	selector: 'dashboard-alumno',
-  templateUrl: 'app/components/dashboard/dashboard-alumno/dashboard-alumno.html',
+  templateUrl: 'app/components/dashboard/student-dashboard/student-dashboard.html',
   providers: [AutenticacionService, TaskService],
 	directives:  [GoalForm, CommentDirective],
   pipes: [BeautifyProgessBarPipe, GoalNamePipe],
