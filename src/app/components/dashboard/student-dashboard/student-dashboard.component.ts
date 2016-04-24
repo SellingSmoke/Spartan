@@ -37,8 +37,6 @@ export class DashboardAlumno implements OnInit{
 
 	task: Task;					// Modelo de la nueva meta para el formulario
 
-	edit_mode: boolean;
-
 	constructor(private aut: AutenticacionService, private _taskService: TaskService) {}
 
 	/*
@@ -48,14 +46,13 @@ export class DashboardAlumno implements OnInit{
 
 	ngOnInit(){
 		this.tasks = [];
-		this.tab = 3; // OJO CAMBIAR
+		this.tab = 1; // OJO CAMBIAR
 		if (this.student.goal){
 			this._taskService.getTasks(this.student.goal.id).then(
 				tasks => this.tasks = tasks
 			);
 			this.task = new Task(this.student.goal.id);
 		}
-		this.edit_mode = false;
 	}
 
 	/*
