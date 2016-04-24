@@ -138,4 +138,14 @@ export class DashboardAlumno implements OnInit{
 		 	jQuery('#s'+t.id).trigger("click");
 	  }
 	}
+
+	saveEdit(t) {
+		t.status = 0;
+		this.editTrigger(t);
+	}
+
+	deleteTask(t){
+		var x = this.tasks.indexOf(t);
+		this.tasks.splice(x, 1);
+	}
 }

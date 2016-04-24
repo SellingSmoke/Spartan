@@ -52,11 +52,19 @@
               </div>
             </div>
           </div>
-          <a class="btn btn-ln btn-raised btn-danger" (click)="editPass()">Cambiar contraseña</a>
+
         </div>
       </div>
     </div>
     <!-- Fin perfil visible-->
+    <div id="row-buttons-profile" class="row panel-body">
+      <div class="col-md-5">
+        <a class="btn btn-ln btn-raised btn-info" (click)="showGoals()">Registro de Metas</a>
+      </div>
+      <div class="col-md-7">
+        <a class="btn btn-ln btn-raised btn-danger" (click)="editPass()">Cambiar contraseña</a>
+      </div>
+    </div>
   </div>
 
   <!-- Cambiar e-mail -->
@@ -99,5 +107,30 @@
         <a class="btn btn-ln btn-raised btn-danger" (click)="saveChanges(true)">Guardar contraseña</a>
         <span class="btn btn-danger pull-right" (click)="saveChanges(false)"> Atrás</span>
       </div>
+    </div>
+  </div>
+
+  <!-- Registro de antiguas metas -->
+  <div class="col-md-8 col-md-offset-2">
+    <div class="form-horizontal panel panel-default" *ngIf="editMode == 3">
+      <table class="ui celled structured table teal">
+        <thead>
+          <tr>
+            <th colspan="8">Histórico de Metas</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="#goal of student.goals">
+          <tr>
+            <td class="three wide active sp-not">
+              <a class="ui teal ribbon label sp-label-statistic">{{goal.name}}</a>
+              <span class="pull-right"><i class="teal users icon"></i>Descripción: {{goal.description}}</span>
+            </td>
+            <td class="one wide active"><i class="teal trophy icon"></i> Metas</td>
+            <td class="two wide active"><i class="teal calendar icon"></i> Fecha de registro </td>
+            <td class="three wide active" colspan="2"><i class="teal large crosshairs icon"></i> Meta actual </td>
+          </tr>
+        </tbody>
+      </table>
+      <span class="btn btn-danger pull-right" (click)="saveChanges(false)"> Atrás</span>
     </div>
   </div>

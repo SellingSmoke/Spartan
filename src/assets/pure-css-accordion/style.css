@@ -224,7 +224,7 @@ a.glyphicon-plus.active {
     background-color: rgb(200, 200, 200);
 }
 
-#titulo-meta {
+#titulo-met {
     text-align: center;
     margin-top: 10px;
 }
@@ -493,4 +493,8 @@ input[type=range]::-ms-track {
 .one-line-right {
   display: inline-flex;
   float: right !important;
+}
+
+#row-buttons-profile {
+  text-align: center;
 }

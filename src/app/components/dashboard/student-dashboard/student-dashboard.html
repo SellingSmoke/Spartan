@@ -203,7 +203,7 @@
                         <i class="material-icons">mode_edit</i>
                         <div class="ripple-container"></div>
                       </a>
-                      <a *ngIf="aut.esProfesor() && task.status != 1" href="javascript:void(0)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                      <a *ngIf="aut.esProfesor() && task.status != 1" (click)="deleteTask(task)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
                         <i class="material-icons">close</i>
                         <div class="ripple-container"></div>
                       </a>
@@ -371,7 +371,7 @@
                       <button (click)=editTrigger(task) class="boton-dialog btn btn-danger">Cancelar</button>
                     </div>
                     <div class="col-md-6 col-xs-6 col-botones-dialog">
-                      <button  class="boton-dialog btn btn-success pull-right">Aceptar</button>
+                      <button  (click)=saveEdit(task) class="boton-dialog btn btn-success pull-right">Aceptar</button>
                     </div>
                   </div>
 
