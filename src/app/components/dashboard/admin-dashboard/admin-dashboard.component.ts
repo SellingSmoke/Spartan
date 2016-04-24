@@ -3,10 +3,10 @@
 import { bootstrap }    from 'angular2/platform/browser';
 import { Component, OnInit } from 'angular2/core';
 import { Router } from 'angular2/router';
-import { Goal } from '../../../models/goal';
-import { Trainer } from '../../../models/trainer';
+import { Goal } from '../../../models/goal.model';
+import { Trainer } from '../../../models/trainer.model';
 import { TrainerService } from '../../../services/trainer.service';
-import { Student } from '../../../models/student';
+import { Student } from '../../../models/student.model';
 import { AutenticacionService } from '../../../services/autenticacion.service';
 import { GoalNamePipe } from '../../../pipes/student-pipes.pipe';
 
@@ -14,8 +14,8 @@ declare var jQuery:JQueryStatic;
 
 @Component({
 	selector: 'dashboard-admin',
-  styleUrls: ['app/components/dashboard/dashboard-admin/table.css'],
-  templateUrl: 'app/components/dashboard/dashboard-admin/dashboard-admin.html',
+  styleUrls: ['app/components/dashboard/admin-dashboard/table.css'],
+  templateUrl: 'app/components/dashboard/admin-dashboard/admin-dashboard.component.html',
 	pipes: [GoalNamePipe],
   providers: [TrainerService, AutenticacionService]
 })
@@ -39,7 +39,7 @@ export class DashboardAdmin implements OnInit{
 	 */
 
 	ngAfterViewInit() {
-		
+
 	}
 
   ngOnInit() {

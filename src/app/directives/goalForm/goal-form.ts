@@ -1,6 +1,6 @@
 import { Component, Output, Input, EventEmitter } from 'angular2/core';
 import {FORM_DIRECTIVES} from 'angular2/common';
-import { Goal } from "../../models/goal";
+import { Goal } from "../../models/goal.model";
 import { Card, ICard } from '../card/card'
 
 @Component({

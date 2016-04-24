@@ -1,5 +1,5 @@
 import { TRAINERS } from '../recursos-estaticos';
-import { Trainer } from '../models/trainer';
+import { Trainer } from '../models/trainer.model';
 import { Injectable } from 'angular2/core';
 
 @Injectable()

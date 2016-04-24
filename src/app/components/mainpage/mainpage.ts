@@ -4,8 +4,8 @@ import {RouterLink} from "angular2/router";
 
 @Component({
 	  selector: 'mainpage',
-    templateUrl: 'app/components/mainpage/mainpage.html',
-		styleUrls: ['app/components/mainpage/mainpage.css'],
+    templateUrl: 'app/components/mainpage/mainpage2.html',
+		styleUrls: ['app/components/mainpage/mainpage2.css'],
     directives: [RouterLink]
 
 })

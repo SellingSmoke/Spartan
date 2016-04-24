@@ -1,5 +1,5 @@
 import { Component } from 'angular2/core';
-import { Diet } from '../../models/diet';
+import { Diet } from '../../models/diet.model';
 import { DietService } from '../../services/diet.service';
 
 @Component({

@@ -2,11 +2,10 @@ import {Component} from 'angular2/core';
 import {Router, Route, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {Inicio} from '../components/dashboard/inicio';
-import {Perfil} from '../components/perfil/perfil';
-import {Login} from '../components/session/login/login';
-import {RegistroEntrenador} from '../components/session/registroEntrenador/registroEntrenador';
-import {RegistroAlumno} from '../components/session/registroAlumno/registroAlumno';
-import {Dietas} from '../components/diets/diets';
+import {Profile} from '../components/profile/profile.component';
+import {Login} from '../components/session/login/login.component';
+import { TrainerSignUp } from '../components/session/trainer-signUp/trainer-signUp.component';
+import { StudentSignUp } from '../components/session/student-signUp/student-signUp.component';
 import {MainPage} from '../components/mainpage/mainpage'
 import { AutenticacionService } from '../services/autenticacion.service';
 import {LoggedInRouterOutlet} from '../services/router.service';
@@ -20,13 +19,12 @@ import {LoggedInRouterOutlet} from '../services/router.service';
 })
 
 @RouteConfig([
-  new Route({ path: '/inicio', component: Inicio, name: 'Inicio', useAsDefault: true}),
-  new Route({ path: '/perfil', component: Perfil, name: 'Perfil'}),
+  new Route({ path: '/dashboard', component: Inicio, name: 'Inicio', useAsDefault: true}),
+  new Route({ path: '/perfil', component: Profile, name: 'Perfil'}),
   new Route({ path: '/login', component: Login, name: 'Login'}),
-  new Route({ path: '/registroEntrenador', component: RegistroEntrenador, name: 'RegistroEntrenador'}),
-  new Route({ path: '/registroAlumno', component: RegistroAlumno, name: 'RegistroAlumno'}),
-  new Route({ path: '/dietas', component: Dietas, name: 'Dietas'}),
-	new Route({ path: '/mainpage', component: MainPage, name: 'MainPage'}),
+  new Route({ path: '/registroEntrenador', component: TrainerSignUp, name: 'RegistroEntrenador'}),
+  new Route({ path: '/registroAlumno', component: StudentSignUp, name: 'RegistroAlumno'}),
+	new Route({ path: '/', component: MainPage, name: 'MainPage'}),
 ])
 
 export class AppComponent {
@@ -36,6 +34,6 @@ export class AppComponent {
     public logOut(){
         // Eliminar localstorage
         this.aut.logOut();
-        this.router.navigateByUrl("/mainpage");
+        this.router.navigateByUrl("/");
     }
 }
