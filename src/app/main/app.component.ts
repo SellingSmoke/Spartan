@@ -19,11 +19,11 @@ import {LoggedInRouterOutlet} from '../services/router.service';
 })
 
 @RouteConfig([
-  new Route({ path: '/dashboard', component: Inicio, name: 'Inicio', useAsDefault: true}),
+  new Route({ path: '/dashboard', component: Inicio, name: 'Dashboard', useAsDefault: true}),
   new Route({ path: '/perfil', component: Profile, name: 'Perfil'}),
   new Route({ path: '/login', component: Login, name: 'Login'}),
-  new Route({ path: '/registroEntrenador', component: TrainerSignUp, name: 'RegistroEntrenador'}),
-  new Route({ path: '/registroAlumno', component: StudentSignUp, name: 'RegistroAlumno'}),
+  new Route({ path: '/registroEntrenador', component: TrainerSignUp, name: 'TrainerSignUp'}),
+  new Route({ path: '/registroAlumno', component: StudentSignUp, name: 'StudentSignUp'}),
 	new Route({ path: '/', component: MainPage, name: 'MainPage'}),
 ])
 
