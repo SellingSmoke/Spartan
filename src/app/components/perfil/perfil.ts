@@ -10,38 +10,28 @@ import { Student } from '../../models/student';
 
 export class Perfil {
 	public student:Student;
-	public cambiarPassword:string;
-	public cambiarCorreoE:string;
+	public editMode:number; // 0 nada - 1 mail - 2 pass
 
 	constructor(private _studentService: StudentService){
-		this.cambiarPassword = undefined;
-		this.cambiarCorreoE = undefined;
+		this.editMode = 0;
 		this._studentService.getStudent(1)
 			.then(student => this.student = student);
 	}
 
-	cambiarPassClick(){
-		this.cambiarPassword="cambiar";
-	}
-	cambiarPass():boolean{
-		return this.cambiarPassword!==undefined;
-	}
-	cambiarAlgo():boolean{
-		return this.cambiarPassword!==undefined || this.cambiarCorreoE!==undefined;
-	}
-	guardarPass(){
-		this.cambiarPassword=undefined;
+	editPass(){
+		this.editMode = 2;
 	}
 
-	cambiarCorreoClick(){
-		this.cambiarCorreoE="cambiar";
+	editMail(){
+		this.editMode = 1;
 	}
 
-	cambiarCorreo():boolean{
-		return this.cambiarCorreoE!==undefined;
+	saveChanges(save:boolean){
+		if(save){
+			// Guardar los cambios en la base de datos
+			// Hacer PUT con este estudiante
+		}
+		this.editMode = 0;
 	}
 
-	guardarCorreo(){
-		this.cambiarCorreoE=undefined;
-	}
 };
