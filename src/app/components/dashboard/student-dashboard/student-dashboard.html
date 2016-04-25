@@ -168,7 +168,7 @@
 
             <ul id="ul-accordion" class="accordion">
 
-              <div *ngIf="tasks.length === 0" class="ui icon warning message" [class.margin-tunned]="tab === 1">
+              <div *ngIf="student.goal.tasks.length === 0" class="ui icon warning message" [class.margin-tunned]="tab === 1">
                 <i class="tasks icon"></i>
                 <div class="content">
                   <div class="header">
@@ -178,7 +178,7 @@
                 </div>
               </div>
 
-              <li *ngFor="#task of tasks" class="accordion-item" [class.hover-transition-to-do]="task.status === 0" [class.hover-transition-pending]="task.status === 2" [class.accordion-pending]="task.status === 2">
+              <li *ngFor="#task of student.goal.tasks" class="accordion-item" [class.hover-transition-to-do]="task.status === 0" [class.hover-transition-pending]="task.status === 2" [class.accordion-pending]="task.status === 2">
                 <!-- El elemento "input" activa el desplegable. Si la tarea tiene "status = 1", el input permanecerá deshabilitado-->
                 <input *ngIf="task.status != 1" id="{{ 's' + task.id}}" class="hide" type="checkbox">
                 <div class="col-md-12 col-xs-12	col-sm-12 margin-row" [class.task-completed]="task.status === 1">
@@ -431,7 +431,7 @@
             </div>
 
             <!-- FORMULARIO Y VISTA DE LA DIETA -->
-            <diets *ngIf="student.goal.diet_id !== -1 || aut.esProfesor()" [(diet_id)]="student.goal.diet_id"></diets>
+            <diets *ngIf="student.goal.goal || aut.esProfesor()" [(diet)]="student.goal.diet"></diets>
 
           </div>
 

@@ -1,6 +1,5 @@
-import { Component, OnInit, Input } from 'angular2/core';
+import { Component, Input, OnInit } from 'angular2/core';
 import { Diet, IDiet } from '../../models/diet.model';
-import { DietService } from '../../services/diet.service';
 import { ShowFoodPipe } from '../../pipes/diet-pipes.pipe';
 
 declare var jQuery:JQueryStatic;
@@ -9,26 +8,23 @@ declare var jQuery:JQueryStatic;
 	selector: 'diets',
   templateUrl: 'app/directives/diets/diets.html',
 	styleUrls: ['app/directives/diets/diets.css'],
-  providers: [DietService],
 	pipes: [ShowFoodPipe]
 })
 
 export class Diets implements OnInit{
 
 	@Input()
-	diet_id:number;
+	diet: Diet;
 
 	static days =['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'];
 
-	diet: Diet;
 	day: number;
 	day_s:string;
 
 	rol:boolean;
 	edit_mode:boolean;
 
-	constructor(private _dietService: DietService) {
-		this.diet = new Diet(1, "", "");
+	constructor() {
 		this.setDay(new Date().getDay() + 1);
 		this.edit_mode = false;
 		this.rol = localStorage.getItem("rol") === "1";
@@ -36,21 +32,16 @@ export class Diets implements OnInit{
 	}
 
 	/**
-		Método que se llama inmediatamente después del constructor
+		Al iniciarse
 	*/
-
-  ngOnInit() {
-		if (this.diet_id !== -1){ // Si existe la dieta
-			this._dietService.getDiet(this.diet_id).then(
-				diet => {
-								 this.diet = diet;
-								 this.hideColumns(this.day);
-							  }
-			);
-		}else{
-			this.hideColumns(this.day);
+	ngOnInit(){
+		if(!this.diet){
+			this.diet = new Diet(1, "", "");
 		}
-  }
+		// Para que oculten al cargarse la dieta
+		this.hideColumns(this.day);
+
+	}
 
 	/**
 		Oculta todas las columnas menos la del dia que le pasas
@@ -89,8 +80,7 @@ export class Diets implements OnInit{
 	editMode(save:boolean){
 		if(save){
 			// Aqui se hará PUT sobre la meta
-			this.diet.id = 1;
-			this.diet_id = 1;
+
 		}
 		this.edit_mode = !this.edit_mode;
 	}

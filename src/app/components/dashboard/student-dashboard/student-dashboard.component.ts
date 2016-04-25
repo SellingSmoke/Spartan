@@ -2,13 +2,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from 'angular2/core';
 import { RouteParams } from 'angular2/router';
 import { Student } from '../../../models/student.model';
 import { Comment } from '../../../models/comment.model';
-import { Task } from '../../../models/task.model';
+import { Task, ITask } from '../../../models/task.model';
 import { Goal } from '../../../models/goal.model';
 import { GoalForm } from '../../../directives/goalForm/goal-form'
 import { Diets } from '../../../directives/diets/diets'
 import { CommentDirective } from '../../../directives/comments/comment.directive'
 import { BeautifyProgessBarPipe, GoalNamePipe } from '../../../pipes/student-pipes.pipe';
-import { TaskService } from '../../../services/task.service';
 import { AutenticacionService } from '../../../services/autenticacion.service';
 
 declare var jQuery:JQueryStatic;
@@ -17,7 +16,7 @@ declare var jQuery:JQueryStatic;
 @Component({
 	selector: 'dashboard-alumno',
   templateUrl: 'app/components/dashboard/student-dashboard/student-dashboard.html',
-  providers: [AutenticacionService, TaskService],
+  providers: [AutenticacionService],
 	directives:  [GoalForm, CommentDirective, Diets],
   pipes: [BeautifyProgessBarPipe, GoalNamePipe],
 	inputs: ['student']
@@ -31,13 +30,13 @@ export class DashboardAlumno implements OnInit{
 	@Output()
   trainer_dashboard_event = new EventEmitter<any>();
 
-	tasks: Task[];		  // Lista de tareas del usuario
-
 	tab: number;				// Tab actual
 
 	task: Task;					// Modelo de la nueva meta para el formulario
 
-	constructor(private aut: AutenticacionService, private _taskService: TaskService) {}
+	constructor(private aut: AutenticacionService) {
+		this.tab = 1;
+	}
 
 	/*
 	 *	Al iniciarse el componente, se cargaran las tareas que debe realizar el alumno
@@ -45,14 +44,7 @@ export class DashboardAlumno implements OnInit{
    */
 
 	ngOnInit(){
-		this.tasks = [];
-		this.tab = 1; // OJO CAMBIAR
-		if (this.student.goal){
-			this._taskService.getTasks(this.student.goal.id).then(
-				tasks => this.tasks = tasks
-			);
-			this.task = new Task(this.student.goal.id);
-		}
+		this.task = new Task(this.student.goal.id);
 	}
 
 	/*
@@ -85,7 +77,7 @@ export class DashboardAlumno implements OnInit{
 	saveTask(mode){
 		// AQUI SE LLAMARÁ A GUARDAR EN LA BDD
 		if (mode){
-			this.tasks.push(this.task);
+			this.student.goal.tasks.push(this.task);
 		}
 		this.task = new Task(this.student.goal.id);
 		// Para cerrar el dialog
@@ -143,7 +135,7 @@ export class DashboardAlumno implements OnInit{
 	}
 
 	deleteTask(t){
-		var x = this.tasks.indexOf(t);
-		this.tasks.splice(x, 1);
+		var x = this.student.goal.tasks.indexOf(t);
+		this.student.goal.tasks.splice(x, 1);
 	}
 }
