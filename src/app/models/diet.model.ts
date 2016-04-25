@@ -30,6 +30,12 @@ export class Diet implements IDiet{
       /** Sabado    */ ["", "", "", ""],
       /** Domingo   */ ["", "", "", ""]
     ];
+    // this.matrix = [
+    //   ["","","","","","",""],
+    //   ["","","","","","",""],
+    //   ["","","","","","",""],
+    //   ["","","","","","",""]
+    // ];
   }
 }
 //
@@ -44,13 +50,13 @@ export class Diet implements IDiet{
 // ];
 //
 // var MATRIX2 : [
-//   /**      */ ["Desayuno ",
-//                         "Desayuno ",
-//                         "Desayuno ",
-//                         "Desayuno ",
-//                         "Desayuno ",
-//                         "Desayuno ",
-//                         "Desayuno "],
+//   /**      */ [" ",
+//                         " ",
+//                         " ",
+//                         " ",
+//                         " ",
+//                         " ",
+//                         " "],
 //   /** s    */     ["",
 //                          "",
 //                          "",
