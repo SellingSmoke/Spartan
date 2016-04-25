@@ -51,7 +51,7 @@
                 <label for="nombreUsuario" class="col-md-2 control-label">Nombre de usuario</label>
 
                 <div class="col-md-10">
-                  <input class="form-control" id="nombreUsuario" placeholder="Nombre de usuario" type="text">
+                  <input [(ngModel)]="model.user" class="form-control" id="nombreUsuario" placeholder="Nombre de usuario" type="text">
                 </div>
               <span class="material-input"></span>
               </div>
@@ -67,7 +67,7 @@
                 <label for="password" class="col-md-2 control-label">Contraseña</label>
 
                 <div class="col-md-10">
-                  <input class="form-control" id="password" placeholder="Contraseña" type="password">
+                  <input [(ngModel)]="model.pass1" class="form-control" id="password" placeholder="Contraseña" type="password">
 
                 </div>
               <span class="material-input"></span>
@@ -76,7 +76,7 @@
                 <label for="passwordCheck" class="col-md-2 control-label">Confirmar contraseña</label>
 
                 <div class="col-md-10">
-                  <input class="form-control" id="passwordCheck" placeholder="Confirmar contraseña" type="password">
+                  <input [(ngModel)]="model.pass2" class="form-control" id="passwordCheck" placeholder="Confirmar contraseña" type="password">
 
                 </div>
               <span class="material-input"></span>
@@ -101,7 +101,7 @@
               <div class="form-group">
                 <div class="col-md-10 col-md-offset-2">
                   <button type="button" class="btn btn-default">Cancel</button>
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary" (click)="registrar()">Submit</button>
                 </div>
               </div>
             </fieldset>

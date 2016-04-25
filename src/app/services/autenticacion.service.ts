@@ -32,7 +32,7 @@ export class AutenticacionService {
     public logOut(){
         // Eliminar localstorage
         localStorage.removeItem('spartan');
-				localStorage.removeItem('alumno');
+        localStorage.removeItem('rol');
     }
     public isLogIn():boolean{
         return localStorage.getItem('spartan');
