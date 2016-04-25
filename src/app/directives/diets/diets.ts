@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from 'angular2/core';
+import { Component, Input, OnInit, AfterViewInit } from 'angular2/core';
 import { Diet, IDiet } from '../../models/diet.model';
 import { ShowFoodPipe } from '../../pipes/diet-pipes.pipe';
 
@@ -11,7 +11,7 @@ declare var jQuery:JQueryStatic;
 	pipes: [ShowFoodPipe]
 })
 
-export class Diets implements OnInit{
+export class Diets implements OnInit, AfterViewInit{
 
 	@Input()
 	diet: Diet;
@@ -24,23 +24,33 @@ export class Diets implements OnInit{
 	rol:boolean;
 	edit_mode:boolean;
 
+	/**
+		Prioridad 1
+	*/
+
 	constructor() {
 		this.setDay(new Date().getDay() + 1);
 		this.edit_mode = false;
 		this.rol = localStorage.getItem("rol") === "1";
-		console.log(this.day);
 	}
 
 	/**
-		Al iniciarse
+		Al iniciarse el componente
+		Prioridad 2
 	*/
 	ngOnInit(){
 		if(!this.diet){
 			this.diet = new Diet(1, "", "");
 		}
-		// Para que oculten al cargarse la dieta
-		this.hideColumns(this.day);
+	}
 
+	/**
+		Al iniciarse el componente
+		Prioridad 3
+	*/
+
+	ngAfterViewInit(){
+		this.hideColumns(this.day);
 	}
 
 	/**
