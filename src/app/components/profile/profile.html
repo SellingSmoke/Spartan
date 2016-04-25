@@ -113,22 +113,57 @@
   <!-- Registro de antiguas metas -->
   <div class="col-md-8 col-md-offset-2">
     <div class="form-horizontal panel panel-default" *ngIf="editMode == 3">
-      <table class="ui celled structured table teal">
+      <table class="ui celled structured table">
         <thead>
           <tr>
             <th colspan="8">Histórico de Metas</th>
           </tr>
         </thead>
-        <tbody *ngFor="#goal of student.goals">
+        <tbody>
+
+          <!-- CABECERA-->
           <tr>
             <td class="three wide active sp-not">
-              <a class="ui teal ribbon label sp-label-statistic">{{goal.name}}</a>
-              <span class="pull-right"><i class="teal users icon"></i>Descripción: {{goal.description}}</span>
+              <span><i class="teal flag icon"></i> Descripción </span>
             </td>
-            <td class="one wide active"><i class="teal trophy icon"></i> Metas</td>
-            <td class="two wide active"><i class="teal calendar icon"></i> Fecha de registro </td>
-            <td class="three wide active" colspan="2"><i class="teal large crosshairs icon"></i> Meta actual </td>
+            <td class="two wide active"><i class="teal food icon"></i> Dieta asignada </td>
+            <td class="two wide active"><i class="teal comments outline icon"></i> Nº comentarios </td>
+            <td class="two wide active" colspan="2"><i class="teal line chart icon"></i> Progreso </td>
           </tr>
+
+          <!-- META ACTUAL-->
+          <tr class="fila-label"><a class="ui teal ribbon label sp-label-statistic">Meta actual</a></tr>
+          <tr class="fila-meta-actual">
+            <td class="three wide sp-not">
+              <span class="pull-right">{{student.goal | GoalName}}</span>
+            </td>
+            <td class="two wide"><i [class]="(student.goal.diet === null) ? 'teal icon remove' : 'teal icon checkmark'"></i></td>
+            <td class="two wide">{{student.goal.comments.length}}</td>
+            <td class="two wide" colspan="2">{{student.goal.progress}}%</td>
+          </tr>
+
+          <!-- METAS COMPLETADAS-->
+          <tr class="fila-label"><a *ngIf="getCompletedGoals().length != 0" class="ui green ribbon label sp-label-statistic">Metas completadas</a></tr>
+          <tr *ngFor="#goal of (getCompletedGoals())" class="fila-metas-completadas">
+            <td class="three wide sp-not">
+              <span class="pull-right">{{goal | GoalName}}</span>
+            </td>
+            <td class="two wide"><i [class]="(goal.diet === null) ? 'teal icon remove' : 'teal icon checkmark'"></i></td>
+            <td class="two wide">{{goal.comments.length}}</td>
+            <td class="two wide" colspan="2">{{goal.progress}}%</td>
+          </tr>
+
+          <!-- METAS CANCELADAS-->
+          <tr class="fila-label"><a *ngIf="getCancelledGoals().length != 0" class="ui red ribbon label sp-label-statistic">Metas canceladas</a></tr>
+          <tr *ngFor="#goal of (getCancelledGoals())" class="fila-metas-canceladas">
+            <td class="three wide sp-not">
+              <span class="pull-right">{{goal | GoalName}}</span>
+            </td>
+            <td class="two wide"><i [class]="(goal.diet === null) ? 'teal icon remove' : 'teal icon checkmark'"></i></td>
+            <td class="two wide">{{goal.comments.length}}</td>
+            <td class="two wide" colspan="2">{{goal.progress}}%</td>
+          </tr>
+
         </tbody>
       </table>
       <span class="btn btn-danger pull-right" (click)="saveChanges(false)"> Atrás</span>

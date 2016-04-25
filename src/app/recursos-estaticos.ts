@@ -124,7 +124,7 @@ export var GOALS: IGoal[] = [
     diet: null,
     comments: [],
     tasks: []},
-  { id: 2, student_id: 1, type: 1, progress: 50, campo_metaX: "10kg", acepted: true, canceled:false,
+  { id: 2, student_id: 1, type: 1, progress: 100, campo_metaX: "10kg", acepted: true, canceled:false,
     diet: null,
     comments: [],
     tasks: [{ id: 5, name: "Recorrido 2", goal_id: 2, status: 1, description: "Te queda esta también", type: 0, objective1:100, format1:"Km", result1: 0, objective2:20, format2:"minutos", result2:18 },
@@ -138,7 +138,7 @@ export var GOALS: IGoal[] = [
     diet: null,
     comments: [],
     tasks: []},
-  { id: 5, student_id: 1, type: 3, progress: 70, campo_metaX: "parte superior",
+  { id: 5, student_id: 1, type: 3, progress: 100, campo_metaX: "parte superior",
         diet: { id: 1, id_trainer: 1, name: "Dieta para perder peso",  description: "Esta dieta controlad las calorias sin descuidar vitaminas y proteinas", notes: "No apta para celiacos",
           matrix:[           /**                            DESAYUNO                                    |                         COMIDA                             |      MERIENDA        |                                  CENA                                   |
             /** Domingo   */ [" - Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja", "- Menestra de verduras - Conejo al tomillo - 1 clementina", "- 1 yogur desnatado", "- Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor"],
@@ -157,7 +157,13 @@ export var GOALS: IGoal[] = [
                 { id: 2, name: "Recorrido", goal_id: 1, status: 0, description: "Esta tarea hay que hacerla pues de esta manera", type: 0, objective1:5, format1:"Km", result1: 0, objective2:20, format2:"minutos", result2:18 },
                 { id: 3, name: "Recorrido 1", goal_id: 1, status: 0, description: "Esta tarea hay que hacerla de esta otra", type: 0, objective1:10, format1:"Km", result1: 0, objective2:20, format2:"Minutos", result2:0 },
                 { id: 4, name: "Repeticiones 1", goal_id: 1, status: 0, description: "Y esta como te dé la real gana", type: 1, objective1:20, format1:"Kg", result1: 0, objective2:20, format2:"Repeticiones", result2:18 },
-                ]}
+      ]},
+      { id: 6, student_id: 1, type: 2, progress: 80, campo_metaX: "10kg", acepted: true, canceled:true,
+        diet: null,
+        comments: [],
+        tasks: [{ id: 5, name: "Recorrido 2", goal_id: 2, status: 1, description: "Te queda esta también", type: 0, objective1:100, format1:"Km", result1: 0, objective2:20, format2:"minutos", result2:18 },
+          { id: 6, name: "Repeticiones 2", goal_id: 2, status: 2, description: "Esta tarea hay que hacerla de este modo FIN", type: 1, objective1:12, format1:"Kg", result1: 0, objective2:20, format2:"Repeticiones", result2:18 }
+        ]},
 ]
 
 
