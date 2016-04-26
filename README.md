@@ -33,35 +33,6 @@ Implementado en Angular2. Probada la funcionalidad en Windows, Mac y Linux.
 
 ![Diagrama](CapturasPantallas/SpartanDiagram.png)
 
-## Captura de pantalla de las páginas principales
-
-<b>Login</b>
-![Login](CapturasPantallas/login.png)
-
-<b>Registro Alumno</b>
-![Registro Alumno](CapturasPantallas/registroAlumno.png)
-
-<b>Registro Entrenador</b>
-![Registro Entrenador](CapturasPantallas/registroEntrenador.png)
-
-<b>Mis Alumnos</b>
-![Mis Alumnos](CapturasPantallas/misAlumnos.png)
-
-<b>Detalle Alumno 1</b>
-![Detalle Alumno 1](CapturasPantallas/detalleAlumno1.png)
-
-<b>Detalle Alumno 2</b>
-![Detalle Alumno 2](CapturasPantallas/detalleAlumno2.png)
-
-<b>Añadir Meta</b>
-![Añadir Meta](CapturasPantallas/meta.png)
-
-<b>Mi perfil</b>
-![Mi perfil](CapturasPantallas/miPerfil.png)
-
-<b>Dieta</b>
-![Dieta](CapturasPantallas/dieta.png)
-
 ## Diagrama de clases Typescript utilizadas en Angular2
 ![Diagrama de clases y estructura básica](CapturasPantallas/photo546502020135233531.jpg)
 
