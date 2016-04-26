@@ -35,20 +35,20 @@ export class GoalForm {
         this.seleccionado = {id: 0, title: " ( ··· ) ", description: null, img: null};
         this.parametrosExtra = [];
 
-        this.pesos_elegibles = [{ id: 0, title: "5kg", img: "url('../assets/imagenes/rojo.jpg') center / cover", icon: "fitness_center", description: null },
-                                { id: 1, title: "10kg", img: "url('../assets/imagenes/rojo.jpg') center / cover", icon: "fitness_center", description: null },
-                                { id: 2, title: "15kg", img: "url('../assets/imagenes/rojo.jpg') center / cover", icon: "fitness_center", description: null }]
-        this.distancias_elegibles = [{ id: 0, title: "5km", img: "url('../assets/imagenes/rojo.jpg') center / cover", icon: "fitness_center", description: null },
-                                     { id: 1, title: "10km", img: "url('../assets/imagenes/rojo.jpg') center / cover", icon: "fitness_center", description: null },
-                                     { id: 2, title: "15km", img: "url('../assets/imagenes/rojo.jpg') center / cover", icon: "fitness_center", description: null }]
-        this.especificos_elegibles = [{ id: 0, title: "parte superior", img: "url('../assets/imagenes/rojo.jpg') center / cover", icon: "fitness_center", description: null },
-                                      { id: 1, title: "parte inferior", img: "url('../assets/imagenes/rojo.jpg') center / cover", icon: "fitness_center", description: null }]
-        this.deportes_elegibles = [{ id: 0, title: "fútbol", img: "url('../assets/imagenes/rojo.jpg') center / cover", icon: "fitness_center", description: null },
-                                   { id: 1, title: "baloncesto", img: "url('../assets/imagenes/rojo.jpg') center / cover", icon: "fitness_center", description: null },
-                                   { id: 2, title: "tennis", img: "url('../assets/imagenes/rojo.jpg') center / cover", icon: "fitness_center", description: null },
-                                   { id: 3, title: "golf", img: "url('../assets/imagenes/rojo.jpg') center / cover", icon: "fitness_center", description: null },
-                                   { id: 4, title: "kick-boxing", img: "url('../assets/imagenes/rojo.jpg') center / cover", icon: "fitness_center", description: null },
-                                   { id: 5, title: "balonmano", img: "url('../assets/imagenes/rojo.jpg') center / cover", icon: "fitness_center", description: null }]
+        this.pesos_elegibles = [{ id: 0, title: "5kg", img: "url('../assets/imagenes/peso.jpg') center / cover", icon: "fitness_center", description: null },
+                                { id: 1, title: "10kg", img: "url('../assets/imagenes/peso.jpg') center / cover", icon: "fitness_center", description: null },
+                                { id: 2, title: "15kg", img: "url('../assets/imagenes/peso.jpg') center / cover", icon: "fitness_center", description: null }]
+        this.distancias_elegibles = [{ id: 0, title: "5km", img: "url('../assets/imagenes/distancia.jpg') center / cover", icon: "fitness_center", description: null },
+                                     { id: 1, title: "10km", img: "url('../assets/imagenes/distancia.jpg') center / cover", icon: "fitness_center", description: null },
+                                     { id: 2, title: "15km", img: "url('../assets/imagenes/distancia.jpg') center / cover", icon: "fitness_center", description: null }]
+        this.especificos_elegibles = [{ id: 0, title: "parte superior", img: "url('../assets/imagenes/superior.jpg') center / cover", icon: "fitness_center", description: null },
+                                      { id: 1, title: "parte inferior", img: "url('../assets/imagenes/piernas.jpg') center / cover", icon: "fitness_center", description: null }]
+        this.deportes_elegibles = [{ id: 0, title: "fútbol", img: "url('../assets/imagenes/futbol.jpg') center / cover", icon: "fitness_center", description: null },
+                                   { id: 1, title: "baloncesto", img: "url('../assets/imagenes/balocesto.jpg') center / cover", icon: "fitness_center", description: null },
+                                   { id: 2, title: "tennis", img: "url('../assets/imagenes/tenis.jpg') center / cover", icon: "fitness_center", description: null },
+                                   { id: 3, title: "golf", img: "url('../assets/imagenes/golf.jpg') center / cover", icon: "fitness_center", description: null },
+                                   { id: 4, title: "kick-boxing", img: "url('../assets/imagenes/Kickboxing.jpg') center / cover", icon: "fitness_center", description: null },
+                                   { id: 5, title: "balonmano", img: "url('../assets/imagenes/balonmano.jpg') center / cover", icon: "fitness_center", description: null }]
     }
 
     nuevaSeleccion(){

@@ -44,7 +44,7 @@ export class DashboardAlumno implements OnInit{
    */
 
 	ngOnInit(){
-		this.task = new Task(this.student.goal.id);
+		if(this.student.goal) this.task = new Task(this.student.goal.id);
 	}
 
 	/*
