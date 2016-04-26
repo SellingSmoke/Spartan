@@ -36,7 +36,7 @@ export class Login {
         this.usuarios = JSON.parse(localStorage.getItem('usuarios'));
 
         for (var i = 0 ; i<this.usuarios.length ; i++){
-            if (this.usuarios[i].user===this.model.user){
+            if (this.usuarios[i].user===this.model.user && this.usuarios[i].user != ""){
                 if (this.usuarios[i].pass===this.model.pass){
                     localStorage.setItem('spartan', "Somos Espartanos");
                     localStorage.setItem('rol', this.usuarios[i].rol);
@@ -44,8 +44,8 @@ export class Login {
                 }
             }
         }
-        /*
-        if (this.model.user==="spartan" && this.model.pass==="spartan"){
+
+        /*if (this.model.user==="spartan" && this.model.pass==="spartan"){
             localStorage.setItem('spartan', "Somos Espartanos");
             localStorage.setItem('rol', "1");
             this.router.parent.navigateByUrl('/dashboard');
@@ -57,8 +57,8 @@ export class Login {
             localStorage.setItem('spartan', "Somos Espartanos");
             localStorage.setItem('rol', "0");
             this.router.parent.navigateByUrl('/dashboard');
-        }
-        */
+        }*/
+
     }
 
 };

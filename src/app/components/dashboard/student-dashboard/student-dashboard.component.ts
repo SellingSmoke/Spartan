@@ -34,6 +34,8 @@ export class DashboardAlumno implements OnInit{
 
 	task: Task;					// Modelo de la nueva meta para el formulario
 
+	taskFormType: number; // 0: no type ; 1 : aerobic ; 2 : anaerobic
+
 	constructor(private aut: AutenticacionService) {
 		this.tab = 1;
 	}

@@ -11,6 +11,7 @@ h2 {
 .mdl-card__title:hover {
   /*font-size: 1.2em;*/
   -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 .mdl-card__title-text {
   opacity: 1.0 !important;

@@ -53,12 +53,12 @@ export class Task implements ITask{
   setType(type: number){
     if(type){
       this.type = 1;
-      this.format1 = "Km"
-      this.format2 = "Minutos"
+      this.format1 = "repeticiones"
+      this.format2 = "Kg"
     }else{
       this.type = 0;
-      this.format1 = "Repeticiones"
-      this.format2 = "Kg"
+      this.format1 = "Km"
+      this.format2 = "minutos"
     }
   }
 
