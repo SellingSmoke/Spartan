@@ -1,7 +1,7 @@
 # Spartan
 
 ## Descripción de la temática de la web
-Spartan es una aplicación web que te permitirá realizar un seguimiento de tú a tú con tu entrenador. Te permitirá llevar un control fácil, rápido, directo, actualizado y completo de toda tu actividad, con el objetivo de que mejores y alcances las metas que te marques tú o tu entrenador.
+Spartan es una aplicación web que te permitirá realizar un seguimiento de tú a tú con tu entrenador. Te permitirá llevar un control fácil, rápido, directo, actualizado y completo de toda tu actividad, con el objetivo de que mejores y alcances las metas que te marques.
 
 ## Entidades
 
@@ -9,7 +9,7 @@ Spartan es una aplicación web que te permitirá realizar un seguimiento de tú 
 - Metas (formadas por tareas)
 - Tareas
 - Dietas 
-
+- Comentarios
 
 De forma adicional y de cara a la visibilidad se pueden sacar estadisticas de seguimiento a partir de las entidades
 
@@ -27,14 +27,11 @@ Para ejecutar la aplicacipn seguir los siguientes pasos:
 
 Implementado en Angular2. Probada la funcionalidad en Windows, Mac y Linux.
 
-
-
-## Diagrama de navegación
-
-![Diagrama](CapturasPantallas/SpartanDiagram.png)
-
 ## Diagrama de clases Typescript utilizadas en Angular2
-![Diagrama de clases y estructura básica](CapturasPantallas/photo546502020135233531.jpg)
+![Diagrama de clases y estructura básica](Diagramas/SpartanClases.png)
+
+## Diagrama de interacción de clases
+![Diagrama de interaccion clases](Diagramas/SpartanDiagram.png)
 
 ## Integrantes del equipo de desarrollo:
 
