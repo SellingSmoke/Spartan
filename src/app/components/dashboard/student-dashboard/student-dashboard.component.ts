@@ -96,6 +96,32 @@ export class DashboardAlumno implements OnInit{
     }
 	}
 
+	setTab(n:number){
+		switch(n){
+			case 1:	this.tab = 1;
+							break;
+			case 2: this.tab = 2;
+							// Pone los comentarios de tu contraparte a leidos
+							for (var comment of this.student.goal.comments){
+								if(comment.rol != localStorage.getItem("rol") && !comment.read)
+									comment.read = true;
+							}
+							//Llamar a guardar en la BDD
+							break;
+			case 3: this.tab = 3;
+							break;
+		}
+	}
+
+	getNoReadComments(){
+		var n = 0;
+		for (var comment of this.student.goal.comments){
+			if(comment.rol != localStorage.getItem("rol") && !comment.read)
+				n++;
+		}
+		return n;
+	}
+
 	showDialog() {
 	    jQuery('#dialog-mat').toggleClass('position-changed');
 	    jQuery('.wrap').toggleClass('active'); //Activar y desactivar el dialog

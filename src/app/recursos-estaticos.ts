@@ -22,7 +22,9 @@ export var STUDENTS: Student[] = [
           ]
         }, acepted: true, canceled:false,
         comments: [{id: 1, rol: 2, date: 1461111590589, comment: "Oye, y esto ... como se hace", read: true},
-                   {id: 2, rol: 1, date: 1461111590589, comment: "Mira que eres malo, esto se hace asi asi y asi", read: false}],
+                   {id: 2, rol: 1, date: 1461111590589, comment: "Mira que eres malo, esto se hace asi asi y asi", read: false},
+                   {id: 3, rol: 2, date: 1461111590589, comment: "Sorry trainer", read: false},
+                   {id: 4, rol: 2, date: 1461111590589, comment: "La proxima lo haré mejor", read: false}],
         tasks: [{ id: 1, name: "Repeticiones", goal_id: 1, status: 0, description: "Esta tarea hay que hacerla asi", type: 1, objective1:15, format1:"repeticiones", result1: 10, objective2:40, format2:"Kg", result2: 35 },
                 { id: 2, name: "Recorrido", goal_id: 1, status: 0, description: "Esta tarea hay que hacerla pues de esta manera", type: 0, objective1:5, format1:"Km", result1: 0, objective2:20, format2:"minutos", result2:18 },
                 { id: 3, name: "Recorrido 1", goal_id: 1, status: 0, description: "Esta tarea hay que hacerla de esta otra", type: 0, objective1:10, format1:"Km", result1: 0, objective2:20, format2:"Minutos", result2:0 },

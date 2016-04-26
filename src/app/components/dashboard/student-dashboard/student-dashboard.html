@@ -62,9 +62,9 @@
           <!-- TABS -->
           <div id="botones-tabs" class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
             <div id="botones-tabs-in" class="mdl-layout__tab-bar">
-              <a class="mdl-layout__tab" (click)="tab = 1" [class.active]="tab === 1">Tareas</a>
-              <a class="mdl-layout__tab" (click)="tab = 2" [class.active]="tab === 2">Comentarios</a>
-              <a class="mdl-layout__tab" (click)="tab = 3" [class.active]="tab === 3">Dieta</a>
+              <a class="mdl-layout__tab" (click)="setTab(1)" [class.active]="tab == 1">Tareas</a>
+              <a class="mdl-layout__tab" (click)="setTab(2)" [class.active]="tab == 2">Comentarios <a *ngIf="getNoReadComments()"class="ui teal circular label">{{ getNoReadComments() }}</a></a>
+              <a class="mdl-layout__tab" (click)="setTab(3)" [class.active]="tab == 3">Dieta</a>
             </div>
           </div>
 
