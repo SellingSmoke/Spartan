@@ -17,7 +17,7 @@
               <i class="large user outline middle aligned icon"></i>
               <div class="content">
                 <a class="header">Nombre y apellidos</a>
-                <div class="description">{{student.name + " " + student.lastname}}</div>
+                <div class="description">{{student?.name + " " + student?.lastname}}</div>
               </div>
             </div>
             <div class="item">
@@ -27,28 +27,28 @@
               <i class="large mail outline middle aligned icon"></i>
               <div class="content">
                 <a class="header">Email</a>
-                <div class="description">{{student.email}}</div>
+                <div class="description">{{student?.email}}</div>
               </div>
             </div>
             <div class="item">
               <i class="large birthday middle aligned icon"></i>
               <div class="content">
                 <a class="header">Edad</a>
-                <div class="description">{{student.age}} años</div>
+                <div class="description">{{student?.age}} años</div>
               </div>
             </div>
             <div class="item">
-              <i [class]="student.gender ? 'pink female icon large' : 'blue male icon large'"></i>
+              <i [class]="student?.gender ? 'pink female icon large' : 'blue male icon large'"></i>
               <div class="content">
                 <a class="header">Género</a>
-                <div class="description">{{student.gender ? 'Femenino' : 'Masculino'}}</div>
+                <div class="description">{{student?.gender ? 'Femenino' : 'Masculino'}}</div>
               </div>
             </div>
             <div class="item">
               <i class="large calendar middle aligned icon"></i>
               <div class="content">
                 <a class="header">Matriculación</a>
-                <div class="description">{{student.registration_date | date }}</div>
+                <div class="description">{{student?.registration_date | date }}</div>
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@
           </div>
         </div>
         <a class="btn btn-ln btn-raised btn-danger" (click)="saveChanges(true)">Guardar nuevo correo</a>
-        <span class="btn btn-danger pull-right" (click)="saveChanges(false)"> Atrás</span>
+        <span *ngIf="edit_mode != 0" class="btn btn-danger pull-right" (click)="saveChanges(false)"> Atrás</span>
       </div>
     </div>
   </div>
@@ -105,67 +105,144 @@
         </div>
         <br>
         <a class="btn btn-ln btn-raised btn-danger" (click)="saveChanges(true)">Guardar contraseña</a>
-        <span class="btn btn-danger pull-right" (click)="saveChanges(false)"> Atrás</span>
+        <span *ngIf="edit_mode != 0" class="btn btn-danger pull-right" (click)="saveChanges(false)"> Atrás</span>
       </div>
     </div>
   </div>
 
   <!-- Registro de antiguas metas -->
   <div class="col-md-8 col-md-offset-2">
-    <div class="form-horizontal panel panel-default" *ngIf="editMode == 3">
-      <table class="ui celled structured table">
-        <thead>
-          <tr>
-            <th colspan="8">Histórico de Metas</th>
-          </tr>
-        </thead>
-        <tbody>
+    <table *ngIf="editMode == 3" class="ui celled structured table">
+      <thead>
+        <tr>
+          <th colspan="8">Histórico de Metas</th>
+        </tr>
+      </thead>
+      <tbody>
 
-          <!-- CABECERA-->
-          <tr>
-            <td class="three wide active sp-not">
-              <span><i class="teal flag icon"></i> Descripción </span>
-            </td>
-            <td class="two wide active"><i class="teal food icon"></i> Dieta asignada </td>
-            <td class="two wide active"><i class="teal comments outline icon"></i> Nº comentarios </td>
-            <td class="two wide active" colspan="2"><i class="teal line chart icon"></i> Progreso </td>
-          </tr>
+        <!-- CABECERA-->
+        <tr>
+          <td class="six wide active"><i class="teal flag icon"></i> Descripción</td>
+          <td class="one wide active"><i class="teal food icon"></i> Dieta asignada </td>
+          <td class="one wide active"><i class="teal comments outline icon"></i> Nº comentarios </td>
+          <td class="one wide active" colspan="2"><i class="teal line chart icon"></i> Progreso </td>
+        </tr>
 
-          <!-- META ACTUAL-->
-          <tr class="fila-label"><a class="ui teal ribbon label sp-label-statistic">Meta actual</a></tr>
-          <tr class="fila-meta-actual">
-            <td class="three wide sp-not">
-              <span class="pull-right">{{student.goal | GoalName}}</span>
-            </td>
-            <td class="two wide"><i [class]="(student.goal.diet === null) ? 'teal icon remove' : 'teal icon checkmark'"></i></td>
-            <td class="two wide">{{student.goal.comments.length}}</td>
-            <td class="two wide" colspan="2">{{student.goal.progress}}%</td>
-          </tr>
+        <!-- META ACTUAL-->
+        <td colspan=4 class="fila-label">
+          <div class="ui teal message">
+            <div class="header">
+              Meta actual
+            </div>
+          </div>
+        </td>
+        <tr class="fila-meta-actual">
+          <td class="three wide sp-not">
+            <span>{{student.goal | GoalName}}</span>
+          </td>
+          <td class="two wide"><i [class]="(student.goal.diet === null) ? 'teal icon remove' : 'teal icon checkmark'"></i></td>
+          <td class="two wide">{{student.goal.comments.length}}</td>
+          <td class="two wide" colspan="2">{{student.goal.progress}}%</td>
+        </tr>
 
-          <!-- METAS COMPLETADAS-->
-          <tr class="fila-label"><a *ngIf="getCompletedGoals().length != 0" class="ui green ribbon label sp-label-statistic">Metas completadas</a></tr>
-          <tr *ngFor="#goal of (getCompletedGoals())" class="fila-metas-completadas">
-            <td class="three wide sp-not">
-              <span class="pull-right">{{goal | GoalName}}</span>
-            </td>
-            <td class="two wide"><i [class]="(goal.diet === null) ? 'teal icon remove' : 'teal icon checkmark'"></i></td>
-            <td class="two wide">{{goal.comments.length}}</td>
-            <td class="two wide" colspan="2">{{goal.progress}}%</td>
-          </tr>
+        <!-- METAS COMPLETADAS-->
+        <td *ngIf="completeGoals.length !== 0" colspan=4 class="fila-label">
+          <div class="ui success message">
+            <div class="header">
+              Metas completadas
+            </div>
+          </div>
+        </td>
+        <tr *ngFor="#goal of completeGoals" class="fila-metas-completadas">
+          <td class="three wide sp-not">
+            <span>{{goal | GoalName}}</span>
+          </td>
+          <td class="two wide"><i [class]="(!goal.diet) ? 'teal icon remove' : 'teal icon checkmark'"></i></td>
+          <td class="two wide">{{goal.comments.length}}</td>
+          <td class="two wide" colspan="2">{{goal.progress}}%</td>
+        </tr>
 
-          <!-- METAS CANCELADAS-->
-          <tr class="fila-label"><a *ngIf="getCancelledGoals().length != 0" class="ui red ribbon label sp-label-statistic">Metas canceladas</a></tr>
-          <tr *ngFor="#goal of (getCancelledGoals())" class="fila-metas-canceladas">
-            <td class="three wide sp-not">
-              <span class="pull-right">{{goal | GoalName}}</span>
-            </td>
-            <td class="two wide"><i [class]="(goal.diet === null) ? 'teal icon remove' : 'teal icon checkmark'"></i></td>
-            <td class="two wide">{{goal.comments.length}}</td>
-            <td class="two wide" colspan="2">{{goal.progress}}%</td>
-          </tr>
-
-        </tbody>
-      </table>
-      <span class="btn btn-danger pull-right" (click)="saveChanges(false)"> Atrás</span>
-    </div>
+        <!-- METAS CANCELADAS-->
+        <td *ngIf="canceledGoals.length !== 0" colspan=4 class="fila-label">
+          <div class="ui error message">
+            <div class="header">
+              Metas canceladas
+            </div>
+          </div>
+        </td>
+        <tr *ngFor="#goal of canceledGoals" class="fila-metas-canceladas">
+          <td class="three wide sp-not">
+            <span>{{goal | GoalName}}</span>
+          </td>
+          <td class="two wide"><i [class]="(goal.diet) ? 'teal icon remove' : 'teal icon checkmark'"></i></td>
+          <td class="two wide">{{goal.comments.length}}</td>
+          <td class="two wide" colspan="2">{{goal.progress}}%</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th colspan=4>
+            <div class="ui tiny statistics">
+              <div class="sp-statics statistic">
+                <div class="value">
+                  {{num}}
+                </div>
+                <div class="label sp-label-statistic">
+                  Metas
+                </div>
+              </div>
+              <div class="sp-statics green statistic">
+                <div class="value">
+                  {{numComplete}}
+                </div>
+                <div class="label sp-label-statistic">
+                  Completada/s
+                </div>
+              </div>
+              <div class="sp-statics red statistic">
+                <div class="value">
+                  {{numCancelled}}
+                </div>
+                <div class="label sp-label-statistic">
+                  Cancelada/s
+                </div>
+              </div>
+              <div class="sp-statics blue statistic">
+                <div class="value">
+                  {{ numDiets }}
+                </div>
+                <div class="label sp-label-statistic">
+                  Dietas
+                </div>
+              </div>
+              <div class="sp-statics orange statistic">
+                <div class="value">
+                  {{ numComments }}
+                </div>
+                <div class="label sp-label-statistic">
+                  Comentarios
+                </div>
+              </div>
+              <div class="sp-statics teal statistic">
+                <div class="value">
+                  {{ numTasks}}
+                </div>
+                <div class="label sp-label-statistic">
+                  Tareas
+                </div>
+              </div>
+              <div class="sp-statics yellow statistic">
+                <div class="value">
+                  {{progress / num}}%
+                </div>
+                <div class="label sp-label-statistic">
+                  Media de progreso
+                </div>
+              </div>
+            </div>
+          </th>
+        </tr>
+      </tfoot>
+    </table>
+    <span *ngIf="editMode === 3" class="btn btn-danger pull-right" (click)="saveChanges(false)"> Atrás</span>
   </div>
