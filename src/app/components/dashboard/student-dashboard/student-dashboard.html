@@ -73,98 +73,6 @@
 
           <div *ngIf="tab === 1" id="tab-tarea" class="panel-body">
 
-            <!-- NUEVA TAREA -->
-
-            <div id="dialog-mat" class='wrap material-dialog'>
-              <div id="dialog-mat-content" class='content'>
-                <h3 id="titulo-nueva-tarea">Nueva tarea</h3>
-
-                <div class="form-group form-radio-button">
-                  <div class="radio radio-button-tarea">
-                    <label>
-                      <input (click)="setType(0)" class="boton-de-radio" type="radio" name="sample1" value="1"><span class="circle"></span><span class="check"></span> AERÓBICA
-                    </label>
-                  </div>
-                  <div class="radio radio-button-tarea">
-                    <label>
-                      <input (click)="setType(1)" class="boton-de-radio" type="radio" name="sample1" value="2"><span class="circle"></span><span class="check"></span> ANAERÓBICA
-                    </label>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label for="nombreTarea" class="col-md-2 control-label">Nombre</label>
-                  <div class="col-md-10">
-                    <input [(ngModel)]="task.name" class="form-control" id="nombreTarea" placeholder="Nombre de la tarea" type="text">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="descripcionTarea" class="col-md-2 control-label">Descripción</label>
-                  <div class="col-md-10">
-                    <textarea [(ngModel)]="task.description" class="form-control" id="descripcionTarea" placeholder="Decripción de la tarea" type="text"></textarea>
-                  </div>
-                </div>
-
-                <ul class="breadcrumb">
-                  <li class="active">Escoja el tipo de ejercicio...</li>
-                </ul>
-
-                <div class="start-no-display" id="form-anaerobico">
-                  <div class="col-md-4 form-group">
-                    <input [(ngModel)]="task.objective1" class="form-control" id="repeticiones-tarea" placeholder="Num. repeticiones" type="number">
-                  </div>
-                  <div class="col-md-2 form-group">
-                    <select [(ngModel)]="task.format1" class="form-control" id="formato-repeticiones">
-                      <option value="repeticiones">Repeticiones</option>
-                      <option value="series">Series</option>
-                    </select>
-                  </div>
-                  <div class="col-md-4 form-group">
-                    <input [(ngModel)]="task.objective2" class="form-control" id="peso-tarea" placeholder="Peso" type="number">
-                  </div>
-                  <div class="col-md-2 form-group">
-                    <select [(ngModel)]="task.format2" class="form-control" id="formato-peso">
-                      <option value="repeticiones">Kg</option>
-                      <option value="series">Peso propio</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="start-no-display" id="form-aerobico">
-                  <div class="col-md-4 form-group">
-                    <input [(ngModel)]="task.objective1" class="form-control" id="distancia-tarea" placeholder="Distancia" type="number">
-                  </div>
-                  <div class="col-md-2 form-group">
-                    <select [(ngModel)]="task.format1" class="form-control" id="formato-distancia">
-                      <option value="km">Km</option>
-                      <option value="metros">Metros</option>
-                    </select>
-                  </div>
-                  <div class="col-md-4 form-group">
-                    <input [(ngModel)]="task.objective2" class="form-control" id="tiempo-tarea" placeholder="Tiempo" type="number">
-                  </div>
-                  <div class="col-md-2 form-group">
-                    <select [(ngModel)]="task.format2" class="form-control" id="formato-tiempo">
-                      <option value="minutos">Minutos</option>
-                      <option value="horas">Horas</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-6 col-xs-6 col-botones-dialog">
-                    <button (click)="saveTask(false)" class="boton-dialog btn btn-danger">Cancelar</button>
-                  </div>
-                  <div class="col-md-6 col-xs-6 col-botones-dialog">
-                    <button (click)="saveTask(true)" class="boton-dialog btn btn-success pull-right">Aceptar</button>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <!-- FIN NUEVA TAREA -->
-
             <!-- TAREAS -->
 
             <ul id="ul-accordion" class="accordion">
@@ -444,5 +352,97 @@
     </div>
     <!-- ESto no sirve para nada,
     esto debería estar en css del dialogo
-    no en un div a parte...-->  
+    no en un div a parte...-->
+    <!-- NUEVA TAREA -->
+
+    <div id="dialog-mat" [class.modal]="posChanged" class='wrap material-dialog'>
+      <div id="dialog-mat-content" class='content'>
+        <h3 id="titulo-nueva-tarea">Nueva tarea</h3>
+
+        <div class="form-group form-radio-button">
+          <div class="radio radio-button-tarea">
+            <label>
+              <input (click)="setType(0)" class="boton-de-radio" type="radio" name="sample1" value="1"><span class="circle"></span><span class="check"></span> AERÓBICA
+            </label>
+          </div>
+          <div class="radio radio-button-tarea">
+            <label>
+              <input (click)="setType(1)" class="boton-de-radio" type="radio" name="sample1" value="2"><span class="circle"></span><span class="check"></span> ANAERÓBICA
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="nombreTarea" class="col-md-2 control-label">Nombre</label>
+          <div class="col-md-10">
+            <input [(ngModel)]="task.name" class="form-control" id="nombreTarea" placeholder="Nombre de la tarea" type="text">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="descripcionTarea" class="col-md-2 control-label">Descripción</label>
+          <div class="col-md-10">
+            <textarea [(ngModel)]="task.description" class="form-control" id="descripcionTarea" placeholder="Decripción de la tarea" type="text"></textarea>
+          </div>
+        </div>
+
+        <ul class="breadcrumb">
+          <li class="active">Escoja el tipo de ejercicio...</li>
+        </ul>
+
+        <div class="start-no-display" id="form-anaerobico">
+          <div class="col-md-4 form-group">
+            <input [(ngModel)]="task.objective1" class="form-control" id="repeticiones-tarea" placeholder="Num. repeticiones" type="number">
+          </div>
+          <div class="col-md-2 form-group">
+            <select [(ngModel)]="task.format1" class="form-control" id="formato-repeticiones">
+              <option value="repeticiones">Repeticiones</option>
+              <option value="series">Series</option>
+            </select>
+          </div>
+          <div class="col-md-4 form-group">
+            <input [(ngModel)]="task.objective2" class="form-control" id="peso-tarea" placeholder="Peso" type="number">
+          </div>
+          <div class="col-md-2 form-group">
+            <select [(ngModel)]="task.format2" class="form-control" id="formato-peso">
+              <option value="repeticiones">Kg</option>
+              <option value="series">Peso propio</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="start-no-display" id="form-aerobico">
+          <div class="col-md-4 form-group">
+            <input [(ngModel)]="task.objective1" class="form-control" id="distancia-tarea" placeholder="Distancia" type="number">
+          </div>
+          <div class="col-md-2 form-group">
+            <select [(ngModel)]="task.format1" class="form-control" id="formato-distancia">
+              <option value="km">Km</option>
+              <option value="metros">Metros</option>
+            </select>
+          </div>
+          <div class="col-md-4 form-group">
+            <input [(ngModel)]="task.objective2" class="form-control" id="tiempo-tarea" placeholder="Tiempo" type="number">
+          </div>
+          <div class="col-md-2 form-group">
+            <select [(ngModel)]="task.format2" class="form-control" id="formato-tiempo">
+              <option value="minutos">Minutos</option>
+              <option value="horas">Horas</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-xs-6 col-botones-dialog">
+            <button (click)="saveTask(false)" class="boton-dialog btn btn-danger">Cancelar</button>
+          </div>
+          <div class="col-md-6 col-xs-6 col-botones-dialog">
+            <button (click)="saveTask(true)" class="boton-dialog btn btn-success pull-right">Aceptar</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FIN NUEVA TAREA -->
+
     <div id="blurizable"></div>
