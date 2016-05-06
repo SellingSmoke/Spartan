@@ -14,10 +14,10 @@ declare var jQuery:JQueryStatic;
 
 @Component({
 	selector: 'dashboard-admin',
-  styleUrls: ['app/components/dashboard/admin-dashboard/table.css'],
-  templateUrl: 'app/components/dashboard/admin-dashboard/admin-dashboard.component.html',
+	styleUrls: ['app/components/dashboard/admin-dashboard/table.css'],
+  	templateUrl: 'app/components/dashboard/admin-dashboard/admin-dashboard.component.html',
 	pipes: [GoalNamePipe],
-  providers: [TrainerService, AutenticacionService]
+  	providers: [TrainerService, AutenticacionService]
 })
 
 export class DashboardAdmin implements OnInit{
@@ -34,33 +34,38 @@ export class DashboardAdmin implements OnInit{
 		this.studentNum = 0;
 	}
 
-	/*
+	/* Actualizado: 6 mayo no se usa, esta vacio
 	 *	Al cargar la vista
-	 */
-
+	 *
 	ngAfterViewInit() {
 
-	}
+		}
 
-  ngOnInit() {
+	*/
+
+	ngOnInit() {
 		this._trainerService.getTrainers().then(
 			trainers => {
 				this.trainers = trainers;
 				this.trainersNum = trainers.length;
 				for (let trainer of trainers) {
-				    this.studentNum += trainer.students.length;
+					this.studentNum += trainer.students.length;
 				}
 			}
 		);
-  }
+	}
 
 	public logOut(){
-			this.aut.logOut();
-			this.router.navigateByUrl("/login");
+		this.aut.logOut();
+		this.router.navigateByUrl("/login");
 	}
 
 	goToDetails(student: Student){
-			this.studentSelected = student;
+		this.studentSelected = student;
 	}
+
+	 public nombreCompleto(trainer):String{
+		return trainer.name + " " + trainer.lastname;
+	};
 
 }
