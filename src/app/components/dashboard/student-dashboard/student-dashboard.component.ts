@@ -10,12 +10,12 @@ import { CommentDirective } from '../../../directives/comments/comment.directive
 import { BeautifyProgessBarPipe, GoalNamePipe } from '../../../pipes/student-pipes.pipe';
 import { AutenticacionService } from '../../../services/autenticacion.service';
 
-declare var jQuery:JQueryStatic;
-
+declare var jQuery:JQueryStatic
 
 @Component({
 	selector: 'dashboard-alumno',
   templateUrl: 'app/components/dashboard/student-dashboard/student-dashboard.html',
+	styleUrls: ['app/components/dashboard/student-dashboard/student-dashboard.css'],
   providers: [AutenticacionService],
 	directives:  [GoalForm, CommentDirective, Diets],
   pipes: [BeautifyProgessBarPipe, GoalNamePipe],
@@ -36,8 +36,15 @@ export class DashboardAlumno implements OnInit{
 
 	taskFormType: number; // 0: no type ; 1 : aerobic ; 2 : anaerobic
 
+	//DECLARACION DE VARIABLES PARA QUITAR jQuery
+
+	posChanged:boolean;
+
+
 	constructor(private aut: AutenticacionService) {
 		this.tab = 1;
+		//Por si acaso, como no se donde se inicializa realmente
+		this.posChanged = false;
 	}
 
 	/*
@@ -47,6 +54,7 @@ export class DashboardAlumno implements OnInit{
 
 	ngOnInit(){
 		if(this.student.goal) this.task = new Task(this.student.goal.id);
+		this.posChanged = false;
 	}
 
 	/*
@@ -130,7 +138,8 @@ goBack() {
 	}
 
 	showDialog() {
-	    jQuery('#dialog-mat').toggleClass('position-changed');
+	    //jQuery('#dialog-mat').toggleClass('position-changed');
+			this.posChanged = !this.posChanged;
 	    jQuery('.wrap').toggleClass('active'); //Activar y desactivar el dialog
 	    jQuery('#blurizable').toggleClass('blur-backgorund change-style-blur'); //Activar y desactivar el fondo oscuro tras el dialog
 	    jQuery('.boton-de-radio').prop('checked', false); //Desmarcar los radio-button de añadir tarea al pulsar Aceptar o Cancelar
