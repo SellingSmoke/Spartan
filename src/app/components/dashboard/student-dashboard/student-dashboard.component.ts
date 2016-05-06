@@ -53,14 +53,15 @@ export class DashboardAlumno implements OnInit{
 	 *	Método que permite volver al DashboardEntrenador
    */
 
-	goBack() {
+/*
+goBack() {
 		this.trainer_dashboard_event.emit(null);
   }
 
 	newGoal(){
 		this.student.goal = null;
 	}
-
+*/
 	getGoal(goal: Goal){
 		this.student.goal = goal;
 		this.task = new Task(this.student.goal.id);
@@ -71,8 +72,12 @@ export class DashboardAlumno implements OnInit{
 		this.student.goal.canceled = !acepted;
 		// LLAMAR A GUARDAR
 		if(this.aut.esProfesor() && !acepted){
+			/* Esto parece que sobra ya que hace solo una llamada a dos tonterias.
 			this.newGoal();
 			this.goBack();
+			*/
+			this.student.goal = null;
+			this.trainer_dashboard_event.emit(null);
 		}
 	}
 

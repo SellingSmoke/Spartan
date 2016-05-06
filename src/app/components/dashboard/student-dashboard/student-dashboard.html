@@ -3,15 +3,16 @@
 <!-- FIN FORMULARIO NUEVA META -->
 
 <div *ngIf="student.goal" class="sp-container-lg">
-
-  <div class="col-md-2"></div>
-  <div class="col-md-8">
+  <!--<div class="col-md-2"></div>-->
+  <div class="col-md-8 col-md-offset-2">
     <div class="container">
       <div class="panel panel-default">
 
         <div class="panel-heading mdl-typography--title" id="sp-heading">
-          <button *ngIf="aut.esProfesor()" id="boton-back" (click)="goBack()" class="btn btn-raised pull-right btn-fab"><i class="material-icons">arrow_back</i></button>
-          <span *ngIf="aut.esProfesor()" class="ui teal right ribbon label"><i class="user icon"></i> <b>{{ student.name }}</b> {{student.lastname}}</span>
+          <span *ngIf="aut.esProfesor()">
+            <button id="boton-back" (click)="goBack()" class="btn btn-raised pull-right btn-fab"><i class="material-icons">arrow_back</i></button>
+            <span class="ui teal right ribbon label"><i class="user icon"></i> <b>{{ student.name }}</b> {{student.lastname}}</span>
+          </span>
           <h3 id="titulo-meta" [class.titulo-meta-prof]="aut.esProfesor()">{{ student.goal | GoalName }}</h3>
 
           <!-- PROGRESO -->
@@ -28,7 +29,7 @@
               <div class="header">
                 Petición de meta
               </div>
-              <p *ngIf="aut.esAlumno()">Tu entrenador aún no ha aceptado tu meta aún</p>
+              <p *ngIf="aut.esAlumno()">Tu entrenador no ha aceptado tu meta aún</p>
               <ul *ngIf="aut.esProfesor()" class="list">
                 <li>Acepta la meta para poder mandar tareas al alumno</li>
                 <li>Pudes rechazar la meta si no la consideras correcta</li>
@@ -436,10 +437,12 @@
           </div>
 
         </div>
-        <div>
-        </div>
+        <!--<div>
+        </div>-->
       </div>
-      <div class="col-md-2"></div>
+      <!--<div class="col-md-2"></div>-->
     </div>
-
+    <!-- ESto no sirve para nada,
+    esto debería estar en css del dialogo
+    no en un div a parte...-->  
     <div id="blurizable"></div>
