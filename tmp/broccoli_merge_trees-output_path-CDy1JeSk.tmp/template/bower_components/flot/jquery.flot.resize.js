@@ -1,1 +1,0 @@
-/Users/Enrique/Spartan/src/template/bower_components/flot/jquery.flot.resize.js

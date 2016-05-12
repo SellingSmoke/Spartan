@@ -1,0 +1,41 @@
+/*.router-link-active{
+    background-color: grey;
+}*/
+
+
+a:hover{
+  cursor: pointer;
+}
+
+.router-link-active > a , .sp-nav > a:hover , .sp-white:hover {
+	background-color: #EF5350;
+  color: white;
+}
+
+.sp-nav > a {
+	color: white;
+}
+
+.sp-menu {
+	border-bottom: 10px;
+	border-color: #EF5350;
+	border-style: solid;
+	border-bottom-color: #EF5350;
+	background-color: #B71C1C;
+  font-size: 20px;
+}
+
+.sp-white {
+	color: white;
+}
+
+.sp-center-paragraph{
+  text-align: center;
+  color: #BDBDBD;
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+
+.sp-lg{
+  font-size: 5em;
+}

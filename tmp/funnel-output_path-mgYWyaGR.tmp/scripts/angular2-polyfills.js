@@ -1,1 +1,0 @@
-/Users/Enrique/Spartan/tmp/funnel-input_base_path-UOKOhUrm.tmp/0/scripts/angular2-polyfills.js
