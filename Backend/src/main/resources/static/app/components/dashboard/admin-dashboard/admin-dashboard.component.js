@@ -36,14 +36,6 @@ System.register(['angular2/core', 'angular2/router', '../../../services/trainer.
                     this.router = router;
                     this.studentNum = 0;
                 }
-                /* Actualizado: 6 mayo no se usa, esta vacio
-                 *	Al cargar la vista
-                 *
-                ngAfterViewInit() {
-            
-                    }
-            
-                */
                 DashboardAdmin.prototype.ngOnInit = function () {
                     var _this = this;
                     this._trainerService.getTrainers().then(function (trainers) {
@@ -57,7 +49,6 @@ System.register(['angular2/core', 'angular2/router', '../../../services/trainer.
                 };
                 DashboardAdmin.prototype.logOut = function () {
                     this.aut.logOut();
-                    this.router.navigateByUrl("/login");
                 };
                 DashboardAdmin.prototype.goToDetails = function (student) {
                     this.studentSelected = student;

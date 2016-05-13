@@ -1,13 +1,13 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: 76197cd79ca7dc93fe43668b52cd8fcb6bec7cd2
+# sw.version: f47acd7a623eebd74585c59c2888c7f18c37a4cd
 # sw.file.hash: 39d0e88c3563113eca178cd82fbd4941f91b2497
 /app/components/dashboard/admin-dashboard/admin-dashboard.component.html
-# sw.file.hash: a0c7cc16657b74764456868af5948ff38ad41359
+# sw.file.hash: 24bd7698cb3c50efe8edebb7ef8246691b515edf
 /app/components/dashboard/admin-dashboard/admin-dashboard.component.js
-# sw.file.hash: 6b7d9257717fea86efc20907fe3a580acaaaa7a1
+# sw.file.hash: bc10ce581aa3eb4cc99b351f055b9ec6e7870262
 /app/components/dashboard/admin-dashboard/admin-dashboard.component.js.map
-# sw.file.hash: 8bc371d40edf6684f6af8ef7f2d03c3d262578db
+# sw.file.hash: 6390598c350ea20176d889fe20174671876ff9f5
 /app/components/dashboard/admin-dashboard/admin-dashboard.component.ts
 # sw.file.hash: 061e797af2cc0744bd8bdf70eebd81da820b9bdf
 /app/components/dashboard/admin-dashboard/table.css
@@ -21,11 +21,11 @@ CACHE MANIFEST
 /app/components/dashboard/inicio.js.map
 # sw.file.hash: 5e9fb09957c480da90eab164c806f83af5814538
 /app/components/dashboard/inicio.ts
-# sw.file.hash: 2b657e09c07633b3422b43dd98c8b1e50cb35699
+# sw.file.hash: 6d8e3733ea31f2b9bfdf9363bced6d91245ad635
 /app/components/dashboard/student-dashboard/student-dashboard.component.js
-# sw.file.hash: 7c27281bb976f0857ca1149786d83938eec9f4e5
+# sw.file.hash: e8e706ee05850182202d58229ab078cd9056e2d9
 /app/components/dashboard/student-dashboard/student-dashboard.component.js.map
-# sw.file.hash: 599655f9a1c3cba22b5644e4035ac3cb00e85458
+# sw.file.hash: 605b74fdd52507586368fb5d56bf4956aca5fbfb
 /app/components/dashboard/student-dashboard/student-dashboard.component.ts
 # sw.file.hash: 29cec236d237e58f6ca7de9968545abc7f394a0a
 /app/components/dashboard/student-dashboard/student-dashboard.css
@@ -55,25 +55,25 @@ CACHE MANIFEST
 /app/components/mainpage/mainpage2.css
 # sw.file.hash: 7cc0809e91967aa8950119ef0b9808d0c660a987
 /app/components/mainpage/mainpage2.html
-# sw.file.hash: ee8a98c38a71ff245032267b9ff224458eb9ab66
+# sw.file.hash: e14b5e0302869ab88f7233435f35685a5672f114
 /app/components/profile/profile.component.js
-# sw.file.hash: 6d90f94f5d00af04f9bbc57973a91a862cc22764
+# sw.file.hash: ee37ca715049a58a95e4f8a50505cd50c0d01738
 /app/components/profile/profile.component.js.map
-# sw.file.hash: f2338ba4d39e3b7ad973b994b3554dd95630128b
+# sw.file.hash: c6459a2ac6bfa2a2f9047bca1a299a6a9210388d
 /app/components/profile/profile.component.ts
 # sw.file.hash: 21d97bb389275817d2e180218ca1eac5e0332612
 /app/components/profile/profile.css
 # sw.file.hash: 0f477b54de7616c0850e9b9a3d281ff236eef274
 /app/components/profile/profile.html
-# sw.file.hash: 3c9f0181872a29e1edc9e4bc8ee967e3d069b6ca
+# sw.file.hash: de4e9de3bfcc88bf3f060f71887e1a355eca6170
 /app/components/session/login/login.component.js
-# sw.file.hash: 023e8ecb63ae1d640b6dc3789adada7b180b65f2
+# sw.file.hash: 618ebe4a51249571992ae1d7ecd081e6f6deee9c
 /app/components/session/login/login.component.js.map
-# sw.file.hash: 52f3a9f6a4c1ace39b1ddd363fa053ec5dfd5775
+# sw.file.hash: 89b3e34258c8d0f4d20d7cb76ed035b2d8f33429
 /app/components/session/login/login.component.ts
 # sw.file.hash: 31fa7068369aa1de3334c99a5fd3b63bcdcc7df8
 /app/components/session/login/login.css
-# sw.file.hash: d464448dcf1764624abc78559b10fe7550a911ca
+# sw.file.hash: 63c52456bdb0b6f9252d9197e6bc247fd5432495
 /app/components/session/login/login.html
 # sw.file.hash: a33762d6642d0f58a898c857eeb0263f103971c9
 /app/components/session/student-signUp/student-signUp.component.js
@@ -139,27 +139,27 @@ CACHE MANIFEST
 /app/directives/studentDetail/student-detail.js.map
 # sw.file.hash: a2be85ff697d7d117d97f162d09003da6d96a41c
 /app/directives/studentDetail/student-detail.ts
-# sw.file.hash: 66b4054ea205987d407e0ff90b8b7d9205c0354d
+# sw.file.hash: f60078b62eaeea318e9075f8b79165816d11ff44
 /app/main/app.component.js
-# sw.file.hash: f452422e61ba7abca1951add730c8758197e453f
+# sw.file.hash: a9be40ce834c793fe9463eeabccaa338e6cf0367
 /app/main/app.component.js.map
-# sw.file.hash: 5cd39c6716ae35fbdca3a6bd659dbbea1397df81
+# sw.file.hash: 9fb572e4bb52779bbcc0c30b233437a94b06c5cc
 /app/main/app.component.ts
 # sw.file.hash: 85ec924807c065ca7b7ff00957ee55828d17aeda
 /app/main/app.main.css
 # sw.file.hash: effaeb737ad854960ec139568a8e50eab4434212
 /app/main/app.main.html
-# sw.file.hash: c93ca8a046404c12dedb3a6108735f74295209c0
+# sw.file.hash: b0cd788055ba3a025cb36b51016ad5dfecd9eb82
 /app/main/main.js
-# sw.file.hash: 40f83e5758db61d69977a60e81fa1ee38e7f72fd
+# sw.file.hash: 79b33825800a4d5deaca2ac627219755c078fe76
 /app/main/main.js.map
-# sw.file.hash: d35d8c4596cdcfc3e873d5ebb7b54e6aa2575345
+# sw.file.hash: d6402b3e916eadf596e37250cd031563ffa65456
 /app/main/main.ts
 # sw.file.hash: f7eb46da9a8393d4ee86cedace424f6917155a51
 /app/models/comment.model.js
 # sw.file.hash: 52c94f47a9cdb1109781f76c8c66a6ba05ba00e2
 /app/models/comment.model.js.map
-# sw.file.hash: 372655dd6812d82765995b5aeaf39bf03d2bf3fc
+# sw.file.hash: 7ad4f587783348c2d203a8fb0d84d97d2a38fb29
 /app/models/comment.model.ts
 # sw.file.hash: d9dcbf2c2cfbe0921083977440bb18dd38fa5a39
 /app/models/diet.model.js
@@ -209,11 +209,11 @@ CACHE MANIFEST
 /app/recursos-estaticos.js.map
 # sw.file.hash: 34cf295c2fcb854d0f4a88d50d73cc3d149afa1f
 /app/recursos-estaticos.ts
-# sw.file.hash: ce9e425b6f9d2284d18809d52e42684946b5df34
+# sw.file.hash: 45a8a3857a346a323b80992d5fd15669ce2d2232
 /app/services/autenticacion.service.js
-# sw.file.hash: 410f6e85e448c68d35c6f2af7fd1eb626cfcc939
+# sw.file.hash: 2f795caede2e39df5296265df25df628f77e8fb1
 /app/services/autenticacion.service.js.map
-# sw.file.hash: 12cf5c4479f7741dbd37a83ae0a4a2dfeb9ce1a9
+# sw.file.hash: 291ffbb0fa8d4937f674a33e508590d856034316
 /app/services/autenticacion.service.ts
 # sw.file.hash: 361042178b061954ba0aab98d83e0ac55205a17b
 /app/services/diet.service.js
@@ -227,11 +227,11 @@ CACHE MANIFEST
 /app/services/goal.service.js.map
 # sw.file.hash: 491459db4b08dd0fd6815dae6e7c12fe8447fe7a
 /app/services/goal.service.ts
-# sw.file.hash: c9c54b356ea073a26c3b4429ebb3d33454c58643
+# sw.file.hash: 6a2f21af18cf09aa32b0daa5ecdf7040226ab1da
 /app/services/router.service.js
-# sw.file.hash: db9ab05b354d5ad30558788eac5c069d8e753551
+# sw.file.hash: a483f63badaf4504cfc26d7de94ae8165b9be01c
 /app/services/router.service.js.map
-# sw.file.hash: df4bfe9f419eace00ff0a1dd4aa94c66aa029fe1
+# sw.file.hash: d9a1b51f9f6a1fc2b60fc346989f8db044ef1cd0
 /app/services/router.service.ts
 # sw.file.hash: 13dda4f9eb97b06dd3503d4972e397d1acf768a0
 /app/services/student.service.js

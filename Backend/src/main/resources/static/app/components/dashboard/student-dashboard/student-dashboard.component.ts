@@ -43,8 +43,7 @@ export class DashboardAlumno implements OnInit{
 
 	constructor(private aut: AutenticacionService) {
 		this.tab = 1;
-		//Por si acaso, como no se donde se inicializa realmente
-		this.posChanged = false;
+		this.posChanged = false; //Por si acaso, como no se donde se inicializa realmente
 	}
 
 	/*
@@ -61,15 +60,10 @@ export class DashboardAlumno implements OnInit{
 	 *	Método que permite volver al DashboardEntrenador
    */
 
-/*
-goBack() {
+	goBack() {
 		this.trainer_dashboard_event.emit(null);
   }
 
-	newGoal(){
-		this.student.goal = null;
-	}
-*/
 	getGoal(goal: Goal){
 		this.student.goal = goal;
 		this.task = new Task(this.student.goal.id);
@@ -80,12 +74,8 @@ goBack() {
 		this.student.goal.canceled = !acepted;
 		// LLAMAR A GUARDAR
 		if(this.aut.esProfesor() && !acepted){
-			/* Esto parece que sobra ya que hace solo una llamada a dos tonterias.
-			this.newGoal();
-			this.goBack();
-			*/
 			this.student.goal = null;
-			this.trainer_dashboard_event.emit(null);
+			this.goBack();
 		}
 	}
 
@@ -131,8 +121,12 @@ goBack() {
 	getNoReadComments(){
 		var n = 0;
 		for (var comment of this.student.goal.comments){
-			if(comment.rol != localStorage.getItem("rol") && !comment.read)
-				n++;
+
+			if(comment.rol == 1 && this.aut.esProfesor()){
+				n++
+			}else if(comment.rol == 2 && this.aut.esAlumno()){
+				n++
+			}
 		}
 		return n;
 	}

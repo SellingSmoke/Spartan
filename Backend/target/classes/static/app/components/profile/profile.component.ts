@@ -80,7 +80,6 @@ export class Profile implements OnInit{
 
 	filterGoals(goals:Goal[]){
 		for (var g of goals){
-			console.log("AQUI")
 			if (g.progress === 100){
 				this.completeGoals.push(g);
 				this.numComplete++;

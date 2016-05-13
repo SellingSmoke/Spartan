@@ -74,7 +74,6 @@ System.register(['angular2/core', '../../services/student.service', '../../servi
                 Profile.prototype.filterGoals = function (goals) {
                     for (var _i = 0; _i < goals.length; _i++) {
                         var g = goals[_i];
-                        console.log("AQUI");
                         if (g.progress === 100) {
                             this.completeGoals.push(g);
                             this.numComplete++;

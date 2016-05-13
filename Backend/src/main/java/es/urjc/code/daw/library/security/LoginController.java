@@ -31,7 +31,7 @@ public class LoginController {
 	public ResponseEntity<User> logIn() {
 
 		if (!userComponent.isLoggedUser()) {
-			log.info("Not user logged");
+			log.info("Not user logged -LOGIN");
 			return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
 		} else {
 			User loggedUser = userComponent.getLoggedUser();
@@ -44,7 +44,7 @@ public class LoginController {
 	public ResponseEntity<Boolean> logOut(HttpSession session) {
 
 		if (!userComponent.isLoggedUser()) {
-			log.info("No user logged");
+			log.info("No user logged - LOGOUT");
 			return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
 		} else {
 			session.invalidate();

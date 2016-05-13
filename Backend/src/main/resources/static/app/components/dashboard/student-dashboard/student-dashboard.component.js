@@ -39,8 +39,7 @@ System.register(['angular2/core', '../../../models/task.model', '../../../direct
                     this.aut = aut;
                     this.trainer_dashboard_event = new core_1.EventEmitter();
                     this.tab = 1;
-                    //Por si acaso, como no se donde se inicializa realmente
-                    this.posChanged = false;
+                    this.posChanged = false; //Por si acaso, como no se donde se inicializa realmente
                 }
                 /*
                  *	Al iniciarse el componente, se cargaran las tareas que debe realizar el alumno
@@ -54,15 +53,9 @@ System.register(['angular2/core', '../../../models/task.model', '../../../direct
                 /*
                  *	Método que permite volver al DashboardEntrenador
                */
-                /*
-                goBack() {
-                        this.trainer_dashboard_event.emit(null);
-                  }
-                
-                    newGoal(){
-                        this.student.goal = null;
-                    }
-                */
+                DashboardAlumno.prototype.goBack = function () {
+                    this.trainer_dashboard_event.emit(null);
+                };
                 DashboardAlumno.prototype.getGoal = function (goal) {
                     this.student.goal = goal;
                     this.task = new task_model_1.Task(this.student.goal.id);
@@ -72,12 +65,8 @@ System.register(['angular2/core', '../../../models/task.model', '../../../direct
                     this.student.goal.canceled = !acepted;
                     // LLAMAR A GUARDAR
                     if (this.aut.esProfesor() && !acepted) {
-                        /* Esto parece que sobra ya que hace solo una llamada a dos tonterias.
-                        this.newGoal();
-                        this.goBack();
-                        */
                         this.student.goal = null;
-                        this.trainer_dashboard_event.emit(null);
+                        this.goBack();
                     }
                 };
                 DashboardAlumno.prototype.saveTask = function (mode) {
@@ -125,8 +114,12 @@ System.register(['angular2/core', '../../../models/task.model', '../../../direct
                     var n = 0;
                     for (var _i = 0, _a = this.student.goal.comments; _i < _a.length; _i++) {
                         var comment = _a[_i];
-                        if (comment.rol != localStorage.getItem("rol") && !comment.read)
+                        if (comment.rol == 1 && this.aut.esProfesor()) {
                             n++;
+                        }
+                        else if (comment.rol == 2 && this.aut.esAlumno()) {
+                            n++;
+                        }
                     }
                     return n;
                 };

@@ -1,6 +1,7 @@
 import {Component} from 'angular2/core';
 import {Router} from "angular2/router";
 import {RouterLink} from "angular2/router";
+import { AutenticacionService } from '../../,,/../../services/autenticacion.service';
 
 @Component({
 	selector: 'login',
@@ -13,58 +14,43 @@ import {RouterLink} from "angular2/router";
 
 export class Login {
 
-    private model = {
-        user : "",
-        pass : ""
-    }
-
-    private usuarios:Usuario[];
-
-    constructor(public router: Router) {}
+    constructor(public router: Router,private autenticacionService: AutenticacionService) {}
 
 
-    logIn(){
+    logIn(event: any, user: string, pass: string){
 
-        if (!localStorage.getItem('usuarios')){
-            var aux=[];
-            aux.push({user:"admin",pass:"admin",rol:"0"});
-            aux.push({user:"spartan",pass:"spartan",rol:"1"});
-            aux.push({user:"alumno",pass:"alumno",rol:"2"});
-            localStorage.setItem('usuarios', JSON.stringify(aux));
-        }
+			event.preventDefault();
 
-        this.usuarios = JSON.parse(localStorage.getItem('usuarios'));
+			this.autenticacionService.logIn(user, pass).subscribe(
+				user => {
+					console.log(user);
+					this.router.parent.navigateByUrl('/dashboard');
+				}
+			);
 
-        for (var i = 0 ; i<this.usuarios.length ; i++){
-            if (this.usuarios[i].user===this.model.user && this.usuarios[i].user != ""){
-                if (this.usuarios[i].pass===this.model.pass){
-                    localStorage.setItem('spartan', "Somos Espartanos");
-                    localStorage.setItem('rol', this.usuarios[i].rol);
-                    this.router.parent.navigateByUrl('/dashboard');
-                }
-            }
-        }
+			// this.autenticacionService.logIn(user, pass) // borrar en un futuro
 
-        /*if (this.model.user==="spartan" && this.model.pass==="spartan"){
-            localStorage.setItem('spartan', "Somos Espartanos");
-            localStorage.setItem('rol', "1");
-            this.router.parent.navigateByUrl('/dashboard');
-        }else if(this.model.user==="alumno" && this.model.pass==="alumno"){
-            localStorage.setItem('spartan', "Somos Espartanos");
-            localStorage.setItem('rol', "2");
-            this.router.parent.navigateByUrl('/dashboard');
-        }else if(this.model.user==="admin" && this.model.pass==="admin"){
-            localStorage.setItem('spartan', "Somos Espartanos");
-            localStorage.setItem('rol', "0");
-            this.router.parent.navigateByUrl('/dashboard');
-        }*/
+
+        // if (!localStorage.getItem('usuarios')){
+        //     var aux=[];
+        //     aux.push({user:"admin",pass:"admin",rol:"0"});
+        //     aux.push({user:"spartan",pass:"spartan",rol:"1"});
+        //     aux.push({user:"alumno",pass:"alumno",rol:"2"});
+        //     localStorage.setItem('usuarios', JSON.stringify(aux));
+        // }
+				//
+        // this.usuarios = JSON.parse(localStorage.getItem('usuarios'));
+				//
+        // for (var i = 0 ; i<this.usuarios.length ; i++){
+        //     if (this.usuarios[i].user===this.model.user && this.usuarios[i].user != ""){
+        //         if (this.usuarios[i].pass===this.model.pass){
+        //             localStorage.setItem('spartan', "Somos Espartanos");
+        //             localStorage.setItem('rol', this.usuarios[i].rol);
+        //             this.router.parent.navigateByUrl('/dashboard');
+        //         }
+        //     }
+        // }
 
     }
 
 };
-
-interface Usuario{
-    user:string;
-    pass:string;
-    rol:string;
-}

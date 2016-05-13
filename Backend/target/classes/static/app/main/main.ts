@@ -5,12 +5,12 @@ import {RouteConfig,  ROUTER_DIRECTIVES, ROUTER_PROVIDERS,
 import {BrowserXhr} from 'angular2/http'
 import {AppComponent} from './app.component';
 import {provide} from 'angular2/core';
-
-bootstrap(AppComponent , [HTTP_PROVIDERS, ROUTER_PROVIDERS]);
+import { AutenticacionService } from '../services/autenticacion.service';
 
 bootstrap(AppComponent, [
   HTTP_PROVIDERS,
   ROUTER_PROVIDERS,
+  AutenticacionService,
   provide(LocationStrategy, {useClass: HashLocationStrategy})
   /*provide(BrowserXhr, { useClass: CustomBrowserXhr })*/
 ]);

@@ -49,16 +49,19 @@ System.register(['angular2/core', 'angular2/router', "./autenticacion.service"],
                 }
                 LoggedInRouterOutlet.prototype.activate = function (instruction) {
                     var url = instruction.urlPath;
-                    console.log(url);
-                    if (!this.rutasPublicas[url] && !localStorage.getItem('spartan')) {
+                    console.log("Estas en: " + url);
+                    if (!this.rutasPublicas[url] && !this.autenticacion.isLogIn()) {
+                        console.log(1);
                         //Ruta no publica sin token
-                        this.padre.navigateByUrl('/');
+                        this.padre.navigateByUrl('/login');
                     }
-                    else if (this.rutasPublicas[url] && localStorage.getItem('spartan')) {
+                    else if (this.rutasPublicas[url] && this.autenticacion.isLogIn()) {
+                        console.log(2);
                         //Ruta publica con token
                         this.padre.navigateByUrl('/dashboard');
                     }
-                    else if (localStorage.getItem('spartan') && !this.rutasPrivadas[url]) {
+                    else if (!this.rutasPrivadas[url] && this.autenticacion.isLogIn()) {
+                        console.log(3);
                         //Ruta no privada con token.
                         // -> Después de pruebas nunca llega aquí
                         this.padre.navigateByUrl('/dashboard');

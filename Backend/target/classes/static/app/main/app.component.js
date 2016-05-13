@@ -51,7 +51,6 @@ System.register(['angular2/core', 'angular2/router', '../components/dashboard/in
                 AppComponent.prototype.logOut = function () {
                     // Eliminar localstorage
                     this.aut.logOut();
-                    this.router.navigateByUrl("/");
                 };
                 AppComponent = __decorate([
                     core_1.Component({

@@ -2,8 +2,8 @@ export interface IComment {
   id?: number;
   rol: number;
   // Los comentarios son de la meta, solo podrán ser del entrenador o del alumno
-  // 0 -> Lo ha escrito el alumno
-  // 1 -> Lo ha escrito el entrenador
+  // 1 -> Lo ha escrito el alumno
+  // 2 -> Lo ha escrito el entrenador
   date: number;
   comment: string;
 

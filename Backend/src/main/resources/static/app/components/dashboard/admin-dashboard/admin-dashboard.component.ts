@@ -34,14 +34,6 @@ export class DashboardAdmin implements OnInit{
 		this.studentNum = 0;
 	}
 
-	/* Actualizado: 6 mayo no se usa, esta vacio
-	 *	Al cargar la vista
-	 *
-	ngAfterViewInit() {
-
-		}
-
-	*/
 
 	ngOnInit() {
 		this._trainerService.getTrainers().then(
@@ -57,7 +49,6 @@ export class DashboardAdmin implements OnInit{
 
 	public logOut(){
 		this.aut.logOut();
-		this.router.navigateByUrl("/login");
 	}
 
 	goToDetails(student: Student){
