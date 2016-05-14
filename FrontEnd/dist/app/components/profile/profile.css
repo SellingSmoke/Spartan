@@ -1,0 +1,32 @@
+.general {
+    padding-top: 5.9em;
+}
+.edit:hover {
+    color: #4183C4;
+    cursor: pointer;
+}
+.dialog-title {
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    line-height: 1em;
+    color: #1B1C1D;
+    text-align: center;
+}
+.fila-label {
+    border-top-width: 1px;
+    border-top-style: solid !important;
+    border-top-color: rgb(232, 233, 233);
+}
+.fila-meta-actual {
+  background-color: rgba(0, 181, 173, 0.07);
+}
+.fila-metas-completadas {
+  background-color: rgba(33, 186, 69, 0.07);
+}
+.fila-metas-canceladas {
+  background-color: rgba(219, 40, 40, 0.07);
+}
+
+.sp-statics{
+  margin-bottom: auto !important;
+}

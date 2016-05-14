@@ -1,0 +1,1 @@
+/Users/Enrique/Spartan/src/template/bower_components/bootstrap/grunt/bs-commonjs-generator.js

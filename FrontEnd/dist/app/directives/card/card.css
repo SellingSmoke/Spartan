@@ -1,0 +1,28 @@
+h2 {
+  text-transform: capitalize;
+}
+.demo-card-wide > .mdl-card__title {
+  height: 176px;
+  /*background: url('../assets/demos/welcome_card.jpg') center / cover;*/
+}
+.mdl-card__title {
+  color: white;
+}
+.mdl-card__title:hover {
+  /*font-size: 1.2em;*/
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+.mdl-card__title-text {
+  opacity: 1.0 !important;
+  font-size: 2em !important;
+}
+.mdl-card {
+  color: transparent;
+  margin: 1em !important;
+  display: inline-block;
+}
+.mdl-card:hover {
+  color: white;
+  cursor: pointer;
+}

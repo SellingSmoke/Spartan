@@ -1,0 +1,1 @@
+/home/michel/Telegram Desktop/Spartan/Spartan/tmp/funnel-input_base_path-4S99zzTG.tmp/0/typings.d.ts
