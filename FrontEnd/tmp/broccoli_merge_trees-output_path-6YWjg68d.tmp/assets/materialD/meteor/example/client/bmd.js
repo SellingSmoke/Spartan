@@ -1,0 +1,1 @@
+/home/michel/Escritorio/Spartan/FrontEnd/src/assets/materialD/meteor/example/client/bmd.js

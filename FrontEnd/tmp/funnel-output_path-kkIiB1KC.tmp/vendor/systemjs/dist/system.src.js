@@ -1,0 +1,1 @@
+/home/michel/Escritorio/Spartan/FrontEnd/tmp/funnel-input_base_path-6Ll1cMmj.tmp/0/systemjs/dist/system.src.js

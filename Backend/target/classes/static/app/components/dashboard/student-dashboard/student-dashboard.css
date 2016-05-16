@@ -1,0 +1,9 @@
+.modalsp {
+  position: absolute !important;
+  width: 100%;
+  height: auto;
+}
+
+#blurizable {
+  left : 0px;
+}

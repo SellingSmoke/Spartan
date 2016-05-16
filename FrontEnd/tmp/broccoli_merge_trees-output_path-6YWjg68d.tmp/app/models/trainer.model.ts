@@ -1,0 +1,1 @@
+/home/michel/Escritorio/Spartan/FrontEnd/src/app/models/trainer.model.ts

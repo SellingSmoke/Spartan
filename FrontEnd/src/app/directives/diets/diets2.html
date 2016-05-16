@@ -1,0 +1,124 @@
+<div class="row">
+  <div class="col-md-4">
+    <h5 class="ui top attached header">
+    Tipo
+  </h5>
+    <div class="ui attached segment">
+      <p *ngIf="!edit_mode">{{ diet.name }}</p>
+      <fieldset *ngIf="edit_mode">
+        <div *ngIf="edit_mode" class="edit-form form-group">
+          <label for="inputPassword" class="col-md-2 control-label">Nombre</label>
+          <div class="col-md-9 col-md-offset-1">
+            <input [(ngModel)]="diet.name" type="text" class="form-control" placeholder="Nombre de la dieta">
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <h5 class="ui attached header">
+    Descripcion
+  </h5>
+    <div class="ui attached segment">
+      <p *ngIf="!edit_mode">{{ diet.description }}</p>
+      <fieldset *ngIf="edit_mode">
+        <div *ngIf="edit_mode" class="edit-form form-group">
+          <label for="inputPassword" class="col-md-2 control-label">Descripción</label>
+          <div class="col-md-9 col-md-offset-1">
+            <textarea rows="3" [(ngModel)]="diet.description" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <h5 class="ui attached header">
+    Notas
+  </h5>
+    <div class="ui attached segment">
+      <p *ngIf="!edit_mode">{{ diet.notes }}</p>
+      <fieldset *ngIf="edit_mode">
+        <div class="edit-form form-group">
+          <label for="inputPassword" class="col-md-2 control-label">Notas</label>
+          <div class="col-md-9 col-md-offset-1">
+            <textarea rows="3" [(ngModel)]="diet.notes" type="text" class="form-control" placeholder="notas de la dieta"></textarea>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div *ngIf="!rol" class="ui bottom attached warning message">
+      <i class="warning icon"></i> Ante cualquier alergia, contacta con tu entrenador
+    </div>
+  </div>
+  <div class="col-md-8">
+    <table id="tabla-dieta" class="ui celled table">
+      <thead>
+        <tr>
+          <!-- CABECERA -->
+          <th colspan="2">
+            <div class="ui pagination menu">
+              <a (click)="hideColumns(day - 1)" class="icon item">
+                <i class="left chevron icon"></i>
+              </a>
+              <a class="item min-width-day"><span class="centered-day">{{ day_s }}</span></a>
+              <a (click)="hideColumns(day + 1)" class="icon item">
+                <i class="right chevron icon"></i>
+              </a>
+            </div>
+            <div *ngIf="edit_mode" (click)="editMode(false)" class="ui right floated small red labeled icon button">
+              <i class="remove icon"></i> Cancelar
+            </div>
+            <div *ngIf="edit_mode" (click)="editMode(true)" class="ui right floated small teal labeled icon button">
+              <i class="save icon"></i> Guardar
+            </div>
+            <div *ngIf="!edit_mode && rol" (click)="editMode(false)" class="ui right floated small teal labeled icon button">
+              <i class="edit icon"></i> Editar
+            </div>
+            <div *ngIf="edit_mode" class="ui info message">
+              <i class="info icon"></i> Escribe "-" seguido del plato
+            </div>
+          </th>
+          <!-- FIN CABECERA -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Desayuno</td>
+          <td *ngFor="#desayuno of diet.matrix[0]">
+            <p *ngIf="!edit_mode">{{ desayuno | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ desayuno | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ desayuno | ShowFood:2 }}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>Comida</td>
+          <td template="ngFor #comida of diet.matrix[1]; #ix = index">
+            <p *ngIf="!edit_mode">{{ comida | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ comida | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ comida | ShowFood:2 }}</p>
+            <fieldset *ngIf="edit_mode && day === ix">
+              <div class="edit-form form-group">
+                <label class="col-md-2 control-label">Comida</label>
+                <div class="col-md-9 col-md-offset-1">
+                  <textarea rows="3" [(ngModel)]="diet.matrix[1][ix]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                </div>
+              </div>
+            </fieldset>
+          </td>
+        </tr>
+        <tr>
+          <td>Merienda</td>
+          <td *ngFor="#merienda of diet.matrix[2]">
+            <p *ngIf="!edit_mode">{{ merienda | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ merienda | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ merienda | ShowFood:2 }}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>Cena</td>
+          <td *ngFor="#cena of diet.matrix[3]">
+            <p *ngIf="!edit_mode">{{ cena | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ cena | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ cena | ShowFood:2 }}</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
