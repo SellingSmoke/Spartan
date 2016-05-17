@@ -24,4 +24,13 @@ export class StudentService {
     return student;
   }
 
+  // getStudent(id: number) {
+  //   let student = Promise.resolve(STUDENTS).then(
+  //     alumnos => alumnos.filter(student => student.id === id)[0]
+  //   );
+  //   return student;
+  // }
+
+
+
 }

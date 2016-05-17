@@ -55,7 +55,7 @@ export class DashboardAlumno implements OnInit{
    */
 
 	ngOnInit(){
-		console.log(this.aut.User().goals[0].campoMetaX); // SOLO PARA PRUEBAS
+		console.log(this.aut.User().goals[0].comments[0].comment); // SOLO PARA PRUEBAS
 		if(this.student.goal) this.task = new Task(this.student.goal.id);
 		this.posChanged = false;
 	}
@@ -112,8 +112,8 @@ export class DashboardAlumno implements OnInit{
 			case 2: this.tab = 2;
 							// Pone los comentarios de tu contraparte a leidos (TO REFACTOR -> NO LOCALSTORAGE)
 							for (var comment of this.student.goal.comments){
-								if(comment.rol != localStorage.getItem("rol") && !comment.read)
-									comment.read = true;
+								// if(comment.rol != parseInt(localStorage.getItem("rol")) && !comment.read)
+								// 	comment.read = true;
 							}
 							//Llamar a guardar en la BDD
 							break;

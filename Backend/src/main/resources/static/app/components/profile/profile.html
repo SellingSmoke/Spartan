@@ -17,7 +17,7 @@
               <i class="large user outline middle aligned icon"></i>
               <div class="content">
                 <a class="header">Nombre y apellidos</a>
-                <div class="description">{{student?.name + " " + student?.lastname}}</div>
+                <div class="description">{{aut.User()?.name + " " + aut.User()?.lastname}}</div>
               </div>
             </div>
             <div class="item">
@@ -27,28 +27,28 @@
               <i class="large mail outline middle aligned icon"></i>
               <div class="content">
                 <a class="header">Email</a>
-                <div class="description">{{student?.email}}</div>
+                <div class="description">{{aut.User()?.email}}</div>
               </div>
             </div>
             <div class="item">
               <i class="large birthday middle aligned icon"></i>
               <div class="content">
-                <a class="header">Edad</a>
-                <div class="description">{{student?.age}} años</div>
+                <a class="header">Fecha de nacimiento</a>
+                <div class="description">{{aut.User()?.birthday | date }} ({{anyos()}} años)</div>
               </div>
             </div>
             <div class="item">
-              <i [class]="student?.gender ? 'pink female icon large' : 'blue male icon large'"></i>
+              <i [class]="aut.User()?.gender ? 'pink female icon large' : 'blue male icon large'"></i>
               <div class="content">
                 <a class="header">Género</a>
-                <div class="description">{{student?.gender ? 'Femenino' : 'Masculino'}}</div>
+                <div class="description">{{aut.User()?.gender ? 'Femenino' : 'Masculino'}}</div>
               </div>
             </div>
             <div class="item">
               <i class="large calendar middle aligned icon"></i>
               <div class="content">
                 <a class="header">Matriculación</a>
-                <div class="description">{{student?.registration_date | date }}</div>
+                <div class="description">{{aut.User()?.registrationDate | date }}</div>
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@
         <div class="form-group">
           <label for="inputPassword" class="col-md-2 control-label">Correo</label>
           <div class="col-md-10">
-            <input [(ngModel)]="student.email" class="form-control" placeholder="Nuevo email" type="email">
+            <input [(ngModel)]="aut.User().email" class="form-control" placeholder="Nuevo email" type="email">
           </div>
         </div>
         <a class="btn btn-ln btn-raised btn-danger" (click)="saveChanges(true)">Guardar nuevo correo</a>
@@ -138,11 +138,11 @@
         </td>
         <tr class="fila-meta-actual">
           <td class="three wide sp-not">
-            <span>{{student.goal | GoalName}}</span>
+            <span>{{aut.User()?.goal}}</span><!-- <span>{{aut.User()?.goal | GoalName}}</span> -->
           </td>
-          <td class="two wide"><i [class]="(student.goal.diet === null) ? 'teal icon remove' : 'teal icon checkmark'"></i></td>
-          <td class="two wide">{{student.goal.comments.length}}</td>
-          <td class="two wide" colspan="2">{{student.goal.progress}}%</td>
+          <td class="two wide"><i [class]="(aut.User().goal?.diet === null) ? 'teal icon remove' : 'teal icon checkmark'"></i></td>
+          <td class="two wide">{{aut.User().goal?.comments.length}}</td>
+          <td class="two wide" colspan="2">{{aut.User().goal?.progress}}%</td>
         </tr>
 
         <!-- METAS COMPLETADAS-->

@@ -31,10 +31,7 @@ System.register(['angular2/core', "angular2/router", '../../,,/../../services/au
                 Login.prototype.logIn = function (event, user, pass) {
                     var _this = this;
                     event.preventDefault();
-                    this.autenticacionService.logIn(user, pass).subscribe(function (user) {
-                        console.log(user);
-                        _this.router.parent.navigateByUrl('/dashboard');
-                    });
+                    this.autenticacionService.logIn(user, pass).subscribe(function (user) { return _this.router.parent.navigateByUrl('/dashboard'); });
                     // this.autenticacionService.logIn(user, pass) // borrar en un futuro
                     // if (!localStorage.getItem('usuarios')){
                     //     var aux=[];

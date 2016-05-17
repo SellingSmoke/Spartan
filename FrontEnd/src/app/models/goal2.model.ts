@@ -1,6 +1,6 @@
-import { IComment } from './comment.model';
-import { ITask } from './task.model';
-import { IDiet } from './diet.model';
+import { IComment } from './comment2.model';
+import { ITask } from './task2.model';
+import { IDiet } from './diet2.model';
 
 export interface IGoal {
 

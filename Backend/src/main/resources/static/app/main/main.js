@@ -1,5 +1,5 @@
-System.register(['angular2/platform/browser', 'angular2/http', 'angular2/router', './app.component', 'angular2/core', '../services/autenticacion.service'], function(exports_1) {
-    var browser_1, http_1, router_1, app_component_1, core_1, autenticacion_service_1;
+System.register(['angular2/platform/browser', 'angular2/http', 'angular2/router', './app.component', 'angular2/core'], function(exports_1) {
+    var browser_1, http_1, router_1, app_component_1, core_1;
     return {
         setters:[
             function (browser_1_1) {
@@ -16,15 +16,11 @@ System.register(['angular2/platform/browser', 'angular2/http', 'angular2/router'
             },
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (autenticacion_service_1_1) {
-                autenticacion_service_1 = autenticacion_service_1_1;
             }],
         execute: function() {
             browser_1.bootstrap(app_component_1.AppComponent, [
                 http_1.HTTP_PROVIDERS,
                 router_1.ROUTER_PROVIDERS,
-                autenticacion_service_1.AutenticacionService,
                 core_1.provide(router_1.LocationStrategy, { useClass: router_1.HashLocationStrategy })
             ]);
         }
