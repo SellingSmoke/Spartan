@@ -46,6 +46,7 @@ System.register(['angular2/core', '../../../models/task.model', '../../../direct
                  *  las cuales se obtienen a partir del id de su meta
                */
                 DashboardAlumno.prototype.ngOnInit = function () {
+                    console.log(this.aut.User().goals[0].comments[0].comment); // SOLO PARA PRUEBAS
                     if (this.student.goal)
                         this.task = new task_model_1.Task(this.student.goal.id);
                     this.posChanged = false;
@@ -97,11 +98,9 @@ System.register(['angular2/core', '../../../models/task.model', '../../../direct
                             break;
                         case 2:
                             this.tab = 2;
-                            // Pone los comentarios de tu contraparte a leidos
+                            // Pone los comentarios de tu contraparte a leidos (TO REFACTOR -> NO LOCALSTORAGE)
                             for (var _i = 0, _a = this.student.goal.comments; _i < _a.length; _i++) {
                                 var comment = _a[_i];
-                                if (comment.rol != localStorage.getItem("rol") && !comment.read)
-                                    comment.read = true;
                             }
                             //Llamar a guardar en la BDD
                             break;

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, AfterViewInit } from 'angular2/core';
 import { Diet, IDiet } from '../../models/diet.model';
 import { ShowFoodPipe } from '../../pipes/diet-pipes.pipe';
+import { AutenticacionService } from '../../services/autenticacion.service';
 
 declare var jQuery:JQueryStatic;
 
@@ -18,6 +19,9 @@ export class Diets implements OnInit, AfterViewInit{
 
 	static days =['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'];
 
+	// Contendrá los platos de cada dia de la semana
+	matrix:string[][];
+
 	day: number;
 	day_s:string;
 
@@ -28,10 +32,10 @@ export class Diets implements OnInit, AfterViewInit{
 		Prioridad 1
 	*/
 
-	constructor() {
+	constructor(private aut:AutenticacionService) {
 		this.setDay(new Date().getDay() + 1);
 		this.edit_mode = false;
-		this.rol = localStorage.getItem("rol") === "1";
+		this.rol = this.aut.esProfesor();
 	}
 
 	/**
@@ -40,7 +44,22 @@ export class Diets implements OnInit, AfterViewInit{
 	*/
 	ngOnInit(){
 		if(!this.diet){
-			this.diet = new Diet(1, "", "");
+			this.diet = new Diet(1, "", ""); // BORRAR EN UN FUTURO
+			this.matrix = [
+				/** Lunes     */ ["", "", "", ""],
+				/** Martes    */ ["", "", "", ""],
+				/** Miercoles */ ["", "", "", ""],
+				/** Jueves    */ ["", "", "", ""],
+				/** Viernes   */ ["", "", "", ""],
+				/** Sabado    */ ["", "", "", ""],
+				/** Domingo   */ ["", "", "", ""]
+			];
+		}else{
+			let m = JSON.stringify(this.diet.matrix);
+			console.log(m);
+			this.matrix = JSON.parse(m);
+			console.log(this.matrix);
+			this.diet.matrix;
 		}
 	}
 

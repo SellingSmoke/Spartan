@@ -22,10 +22,7 @@ export class Login {
 			event.preventDefault();
 
 			this.autenticacionService.logIn(user, pass).subscribe(
-				user => {
-					console.log(user);
-					this.router.parent.navigateByUrl('/dashboard');
-				}
+				user => this.router.parent.navigateByUrl('/dashboard')
 			);
 
 			// this.autenticacionService.logIn(user, pass) // borrar en un futuro

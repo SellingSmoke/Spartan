@@ -1,703 +1,703 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: 7f55b8f7b34156cd36606a37ec6e113b26facdd0
-# sw.file.hash: e5b20a54c3fb37e04b6ad99a7e8b127b667c30b9
-/app\components\dashboard\admin-dashboard\admin-dashboard.component.html
+# sw.version: 98c3ca84ef81c9b7567d68c25c2bd6ce54ec5ebb
+# sw.file.hash: 39d0e88c3563113eca178cd82fbd4941f91b2497
+/app/components/dashboard/admin-dashboard/admin-dashboard.component.html
 # sw.file.hash: 24bd7698cb3c50efe8edebb7ef8246691b515edf
-/app\components\dashboard\admin-dashboard\admin-dashboard.component.js
+/app/components/dashboard/admin-dashboard/admin-dashboard.component.js
 # sw.file.hash: bc10ce581aa3eb4cc99b351f055b9ec6e7870262
-/app\components\dashboard\admin-dashboard\admin-dashboard.component.js.map
-# sw.file.hash: 8d6930a065dc43da530b4e870c844b606e57ebf1
-/app\components\dashboard\admin-dashboard\admin-dashboard.component.ts
-# sw.file.hash: 216f2dd296f688904d4d69ba76c268816ccf0acd
-/app\components\dashboard\admin-dashboard\table.css
-# sw.file.hash: 1a8817610ba4bbc920e470b36fafe6953fdb2be3
-/app\components\dashboard\inicio.css
-# sw.file.hash: 14f359e00e52a1d55356d14b0134a44da3c29996
-/app\components\dashboard\inicio.html
+/app/components/dashboard/admin-dashboard/admin-dashboard.component.js.map
+# sw.file.hash: 6390598c350ea20176d889fe20174671876ff9f5
+/app/components/dashboard/admin-dashboard/admin-dashboard.component.ts
+# sw.file.hash: 061e797af2cc0744bd8bdf70eebd81da820b9bdf
+/app/components/dashboard/admin-dashboard/table.css
+# sw.file.hash: d44d29ce0f99be31ec6b108901df895199128f94
+/app/components/dashboard/inicio.css
+# sw.file.hash: 6c2553b20f513456357d36a35ccfea655eed7783
+/app/components/dashboard/inicio.html
 # sw.file.hash: 6e6b612df56c4f7432ab89fa30b7ad5750e335e6
-/app\components\dashboard\inicio.js
+/app/components/dashboard/inicio.js
 # sw.file.hash: f8b35a326928a6441431cec5409e59a613b1a0b4
-/app\components\dashboard\inicio.js.map
-# sw.file.hash: 34d987a53a7343feb22add32a10b6cce41868187
-/app\components\dashboard\inicio.ts
+/app/components/dashboard/inicio.js.map
+# sw.file.hash: 0bf8e70ecc094581738776f0c31fd1d5a10837a5
+/app/components/dashboard/inicio.ts
 # sw.file.hash: 77f0eae028d03e2d00e9891b79675180fde4ba78
-/app\components\dashboard\student-dashboard\student-dashboard.component.js
+/app/components/dashboard/student-dashboard/student-dashboard.component.js
 # sw.file.hash: 393e17cc2acdaf580963ea4e9bd0ca7875cee5ce
-/app\components\dashboard\student-dashboard\student-dashboard.component.js.map
-# sw.file.hash: 20bb30e42a1379298577fee2e50b9f5d460ca4db
-/app\components\dashboard\student-dashboard\student-dashboard.component.ts
-# sw.file.hash: 766a2a1330678612b0cd442fa170cd0a86e52b6a
-/app\components\dashboard\student-dashboard\student-dashboard.css
-# sw.file.hash: a51d68f8fb9b5a44bc7f903dbb943444ddd12db2
-/app\components\dashboard\student-dashboard\student-dashboard.html
+/app/components/dashboard/student-dashboard/student-dashboard.component.js.map
+# sw.file.hash: 1566d09a840eb217dd17415bf625c47861024cb3
+/app/components/dashboard/student-dashboard/student-dashboard.component.ts
+# sw.file.hash: 29cec236d237e58f6ca7de9968545abc7f394a0a
+/app/components/dashboard/student-dashboard/student-dashboard.css
+# sw.file.hash: 84244bfe49a3ebc942ff9bf32ac0d0fb6aa38b45
+/app/components/dashboard/student-dashboard/student-dashboard.html
 # sw.file.hash: ec9504b57d8ae76fa7b0b1c77c30d9b165bb0c83
-/app\components\dashboard\trainer-dashboard\trainer-dashboard.component.js
+/app/components/dashboard/trainer-dashboard/trainer-dashboard.component.js
 # sw.file.hash: cb1ef94c1b31c209657a14dd261d29e57ef727fb
-/app\components\dashboard\trainer-dashboard\trainer-dashboard.component.js.map
-# sw.file.hash: ae6b5a0ebb1b40c26343286a09bde2eb58ae8972
-/app\components\dashboard\trainer-dashboard\trainer-dashboard.component.ts
-# sw.file.hash: 07a42754df4351efe45d29b4d3b5b9636218ef57
-/app\components\dashboard\trainer-dashboard\trainer-dashboard.css
-# sw.file.hash: 4757ff2b01494378d0e56fa01fa98e42cc9dcc07
-/app\components\dashboard\trainer-dashboard\trainer-dashboard.html
-# sw.file.hash: 4cc8e5e4159da4d1021dd4da7bfe60469cfd03ae
-/app\components\mainpage\mainpage.css
-# sw.file.hash: 15d596c4d1df45a274f486272107cbfe5b7c7e59
-/app\components\mainpage\mainpage.html
+/app/components/dashboard/trainer-dashboard/trainer-dashboard.component.js.map
+# sw.file.hash: 966ab5b886e6acb0c3f2aac6d50b8a9a16d211bd
+/app/components/dashboard/trainer-dashboard/trainer-dashboard.component.ts
+# sw.file.hash: 0ae118d5f6d8cd9231817408ccf828fe0fbd347f
+/app/components/dashboard/trainer-dashboard/trainer-dashboard.css
+# sw.file.hash: dfa656399d039a707d7af32df12ca3f22367440e
+/app/components/dashboard/trainer-dashboard/trainer-dashboard.html
+# sw.file.hash: 81d7a2b59583515c5f21335dbb6fd2d08f35f080
+/app/components/mainpage/mainpage.css
+# sw.file.hash: e4a431abb291030aefbd6d142eabf6b672798324
+/app/components/mainpage/mainpage.html
 # sw.file.hash: 580cd383d51a965096e308c8f2a5dcfb28a996aa
-/app\components\mainpage\mainpage.js
+/app/components/mainpage/mainpage.js
 # sw.file.hash: 4251f4c8be1d0f038a0039bc7b6f28b0e643185f
-/app\components\mainpage\mainpage.js.map
-# sw.file.hash: 486e5389fcc858626e822844fc363a04aebfece0
-/app\components\mainpage\mainpage.ts
-# sw.file.hash: 5a34204fbf5dd996d0786e74f1265c39f9aac18c
-/app\components\mainpage\mainpage2.css
-# sw.file.hash: ec3eb47ca0216204b34e3667248f899a0c42e7ad
-/app\components\mainpage\mainpage2.html
+/app/components/mainpage/mainpage.js.map
+# sw.file.hash: 2f2ab2e965820cc3290d30217f2d57dac33a61cc
+/app/components/mainpage/mainpage.ts
+# sw.file.hash: 39ee9e70ed32a736b5dc4cf26c53aa520c2f7661
+/app/components/mainpage/mainpage2.css
+# sw.file.hash: 7cc0809e91967aa8950119ef0b9808d0c660a987
+/app/components/mainpage/mainpage2.html
 # sw.file.hash: 60fe8ac7dcafd2918ba412ee967a3701a763a47a
-/app\components\profile\profile.component.js
+/app/components/profile/profile.component.js
 # sw.file.hash: f6d2eb0072ba64afa751dcb118a30caaa5d74a8a
-/app\components\profile\profile.component.js.map
-# sw.file.hash: ce9c05788b604d4a8b3de117975e998cc42dd05a
-/app\components\profile\profile.component.ts
-# sw.file.hash: ac2839fc8c89e19ca241f1d1fe4b8e947d8eeb79
-/app\components\profile\profile.css
-# sw.file.hash: a99cdb7546d7f30fb9cc1d8b259dd5d0e778affe
-/app\components\profile\profile.html
+/app/components/profile/profile.component.js.map
+# sw.file.hash: 7107a873632fc32bf32e17e3d6a81dcc8e26c8fb
+/app/components/profile/profile.component.ts
+# sw.file.hash: 21d97bb389275817d2e180218ca1eac5e0332612
+/app/components/profile/profile.css
+# sw.file.hash: 0f967b15de07edaa92242359aaccee511d385e96
+/app/components/profile/profile.html
 # sw.file.hash: d4916db1b090d0bfa41e4f513e753d0a8aee8516
-/app\components\session\login\login.component.js
+/app/components/session/login/login.component.js
 # sw.file.hash: b2a911861f12d0397f97edcfd31f426ce4101fd8
-/app\components\session\login\login.component.js.map
-# sw.file.hash: 81a590ac217dcaec8d18ffaadad0b6ee9b880697
-/app\components\session\login\login.component.ts
-# sw.file.hash: 0894b026b0a7413477193c08ffda34526921581d
-/app\components\session\login\login.css
-# sw.file.hash: 0dd04456dfab49d085f2d61180e1e13d6ed0a297
-/app\components\session\login\login.html
+/app/components/session/login/login.component.js.map
+# sw.file.hash: e2b3e6d99d9806beddd4704d04b9b055be5a1ed2
+/app/components/session/login/login.component.ts
+# sw.file.hash: 31fa7068369aa1de3334c99a5fd3b63bcdcc7df8
+/app/components/session/login/login.css
+# sw.file.hash: 63c52456bdb0b6f9252d9197e6bc247fd5432495
+/app/components/session/login/login.html
 # sw.file.hash: a33762d6642d0f58a898c857eeb0263f103971c9
-/app\components\session\student-signUp\student-signUp.component.js
+/app/components/session/student-signUp/student-signUp.component.js
 # sw.file.hash: a273931d18e385b3753ecaffa77028461b10eb2b
-/app\components\session\student-signUp\student-signUp.component.js.map
-# sw.file.hash: 56e63a06a704b3131be8d5d2c59f95aa91323a4a
-/app\components\session\student-signUp\student-signUp.component.ts
-# sw.file.hash: e64f6a9a138fc0f369573dad654517d85d140949
-/app\components\session\student-signUp\student-signUp.html
+/app/components/session/student-signUp/student-signUp.component.js.map
+# sw.file.hash: 5756c5e4878dd6c5d2040379227a9ef5d2ac7d44
+/app/components/session/student-signUp/student-signUp.component.ts
+# sw.file.hash: 1e1db6b390cd0366211cbb95ac03a56ea160662d
+/app/components/session/student-signUp/student-signUp.html
 # sw.file.hash: 740dcdd5a783896b81af8cbfc48caa14d3f6cab4
-/app\components\session\trainer-signUp\trainer-signUp.component.js
+/app/components/session/trainer-signUp/trainer-signUp.component.js
 # sw.file.hash: f8962b57dd90f6dc6e81c2107012d60c1cb0195a
-/app\components\session\trainer-signUp\trainer-signUp.component.js.map
-# sw.file.hash: 797063448bb4a3660186d2354c5d899ff6c02fc9
-/app\components\session\trainer-signUp\trainer-signUp.component.ts
-# sw.file.hash: edd3a3cdc809576a10d8f8d1226f6b3ac19584fc
-/app\components\session\trainer-signUp\trainer-signUp.html
-# sw.file.hash: afc3cc1e8f0bfd9f334587cf8b1eb9e4b4b36d6a
-/app\directives\card\card.css
-# sw.file.hash: 49d87225e242cd9ab868ac582d4eb9ab8fe642cf
-/app\directives\card\card.html
+/app/components/session/trainer-signUp/trainer-signUp.component.js.map
+# sw.file.hash: 18fb5726d85d8ab4f48dbdfffa06e8c8d9c18fbd
+/app/components/session/trainer-signUp/trainer-signUp.component.ts
+# sw.file.hash: 30b779f6c220183ede2b38407a5c17115d67c3b4
+/app/components/session/trainer-signUp/trainer-signUp.html
+# sw.file.hash: abba2d0499710d886b939f78cf6a378fb077deeb
+/app/directives/card/card.css
+# sw.file.hash: b3d892849e1e2e51035eb33306efa48984fbc6b2
+/app/directives/card/card.html
 # sw.file.hash: b0a7dc1d655bd90a1535a316b3e05ce3aa2afdf4
-/app\directives\card\card.js
+/app/directives/card/card.js
 # sw.file.hash: d5ea0dfe5ef478af73d04c12d6b4191d4cc411df
-/app\directives\card\card.js.map
-# sw.file.hash: 5c9bd4346c5421259c0bfccdb327d0423ba09d92
-/app\directives\card\card.ts
-# sw.file.hash: 1e1a9fc9e8427202c2726bfa5e23be91af0b3b34
-/app\directives\comments\comment.directive.html
+/app/directives/card/card.js.map
+# sw.file.hash: 09612e5e9b6b98b33d6658044192a2dc70398395
+/app/directives/card/card.ts
+# sw.file.hash: 3586a113c6eb3a566c594c1ed42754d9f5c3f728
+/app/directives/comments/comment.directive.html
 # sw.file.hash: 651937952051196a0679dc08dadca4a423cf2a48
-/app\directives\comments\comment.directive.js
+/app/directives/comments/comment.directive.js
 # sw.file.hash: f92933d6fc66d9a553b6028e2dc3e0114736300b
-/app\directives\comments\comment.directive.js.map
-# sw.file.hash: 7fb17cb6bab43e9c9ed5452e08182469c5f126f9
-/app\directives\comments\comment.directive.ts
-# sw.file.hash: badfb0246311a0d2043d4d8a6d0136113fdc6bb2
-/app\directives\diets\diets.css
-# sw.file.hash: f3a51c8b931d48f86d370e7da8a4602024930642
-/app\directives\diets\diets.html
-# sw.file.hash: 32b99fd09215d3049cf2ea728a431e395fdd8a8f
-/app\directives\diets\diets.js
-# sw.file.hash: 24a5c61671d9250bd37a2e90c96936fd178fe7e4
-/app\directives\diets\diets.js.map
-# sw.file.hash: e015c611e6be38bcb4e5c51db1e68b629c4affdc
-/app\directives\diets\diets.ts
-# sw.file.hash: 341d9e2b7215322f554787505ce8efb7d13cd8bf
-/app\directives\diets\diets2.html
-# sw.file.hash: 898a3a7673aa64cc99d7e300a0fb19ff795af6f2
-/app\directives\goalForm\goal-form.css
-# sw.file.hash: 4ac51613b9533b3bedddf5852acf1cdf10acf1d4
-/app\directives\goalForm\goal-form.html
+/app/directives/comments/comment.directive.js.map
+# sw.file.hash: 5a6fce66c5b1a074de8665aff7649ab6a47aecbe
+/app/directives/comments/comment.directive.ts
+# sw.file.hash: b50d3e73e3d0cc0970800851a0437d1f5ab0ce46
+/app/directives/diets/diets.css
+# sw.file.hash: e7c6cd0267457e765718d293859fa7519cfc19f1
+/app/directives/diets/diets.html
+# sw.file.hash: 64fc5d349d1657e2713fe50926aff3d4de27e255
+/app/directives/diets/diets.js
+# sw.file.hash: 85ede247306eaccb271d96b91e62bc3d2d84b317
+/app/directives/diets/diets.js.map
+# sw.file.hash: fee042ba098d0bb7c70b95a2774e7baaf3856d1c
+/app/directives/diets/diets.ts
+# sw.file.hash: 49fb12a1dc18c393748cf906ec893100e9d59d0b
+/app/directives/diets/diets2.html
+# sw.file.hash: 2b2e04704ad3519098650f838bf0cdb92b911dfe
+/app/directives/goalForm/goal-form.css
+# sw.file.hash: e1471a147d51c76e18e859c3a70f9e7f5fad5437
+/app/directives/goalForm/goal-form.html
 # sw.file.hash: f18df132c828bb96ed56c883e453d5d53ab1d029
-/app\directives\goalForm\goal-form.js
+/app/directives/goalForm/goal-form.js
 # sw.file.hash: df26b77e12c4a6519844359aabb9df0d06f13f47
-/app\directives\goalForm\goal-form.js.map
-# sw.file.hash: 9a3a1f0d438e74daa69d22260214eaff11a7ded9
-/app\directives\goalForm\goal-form.ts
-# sw.file.hash: a579b8a08743fc5f512bd1053d8603bcb0f5894f
-/app\directives\studentDetail\student-detail.html
+/app/directives/goalForm/goal-form.js.map
+# sw.file.hash: 7a63f797591ec18e75453f8107b4b43f7584ec3a
+/app/directives/goalForm/goal-form.ts
+# sw.file.hash: 1df1134c25a4b639f703c50ce04663f1a9a71068
+/app/directives/studentDetail/student-detail.html
 # sw.file.hash: 089575201b1d64da8d18593121ea631fba0c3629
-/app\directives\studentDetail\student-detail.js
+/app/directives/studentDetail/student-detail.js
 # sw.file.hash: 261effbacb3b3891f35b640f8d0921f5e2abba66
-/app\directives\studentDetail\student-detail.js.map
-# sw.file.hash: 48d1ea80d4ea27f53b7570f136d333d0a1dece3c
-/app\directives\studentDetail\student-detail.ts
+/app/directives/studentDetail/student-detail.js.map
+# sw.file.hash: a2be85ff697d7d117d97f162d09003da6d96a41c
+/app/directives/studentDetail/student-detail.ts
 # sw.file.hash: afe9479871cde179cf7894ab5291e2390ad818f2
-/app\main\app.component.js
+/app/main/app.component.js
 # sw.file.hash: d41dbee81e5bc78937094683b25e213a03ef6430
-/app\main\app.component.js.map
-# sw.file.hash: faf3c054fff6630ca75e6be0f51c9d197226b149
-/app\main\app.component.ts
-# sw.file.hash: b9d29b1179517bb5f8a8d6769ce99bae9151e8a4
-/app\main\app.main.css
-# sw.file.hash: ce8e1f22103b0b3f9678c91210d83a3dc76177a4
-/app\main\app.main.html
+/app/main/app.component.js.map
+# sw.file.hash: 35b17da8da068e201d898c070d2538b4f7101076
+/app/main/app.component.ts
+# sw.file.hash: 85ec924807c065ca7b7ff00957ee55828d17aeda
+/app/main/app.main.css
+# sw.file.hash: effaeb737ad854960ec139568a8e50eab4434212
+/app/main/app.main.html
 # sw.file.hash: 6ed176501977aadc4fd7dc77c6f77359e11cd0a7
-/app\main\main.js
+/app/main/main.js
 # sw.file.hash: 4ed38146e1b89fb954ecb88b302822f307f8686e
-/app\main\main.js.map
-# sw.file.hash: b0801b14b6c168b984b7d2c6e3498ec12a6cfe21
-/app\main\main.ts
+/app/main/main.js.map
+# sw.file.hash: a86c9acc7a60947cc516f063aa058fe3041d25aa
+/app/main/main.ts
 # sw.file.hash: f91602475f6c3435930e593037674ef34e11bbed
-/app\models\comment.model.js
+/app/models/comment.model.js
 # sw.file.hash: ea658ab3a88af43d168162a18abc2a7d8e4a4134
-/app\models\comment.model.js.map
-# sw.file.hash: c50a98ca49909b93dc8c1df38a97a08f9f96934e
-/app\models\comment.model.ts
+/app/models/comment.model.js.map
+# sw.file.hash: a27f53579fde8657a04f6cc7fb511994cd317d47
+/app/models/comment.model.ts
 # sw.file.hash: 391b5b6e00b1fbf634f4bc1b553dde67a4befaa4
-/app\models\comment2.model.js
+/app/models/comment2.model.js
 # sw.file.hash: 1fd2e83e1be1d16e59dcc4224dbccc07bd6b05ed
-/app\models\comment2.model.js.map
-# sw.file.hash: 20ff78a346151e9698f6a551a00b0932a5747d81
-/app\models\comment2.model.ts
+/app/models/comment2.model.js.map
+# sw.file.hash: fcc2f7494e95a7269ac1f15ffcd7a3642d65c618
+/app/models/comment2.model.ts
 # sw.file.hash: d9dcbf2c2cfbe0921083977440bb18dd38fa5a39
-/app\models\diet.model.js
+/app/models/diet.model.js
 # sw.file.hash: 99d345aee765ed75ea1f51cd5672af759eefefd5
-/app\models\diet.model.js.map
-# sw.file.hash: 9bee1064aa9511b6abb9d96f2c9cbba0e2f183d2
-/app\models\diet.model.ts
-# sw.file.hash: f0c3d6d34770012b64eaf257fbaa30e7c89165c6
-/app\models\diet2.model.js
-# sw.file.hash: f1e6646d9ad3eaa078f5ba9caf6a6ade3711f880
-/app\models\diet2.model.js.map
-# sw.file.hash: 81417c2364034d17e565865398d4daca6be7b1d2
-/app\models\diet2.model.ts
+/app/models/diet.model.js.map
+# sw.file.hash: b6d086832bd4aabba2812c9bb5db9a28b8933983
+/app/models/diet.model.ts
+# sw.file.hash: 76499235f73ffd24190102e41e948a132da99533
+/app/models/diet2.model.js
+# sw.file.hash: 2ed04a36cd33041d7779ab4b14def9cea88eeae5
+/app/models/diet2.model.js.map
+# sw.file.hash: 784507846e3afee4f89de60bc6f0bbcb84f22b6e
+/app/models/diet2.model.ts
 # sw.file.hash: 184a994cbf8b9b448a1774b5e777ebfed8387a4f
-/app\models\goal.model.js
+/app/models/goal.model.js
 # sw.file.hash: 2beb7ad2a5a28999b49e6e63e7f90a9b2e3aa2ab
-/app\models\goal.model.js.map
-# sw.file.hash: 7c3559389820ad586ef98f678c8e4e3fe3677e79
-/app\models\goal.model.ts
+/app/models/goal.model.js.map
+# sw.file.hash: c7f9d9ae06bed83d600743898422f85d36a0e195
+/app/models/goal.model.ts
 # sw.file.hash: c004f7da8338e324187557c415c93702b8305d10
-/app\models\goal2.model.js
+/app/models/goal2.model.js
 # sw.file.hash: 8b98338a9fae9f1702ef9ef6120f594611079d32
-/app\models\goal2.model.js.map
-# sw.file.hash: e955ce9605b69d118c518fb7032abd8b1cf76367
-/app\models\goal2.model.ts
+/app/models/goal2.model.js.map
+# sw.file.hash: 7c5384c1e1df9e26ff07ff0cc69fec4db9f7eb57
+/app/models/goal2.model.ts
 # sw.file.hash: c131355049c4eff90ed0dfd8880a35fe800bb523
-/app\models\student.model.js
+/app/models/student.model.js
 # sw.file.hash: ad0f5796a356fd1ed7efc113651c32531af7c314
-/app\models\student.model.js.map
-# sw.file.hash: d0bfdcbc0f75628003612cc4e8e1e7778e7dca31
-/app\models\student.model.ts
+/app/models/student.model.js.map
+# sw.file.hash: bab72a0d6dd1e135392506f6cc2085b3a780505b
+/app/models/student.model.ts
 # sw.file.hash: a78bc73e8d8bcebfd99ce0217968226d144764a9
-/app\models\task.model.js
+/app/models/task.model.js
 # sw.file.hash: a96ff872a0f213592e433a96cc78993a492a7fd5
-/app\models\task.model.js.map
-# sw.file.hash: 8c77618c7f8c36304ed91bbdcae2789c802d431c
-/app\models\task.model.ts
+/app/models/task.model.js.map
+# sw.file.hash: 5f7bf7a945c0ddad22ac30dea59bf835d40266d1
+/app/models/task.model.ts
 # sw.file.hash: 0c2fa6c922c72aa771937b7c6f49fc96409586a8
-/app\models\task2.model.js
+/app/models/task2.model.js
 # sw.file.hash: d272196bf98a57207aee9a0e93fcdfc2d6b2b908
-/app\models\task2.model.js.map
-# sw.file.hash: 4fc45261c8f1cd87403138d468697b1963ba849f
-/app\models\task2.model.ts
+/app/models/task2.model.js.map
+# sw.file.hash: 6b1e2a79c7ad00f57f839c9c21959d20d94795a2
+/app/models/task2.model.ts
 # sw.file.hash: c8853cb0f1f2c2b9bd84d14514ac0d6c83e138a2
-/app\models\trainer.model.js
+/app/models/trainer.model.js
 # sw.file.hash: 48167045724054119c565c3043e3df9ab1d7f172
-/app\models\trainer.model.js.map
-# sw.file.hash: 3cc8f161a9e3b6c1a243fae00d2f668fbeb2b787
-/app\models\trainer.model.ts
+/app/models/trainer.model.js.map
+# sw.file.hash: 2149198ccff9ea139ecc519f68afcf427db6212a
+/app/models/trainer.model.ts
 # sw.file.hash: 6880329f8e5e1be4e517999205c903af15161ed8
-/app\models\user.model.js
+/app/models/user.model.js
 # sw.file.hash: df96d83190eb57298cd9eb00fb53f627aca3aafd
-/app\models\user.model.js.map
-# sw.file.hash: 6f8da592d05fe73377985ef8229d1eb0282a2be1
-/app\models\user.model.ts
+/app/models/user.model.js.map
+# sw.file.hash: 176f473acb28013d9866ecfada47041c13782bed
+/app/models/user.model.ts
 # sw.file.hash: 9c9fe057d555ed849124c4c9c6c3f3561e4a21aa
-/app\pipes\diet-pipes.pipe.js
+/app/pipes/diet-pipes.pipe.js
 # sw.file.hash: c9cee818c23a746abc88411836e4a1a005cdf414
-/app\pipes\diet-pipes.pipe.js.map
-# sw.file.hash: 742e6384bae74b6c807235a3e5e515baef2938a4
-/app\pipes\diet-pipes.pipe.ts
+/app/pipes/diet-pipes.pipe.js.map
+# sw.file.hash: c55ed56c64b4b683ee46963f3772b1cfa8bc62ed
+/app/pipes/diet-pipes.pipe.ts
 # sw.file.hash: a9148f1c408640ac95aae87f8033587099ad8ce5
-/app\pipes\student-pipes.pipe.js
+/app/pipes/student-pipes.pipe.js
 # sw.file.hash: 47044fed830f431be59cff09f900145933f14f7f
-/app\pipes\student-pipes.pipe.js.map
-# sw.file.hash: 5b75a7245313e1dd6f343eb985e26ff77f9a0b38
-/app\pipes\student-pipes.pipe.ts
+/app/pipes/student-pipes.pipe.js.map
+# sw.file.hash: 7d050a8634d05c4bf4965820c114f2c297670918
+/app/pipes/student-pipes.pipe.ts
 # sw.file.hash: 89cfc43d273cc82c04730f83289c3dbc959af0ca
-/app\recursos-estaticos.js
+/app/recursos-estaticos.js
 # sw.file.hash: da7589494d4b3f6d49a5a55c5cc6af940f7b140d
-/app\recursos-estaticos.js.map
-# sw.file.hash: 711eb741242936f5bc92e9b960aed8084741b560
-/app\recursos-estaticos.ts
+/app/recursos-estaticos.js.map
+# sw.file.hash: 34cf295c2fcb854d0f4a88d50d73cc3d149afa1f
+/app/recursos-estaticos.ts
 # sw.file.hash: 202204ac0d4622588861bd644834bc81a8925fa1
-/app\services\autenticacion.service.js
+/app/services/autenticacion.service.js
 # sw.file.hash: 0117a4ca82612bec79099a731e5f4b9e3724cf07
-/app\services\autenticacion.service.js.map
-# sw.file.hash: a55f472634cc53a9d31c86c38ddbf7bcf9b66eee
-/app\services\autenticacion.service.ts
+/app/services/autenticacion.service.js.map
+# sw.file.hash: 05faa38238459f28e8924ecfe00ef56c3385ce5c
+/app/services/autenticacion.service.ts
 # sw.file.hash: 361042178b061954ba0aab98d83e0ac55205a17b
-/app\services\diet.service.js
+/app/services/diet.service.js
 # sw.file.hash: 05483720ba2905e202272f6bd17346dd3ae63f2b
-/app\services\diet.service.js.map
-# sw.file.hash: 1e574f444939a3f2e6c183bb20b891a0f42c908c
-/app\services\diet.service.ts
+/app/services/diet.service.js.map
+# sw.file.hash: 5ff23177ac634bf350579d070e59ca3e0cdb3c95
+/app/services/diet.service.ts
 # sw.file.hash: d9d00df0d7f4dd409c5baaf4bc1f0499599badb7
-/app\services\goal.service.js
+/app/services/goal.service.js
 # sw.file.hash: ff3221ca57f3695f62991422821962694efd521f
-/app\services\goal.service.js.map
-# sw.file.hash: b69368ae459d3b6610b3f30d06d0173132ef67fa
-/app\services\goal.service.ts
+/app/services/goal.service.js.map
+# sw.file.hash: 491459db4b08dd0fd6815dae6e7c12fe8447fe7a
+/app/services/goal.service.ts
 # sw.file.hash: 6a2f21af18cf09aa32b0daa5ecdf7040226ab1da
-/app\services\router.service.js
+/app/services/router.service.js
 # sw.file.hash: a483f63badaf4504cfc26d7de94ae8165b9be01c
-/app\services\router.service.js.map
-# sw.file.hash: 6e86704416cbdcaed10546983d2c04a022adfdfb
-/app\services\router.service.ts
+/app/services/router.service.js.map
+# sw.file.hash: d9a1b51f9f6a1fc2b60fc346989f8db044ef1cd0
+/app/services/router.service.ts
 # sw.file.hash: 13dda4f9eb97b06dd3503d4972e397d1acf768a0
-/app\services\student.service.js
+/app/services/student.service.js
 # sw.file.hash: 46da78c4a7c4cd562cd545848b52c0bf5e2f87f7
-/app\services\student.service.js.map
-# sw.file.hash: 649354d622bef33a526ebf5293c968470f3368ac
-/app\services\student.service.ts
+/app/services/student.service.js.map
+# sw.file.hash: 0308060a3832e96083be53fc85898b1a371d718a
+/app/services/student.service.ts
 # sw.file.hash: eb8b6fbf0d0ae74cf85598a0dd81cb4799fdfe00
-/app\services\task.service.js
+/app/services/task.service.js
 # sw.file.hash: 5960c851e587476d7719813d29a005a13435c370
-/app\services\task.service.js.map
-# sw.file.hash: 018fe762bc10b841f6640c02f02746c16bd506bd
-/app\services\task.service.ts
+/app/services/task.service.js.map
+# sw.file.hash: d9a392b932f6f842bb87696e6a2c777471d0e7e0
+/app/services/task.service.ts
 # sw.file.hash: 57ed48d98d986b32fae464b7b2077f2adf80c9e8
-/app\services\trainer.service.js
+/app/services/trainer.service.js
 # sw.file.hash: a9613bb3cc30763f3405ce931b7cf226c37928ad
-/app\services\trainer.service.js.map
-# sw.file.hash: 29ba610897aba2459c7d9313e3efcaa800080fe3
-/app\services\trainer.service.ts
+/app/services/trainer.service.js.map
+# sw.file.hash: e9952a7f7471417a409408239a7ac5832a498879
+/app/services/trainer.service.ts
 # sw.file.hash: 7b7d807183e0223137542189a06670fd12078229
-/assets\imagenes\Kickboxing.jpg
+/assets/imagenes/Kickboxing.jpg
 # sw.file.hash: 8edaa0afdf2e3115e37ca7dbf63873c75fe77c6a
-/assets\imagenes\balocesto.jpg
+/assets/imagenes/balocesto.jpg
 # sw.file.hash: f021206ded647d43e8c474fa34e22ed514685b2f
-/assets\imagenes\balonmano.jpg
+/assets/imagenes/balonmano.jpg
 # sw.file.hash: fb0f205ba2f8181d70cd03752e06427e37fde452
-/assets\imagenes\distancia.jpg
+/assets/imagenes/distancia.jpg
 # sw.file.hash: 0dec064ffbd715cc3f6797e8a7f3479fee65cfde
-/assets\imagenes\fondomain.jpg
+/assets/imagenes/fondomain.jpg
 # sw.file.hash: 4bd7b197dad57a7b965684b2d6e784d26c228907
-/assets\imagenes\futbol.jpg
+/assets/imagenes/futbol.jpg
 # sw.file.hash: 7e70a583313f2e7aa8431d3fff6ee1106a88efef
-/assets\imagenes\ganarMusculo.jpg
+/assets/imagenes/ganarMusculo.jpg
 # sw.file.hash: 7e1b55713c891f129ec4f382b9b997fc52ec9ad0
-/assets\imagenes\golf.jpg
+/assets/imagenes/golf.jpg
 # sw.file.hash: 4cfb6b58015c6ac5bbf94097cabc0216a15f86fa
-/assets\imagenes\header.jpg
+/assets/imagenes/header.jpg
 # sw.file.hash: b2f860942847acd49d5f8dc91ac1347ba51ccc5d
-/assets\imagenes\mejorar.jpg
+/assets/imagenes/mejorar.jpg
 # sw.file.hash: 0f48b6239769209f0291ef3450aba3be6901880f
-/assets\imagenes\otra.jpg
+/assets/imagenes/otra.jpg
 # sw.file.hash: 9ab1da98c326a576b2ac0bb9c2d958307e372af6
-/assets\imagenes\perderPeso.jpg
+/assets/imagenes/perderPeso.jpg
 # sw.file.hash: 2e58ccb061aeaff72d370af06bc7f18a0d4d27a2
-/assets\imagenes\pesas.jpg
+/assets/imagenes/pesas.jpg
 # sw.file.hash: e70b6928ea75f39fb3257fa205f566122c9578ba
-/assets\imagenes\peso.jpg
+/assets/imagenes/peso.jpg
 # sw.file.hash: 046f24615cfc4ffd21a9b0bba583e881283444d3
-/assets\imagenes\piernas.jpg
+/assets/imagenes/piernas.jpg
 # sw.file.hash: 001da2241ec2c37e7c92a045e5e8490793581442
-/assets\imagenes\resistencia.jpg
+/assets/imagenes/resistencia.jpg
 # sw.file.hash: 46f6d7e01f29db0a80ab01d52d5df24dfc6ea4b8
-/assets\imagenes\rojo.jpg
+/assets/imagenes/rojo.jpg
 # sw.file.hash: ab7a404e93cde1f77c94224702578ca3a6bbda1a
-/assets\imagenes\student.jpg
+/assets/imagenes/student.jpg
 # sw.file.hash: cb7ede2623816db050aec2c72e428b6557116ca2
-/assets\imagenes\superior.jpg
+/assets/imagenes/superior.jpg
 # sw.file.hash: 7d3eeb0afa3bc0549936c28b4602f06a7b65818a
-/assets\imagenes\tenis.jpg
+/assets/imagenes/tenis.jpg
 # sw.file.hash: cf1e88ce04602158f7f33be53fd01cc64f9e90da
-/assets\imagenes\trabajoEspecifico.jpg
+/assets/imagenes/trabajoEspecifico.jpg
 # sw.file.hash: cfe2ad10f923448e215966ba6131d6bdcd2d13fb
-/assets\imagenes\trainer.jpg
-# sw.file.hash: 2c9292b9b7323464a6a62c93450c4322f3579ecf
-/assets\main.css
-# sw.file.hash: c503a7f75ed6125de9508708fadef2030615754b
-/assets\materialD\CONTRIBUTING.md
-# sw.file.hash: 0297fc978009e15f53544c0229ef952ce244b3af
-/assets\materialD\Gruntfile.js
-# sw.file.hash: 08f56b35672684e5f2082035a97eb04a1366c484
-/assets\materialD\LICENSE.md
-# sw.file.hash: 537d004d9d1d18ba733aa6424f0aeca1b70628a1
-/assets\materialD\README.md
-# sw.file.hash: a815db7662b47a75ba5e3de389925e58db908094
-/assets\materialD\_config.yml
-# sw.file.hash: ca3874e367e7a577230bf2e895fd60835c469473
-/assets\materialD\bootstrap-elements.html
-# sw.file.hash: bd8709d7fca821225c97ce6ee3fc160fa1a67b14
-/assets\materialD\bower.json
+/assets/imagenes/trainer.jpg
+# sw.file.hash: 981fcd560b24de1e93923851023ab6c7a1e3c79f
+/assets/main.css
+# sw.file.hash: cdcb96342eb9439009a52083d03bf88009703f55
+/assets/materialD/CONTRIBUTING.md
+# sw.file.hash: 91200c3904114f56aa5308bbef882313d124e658
+/assets/materialD/Gruntfile.js
+# sw.file.hash: 626adacbb6f194d94f3eb63cd485a3f5a66ab8c6
+/assets/materialD/LICENSE.md
+# sw.file.hash: 5b90d1f743c95cd517b37a61feced3a2103edd39
+/assets/materialD/README.md
+# sw.file.hash: c008d823d3b5a481a055e662daee203cab35f1d6
+/assets/materialD/_config.yml
+# sw.file.hash: 8ca9e3fc48307663d2399d4a598f1c46c3f374c0
+/assets/materialD/bootstrap-elements.html
+# sw.file.hash: 96b3380ba891ea68e33df22ab53ee57d9c29d3ba
+/assets/materialD/bower.json
 # sw.file.hash: ca6f43912b1b04f1480d0791c6ef0459548d4754
-/assets\materialD\demo\imgs\banner.jpg
+/assets/materialD/demo/imgs/banner.jpg
 # sw.file.hash: 43761794fe1a515cafb684751f9ec0d8d6f1d4e5
-/assets\materialD\demo\imgs\gittip-button.jpg
+/assets/materialD/demo/imgs/gittip-button.jpg
 # sw.file.hash: 8e7a96bc9d4ffdd0cba21af4906fb992ffa7a412
-/assets\materialD\demo\imgs\issues-button.jpg
-# sw.file.hash: 5f1af3c7b061a376632a21161fa69649636fb9c2
-/assets\materialD\dist\css\bootstrap-material-design.css
+/assets/materialD/demo/imgs/issues-button.jpg
+# sw.file.hash: 48de8c940711a013d55b990835e4896d016fd72e
+/assets/materialD/dist/css/bootstrap-material-design.css
 # sw.file.hash: 5babae67cbfc1835d56233d8dd561bcfe146506a
-/assets\materialD\dist\css\bootstrap-material-design.css.map
-# sw.file.hash: 6f7ab9a5c027f1c2b260001afc959e640387292e
-/assets\materialD\dist\css\bootstrap-material-design.min.css
+/assets/materialD/dist/css/bootstrap-material-design.css.map
+# sw.file.hash: ace3f37ba195b8e9b66c0b6cc4eec6722229065b
+/assets/materialD/dist/css/bootstrap-material-design.min.css
 # sw.file.hash: 0dee789a4564b433baea4d02fed82d8b075f1726
-/assets\materialD\dist\css\bootstrap-material-design.min.css.map
-# sw.file.hash: f67be610e6e968aebe7064f02e011d83364e3f8a
-/assets\materialD\dist\css\ripples.css
+/assets/materialD/dist/css/bootstrap-material-design.min.css.map
+# sw.file.hash: e321836d0d45ae30d344c498c098633e69a752cc
+/assets/materialD/dist/css/ripples.css
 # sw.file.hash: e3dad56bb30d24311c09f9160b68052514c66f51
-/assets\materialD\dist\css\ripples.css.map
-# sw.file.hash: 29c4413b8defbab885f714bcbacceac66bbe8701
-/assets\materialD\dist\css\ripples.min.css
+/assets/materialD/dist/css/ripples.css.map
+# sw.file.hash: 408de0c7b5ea997a83b951ff1f5b4ee9e529cffe
+/assets/materialD/dist/css/ripples.min.css
 # sw.file.hash: 7c653e4490125c1b98b8ffd9d6e1948358d76e67
-/assets\materialD\dist\css\ripples.min.css.map
-# sw.file.hash: cc41eab64634855a6c231bbb1766056b664d215c
-/assets\materialD\dist\js\material.js
-# sw.file.hash: 568eda1ffe5273b5b10412a1b7290312cf8fb324
-/assets\materialD\dist\js\material.min.js
+/assets/materialD/dist/css/ripples.min.css.map
+# sw.file.hash: e3ddb88021d8a73a5ec827addfa3ebbeb97d993c
+/assets/materialD/dist/js/material.js
+# sw.file.hash: ceecf9315c833d5fe8a9c47d55beacebf2311372
+/assets/materialD/dist/js/material.min.js
 # sw.file.hash: ceffc490b0633b17a6d32f7c7ad2dbb0bda291a6
-/assets\materialD\dist\js\material.min.js.map
-# sw.file.hash: fe5176620d1cf4d9c26bbf48fee025681644c547
-/assets\materialD\dist\js\ripples.js
-# sw.file.hash: 2e9893cefdfda38ae98dd6600c59d8bba4e5e842
-/assets\materialD\dist\js\ripples.min.js
+/assets/materialD/dist/js/material.min.js.map
+# sw.file.hash: 8cbff0aadb74756370c621a1014855dab6a615a8
+/assets/materialD/dist/js/ripples.js
+# sw.file.hash: 2c636b10e45de69c4d1b72597e01c792911c5d1c
+/assets/materialD/dist/js/ripples.min.js
 # sw.file.hash: f0875d800e5d37c9c12a1ec5f13bae059eabac32
-/assets\materialD\dist\js\ripples.min.js.map
-# sw.file.hash: 5689a674b852c5f09f57ea4f0f862ef511200c23
-/assets\materialD\grunt\configBridge.json
-# sw.file.hash: 6c65031e4d140fb7b6bd230846c2487d8be85682
-/assets\materialD\index.css
-# sw.file.hash: 64a1df7ba57929bc377c942182a0b9e80c8cfd18
-/assets\materialD\index.html
-# sw.file.hash: cc25ffe128621ef365e9c868c62e2be51de4569e
-/assets\materialD\less\_alerts.less
-# sw.file.hash: 960159dec26c43343a9e6be48c739c89ed1d9355
-/assets\materialD\less\_buttons.less
-# sw.file.hash: d3d0925bf36e24a957a7da0755f9fde5533d34e0
-/assets\materialD\less\_cards.less
-# sw.file.hash: b51ff0bf2f368415927afb1781b0768c0679a922
-/assets\materialD\less\_checkboxes.less
-# sw.file.hash: c1ae5ff5c46b028448f8515f737a4af99022d277
-/assets\materialD\less\_colors.less
-# sw.file.hash: 128149a42aed9623c469cc1ebee11491d47ad94a
-/assets\materialD\less\_core.less
-# sw.file.hash: a144248e72cfce27da57e7c05f0782192d039fac
-/assets\materialD\less\_dialogs.less
-# sw.file.hash: 8362b30633bfb00edcb60454c161f2c1843a1df5
-/assets\materialD\less\_dividers.less
-# sw.file.hash: 1aa47c976b794a6b3112574fab335aa48914fffd
-/assets\materialD\less\_form.less
-# sw.file.hash: 1570dde482ab0eb47b82ce7d40c7c15d3794cfdd
-/assets\materialD\less\_import-bs-less.less
-# sw.file.hash: 26b394481373e5701cd012e69e17d308402b1d8c
-/assets\materialD\less\_import-bs-sass.less
-# sw.file.hash: 11798f796ee6688fb1bd4507ee446da3a19f834b
-/assets\materialD\less\_inputs-size.less
-# sw.file.hash: 538fd7b8adbd1e067a54f48bf2c1fcf595f49d83
-/assets\materialD\less\_inputs.less
-# sw.file.hash: 672a64928ad7a84ad46f26e6402a36501b3b514a
-/assets\materialD\less\_lists.less
-# sw.file.hash: fc0793a355c24c1639836e00d0f465951f5b338e
-/assets\materialD\less\_mixins.less
-# sw.file.hash: e2877c5d1035e9254b0670c9fc8a1a373f7c4df1
-/assets\materialD\less\_navbar.less
-# sw.file.hash: 11957b6598498597449f04edf35f01f918bb79a2
-/assets\materialD\less\_panels.less
-# sw.file.hash: a3ed617b8d088b225b38b9d7baf29ec726940813
-/assets\materialD\less\_plugins.less
-# sw.file.hash: 1fa3d460c0698c622b3414402b3434ff678e861f
-/assets\materialD\less\_popups.less
-# sw.file.hash: f4b7a590870bd3df2f91f2e2825c53a45011b056
-/assets\materialD\less\_progress.less
-# sw.file.hash: 006791a7bef79501a392b135bb91b4eb4b10d1bb
-/assets\materialD\less\_radios.less
-# sw.file.hash: 872680b0e4080081ca2a65c5a63f6d566011dac3
-/assets\materialD\less\_shadows.less
-# sw.file.hash: af5afbe2c361d49457046e9612b7bf52e68785ea
-/assets\materialD\less\_tabs.less
-# sw.file.hash: 0ad7b5bfad4cb485c8ac6542da296a2d0edb184f
-/assets\materialD\less\_themes.less
-# sw.file.hash: f8c0f2dc35e2d72e67a29b3a87bd97e0a44e5ced
-/assets\materialD\less\_togglebutton.less
-# sw.file.hash: 698d9119944e57d86234fdf870354ffcb428f7e9
-/assets\materialD\less\_typography.less
-# sw.file.hash: 5aef90bfda485d340da318a6f6144d987b4e416f
-/assets\materialD\less\_variables.less
-# sw.file.hash: 452c9c985cc26aa95a808b73bcd1cbc099bfdb18
-/assets\materialD\less\_welljumbo.less
-# sw.file.hash: 60c4443c0ce7fac71781ae750ed16813458b9abb
-/assets\materialD\less\bootstrap-material-design.less
-# sw.file.hash: 0d978eb82a91f647d1e451bbd878a1d75a7f336b
-/assets\materialD\less\plugins\_plugin-dropdownjs.less
-# sw.file.hash: b8b354d7e20359ef0454171f3343dd202619e6df
-/assets\materialD\less\plugins\_plugin-nouislider.less
-# sw.file.hash: dedec2b83eaa56b0d995adcb6836bbc6d0994ac3
-/assets\materialD\less\plugins\_plugin-selectize.less
-# sw.file.hash: ef8db74c4d68836e1022c7f9f2b42ccdf5ca9ff1
-/assets\materialD\less\plugins\_plugin-snackbarjs.less
-# sw.file.hash: edd439a4cf725fe82110c26b9f1c1e2318ced549
-/assets\materialD\less\ripples.less
-# sw.file.hash: eff66a0b0988eb809e4e612c6386112befaa949c
-/assets\materialD\meteor\README.md
-# sw.file.hash: 383e3d03a539aeebed4e0b07557daa7a01a07c56
-/assets\materialD\meteor\example\client\bmd.css
-# sw.file.hash: e8f79b4de4cdabc0307b231fb67a62bcd3f98d02
-/assets\materialD\meteor\example\client\bmd.html
-# sw.file.hash: c9d565cc3c88044e9500fcebb7facc64a0731dff
-/assets\materialD\meteor\example\client\bmd.js
-# sw.file.hash: 2d62c57a56db674dcdfa95647c1ddd84e5b5bf5b
-/assets\materialD\meteor\example\run.bat
-# sw.file.hash: 84abbdcbfa21db5568cee74d8c768e1d62df7ef2
-/assets\materialD\meteor\example\run.sh
-# sw.file.hash: 96cd348b75ff93e51c704a3010dd4b05faac3992
-/assets\materialD\meteor\init.js
-# sw.file.hash: efd31baa5160d42e0e60490a3a90b8d3c908478e
-/assets\materialD\meteor\package.js
-# sw.file.hash: 80f30dd757aaea71c78e783aa22904a184e6e7f0
-/assets\materialD\meteor\test.js
-# sw.file.hash: 42e8bc7b243ce5cee1685cc68efb83fe503a0b7d
-/assets\materialD\package.json
-# sw.file.hash: f9454c78beec41a7d7d4943e6ba817ffd40e2105
-/assets\materialD\sass\_alerts.scss
-# sw.file.hash: 23abba6edbe0fa79709923ab335875250843f3ae
-/assets\materialD\sass\_buttons.scss
-# sw.file.hash: 9c7c81c7bb9a45dd2aa72a7691cb79e7442b9d97
-/assets\materialD\sass\_cards.scss
-# sw.file.hash: 23e1d78261d1faa4d18f12546e1d2f72dfd6acf5
-/assets\materialD\sass\_checkboxes.scss
-# sw.file.hash: 90d3cc6b0de111b5e91fd4766edcafdafb847e42
-/assets\materialD\sass\_colors-map.scss
-# sw.file.hash: ea69ebdf1681a560230d7d237dde4c06d93ac61b
-/assets\materialD\sass\_colors.scss
-# sw.file.hash: 896dfe5fe8cdf25d49368d506f1e98371a4af43e
-/assets\materialD\sass\_core.scss
-# sw.file.hash: 91afab5bcfca1ad8bbca5456be1302a61f1b99b4
-/assets\materialD\sass\_dialogs.scss
-# sw.file.hash: 61f299797fa8d5ce55f58e2f7c356f83aa393a08
-/assets\materialD\sass\_dividers.scss
-# sw.file.hash: f2bfb1c7da4640080d1efcd98dc995d421d75d40
-/assets\materialD\sass\_form.scss
-# sw.file.hash: 1c03055f41747a045f7dd6e307942d03e3f30c47
-/assets\materialD\sass\_import-bs-less.scss
-# sw.file.hash: 71b65daa39fa355a801a6f26ef033d9b89fc337f
-/assets\materialD\sass\_import-bs-sass.scss
-# sw.file.hash: f5a1a7f9ce6717d54d430de810cc4cc15889fe07
-/assets\materialD\sass\_inputs-size.scss
-# sw.file.hash: 882434897eaa42aecfcb373aab28a7f27682d7d1
-/assets\materialD\sass\_inputs.scss
-# sw.file.hash: 6b7d153932b3328a9034ba00ab150d48f79b5492
-/assets\materialD\sass\_labels.scss
-# sw.file.hash: b115f6da0e3c97897ab519fcbf6858a00cbc0a93
-/assets\materialD\sass\_lists.scss
-# sw.file.hash: 84c7992977d05f8f26b98999a9280b9372b395fa
-/assets\materialD\sass\_mixins-utilities.scss
-# sw.file.hash: a09f07e5ab8a2fdd83ff2cedf888085ef6f323ef
-/assets\materialD\sass\_mixins.scss
-# sw.file.hash: a51e1f7e263f878ef151cb46b87cf3954d2aa8bf
-/assets\materialD\sass\_navbar.scss
-# sw.file.hash: 6f9d94ca9772c5c7544f00920867c5751d2f0909
-/assets\materialD\sass\_panels.scss
-# sw.file.hash: e1928d714adebd142caf67853dcd91fe6aef24ed
-/assets\materialD\sass\_plugins.scss
-# sw.file.hash: bc1604d4c1e61aa80fdb32201212db7db50d6032
-/assets\materialD\sass\_popups.scss
-# sw.file.hash: b6ec899f5c316d1f13fe7fe05fc8e4b148efd62e
-/assets\materialD\sass\_progress.scss
-# sw.file.hash: c20e22a38274aceab2c4c7898786ebe87ee7e2ee
-/assets\materialD\sass\_radios.scss
-# sw.file.hash: b92492e405d4131c8997aa62a04ea1bac0598002
-/assets\materialD\sass\_shadows.scss
-# sw.file.hash: 63fd316757828426fde37ef094363bb35804e7b4
-/assets\materialD\sass\_tabs.scss
-# sw.file.hash: 2ea420476ec8af93cebedf9024a94fa076becf47
-/assets\materialD\sass\_themes.scss
-# sw.file.hash: b4c4b5dcafc1f257bcf96f455e980b31ad0f5b9d
-/assets\materialD\sass\_togglebutton.scss
-# sw.file.hash: 1125fea0b8cefcfb89f1ac05264898df28c172c9
-/assets\materialD\sass\_typography.scss
-# sw.file.hash: f172f74d99a6b3784372d217d7e0b8ee671c41d8
-/assets\materialD\sass\_variables.scss
-# sw.file.hash: 1be997c1e7cb75c6d9e4e8faeab3dee08a9e4a0b
-/assets\materialD\sass\_welljumbo.scss
-# sw.file.hash: 73ae6a9809492925325b5025b6d0b5a1a4d7ce19
-/assets\materialD\sass\bootstrap-material-design.scss
-# sw.file.hash: 8b6465423024a0e85fc822c259488543acab9ce7
-/assets\materialD\sass\plugins\_plugin-dropdownjs.scss
-# sw.file.hash: 5fdb5fc307088123cb7314ee197acda0c7d2a3ad
-/assets\materialD\sass\plugins\_plugin-nouislider.scss
-# sw.file.hash: f74810ab0c618550c18ae1486889610a75869708
-/assets\materialD\sass\plugins\_plugin-selectize.scss
-# sw.file.hash: 147ac77f882deef9d761affa5db72644022205bd
-/assets\materialD\sass\plugins\_plugin-snackbarjs.scss
-# sw.file.hash: ff4f1cc20d484b5fea653e02eb24beb639264360
-/assets\materialD\sass\ripples.scss
-# sw.file.hash: a7fe2a53d4befe1c33a0854e03cbe1d2474e5ad7
-/assets\materialD\scripts\index.js
-# sw.file.hash: cc41eab64634855a6c231bbb1766056b664d215c
-/assets\materialD\scripts\material.js
-# sw.file.hash: fe5176620d1cf4d9c26bbf48fee025681644c547
-/assets\materialD\scripts\ripples.js
+/assets/materialD/dist/js/ripples.min.js.map
+# sw.file.hash: dceb73563a2b58c7a40c97eca87cbc815d155987
+/assets/materialD/grunt/configBridge.json
+# sw.file.hash: 8682369ecffe5f991d1e39b71b869a7195e3fb53
+/assets/materialD/index.css
+# sw.file.hash: 21ef7495d6a270277e34a3dd7e7b8f70fe9ed124
+/assets/materialD/index.html
+# sw.file.hash: d65e7971375a9b35e6392eab63e88f0ee69642b6
+/assets/materialD/less/_alerts.less
+# sw.file.hash: e80b7e7b3e6ab7260f02a21ab0deb7d31ec5ac99
+/assets/materialD/less/_buttons.less
+# sw.file.hash: d4fb997039904c795eebbfa96999129817a06ab8
+/assets/materialD/less/_cards.less
+# sw.file.hash: 7f11c680bade744acc99728e6c3ab73f3705d026
+/assets/materialD/less/_checkboxes.less
+# sw.file.hash: 7adf44a57d2323c0b1f863c8bf0b9d317cb296f8
+/assets/materialD/less/_colors.less
+# sw.file.hash: 976d801ce080806146be37ac3c14bcfa7f73c6f9
+/assets/materialD/less/_core.less
+# sw.file.hash: 3fd8d1ec6a093617ad9baf206b2eb22c76f35aac
+/assets/materialD/less/_dialogs.less
+# sw.file.hash: aafae020269ea10fe9eaee8884ee5804059cbe57
+/assets/materialD/less/_dividers.less
+# sw.file.hash: bd4ce3246cf35e1bc25b6d1bd32994ae3e2fa593
+/assets/materialD/less/_form.less
+# sw.file.hash: 28eb86b74ca1812439b6a2f3d80aaef8907a73aa
+/assets/materialD/less/_import-bs-less.less
+# sw.file.hash: 470c972fc6c5ef5d6b8a3d66877ee5d10e840688
+/assets/materialD/less/_import-bs-sass.less
+# sw.file.hash: 951180b92b5f77ddd698e3bbfdf5a0aa9e393169
+/assets/materialD/less/_inputs-size.less
+# sw.file.hash: dc8adf705598d19c9f3933d0f1392c41d2ff3580
+/assets/materialD/less/_inputs.less
+# sw.file.hash: 2ea5163e473b3b2f8f5b744a6c79452c1f022d87
+/assets/materialD/less/_lists.less
+# sw.file.hash: 620a6202d71e3542b22f761e780969c72c84eb9d
+/assets/materialD/less/_mixins.less
+# sw.file.hash: e51a53df59f913da9b3e051abd238f4091ed9349
+/assets/materialD/less/_navbar.less
+# sw.file.hash: 55afb2982e972c39ba436a0f04f8c712fcd8cddc
+/assets/materialD/less/_panels.less
+# sw.file.hash: d096f5f13c6c2cba567d35252abfb6d591e5ea3a
+/assets/materialD/less/_plugins.less
+# sw.file.hash: 238644d46df7249fd500cc97458fbd1865e2354e
+/assets/materialD/less/_popups.less
+# sw.file.hash: efbbf5edcd3e4e6d215970d62978f9005f004cd5
+/assets/materialD/less/_progress.less
+# sw.file.hash: fb87405f58d9a576b75ede43baf2a3e1ce873deb
+/assets/materialD/less/_radios.less
+# sw.file.hash: 1038417436a9526c58ee959889efd1875be6e0fa
+/assets/materialD/less/_shadows.less
+# sw.file.hash: cb688959664c23ab74c6502dc78239116db9d995
+/assets/materialD/less/_tabs.less
+# sw.file.hash: 7e7b9f5338ad9376a5cddb2c7773e60fb37d542d
+/assets/materialD/less/_themes.less
+# sw.file.hash: fad54de46e730c5439174e7b95be27896d1df653
+/assets/materialD/less/_togglebutton.less
+# sw.file.hash: 6fcef88bb6ec6d489316e82f43577e7e7a89b007
+/assets/materialD/less/_typography.less
+# sw.file.hash: 0d93405c017a461f788a3b1ccf8a9ae297ce409b
+/assets/materialD/less/_variables.less
+# sw.file.hash: e1c20e0eb98faef1f69400718014e1ed155867d4
+/assets/materialD/less/_welljumbo.less
+# sw.file.hash: 6d38d07c3167ad5d4b4645d49929c61d79260b37
+/assets/materialD/less/bootstrap-material-design.less
+# sw.file.hash: 067cd60fa9809ab9b578215ca19520307866e494
+/assets/materialD/less/plugins/_plugin-dropdownjs.less
+# sw.file.hash: 535f91e45f54e409a06d2715122c6838a4e69b24
+/assets/materialD/less/plugins/_plugin-nouislider.less
+# sw.file.hash: e72fd48ff49ff42a4a02e3250733cb6f5551a97b
+/assets/materialD/less/plugins/_plugin-selectize.less
+# sw.file.hash: 557155ed0edbfdb6af54027c6d788f00f382bc3c
+/assets/materialD/less/plugins/_plugin-snackbarjs.less
+# sw.file.hash: fa56605b4efad1eba9b1885b75c3f518f1f9474d
+/assets/materialD/less/ripples.less
+# sw.file.hash: ec56fcfd6f6aba312e322b66ce2dbfff3f58adfd
+/assets/materialD/meteor/README.md
+# sw.file.hash: 8fa8e737212a1d6a6dffd499bef8e897b1752a6f
+/assets/materialD/meteor/example/client/bmd.css
+# sw.file.hash: 8b980e8fc0846a9d25f15a51de2750e5a8ffb357
+/assets/materialD/meteor/example/client/bmd.html
+# sw.file.hash: 44522ce726457f2cf5d4749215cb5a56d78b98a5
+/assets/materialD/meteor/example/client/bmd.js
+# sw.file.hash: e550db4c4559157dadd87ecb995e0eecd65b5079
+/assets/materialD/meteor/example/run.bat
+# sw.file.hash: 96c7e879442053a7bdc3a88090f4d45e22df3e79
+/assets/materialD/meteor/example/run.sh
+# sw.file.hash: 607fafacad4c1f39d00c04393f5598adcc1cae12
+/assets/materialD/meteor/init.js
+# sw.file.hash: 7ede96d29741f7ed5b7549c3091bf727cd4a7898
+/assets/materialD/meteor/package.js
+# sw.file.hash: 9da6ee44324753848590c65ea2043ad0c3050f14
+/assets/materialD/meteor/test.js
+# sw.file.hash: 81b75b743c39ab2f7e41a11ba0825055725d9407
+/assets/materialD/package.json
+# sw.file.hash: 7f5c3d16f41b373a35091fadc5fc406cd05f0bcf
+/assets/materialD/sass/_alerts.scss
+# sw.file.hash: 8daa9a295cd1abd1edd6f569ed8b62b8c9f369af
+/assets/materialD/sass/_buttons.scss
+# sw.file.hash: d0cdf75ded6dfb5dbc932b4509b4a2dc282a0b7c
+/assets/materialD/sass/_cards.scss
+# sw.file.hash: adac565c3e8bee208d70306a007ff210817fe6c2
+/assets/materialD/sass/_checkboxes.scss
+# sw.file.hash: 4fc4f49f1d4d8b1f87b9957459f59c4d6f0f0178
+/assets/materialD/sass/_colors-map.scss
+# sw.file.hash: cca85177ea192457ba1ffce4352ea240d2a15f8a
+/assets/materialD/sass/_colors.scss
+# sw.file.hash: 75222d57ac212c6a0f061334bc88da532206bdae
+/assets/materialD/sass/_core.scss
+# sw.file.hash: 348fd87dcff8bde568773f6670174f00d9de3e15
+/assets/materialD/sass/_dialogs.scss
+# sw.file.hash: e28ee78796816582a740392f86ffca3dda418257
+/assets/materialD/sass/_dividers.scss
+# sw.file.hash: 1a807edebe5966ca1f72f466ce9441519c9cd8d6
+/assets/materialD/sass/_form.scss
+# sw.file.hash: 776812bf75ebad0c84010888b2f222ef4a6cc23b
+/assets/materialD/sass/_import-bs-less.scss
+# sw.file.hash: 6c05c9e125d2cd5fc3de058aab6027e63d7cc6a5
+/assets/materialD/sass/_import-bs-sass.scss
+# sw.file.hash: 77b7921859008a2cc9b071252e8bbf60ccfd8e78
+/assets/materialD/sass/_inputs-size.scss
+# sw.file.hash: 43b37f1c63e4dc6c59696895da063f3759063509
+/assets/materialD/sass/_inputs.scss
+# sw.file.hash: bac445b9533c265d755d98fd34729acf7bf70b72
+/assets/materialD/sass/_labels.scss
+# sw.file.hash: 046eab310f119e0a6d4ad42ba48c58d15db078e0
+/assets/materialD/sass/_lists.scss
+# sw.file.hash: 9df42a07ea62b896ae1cc608d67b30f16378c42b
+/assets/materialD/sass/_mixins-utilities.scss
+# sw.file.hash: 75ce8e0dccef452d97fa5f4ffe386eda9577eebf
+/assets/materialD/sass/_mixins.scss
+# sw.file.hash: 55efde39513b252910d5515a202f35b75f861241
+/assets/materialD/sass/_navbar.scss
+# sw.file.hash: 16707a1dccc72c267f7cf728b3f50cd90c123f85
+/assets/materialD/sass/_panels.scss
+# sw.file.hash: 34e0a495f7b9cfa87d71aa2393089a9c86f8666b
+/assets/materialD/sass/_plugins.scss
+# sw.file.hash: f866337adbe83049b12b5ed0f152b6f163caad21
+/assets/materialD/sass/_popups.scss
+# sw.file.hash: 6d83e6e6c21e60f734e2ec155eb12a6c93a53fbc
+/assets/materialD/sass/_progress.scss
+# sw.file.hash: 1e5e13d38786e871ea29364f699d4827cdb2b890
+/assets/materialD/sass/_radios.scss
+# sw.file.hash: e0834bdc50a4b2d114a6741fa5a1c0f86690c2e5
+/assets/materialD/sass/_shadows.scss
+# sw.file.hash: e5a6bdfbf039576ffe7d99f7c18334dee80c2964
+/assets/materialD/sass/_tabs.scss
+# sw.file.hash: df805d0b92f7dd1f9c736d1b2047c5ff081668fc
+/assets/materialD/sass/_themes.scss
+# sw.file.hash: 64bd39a4d2ea093d00d5e7dfe6f4bff514c359cc
+/assets/materialD/sass/_togglebutton.scss
+# sw.file.hash: d76adeb09b6d445ba3dd390bb075a2ed55c57731
+/assets/materialD/sass/_typography.scss
+# sw.file.hash: 1eeffb7b35490851810a2044c356445e770309ac
+/assets/materialD/sass/_variables.scss
+# sw.file.hash: d8d8de9c3223c2c093edbe8b7546d65920f46db5
+/assets/materialD/sass/_welljumbo.scss
+# sw.file.hash: 585e4d6b2b8607f6160522868cd595898a3b0655
+/assets/materialD/sass/bootstrap-material-design.scss
+# sw.file.hash: eeac08c70e3f37d2c4c9cbd5d45be803f176c712
+/assets/materialD/sass/plugins/_plugin-dropdownjs.scss
+# sw.file.hash: 49291894930bb3589b16e24173e724cf87e53ed6
+/assets/materialD/sass/plugins/_plugin-nouislider.scss
+# sw.file.hash: b719a6dc522717cd2a5c189c01b2d8cc3ba41a65
+/assets/materialD/sass/plugins/_plugin-selectize.scss
+# sw.file.hash: d52365b27db36c25048be80294a2c849ad46d525
+/assets/materialD/sass/plugins/_plugin-snackbarjs.scss
+# sw.file.hash: 189c37aa742686c1125d9dcc1ffa4d435c9eb03c
+/assets/materialD/sass/ripples.scss
+# sw.file.hash: cd2f9ced3864576e02261045a72ed577bb12917d
+/assets/materialD/scripts/index.js
+# sw.file.hash: e3ddb88021d8a73a5ec827addfa3ebbeb97d993c
+/assets/materialD/scripts/material.js
+# sw.file.hash: 8cbff0aadb74756370c621a1014855dab6a615a8
+/assets/materialD/scripts/ripples.js
 # sw.file.hash: da39a3ee5e6b4b0d3255bfef95601890afd80709
-/assets\materialD\test\materialSpec.js
+/assets/materialD/test/materialSpec.js
 # sw.file.hash: da39a3ee5e6b4b0d3255bfef95601890afd80709
-/assets\materialD\test\ripplesSpec.js
-# sw.file.hash: 12f588f5279cc8ea4f006024a8f9d564b5fd8e76
-/assets\materialD\testcase.html
-# sw.file.hash: 0c88c4a575487a14cd76b46dc8a448c08d251c68
-/assets\pure-css-accordion\style.css
-# sw.file.hash: 5e1f794fa856d5ab4be0500a14de3ac2930076b0
-/assets\scripts\Rx.js
+/assets/materialD/test/ripplesSpec.js
+# sw.file.hash: 4c4315e2e593eab7422a242dec799ae50319000b
+/assets/materialD/testcase.html
+# sw.file.hash: b73b07b2aa3bb51b3cc38fa0f4940a7c4ba6321d
+/assets/pure-css-accordion/style.css
+# sw.file.hash: 9f2d5f45393742f4c1bdb3b05b1e5b3680679eaf
+/assets/scripts/Rx.js
 # sw.file.hash: f72705562b9b90f9c1cc7d24d1558f4310824ed8
-/assets\scripts\angular2-polyfills.js
-# sw.file.hash: b210c7f38e18e3e9a62af90c046cb9e98187ef05
-/assets\scripts\angular2.dev.js
-# sw.file.hash: c0a9529eaba059dc0082b0d9c01df73fc8680709
-/assets\scripts\bootstrap.min.css
-# sw.file.hash: c5c481ca5a263031d938f6c12abd2fe5fb4b6a83
-/assets\scripts\bootstrap.min.js
-# sw.file.hash: 4d3ed5b15d384fc4d09d5034964684a8dd80fa2d
-/assets\scripts\es6-shim.min.js
-# sw.file.hash: 6b0088cdeaf2696d7630cb91b723c2bea0efbbba
-/assets\scripts\http.js
-# sw.file.hash: 89f155b0e09d3ef041bdf22d55137372c0343905
-/assets\scripts\jquery.d.ts
-# sw.file.hash: 44d980c8f4d21057018d80398d574fa72aea1bc7
-/assets\scripts\jquery.min.js
-# sw.file.hash: 689627b3f621394a38a90eebee924ddfb596f4e2
-/assets\scripts\router.js
-# sw.file.hash: 71b7ea9bd30b7a9ab5141de056bd60ef740ec872
-/assets\scripts\scripts-pablo.js
-# sw.file.hash: df1b65295897edf8808d890cf84d962920c4841d
-/assets\scripts\system-polyfills.js
-# sw.file.hash: 1e05c86ff6368ba23943bce4704ffa3ebd1f0cc6
-/assets\scripts\system.js
+/assets/scripts/angular2-polyfills.js
+# sw.file.hash: 1ff5ae25b83b613a9f2e18bceb6339dfdf547a17
+/assets/scripts/angular2.dev.js
+# sw.file.hash: 8eb176c70b9cfa6871b76d6dc98fb526e7e9b3de
+/assets/scripts/bootstrap.min.css
+# sw.file.hash: 791aa054a026bddc0de92bad6cf7a1c6e73713d5
+/assets/scripts/bootstrap.min.js
+# sw.file.hash: e4a502aee212d308c78f73578363ba0f85b320a6
+/assets/scripts/es6-shim.min.js
+# sw.file.hash: bd9d4ea52039521ba48a45ee5a20a24f1673388a
+/assets/scripts/http.js
+# sw.file.hash: 369450ec7fc3a28a74f1c803968c3e9805aaf41a
+/assets/scripts/jquery.d.ts
+# sw.file.hash: 37b1db88b57438f1072a8ebc7559c909c9d3a682
+/assets/scripts/jquery.min.js
+# sw.file.hash: d6be72f514cdba1647ac8bfa659e24ebbb5a3b2b
+/assets/scripts/router.js
+# sw.file.hash: 3d6bd163124d94e98b994a10cea46a400a3f7160
+/assets/scripts/scripts-pablo.js
+# sw.file.hash: 064ab212cfd9e125474ae3bbb600c366b31e79cb
+/assets/scripts/system-polyfills.js
+# sw.file.hash: ea2d7cecbce9a5de1b6777fa755578976b7f3e2b
+/assets/scripts/system.js
 # sw.file.hash: 761f5fd7b2c13688d4e810f3ade6e1e0135de899
-/assets\scripts\typescript.js
-# sw.file.hash: 828990ae85fef20d36d0153fa5d528e28ffdbf53
-/assets\semantic-ui-card\README.md
-# sw.file.hash: c1fb10d2eb26ee527134c96a80fdedd534290569
-/assets\semantic-ui-card\RELEASE-NOTES.md
-# sw.file.hash: 434bdafe1b76376fc567f107b2faec75912fc2e1
-/assets\semantic-ui-card\bower.json
-# sw.file.hash: 35247913c482e4071eac920beacec9ceb6377e07
-/assets\semantic-ui-card\card.css
-# sw.file.hash: 52bb5c4e97eb2bf7c50ab24918106ef95f88acae
-/assets\semantic-ui-card\card.min.css
-# sw.file.hash: 0c78cfb7e1107455423e30858118622c85c841de
-/assets\semantic-ui-card\composer.json
-# sw.file.hash: a98f88a3d36e14aad2cb6ddaeaf5aeb2ff824dd7
-/assets\semantic-ui-card\package.js
-# sw.file.hash: a9f8f0d3c6c9fcf2d08dd7479823bd55beb0a1bd
-/assets\semantic-ui-card\package.json
-# sw.file.hash: 98f82aeda043ce9aaa4220699657b5f081903fa6
-/assets\semantic-ui-icons\README.md
-# sw.file.hash: 517d0026498517fe1110699a2c662ec03a0e9b31
-/assets\semantic-ui-icons\RELEASE-NOTES.md
+/assets/scripts/typescript.js
+# sw.file.hash: 9ed42e2da272224eea2084ff9b28ccd7c0de1693
+/assets/semantic-ui-card/README.md
+# sw.file.hash: cac24f20266ab829d7a23963f0678fcf09399f8c
+/assets/semantic-ui-card/RELEASE-NOTES.md
+# sw.file.hash: f7266d3a013eca94ff9fdffb7a465f4d4bd5eb42
+/assets/semantic-ui-card/bower.json
+# sw.file.hash: 024f13e5d4c19a8a212b26e03e384f7c66a99e89
+/assets/semantic-ui-card/card.css
+# sw.file.hash: 4d77047a2f37b3e4ce79310f35cbf6607b294611
+/assets/semantic-ui-card/card.min.css
+# sw.file.hash: 9506fd52f5cfc172898b73091a987203f43511b4
+/assets/semantic-ui-card/composer.json
+# sw.file.hash: 4632cac33c56eeab6c227305b90d8627cea4f801
+/assets/semantic-ui-card/package.js
+# sw.file.hash: 4ffdf4f7d4e76c957daad94c3a15385f46ea9d51
+/assets/semantic-ui-card/package.json
+# sw.file.hash: 53ab9de7b25b7718dd4b2c8e56f81c2445a57804
+/assets/semantic-ui-icons/README.md
+# sw.file.hash: b9308f89eb508e9f5ecf839624a91e12219a8480
+/assets/semantic-ui-icons/RELEASE-NOTES.md
 # sw.file.hash: 3e63fc9b3de4580f1f3bec0631436f755b80f167
-/assets\semantic-ui-icons\assets\fonts\icons.eot
-# sw.file.hash: 0b42e5ee7daafb72b1237b9d5b7f5ab0775fffc7
-/assets\semantic-ui-icons\assets\fonts\icons.svg
+/assets/semantic-ui-icons/assets/fonts/icons.eot
+# sw.file.hash: 26bb1c5ef100a1cd71923f1d5dc29fc797ef4639
+/assets/semantic-ui-icons/assets/fonts/icons.svg
 # sw.file.hash: 9088143b19979779b2116cef38b661f72d982e19
-/assets\semantic-ui-icons\assets\fonts\icons.ttf
+/assets/semantic-ui-icons/assets/fonts/icons.ttf
 # sw.file.hash: 56ce13e71c2150d81bc972940584915181bd6081
-/assets\semantic-ui-icons\assets\fonts\icons.woff
+/assets/semantic-ui-icons/assets/fonts/icons.woff
 # sw.file.hash: 1075231650f579955905bb2f6527148a8e2b4b16
-/assets\semantic-ui-icons\assets\fonts\icons.woff2
-# sw.file.hash: 4541d6654a161de5a1f2466bf581224396623ac6
-/assets\semantic-ui-icons\bower.json
-# sw.file.hash: de09f3194d64d172f019f8cfe0d2af43a3d185b5
-/assets\semantic-ui-icons\composer.json
-# sw.file.hash: 125d1bc0706829608fbadc7d32f1bec0238e82ed
-/assets\semantic-ui-icons\icon.css
-# sw.file.hash: eeefbf9dfc2c387154c9b98a3b6439ca3bf670ae
-/assets\semantic-ui-icons\icon.min.css
-# sw.file.hash: 03f2a9ab0f44c94969531118c8e6fb1115c0c2f0
-/assets\semantic-ui-icons\package.js
-# sw.file.hash: eeb02fc063c1d994070e79035d4dc49b8539b88a
-/assets\semantic-ui-icons\package.json
-# sw.file.hash: 567026cb91e176d972114d9317d5968a86c9264e
-/assets\semantic-ui-tab\README.md
-# sw.file.hash: b46def01cb31bdda16cf41167625a39aa82b9b51
-/assets\semantic-ui-tab\RELEASE-NOTES.md
-# sw.file.hash: 9d713eca4680899ddb1ab1ccae4b7167da7a5f20
-/assets\semantic-ui-tab\bower.json
-# sw.file.hash: 157036f1f55867f01fd71dd49e73d151a11d937f
-/assets\semantic-ui-tab\composer.json
-# sw.file.hash: af519c6ca284353edbe95425ef2fcabbf86ce619
-/assets\semantic-ui-tab\index.js
-# sw.file.hash: 4845f5f2ea362e1916426159a0b667ec078a2942
-/assets\semantic-ui-tab\package.js
-# sw.file.hash: be72f9374b203c04453abcf7fb422f053038e31f
-/assets\semantic-ui-tab\package.json
-# sw.file.hash: 5233a2efe1dfc6f1e057874d2e2f1bce22cf6e82
-/assets\semantic-ui-tab\tab.css
-# sw.file.hash: d60e7c9d9fa35b26bd14fd3e76f81163afc2d99c
-/assets\semantic-ui-tab\tab.js
-# sw.file.hash: bc31625a8a26cfc448b8b4f9cbb2d9bddeb31cb6
-/assets\semantic-ui-tab\tab.min.css
-# sw.file.hash: ecfcca8e1ed5f6b0d1b46a5fdb9958f1c312fcfd
-/assets\semantic-ui-tab\tab.min.js
-# sw.file.hash: 94110898f9bbb012a93d3d883bb8e5a26a235182
-/assets\semantic-ui-transition\README.md
-# sw.file.hash: aad05ab1b23ed88e8e09e7344c98cc8ec624fd00
-/assets\semantic-ui-transition\RELEASE-NOTES.md
-# sw.file.hash: 2eeaae484fb2e08c1a882091981512b76e32332f
-/assets\semantic-ui-transition\bower.json
-# sw.file.hash: 8e4680dba78b0334863593a863c737eadd1f6c2b
-/assets\semantic-ui-transition\composer.json
-# sw.file.hash: 190bbd11c4a037a9a652602b28bfd190d7fc8e3e
-/assets\semantic-ui-transition\index.js
-# sw.file.hash: f161039e865b4d579921902fbc521030e89ee8c4
-/assets\semantic-ui-transition\package.js
-# sw.file.hash: b496ce16a14e3c3a30a7f4f49f22f799607ffbd3
-/assets\semantic-ui-transition\package.json
-# sw.file.hash: c6e14fe60105082975d6c861d62a58a0ec448bb6
-/assets\semantic-ui-transition\transition.css
-# sw.file.hash: 6ad6cf9f2f7efab4fdd9323d0ac5691241873129
-/assets\semantic-ui-transition\transition.js
-# sw.file.hash: 7e994cd472b0a0d4c6819a13499c08eed73f63c2
-/assets\semantic-ui-transition\transition.min.css
-# sw.file.hash: 2453168ade6ed0511753aca34db987966c5e549a
-/assets\semantic-ui-transition\transition.min.js
-# sw.file.hash: 089b73e7996589099daf38af07b70291faf69bc4
-/assets\spartan.css
+/assets/semantic-ui-icons/assets/fonts/icons.woff2
+# sw.file.hash: 87a50d03925464789570a55de54b306071d7266d
+/assets/semantic-ui-icons/bower.json
+# sw.file.hash: 499341d088eb66a3f8b4ecd25f1491a5248a7312
+/assets/semantic-ui-icons/composer.json
+# sw.file.hash: ceb3c18150bd5f375f349b7b1548c212d33bbb73
+/assets/semantic-ui-icons/icon.css
+# sw.file.hash: 9e743f908eacca6a268f43fded02ee1a1f5c5a91
+/assets/semantic-ui-icons/icon.min.css
+# sw.file.hash: ad01d3e3bb5f2c4453290c4c10222e182d10437a
+/assets/semantic-ui-icons/package.js
+# sw.file.hash: 7665499475cad7d01b60b9e698525a2666de38de
+/assets/semantic-ui-icons/package.json
+# sw.file.hash: d0872138b6e1680665fdad41704a9813e7d4bbbd
+/assets/semantic-ui-tab/README.md
+# sw.file.hash: b5acc708d5af34a230b589ef5b0cdbe2473e5cc9
+/assets/semantic-ui-tab/RELEASE-NOTES.md
+# sw.file.hash: 1b09b273d46cf5727996cf50aecc1fd5a4a82f66
+/assets/semantic-ui-tab/bower.json
+# sw.file.hash: cd389f1862c238cc02e431da70ea786e834f737a
+/assets/semantic-ui-tab/composer.json
+# sw.file.hash: d2f62b844541878c4d1c44d5c878cccfad6ca13c
+/assets/semantic-ui-tab/index.js
+# sw.file.hash: 74f0c7d7aa1e10d796eb94e7a02e890e73566988
+/assets/semantic-ui-tab/package.js
+# sw.file.hash: be4fc7e670ad876910b4ba4db0bf3e7df8f0a35c
+/assets/semantic-ui-tab/package.json
+# sw.file.hash: da2200f9c03d8d77db2b4a4602a4f88d9bb2ccc6
+/assets/semantic-ui-tab/tab.css
+# sw.file.hash: 2a8c2a3027e5c80689a2c389ccec00553e31bac8
+/assets/semantic-ui-tab/tab.js
+# sw.file.hash: eb1683231cf67dfbfe4182fc11b0acfaba0e6b2a
+/assets/semantic-ui-tab/tab.min.css
+# sw.file.hash: 1092cea4f2065dc82fa4132de49874533067e7e0
+/assets/semantic-ui-tab/tab.min.js
+# sw.file.hash: ba7107eb391ad6577c90ff44e303bf7e9fd71f4f
+/assets/semantic-ui-transition/README.md
+# sw.file.hash: 2837c32b4189e3eed2120ea03d490d9de5f376f9
+/assets/semantic-ui-transition/RELEASE-NOTES.md
+# sw.file.hash: 6247e6ad04425c8989a4f92f07b08f1be0651237
+/assets/semantic-ui-transition/bower.json
+# sw.file.hash: dbdb7be639bbd583a67ed5b3436c9b35ea69caab
+/assets/semantic-ui-transition/composer.json
+# sw.file.hash: ce4085037fd3e8ee13f687336f053d81658234e6
+/assets/semantic-ui-transition/index.js
+# sw.file.hash: a8abab6e89793f77293ce806d2131cdefd537956
+/assets/semantic-ui-transition/package.js
+# sw.file.hash: 0664d4a976615b33b64a0ba2b02937d34f44e119
+/assets/semantic-ui-transition/package.json
+# sw.file.hash: 1ae46db45485ada2e5a7a57f5bb01a72b11991ff
+/assets/semantic-ui-transition/transition.css
+# sw.file.hash: 27b05e86dfe3e0935d76f6e26671e061fd71bf27
+/assets/semantic-ui-transition/transition.js
+# sw.file.hash: c5a4d51f4230a27111939ed866e87d72d9e9457f
+/assets/semantic-ui-transition/transition.min.css
+# sw.file.hash: 34a3b90c78ce62eac1e561fa1c2cec013e4758e4
+/assets/semantic-ui-transition/transition.min.js
+# sw.file.hash: 5ea8d323ce1970d16a5dda6865008d352effbeb4
+/assets/spartan.css
 # sw.file.hash: 84161b857f5c547e3699ddfbffc6d8d737542e01
 /favicon.ico
-# sw.file.hash: 697c8676b2270779a818fba17f75b454d156084e
+# sw.file.hash: 1adda575519ae0450be6b3708d8d4d313e18b500
 /index.html
 # sw.file.hash: da39a3ee5e6b4b0d3255bfef95601890afd80709
-/thirdparty\libs.js
-# sw.file.hash: 6e9adb87f4779aed6dfc646df9eeb1875e2e352f
+/thirdparty/libs.js
+# sw.file.hash: a8221a9a69db12c7e3fdd18c1220b79bc0ced58b
 /tsconfig.json
-# sw.file.hash: cb85b0bd48234ba4f3b5fe9b4880d2917ea885e1
+# sw.file.hash: a171ca1d6af67138a27f802ddad984e3c89fed1b
 /typings.d.ts
 # sw.file.hash: f72705562b9b90f9c1cc7d24d1558f4310824ed8
-/vendor\angular2\bundles\angular2-polyfills.js
-# sw.file.hash: b210c7f38e18e3e9a62af90c046cb9e98187ef05
-/vendor\angular2\bundles\angular2.dev.js
-# sw.file.hash: f81c59b9eb53e824c3eaea0057f54d95be70ebd7
-/vendor\angular2\bundles\http.dev.js
-# sw.file.hash: fa20231154d7a5c57a50c2681eabdc49fbe2be80
-/vendor\angular2\bundles\router.dev.js
-# sw.file.hash: 6dd221c0522d7ff7d558c8a7a881d2011739a14a
-/vendor\angular2\bundles\upgrade.dev.js
-# sw.file.hash: c9ab5f72532a6454434b8b7a21b789a1787e9b8d
-/vendor\es6-shim\es6-shim.js
-# sw.file.hash: 97bd4e39958535a453f4809b4142aa2f7e722ab5
-/vendor\rxjs\bundles\Rx.js
-# sw.file.hash: df1b65295897edf8808d890cf84d962920c4841d
-/vendor\systemjs\dist\system-polyfills.js
-# sw.file.hash: 9f1595e04930fe15142d351a0de2c8e4d253d464
-/vendor\systemjs\dist\system.src.js
+/vendor/angular2/bundles/angular2-polyfills.js
+# sw.file.hash: 1ff5ae25b83b613a9f2e18bceb6339dfdf547a17
+/vendor/angular2/bundles/angular2.dev.js
+# sw.file.hash: e161d053cf096f7e43daa9aafc58026972429e6c
+/vendor/angular2/bundles/http.dev.js
+# sw.file.hash: edb629c3fec077046d1455e3e1817669fc6ee888
+/vendor/angular2/bundles/router.dev.js
+# sw.file.hash: 942eb74b23c16f85fb23ccbce6dfa136af7afec4
+/vendor/angular2/bundles/upgrade.dev.js
+# sw.file.hash: 55b3f2ce7b61115d27e50ddab924ab49b04c3209
+/vendor/es6-shim/es6-shim.js
+# sw.file.hash: 736fe8675af5630486329adf5efe12ec7be449b1
+/vendor/rxjs/bundles/Rx.js
+# sw.file.hash: 064ab212cfd9e125474ae3bbb600c366b31e79cb
+/vendor/systemjs/dist/system-polyfills.js
+# sw.file.hash: 83128f4a4209eb7b16ad0bb729fda6939bc450fc
+/vendor/systemjs/dist/system.src.js

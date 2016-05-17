@@ -4,6 +4,7 @@ import { Student } from '../../models/student.model';
 import { GoalService } from '../../services/goal.service';
 import {Goal} from '../../models/goal.model';
 import { GoalNamePipe } from '../../pipes/student-pipes.pipe';
+import { AutenticacionService } from '../../services/autenticacion.service';
 
 @Component({
 	selector: 'profile',
@@ -14,7 +15,7 @@ import { GoalNamePipe } from '../../pipes/student-pipes.pipe';
 })
 
 export class Profile implements OnInit{
-	public student:Student;
+	// public student:Student;
 	public editMode:number; // 0 nada - 1 mail - 2 pass  - 3 registro histórico de metas
 	public goals:Goal[];
 
@@ -29,7 +30,7 @@ export class Profile implements OnInit{
 	num:number;
 	progress:number;
 
-	constructor(private _studentService: StudentService, private _goalService: GoalService){
+	constructor(private _studentService: StudentService, private _goalService: GoalService,private aut: AutenticacionService){
 		this.progress = 0;
 		this.num = 0;
 		this.numComplete = 0;
@@ -43,15 +44,14 @@ export class Profile implements OnInit{
 	}
 
 	ngOnInit(){
-		this._studentService.getStudent(1)
-			.then(student => {
-				this.student = student;
-				this.numComments += student.goal.comments.length;
-				if(student.goal){
-					 this.progress+= student.goal.progress;
-					 if(student.goal.diet) this.numDiets += 1;
-				}
-			});
+		console.log(this.aut.User().gender);
+
+			//this.numComments += student.goal.comments.length;
+			// if(student.goal){
+			// 	 this.progress+= student.goal.progress;
+			// 	 if(student.goal.diet) this.numDiets += 1;
+			// }
+
 		this._goalService.getGoals(1)
 			.then(goals => {
 				this.filterGoals(goals);
@@ -69,6 +69,11 @@ export class Profile implements OnInit{
 	showGoals(){
 		this.editMode = 3;
 	}
+
+	anyos(){
+		return Math.floor(parseInt(((Date.now() - this.aut.User().birthday) / (1000 * 60 * 60 * 24* 365)).toFixed(1)));
+	}
+
 
 	saveChanges(save:boolean){
 		if(save){

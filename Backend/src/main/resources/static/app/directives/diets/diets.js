@@ -1,4 +1,4 @@
-System.register(['angular2/core', '../../models/diet.model', '../../pipes/diet-pipes.pipe'], function(exports_1) {
+System.register(['angular2/core', '../../models/diet.model', '../../pipes/diet-pipes.pipe', '../../services/autenticacion.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', '../../models/diet.model', '../../pipes/diet-p
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, diet_model_1, diet_pipes_pipe_1;
+    var core_1, diet_model_1, diet_pipes_pipe_1, autenticacion_service_1;
     var Diets;
     return {
         setters:[
@@ -20,16 +20,20 @@ System.register(['angular2/core', '../../models/diet.model', '../../pipes/diet-p
             },
             function (diet_pipes_pipe_1_1) {
                 diet_pipes_pipe_1 = diet_pipes_pipe_1_1;
+            },
+            function (autenticacion_service_1_1) {
+                autenticacion_service_1 = autenticacion_service_1_1;
             }],
         execute: function() {
             Diets = (function () {
                 /**
                     Prioridad 1
                 */
-                function Diets() {
+                function Diets(aut) {
+                    this.aut = aut;
                     this.setDay(new Date().getDay() + 1);
                     this.edit_mode = false;
-                    this.rol = localStorage.getItem("rol") === "1";
+                    this.rol = this.aut.esProfesor();
                 }
                 /**
                     Al iniciarse el componente
@@ -37,7 +41,23 @@ System.register(['angular2/core', '../../models/diet.model', '../../pipes/diet-p
                 */
                 Diets.prototype.ngOnInit = function () {
                     if (!this.diet) {
-                        this.diet = new diet_model_1.Diet(1, "", "");
+                        this.diet = new diet_model_1.Diet(1, "", ""); // BORRAR EN UN FUTURO
+                        this.matrix = [
+                            /** Lunes     */ ["", "", "", ""],
+                            /** Martes    */ ["", "", "", ""],
+                            /** Miercoles */ ["", "", "", ""],
+                            /** Jueves    */ ["", "", "", ""],
+                            /** Viernes   */ ["", "", "", ""],
+                            /** Sabado    */ ["", "", "", ""],
+                            /** Domingo   */ ["", "", "", ""]
+                        ];
+                    }
+                    else {
+                        var m = JSON.stringify(this.diet.matrix);
+                        console.log(m);
+                        this.matrix = JSON.parse(m);
+                        console.log(this.matrix);
+                        this.diet.matrix;
                     }
                 };
                 /**
@@ -96,7 +116,7 @@ System.register(['angular2/core', '../../models/diet.model', '../../pipes/diet-p
                         styleUrls: ['app/directives/diets/diets.css'],
                         pipes: [diet_pipes_pipe_1.ShowFoodPipe]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [autenticacion_service_1.AutenticacionService])
                 ], Diets);
                 return Diets;
             })();

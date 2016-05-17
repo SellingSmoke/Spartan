@@ -47,6 +47,7 @@ System.register(['angular2/core', 'angular2/router', '../components/dashboard/in
                 function AppComponent(router, aut) {
                     this.router = router;
                     this.aut = aut;
+                    this.aut.reqIsLogged(); // COPIAR A PERFIL
                 }
                 AppComponent.prototype.logOut = function () {
                     // Eliminar localstorage

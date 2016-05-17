@@ -1,78 +1,23 @@
 export interface IDiet {
-  id: number;
+  id?: number;
+  trainerId: number;
   name: string;
   description: string;
   notes:string;
-  matrix: string[][];
+  matrix:string;
 }
 
-export class Diet implements IDiet{
-  id: number;
-  name: string;
-  description: string;
-  notes:string;
-  matrix: string[][];
-
-  constructor(id_trainer:number, name:string, description:string){
-    this.id = -1;
-    this.name = name;
-    this.description = description;
-    this.notes = "Sin anotaciones"
-    this.matrix = [
-      /** Lunes     */ ["", "", "", ""],
-      /** Martes    */ ["", "", "", ""],
-      /** Miercoles */ ["", "", "", ""],
-      /** Jueves    */ ["", "", "", ""],
-      /** Viernes   */ ["", "", "", ""],
-      /** Sabado    */ ["", "", "", ""],
-      /** Domingo   */ ["", "", "", ""]
-    ];
-    // this.matrix = [
-    //   ["","","","","","",""],
-    //   ["","","","","","",""],
-    //   ["","","","","","",""],
-    //   ["","","","","","",""]
-    // ];
-  }
-}
+// export class Diet implements IDiet{
+//   id: number;
+//   name: string;
+//   description: string;
+//   notes:string;
+//   matrix:string;
 //
-// var MATRIX1 : [
-//   /** Lunes     */ ["", "", "", ""],
-//   /** Martes    */ ["", "", "", ""],
-//   /** Miercoles */ ["", "", "", ""],
-//   /** Jueves    */ ["", "", "", ""],
-//   /** Viernes   */ ["", "", "", ""],
-//   /** Sabado    */ ["", "", "", ""],
-//   /** Domingo   */ ["", "", "", ""]
-// ];
-//
-// var MATRIX2 : [
-//   /**      */ [" ",
-//                         " ",
-//                         " ",
-//                         " ",
-//                         " ",
-//                         " ",
-//                         " "],
-//   /** s    */     ["",
-//                          "",
-//                          "",
-//                          "",
-//                          "",
-//                          "",
-//                          ""],
-//   /** s */      ["",
-//                          "",
-//                          "",
-//                          "",
-//                          "",
-//                          "",
-//                          ""],
-//   /** s    */       ["",
-//                          "",
-//                          "",
-//                          "",
-//                          "",
-//                          "",
-//                          ""]
-// ];
+//   constructor(name:string, description:string){
+//     this.name = name;
+//     this.description = description;
+//     this.notes = "Sin anotaciones";
+//     this.matrix = "";
+//   }
+// }
