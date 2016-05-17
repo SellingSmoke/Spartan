@@ -21,6 +21,7 @@ export class Inicio{
  seeStudentTasks: boolean;
 
  constructor(private aut: AutenticacionService, private _studentService: StudentService) {
+
    this.seeStudentTasks = false;
      if(aut.esAlumno()){
        this._studentService.getStudent(1)

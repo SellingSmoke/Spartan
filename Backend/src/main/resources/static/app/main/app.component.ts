@@ -29,7 +29,9 @@ import {LoggedInRouterOutlet} from '../services/router.service';
 
 export class AppComponent {
 
-    constructor(private router:Router, private aut: AutenticacionService){}
+    constructor(private router:Router, private aut: AutenticacionService){
+			 this.aut.reqIsLogged(); // COPIAR A PERFIL
+		}
 
     public logOut(){
         // Eliminar localstorage

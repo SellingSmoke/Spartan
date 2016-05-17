@@ -1,21 +1,61 @@
 import {Injectable} from 'angular2/core';
 import { Http, RequestOptions, Headers } from 'angular2/http';
 import {Router} from 'angular2/router';
+import { User } from '../models/user.model';;
 import 'rxjs/Rx';
 
 @Injectable()
 export class AutenticacionService {
 
-    // New Variables
-    user: User;
+    static staticUser:User;
 
-    constructor (private http: Http, private router:Router){
-      //this.reqIsLogged();
-    }
+    private currentUser: User;
 
-  	reqIsLogged(){
+    constructor (private http: Http, private router:Router){}
 
-      console.log("AUT")
+  	public logIn(user: string, pass: string) {
+
+  		let userPass = user + ":" + pass;
+
+  		let headers = new Headers({
+  			'Authorization': 'Basic '+utf8_to_b64(userPass),
+  			'X-Requested-With': 'XMLHttpRequest'
+  		});
+
+  		let options = new RequestOptions({headers});
+
+  		return this.http.get('logIn', options).map(
+  			response => {
+				  return this.processLogInResponse(response);
+  			}
+  		);
+  	}
+
+
+    private processLogInResponse(response){
+      // Si ha llegado aqui, es que te has logeado correctamente
+      console.log("AQUI ESTA");
+      console.log(response.json());
+
+  		this.currentUser = response.json();
+      this.setUser();
+
+      console.log("CUMPLE: "+this.currentUser.birthday);
+
+      localStorage.setItem("login", "SPARTAN");
+      if(this.currentUser.roles.indexOf("ROLE_ADMIN") !== -1){
+        localStorage.setItem("rol", "ROLE_ADMIN");
+      }
+      if(this.currentUser.roles.indexOf("ROLE_TRAINER") !== -1){
+        localStorage.setItem("rol", "ROLE_TRAINER");
+      }
+      if(this.currentUser.roles.indexOf("ROLE_STUDENT") !== -1){
+        localStorage.setItem("rol", "ROLE_STUDENT");
+      }
+      return response;
+  	}
+
+    public reqIsLogged(){
 
   		let headers = new Headers({
   			'X-Requested-With': 'XMLHttpRequest'
@@ -29,71 +69,50 @@ export class AutenticacionService {
   				if(error.status != 401){
   					console.error("Error when asking if logged: "+
   						JSON.stringify(error));
-  				}
+  				}else{
+            console.error("No tienes sesion activa");
+          }
+          this.exit();
   			}
   		);
     }
 
-    private processLogInResponse(response){
-      console.log(response);
-  		// localStorage.setItem("login", "SPARTAN"); // ERROR: Machea si existe una pagina la cual si existe
-  		this.user = response.json();
-      if(this.user.roles.indexOf("ROLE_ADMIN") !== -1){
-        localStorage.setItem("rol", "ADMIN");
-        localStorage.setItem("login", "SPARTAN"); // BORRAR EN UN FUTURO
+    private setUser(){
+      if(!AutenticacionService.staticUser){
+        AutenticacionService.staticUser = this.currentUser;
+      }else{
+        console.log("Ya hay usuario");
       }
-      if(this.user.roles.indexOf("ROLE_TRAINER") !== -1){
-        localStorage.setItem("rol", "TRAINER");
-        localStorage.setItem("login", "SPARTAN"); // BORRAR EN UN FUTURO
-      }
-      if(this.user.roles.indexOf("ROLE_STUDENT") !== -1){
-        localStorage.setItem("rol", "STUDENT");
-        localStorage.setItem("login", "SPARTAN"); // BORRAR EN UN FUTURO
-      }
-      return response;
-  	}
+    }
 
-  	logIn(user: string, pass: string) {
-
-      console.log("LOGIN");
-
-
-      if(user == "DEV"){
-        this.modoDesarrollo();
-      }
-
-  		let userPass = user + ":" + pass;
-
-  		let headers = new Headers({
-  			'Authorization': 'Basic '+utf8_to_b64(userPass),
-  			'X-Requested-With': 'XMLHttpRequest'
-  		});
-
-  		let options = new RequestOptions({headers});
-
-  		return this.http.get('logIn', options).map(
-  			response => {
-				  return this.processLogInResponse(response);;
-  			}
-  		);
-
-  	}
+    public User(){
+      return AutenticacionService.staticUser;
+    }
 
     public esAlumno():boolean {
-        return this.checkLS("STUDENT");
+        return this.checkLS("ROLE_STUDENT");
     }
 
     public esProfesor():boolean {
-        return this.checkLS("TRAINER");
+        return this.checkLS("ROLE_TRAINER");
     }
 
     public isAdmin():boolean {
-        return this.checkLS("ADMIN");
+        return this.checkLS("ROLE_ADMIN");
     }
 
     public isLogIn():boolean{
         return localStorage.getItem('login') =="SPARTAN";
     }
+
+
+    private checkLS(rol:String):boolean{
+        return localStorage.getItem('rol') == rol && this.isLogIn();
+    }
+
+    /*
+     *	Destruye la sesión en Spring
+     */
 
     public logOut(){
         console.log("LOGOUT LLAMADO");
@@ -105,29 +124,22 @@ export class AutenticacionService {
           response => {
             console.log("LOGOUT LLEGO");
             console.log(response);
-            localStorage.clear();
-            this.router.navigateByUrl("/");
+            this.exit();
           }
         );
     }
 
-    private checkLS(rol:String):boolean{
-        return localStorage.getItem('rol') == rol && this.isLogIn();
+    /*
+     *	Destruye la sesión en Angular
+     */
+
+    private exit(){
+      localStorage.clear();
+      this.router.navigateByUrl("/");
     }
 
-    // BORRAR EN UN FUTURO
-    private modoDesarrollo(){
-        localStorage.setItem("rol", "TRAINER");
-        localStorage.setItem("login", "SPARTAN");
-    }
 
 };
-
-export interface User {
-    id?: number;
-    name: string;
-    roles: string[];
-}
 
 function utf8_to_b64(str) {
     return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function(match, p1) {

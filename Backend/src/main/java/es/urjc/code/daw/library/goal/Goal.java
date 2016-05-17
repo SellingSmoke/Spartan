@@ -1,19 +1,20 @@
 package es.urjc.code.daw.library.goal;
 
-import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import es.urjc.code.daw.library.task.Task;
 
 @Entity
-public class Goal implements Serializable{
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class Goal{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -34,6 +35,9 @@ public class Goal implements Serializable{
 	
 	boolean acepted;
 	boolean canceled;
+	
+	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+	private List<Task> tasks;
 
 	public Goal() {}
 
@@ -44,6 +48,15 @@ public class Goal implements Serializable{
 		this.campoMetaX = campoMetaX;
 		this.acepted = acepted;
 		this.canceled = canceled;
+		this.tasks = new ArrayList<>();
+	}
+
+	public List<Task> getTasks() {
+		return tasks;
+	}
+
+	public void setTasks(List<Task> tasks) {
+		this.tasks = tasks;
 	}
 
 	public double getProgress() {

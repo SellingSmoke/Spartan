@@ -1,6 +1,6 @@
 export interface IComment {
   id?: number;
-  rol: number;
+  rol: string;
   // Los comentarios son de la meta, solo podrán ser del entrenador o del alumno
   // 1 -> Lo ha escrito el alumno
   // 2 -> Lo ha escrito el entrenador
@@ -15,14 +15,14 @@ export interface IComment {
 
 export class Comment implements IComment{
   id: number;
-  rol: number;
+  rol: string;
   date: number;
   comment: string;
   read: boolean;
 
   constructor(){
     this.comment = "";
-    this.rol = 1;//localStorage.getItem('rol');
+    this.rol = localStorage.getItem('rol');
     this.date = new Date().getTime();
     this.read = false;
   }

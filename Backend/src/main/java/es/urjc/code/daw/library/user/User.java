@@ -1,6 +1,5 @@
 package es.urjc.code.daw.library.user;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -40,12 +39,7 @@ import es.urjc.code.daw.library.goal.Goal;
  */
 
 @Entity
-public class User implements Serializable {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

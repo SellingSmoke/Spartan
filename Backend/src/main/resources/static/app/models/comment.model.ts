@@ -22,7 +22,7 @@ export class Comment implements IComment{
 
   constructor(){
     this.comment = "";
-    this.rol = localStorage.getItem('rol');
+    this.rol = 1;//localStorage.getItem('rol');
     this.date = new Date().getTime();
     this.read = false;
   }
