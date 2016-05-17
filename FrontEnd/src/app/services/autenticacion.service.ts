@@ -34,6 +34,9 @@ export class AutenticacionService {
 
     private processLogInResponse(response){
       // Si ha llegado aqui, es que te has logeado correctamente
+      console.log("AQUI ESTA");
+      console.log(response.json());
+
   		this.currentUser = response.json();
       this.setUser();
 

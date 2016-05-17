@@ -1,19 +1,24 @@
 package es.urjc.code.daw.library.user;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import es.urjc.code.daw.library.goal.Goal;
 
 /**
  * This is the entity to store in database user information. It contains the
@@ -35,13 +40,18 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  */
 
 @Entity
-public class User {
+public class User implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private long id;
 	
-	private Long trainerId;
+	private long trainerId;
 
 	private String name;
 	
@@ -54,6 +64,9 @@ public class User {
 	private long registrationDate;
 	
 	private String gender;
+	
+	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+	private List<Goal> goals;
 
 	@JsonIgnore
 	private String passwordHash;
@@ -61,8 +74,7 @@ public class User {
 	@ElementCollection(fetch = FetchType.EAGER)
 	private List<String> roles;
 
-	public User() {
-	}
+	public User() {}
 
 	public User(long trainer_id, String name, String lastname, String email,long birthday, String gender,String password, String... roles) {
 		this.trainerId = trainer_id;
@@ -74,6 +86,7 @@ public class User {
 		this.gender = gender;
 		this.passwordHash = new BCryptPasswordEncoder().encode(password);
 		this.roles = new ArrayList<>(Arrays.asList(roles));
+		this.goals = new ArrayList<>();
 	}
 	
 	public long getTrainerId() {
@@ -146,6 +159,24 @@ public class User {
 
 	public void setRoles(List<String> roles) {
 		this.roles = roles;
+	}
+	
+
+	public List<Goal> getGoals() {
+		return goals;
+	}
+
+	public void setGoals(List<Goal> goals) {
+		this.goals = goals;
+	}
+	
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 }

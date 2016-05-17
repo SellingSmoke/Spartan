@@ -55,7 +55,7 @@ export class DashboardAlumno implements OnInit{
    */
 
 	ngOnInit(){
-		console.log(this.aut.User().email);
+		console.log(this.aut.User().goals[0].campoMetaX); // SOLO PARA PRUEBAS
 		if(this.student.goal) this.task = new Task(this.student.goal.id);
 		this.posChanged = false;
 	}
