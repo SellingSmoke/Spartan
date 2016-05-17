@@ -32,11 +32,40 @@ System.register(['angular2/core', 'angular2/http', 'angular2/router', 'rxjs/Rx']
                 function AutenticacionService(http, router) {
                     this.http = http;
                     this.router = router;
-                    //this.reqIsLogged();
                 }
+                AutenticacionService.prototype.logIn = function (user, pass) {
+                    var _this = this;
+                    var userPass = user + ":" + pass;
+                    var headers = new http_1.Headers({
+                        'Authorization': 'Basic ' + utf8_to_b64(userPass),
+                        'X-Requested-With': 'XMLHttpRequest'
+                    });
+                    var options = new http_1.RequestOptions({ headers: headers });
+                    return this.http.get('logIn', options).map(function (response) {
+                        return _this.processLogInResponse(response);
+                    });
+                };
+                AutenticacionService.prototype.processLogInResponse = function (response) {
+                    // Si ha llegado aqui, es que te has logeado correctamente
+                    console.log("AQUI ESTA");
+                    console.log(response.json());
+                    this.currentUser = response.json();
+                    this.setUser();
+                    console.log("CUMPLE: " + this.currentUser.birthday);
+                    localStorage.setItem("login", "SPARTAN");
+                    if (this.currentUser.roles.indexOf("ROLE_ADMIN") !== -1) {
+                        localStorage.setItem("rol", "ROLE_ADMIN");
+                    }
+                    if (this.currentUser.roles.indexOf("ROLE_TRAINER") !== -1) {
+                        localStorage.setItem("rol", "ROLE_TRAINER");
+                    }
+                    if (this.currentUser.roles.indexOf("ROLE_STUDENT") !== -1) {
+                        localStorage.setItem("rol", "ROLE_STUDENT");
+                    }
+                    return response;
+                };
                 AutenticacionService.prototype.reqIsLogged = function () {
                     var _this = this;
-                    console.log("AUT");
                     var headers = new http_1.Headers({
                         'X-Requested-With': 'XMLHttpRequest'
                     });
@@ -46,55 +75,41 @@ System.register(['angular2/core', 'angular2/http', 'angular2/router', 'rxjs/Rx']
                             console.error("Error when asking if logged: " +
                                 JSON.stringify(error));
                         }
+                        else {
+                            console.error("No tienes sesion activa");
+                        }
+                        _this.exit();
                     });
                 };
-                AutenticacionService.prototype.processLogInResponse = function (response) {
-                    console.log(response);
-                    // localStorage.setItem("login", "SPARTAN"); // ERROR: Machea si existe una pagina la cual si existe
-                    this.user = response.json();
-                    if (this.user.roles.indexOf("ROLE_ADMIN") !== -1) {
-                        localStorage.setItem("rol", "ADMIN");
-                        localStorage.setItem("login", "SPARTAN"); // BORRAR EN UN FUTURO
+                AutenticacionService.prototype.setUser = function () {
+                    if (!AutenticacionService.staticUser) {
+                        AutenticacionService.staticUser = this.currentUser;
                     }
-                    if (this.user.roles.indexOf("ROLE_TRAINER") !== -1) {
-                        localStorage.setItem("rol", "TRAINER");
-                        localStorage.setItem("login", "SPARTAN"); // BORRAR EN UN FUTURO
+                    else {
+                        console.log("Ya hay usuario");
                     }
-                    if (this.user.roles.indexOf("ROLE_STUDENT") !== -1) {
-                        localStorage.setItem("rol", "STUDENT");
-                        localStorage.setItem("login", "SPARTAN"); // BORRAR EN UN FUTURO
-                    }
-                    return response;
                 };
-                AutenticacionService.prototype.logIn = function (user, pass) {
-                    var _this = this;
-                    console.log("LOGIN");
-                    if (user == "DEV") {
-                        this.modoDesarrollo();
-                    }
-                    var userPass = user + ":" + pass;
-                    var headers = new http_1.Headers({
-                        'Authorization': 'Basic ' + utf8_to_b64(userPass),
-                        'X-Requested-With': 'XMLHttpRequest'
-                    });
-                    var options = new http_1.RequestOptions({ headers: headers });
-                    return this.http.get('logIn', options).map(function (response) {
-                        return _this.processLogInResponse(response);
-                        ;
-                    });
+                AutenticacionService.prototype.User = function () {
+                    return AutenticacionService.staticUser;
                 };
                 AutenticacionService.prototype.esAlumno = function () {
-                    return this.checkLS("STUDENT");
+                    return this.checkLS("ROLE_STUDENT");
                 };
                 AutenticacionService.prototype.esProfesor = function () {
-                    return this.checkLS("TRAINER");
+                    return this.checkLS("ROLE_TRAINER");
                 };
                 AutenticacionService.prototype.isAdmin = function () {
-                    return this.checkLS("ADMIN");
+                    return this.checkLS("ROLE_ADMIN");
                 };
                 AutenticacionService.prototype.isLogIn = function () {
                     return localStorage.getItem('login') == "SPARTAN";
                 };
+                AutenticacionService.prototype.checkLS = function (rol) {
+                    return localStorage.getItem('rol') == rol && this.isLogIn();
+                };
+                /*
+                 *	Destruye la sesión en Spring
+                 */
                 AutenticacionService.prototype.logOut = function () {
                     var _this = this;
                     console.log("LOGOUT LLAMADO");
@@ -103,17 +118,15 @@ System.register(['angular2/core', 'angular2/http', 'angular2/router', 'rxjs/Rx']
                     }).subscribe(function (response) {
                         console.log("LOGOUT LLEGO");
                         console.log(response);
-                        localStorage.clear();
-                        _this.router.navigateByUrl("/");
+                        _this.exit();
                     });
                 };
-                AutenticacionService.prototype.checkLS = function (rol) {
-                    return localStorage.getItem('rol') == rol && this.isLogIn();
-                };
-                // BORRAR EN UN FUTURO
-                AutenticacionService.prototype.modoDesarrollo = function () {
-                    localStorage.setItem("rol", "TRAINER");
-                    localStorage.setItem("login", "SPARTAN");
+                /*
+                 *	Destruye la sesión en Angular
+                 */
+                AutenticacionService.prototype.exit = function () {
+                    localStorage.clear();
+                    this.router.navigateByUrl("/");
                 };
                 AutenticacionService = __decorate([
                     core_1.Injectable(), 

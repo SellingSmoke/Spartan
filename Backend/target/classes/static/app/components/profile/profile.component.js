@@ -1,4 +1,4 @@
-System.register(['angular2/core', '../../services/student.service', '../../services/goal.service', '../../pipes/student-pipes.pipe'], function(exports_1) {
+System.register(['angular2/core', '../../services/student.service', '../../services/goal.service', '../../pipes/student-pipes.pipe', '../../services/autenticacion.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', '../../services/student.service', '../../servi
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, student_service_1, goal_service_1, student_pipes_pipe_1;
+    var core_1, student_service_1, goal_service_1, student_pipes_pipe_1, autenticacion_service_1;
     var Profile;
     return {
         setters:[
@@ -23,12 +23,16 @@ System.register(['angular2/core', '../../services/student.service', '../../servi
             },
             function (student_pipes_pipe_1_1) {
                 student_pipes_pipe_1 = student_pipes_pipe_1_1;
+            },
+            function (autenticacion_service_1_1) {
+                autenticacion_service_1 = autenticacion_service_1_1;
             }],
         execute: function() {
             Profile = (function () {
-                function Profile(_studentService, _goalService) {
+                function Profile(_studentService, _goalService, aut) {
                     this._studentService = _studentService;
                     this._goalService = _goalService;
+                    this.aut = aut;
                     this.progress = 0;
                     this.num = 0;
                     this.numComplete = 0;
@@ -42,16 +46,12 @@ System.register(['angular2/core', '../../services/student.service', '../../servi
                 }
                 Profile.prototype.ngOnInit = function () {
                     var _this = this;
-                    this._studentService.getStudent(1)
-                        .then(function (student) {
-                        _this.student = student;
-                        _this.numComments += student.goal.comments.length;
-                        if (student.goal) {
-                            _this.progress += student.goal.progress;
-                            if (student.goal.diet)
-                                _this.numDiets += 1;
-                        }
-                    });
+                    console.log(this.aut.User().gender);
+                    //this.numComments += student.goal.comments.length;
+                    // if(student.goal){
+                    // 	 this.progress+= student.goal.progress;
+                    // 	 if(student.goal.diet) this.numDiets += 1;
+                    // }
                     this._goalService.getGoals(1)
                         .then(function (goals) {
                         _this.filterGoals(goals);
@@ -65,6 +65,9 @@ System.register(['angular2/core', '../../services/student.service', '../../servi
                 };
                 Profile.prototype.showGoals = function () {
                     this.editMode = 3;
+                };
+                Profile.prototype.anyos = function () {
+                    return Math.floor(parseInt(((Date.now() - this.aut.User().birthday) / (1000 * 60 * 60 * 24 * 365)).toFixed(1)));
                 };
                 Profile.prototype.saveChanges = function (save) {
                     if (save) {
@@ -98,7 +101,7 @@ System.register(['angular2/core', '../../services/student.service', '../../servi
                         pipes: [student_pipes_pipe_1.GoalNamePipe],
                         providers: [student_service_1.StudentService, goal_service_1.GoalService]
                     }), 
-                    __metadata('design:paramtypes', [student_service_1.StudentService, goal_service_1.GoalService])
+                    __metadata('design:paramtypes', [student_service_1.StudentService, goal_service_1.GoalService, autenticacion_service_1.AutenticacionService])
                 ], Profile);
                 return Profile;
             })();

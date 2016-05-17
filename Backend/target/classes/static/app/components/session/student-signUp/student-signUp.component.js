@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1) {
+System.register(['angular2/core', '../../../services/user.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,36 +8,53 @@ System.register(['angular2/core'], function(exports_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, user_service_1;
     var StudentSignUp;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (user_service_1_1) {
+                user_service_1 = user_service_1_1;
             }],
         execute: function() {
             StudentSignUp = (function () {
-                function StudentSignUp() {
-                    this.model = {
-                        user: "",
-                        pass1: "",
-                        pass2: ""
-                    };
+                function StudentSignUp(userService) {
+                    this.userService = userService;
                 }
                 StudentSignUp.prototype.registrar = function () {
-                    if (this.model.pass1 === this.model.pass2) {
-                        var aux = JSON.parse(localStorage.getItem('usuarios'));
-                        aux.push({ user: this.model.user, pass: this.model.pass1, rol: "2" });
-                        localStorage.removeItem('usuarios');
-                        localStorage.setItem('usuarios', JSON.stringify(aux));
+                    if (this.pass1 === this.pass2) {
+                        console.log("HAS PULSADO SUBMIT!!!!");
+                        console.log(this.toJSON());
+                        // var aux= JSON.parse(localStorage.getItem('usuarios'));
+                        // aux.push({user:this.model.user,pass:this.model.pass1,rol:"2"});
+                        // localStorage.removeItem('usuarios');
+                        // localStorage.setItem('usuarios', JSON.stringify(aux));
+                        this.userService.newUser(this.toJSON());
                     }
+                };
+                StudentSignUp.prototype.toJSON = function () {
+                    return {
+                        trainerId: 1,
+                        name: this.name,
+                        lastname: this.lastname,
+                        roles: ["ROLE_STUDENT"],
+                        email: this.email,
+                        gender: this.gender,
+                        birthday: 1360006343670,
+                        registrationDate: Date.now(),
+                        goals: [],
+                        img_url: ""
+                    };
                 };
                 StudentSignUp = __decorate([
                     core_1.Component({
                         selector: 'registroAlumno',
-                        templateUrl: 'app/components/session/student-signUp/student-signUp.html'
+                        templateUrl: 'app/components/session/student-signUp/student-signUp.html',
+                        providers: [user_service_1.UserService]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [user_service_1.UserService])
                 ], StudentSignUp);
                 return StudentSignUp;
             })();

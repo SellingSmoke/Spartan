@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: 7f55b8f7b34156cd36606a37ec6e113b26facdd0
+# sw.version: 3a98625681023af35081cada006d7b54dd395c46
 # sw.file.hash: e5b20a54c3fb37e04b6ad99a7e8b127b667c30b9
 /app\components\dashboard\admin-dashboard\admin-dashboard.component.html
 # sw.file.hash: 24bd7698cb3c50efe8edebb7ef8246691b515edf
@@ -75,21 +75,21 @@ CACHE MANIFEST
 /app\components\session\login\login.css
 # sw.file.hash: 0dd04456dfab49d085f2d61180e1e13d6ed0a297
 /app\components\session\login\login.html
-# sw.file.hash: a33762d6642d0f58a898c857eeb0263f103971c9
+# sw.file.hash: 17332f221d7de39279a9529ecf2d2c52bf930fbb
 /app\components\session\student-signUp\student-signUp.component.js
-# sw.file.hash: a273931d18e385b3753ecaffa77028461b10eb2b
+# sw.file.hash: 9e506431dd37c0481e8258bed84d732b3df9f088
 /app\components\session\student-signUp\student-signUp.component.js.map
-# sw.file.hash: 56e63a06a704b3131be8d5d2c59f95aa91323a4a
+# sw.file.hash: b736bb82c84614320876eb2dff4d2638ebabb7d3
 /app\components\session\student-signUp\student-signUp.component.ts
-# sw.file.hash: e64f6a9a138fc0f369573dad654517d85d140949
+# sw.file.hash: e96fb0a294ab8bfeec90954004e1c5846047b16b
 /app\components\session\student-signUp\student-signUp.html
-# sw.file.hash: 740dcdd5a783896b81af8cbfc48caa14d3f6cab4
+# sw.file.hash: d4dbf3824e21461c7ebf03916bfeee2e0fca88f3
 /app\components\session\trainer-signUp\trainer-signUp.component.js
-# sw.file.hash: f8962b57dd90f6dc6e81c2107012d60c1cb0195a
+# sw.file.hash: 6cdfd434d3ded26803a0b7a6668150b9e78a4232
 /app\components\session\trainer-signUp\trainer-signUp.component.js.map
-# sw.file.hash: 797063448bb4a3660186d2354c5d899ff6c02fc9
+# sw.file.hash: a6a578620a93cd4eabce32e5a638a3bbb8b8b587
 /app\components\session\trainer-signUp\trainer-signUp.component.ts
-# sw.file.hash: edd3a3cdc809576a10d8f8d1226f6b3ac19584fc
+# sw.file.hash: 20bad8000126a172f0cead09812c240eaf12975b
 /app\components\session\trainer-signUp\trainer-signUp.html
 # sw.file.hash: afc3cc1e8f0bfd9f334587cf8b1eb9e4b4b36d6a
 /app\directives\card\card.css
@@ -239,11 +239,11 @@ CACHE MANIFEST
 /app\recursos-estaticos.js.map
 # sw.file.hash: 711eb741242936f5bc92e9b960aed8084741b560
 /app\recursos-estaticos.ts
-# sw.file.hash: 202204ac0d4622588861bd644834bc81a8925fa1
+# sw.file.hash: 08e7bebc452dc90bb25c93e014175f6766b02685
 /app\services\autenticacion.service.js
-# sw.file.hash: 0117a4ca82612bec79099a731e5f4b9e3724cf07
+# sw.file.hash: 9a16e504295cf8ccfe2b77fab1dbc671f341ea1a
 /app\services\autenticacion.service.js.map
-# sw.file.hash: a55f472634cc53a9d31c86c38ddbf7bcf9b66eee
+# sw.file.hash: 0a6bbfcb952225579dc96b0167381755465e2af7
 /app\services\autenticacion.service.ts
 # sw.file.hash: 361042178b061954ba0aab98d83e0ac55205a17b
 /app\services\diet.service.js
@@ -281,6 +281,12 @@ CACHE MANIFEST
 /app\services\trainer.service.js.map
 # sw.file.hash: 29ba610897aba2459c7d9313e3efcaa800080fe3
 /app\services\trainer.service.ts
+# sw.file.hash: 29816f357b99d9707fc76bdc4ba93463aa55087c
+/app\services\user.service.js
+# sw.file.hash: 6c82d195a0effc446672ace8993714a559257c48
+/app\services\user.service.js.map
+# sw.file.hash: 88feb769f00762c630ab6a901a5bd1ac0faed87c
+/app\services\user.service.ts
 # sw.file.hash: 7b7d807183e0223137542189a06670fd12078229
 /assets\imagenes\Kickboxing.jpg
 # sw.file.hash: 8edaa0afdf2e3115e37ca7dbf63873c75fe77c6a

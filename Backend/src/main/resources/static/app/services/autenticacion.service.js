@@ -28,7 +28,6 @@ System.register(['angular2/core', 'angular2/http', 'angular2/router', 'rxjs/Rx']
             },
             function (_1) {}],
         execute: function() {
-            ;
             AutenticacionService = (function () {
                 function AutenticacionService(http, router) {
                     this.http = http;
