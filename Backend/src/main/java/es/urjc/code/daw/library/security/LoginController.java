@@ -1,5 +1,7 @@
 package es.urjc.code.daw.library.security;
 
+import java.util.Collection;
+
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import es.urjc.code.daw.library.user.User;
 import es.urjc.code.daw.library.user.UserComponent;
+import es.urjc.code.daw.library.user.UserRepository;
 
 /**
  * This class is used to provide REST endpoints to logIn and logOut to the
@@ -23,7 +26,10 @@ import es.urjc.code.daw.library.user.UserComponent;
 public class LoginController {
 
 	private static final Logger log = LoggerFactory.getLogger(LoginController.class);
-
+	
+	@Autowired
+	private UserRepository userRepository;
+	
 	@Autowired
 	private UserComponent userComponent;
 
@@ -35,9 +41,14 @@ public class LoginController {
 			return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
 		} else {
 			User loggedUser = userComponent.getLoggedUser();
-			log.info("Logged as " + loggedUser.getName());
+			log.info("Logged as " + loggedUser.getName()+" LOGIN");
 			return new ResponseEntity<>(loggedUser, HttpStatus.OK);
 		}
+	}
+	
+	@RequestMapping("/users")
+	public Collection<User> pruebas() {
+		return userRepository.findAll();
 	}
 
 	@RequestMapping("/logOut")
