@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import es.urjc.code.daw.library.comment.Comment;
 import es.urjc.code.daw.library.task.Task;
 
 @Entity
@@ -38,8 +39,19 @@ public class Goal{
 	
 	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Task> tasks;
+	
+	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+	private List<Comment> comments;
 
 	public Goal() {}
+
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
 
 	public Goal(double progress, int type, String campoMetaX, boolean acepted, boolean canceled) {
 		super();
@@ -49,6 +61,7 @@ public class Goal{
 		this.acepted = acepted;
 		this.canceled = canceled;
 		this.tasks = new ArrayList<>();
+		this.comments = new ArrayList<>();
 	}
 
 	public List<Task> getTasks() {

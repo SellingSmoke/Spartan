@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: 697b278c48e434087e66fa9795b32c01f6ea4430
+# sw.version: 7f55b8f7b34156cd36606a37ec6e113b26facdd0
 # sw.file.hash: e5b20a54c3fb37e04b6ad99a7e8b127b667c30b9
 /app\components\dashboard\admin-dashboard\admin-dashboard.component.html
 # sw.file.hash: 24bd7698cb3c50efe8edebb7ef8246691b515edf
@@ -21,11 +21,11 @@ CACHE MANIFEST
 /app\components\dashboard\inicio.js.map
 # sw.file.hash: 34d987a53a7343feb22add32a10b6cce41868187
 /app\components\dashboard\inicio.ts
-# sw.file.hash: 85f6de62d5d201e5a1ef0a0bfb92e96256ae15ad
+# sw.file.hash: 77f0eae028d03e2d00e9891b79675180fde4ba78
 /app\components\dashboard\student-dashboard\student-dashboard.component.js
-# sw.file.hash: 57ba3d5b56f1f06ab17efffcc29cc3bfb5c51a83
+# sw.file.hash: 393e17cc2acdaf580963ea4e9bd0ca7875cee5ce
 /app\components\dashboard\student-dashboard\student-dashboard.component.js.map
-# sw.file.hash: 39da37dc9be85a06e38ebfb9212117822ea58dcb
+# sw.file.hash: 20bb30e42a1379298577fee2e50b9f5d460ca4db
 /app\components\dashboard\student-dashboard\student-dashboard.component.ts
 # sw.file.hash: 766a2a1330678612b0cd442fa170cd0a86e52b6a
 /app\components\dashboard\student-dashboard\student-dashboard.css
@@ -161,12 +161,24 @@ CACHE MANIFEST
 /app\models\comment.model.js.map
 # sw.file.hash: c50a98ca49909b93dc8c1df38a97a08f9f96934e
 /app\models\comment.model.ts
+# sw.file.hash: 391b5b6e00b1fbf634f4bc1b553dde67a4befaa4
+/app\models\comment2.model.js
+# sw.file.hash: 1fd2e83e1be1d16e59dcc4224dbccc07bd6b05ed
+/app\models\comment2.model.js.map
+# sw.file.hash: 20ff78a346151e9698f6a551a00b0932a5747d81
+/app\models\comment2.model.ts
 # sw.file.hash: d9dcbf2c2cfbe0921083977440bb18dd38fa5a39
 /app\models\diet.model.js
 # sw.file.hash: 99d345aee765ed75ea1f51cd5672af759eefefd5
 /app\models\diet.model.js.map
 # sw.file.hash: 9bee1064aa9511b6abb9d96f2c9cbba0e2f183d2
 /app\models\diet.model.ts
+# sw.file.hash: f0c3d6d34770012b64eaf257fbaa30e7c89165c6
+/app\models\diet2.model.js
+# sw.file.hash: f1e6646d9ad3eaa078f5ba9caf6a6ade3711f880
+/app\models\diet2.model.js.map
+# sw.file.hash: 81417c2364034d17e565865398d4daca6be7b1d2
+/app\models\diet2.model.ts
 # sw.file.hash: 184a994cbf8b9b448a1774b5e777ebfed8387a4f
 /app\models\goal.model.js
 # sw.file.hash: 2beb7ad2a5a28999b49e6e63e7f90a9b2e3aa2ab
@@ -177,7 +189,7 @@ CACHE MANIFEST
 /app\models\goal2.model.js
 # sw.file.hash: 8b98338a9fae9f1702ef9ef6120f594611079d32
 /app\models\goal2.model.js.map
-# sw.file.hash: b04acb4e2fbcc216b11ec9d400e22586994c720a
+# sw.file.hash: e955ce9605b69d118c518fb7032abd8b1cf76367
 /app\models\goal2.model.ts
 # sw.file.hash: c131355049c4eff90ed0dfd8880a35fe800bb523
 /app\models\student.model.js

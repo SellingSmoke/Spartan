@@ -46,7 +46,7 @@ System.register(['angular2/core', '../../../models/task.model', '../../../direct
                  *  las cuales se obtienen a partir del id de su meta
                */
                 DashboardAlumno.prototype.ngOnInit = function () {
-                    console.log(this.aut.User().goals[0].campoMetaX); // SOLO PARA PRUEBAS
+                    console.log(this.aut.User().goals[0].comments[0].comment); // SOLO PARA PRUEBAS
                     if (this.student.goal)
                         this.task = new task_model_1.Task(this.student.goal.id);
                     this.posChanged = false;
