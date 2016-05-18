@@ -1,5 +1,6 @@
 package es.urjc.code.daw.library.diet;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,6 +16,7 @@ public class Diet{
 	private String name;
 	private String description;
 	private String notes;
+	@Column(length = 50000)
 	private String matrix;
 
 	public Diet() {}
