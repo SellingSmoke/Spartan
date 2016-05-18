@@ -1,15 +1,16 @@
 import { Component, OnInit, Input, Output, EventEmitter } from 'angular2/core';
 import { RouteParams } from 'angular2/router';
-import { Student } from '../../../models/student.model';
 
 import { User } from '../../../models/user.model';
 
-import { Comment } from '../../../models/comment.model';
-import { Task, ITask } from '../../../models/task.model';
-import { Goal } from '../../../models/goal.model';
+import { Comment } from '../../../models/comment2.model';
+import { Task, ITask } from '../../../models/task2.model';
+import { Goal } from '../../../models/goal2.model';
+
 import { GoalForm } from '../../../directives/goalForm/goal-form'
 import { Diets } from '../../../directives/diets/diets'
 import { CommentDirective } from '../../../directives/comments/comment.directive'
+
 import { BeautifyProgessBarPipe, GoalNamePipe } from '../../../pipes/student-pipes.pipe';
 import { AutenticacionService } from '../../../services/autenticacion.service';
 
@@ -28,7 +29,7 @@ declare var jQuery:JQueryStatic
 export class DashboardAlumno implements OnInit{
 
 	@Input()
-	student: Student;
+	student: User;
 
 	@Output()
   trainer_dashboard_event = new EventEmitter<any>();
@@ -69,7 +70,7 @@ export class DashboardAlumno implements OnInit{
   }
 
 	getGoal(goal: Goal){
-		this.student.goal = goal;
+		this.student.goal[0] = goal;
 		this.task = new Task(this.student.goal.id);
 	}
 
@@ -112,8 +113,8 @@ export class DashboardAlumno implements OnInit{
 			case 2: this.tab = 2;
 							// Pone los comentarios de tu contraparte a leidos (TO REFACTOR -> NO LOCALSTORAGE)
 							for (var comment of this.student.goal.comments){
-								// if(comment.rol != parseInt(localStorage.getItem("rol")) && !comment.read)
-								// 	comment.read = true;
+								if(comment.rol != this.aut.User().roles[0] && !comment.read)
+									comment.read = true;
 							}
 							//Llamar a guardar en la BDD
 							break;
@@ -125,11 +126,12 @@ export class DashboardAlumno implements OnInit{
 	getNoReadComments(){
 		var n = 0;
 		for (var comment of this.student.goal.comments){
-
-			if(comment.rol == 1 && this.aut.esProfesor()){
-				n++
-			}else if(comment.rol == 2 && this.aut.esAlumno()){
-				n++
+			if (!comment.read){
+				if(comment.rol == "ROLE_STUDENT" && this.aut.esProfesor()){
+					n++
+				}else if(comment.rol == "ROLE_TRAINER" && this.aut.esAlumno()){
+					n++
+				}
 			}
 		}
 		return n;

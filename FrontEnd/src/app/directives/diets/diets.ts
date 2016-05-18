@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, AfterViewInit } from 'angular2/core';
-import { Diet, IDiet } from '../../models/diet.model';
+import { IDiet } from '../../models/diet2.model';
 import { ShowFoodPipe } from '../../pipes/diet-pipes.pipe';
 import { AutenticacionService } from '../../services/autenticacion.service';
 
@@ -15,7 +15,7 @@ declare var jQuery:JQueryStatic;
 export class Diets implements OnInit, AfterViewInit{
 
 	@Input()
-	diet: Diet;
+	diet: IDiet;
 
 	static days =['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'];
 
@@ -44,7 +44,7 @@ export class Diets implements OnInit, AfterViewInit{
 	*/
 	ngOnInit(){
 		if(!this.diet){
-			this.diet = new Diet(1, "", ""); // BORRAR EN UN FUTURO
+			// this.diet = new Diet(1, "", ""); // BORRAR EN UN FUTURO
 			this.matrix = [
 				/** Lunes     */ ["", "", "", ""],
 				/** Martes    */ ["", "", "", ""],
@@ -55,11 +55,7 @@ export class Diets implements OnInit, AfterViewInit{
 				/** Domingo   */ ["", "", "", ""]
 			];
 		}else{
-			let m = JSON.stringify(this.diet.matrix);
-			console.log(m);
-			this.matrix = JSON.parse(m);
-			console.log(this.matrix);
-			this.diet.matrix;
+			this.matrix = JSON.parse(this.diet.matrix);
 		}
 	}
 

@@ -1,8 +1,10 @@
 import { Component, Input } from 'angular2/core';
-import { Comment } from '../../models/comment.model';
+import { Comment, newComment } from '../../models/comment2.model';
+import { AutenticacionService } from '../../services/autenticacion.service';
 
 @Component({
     selector: 'comment',
+    providers: [AutenticacionService],
     templateUrl: 'app/directives/comments/comment.directive.html',
     inputs: ['comments']
 })
@@ -12,16 +14,12 @@ export class CommentDirective {
     @Input()
     comments:Comment[];
 
-    comment: Comment;   // Modelo de un nuevo comentario
+    constructor(private aut: AutenticacionService){}
 
-    constructor(){
-      this.comment = new Comment();
-    }
-
-    saveComment(text: string){
-      //this.student.goal.comments.push(this.comment);
-      this.comments.push(this.comment);
-      this.comment = new Comment();
+    saveComment(text: string){      
+      let comment = newComment(text);
+      this.comments.push(comment);
+      console.log(this.comments);
     }
 
 };

@@ -4,34 +4,31 @@ import { DashboardEntrenador } from './trainer-dashboard/trainer-dashboard.compo
 import { DashboardAlumno } from './student-dashboard/student-dashboard.component';
 import { DashboardAdmin } from './admin-dashboard/admin-dashboard.component';
 import { AutenticacionService } from '../../services/autenticacion.service';
-import { StudentService } from '../../services/student.service';
-import { Student } from '../../models/student.model';
+import { User } from '../../models/user.model';
 
 @Component({
  selector: 'inicio',
  styleUrls: ['app/components/dashboard/inicio.css'],
  templateUrl: 'app/components/dashboard/inicio.html',
  directives: [DashboardEntrenador, DashboardAlumno, DashboardAdmin],
- providers: [AutenticacionService, StudentService]
+ providers: [AutenticacionService]
 })
 
 export class Inicio{
 
- student: Student;
+ student: User;
  seeStudentTasks: boolean;
 
- constructor(private aut: AutenticacionService, private _studentService: StudentService) {
-
-   this.seeStudentTasks = false;
+ constructor(private aut: AutenticacionService) {
+     this.seeStudentTasks = false;
      if(aut.esAlumno()){
-       this._studentService.getStudent(1)
-         .then(student => this.student = student);
+       this.student = this.aut.User();
      }else{
        this.student = undefined;
      }
   }
 
-  getStudentDashBoard(student: Student){
+  getStudentDashBoard(student: User){
     this.student = student;
     this.seeStudentTasks = true;
   }

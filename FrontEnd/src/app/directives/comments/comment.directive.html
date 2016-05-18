@@ -1,5 +1,5 @@
 <div *ngFor="#comment of comments" class="ui right aligned grid">
-  <div *ngIf="comment.rol == 2" class="left floated left aligned nine wide column">
+  <div *ngIf="comment.rol == 'ROLE_STUDENT'" class="left floated left aligned nine wide column">
     <div class="ui feed">
       <div class="event">
         <div class="label sp-img-comment">
@@ -16,7 +16,7 @@
       </div>
     </div>
   </div>
-  <div *ngIf="comment.rol == 1" class="right floated right aligned nine wide column">
+  <div *ngIf="comment.rol == 'ROLE_TRAINER'" class="right floated right aligned nine wide column">
     <div class="ui feed pull-right">
       <div class="event">
         <div class="label sp-img-comment">
@@ -38,7 +38,7 @@
 <div class="form-group">
   <label for="textArea" class="col-md-2 control-label">Añade tu comentario</label>
   <div class="col-md-10">
-    <textarea [(ngModel)]="comment.comment" class="form-control" rows="3" id="textArea" required></textarea>
-    <button (click)="saveComment()" class="btn btn-primary btn-raised" type="submit">Enviar</button>
+    <textarea #textComment (keyup)="0" class="form-control" rows="3" id="textArea" required></textarea>
+    <button (click)="saveComment(textComment.value); textComment.value='';" class="btn btn-primary btn-raised" type="submit">Enviar</button>
   </div>
 </div>
