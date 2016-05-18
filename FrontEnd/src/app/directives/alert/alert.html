@@ -1,5 +1,5 @@
 <div class="ui message" [ngClass]="color">
-  <i class="close icon" (click)="closeAlert()"></i>
+  <i *ngIf="closable" class="close icon" (click)="closeAlert()"></i>
   <div class="header">{{mainTitle}}</div>
   <p>{{message}}</p>
 </div>

@@ -69,7 +69,7 @@ export class Signup implements OnInit{
 				birthday: 1360006343670,
 				registrationDate: Date.now(),
 				goals: [],
-				img_url:""
+				imageUrl:""
 			}
 		}
 

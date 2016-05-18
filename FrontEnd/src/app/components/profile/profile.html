@@ -5,7 +5,7 @@
     <div class="panel-body">
       <div class="row">
         <div class="col-md-5">
-          <img class="img-circle img-responsive" src="http://semantic-ui.com/images/avatar2/large/matthew.png">
+          <img class="img-circle img-responsive" [src]="aut.User().imageUrl" (click)="changeEditMode(4)">
         </div>
         <div class="col-md-7">
           <div class="ui relaxed divided list">
@@ -22,7 +22,7 @@
             </div>
             <div class="item">
               <div class="right floated content">
-                <i class="large edit middle aligned icon" (click)="editMail()"></i>
+                <i class="large edit middle aligned icon" (click)="changeEditMode(1)"></i>
               </div>
               <i class="large mail outline middle aligned icon"></i>
               <div class="content">
@@ -38,10 +38,10 @@
               </div>
             </div>
             <div class="item">
-              <i [class]="aut.User()?.gender ? 'pink female icon large' : 'blue male icon large'"></i>
+              <i [class]="aut.User()?.gender=='Mujer' ? 'pink female icon large' : 'blue male icon large'"></i>
               <div class="content">
                 <a class="header">Género</a>
-                <div class="description">{{aut.User()?.gender ? 'Femenino' : 'Masculino'}}</div>
+                <div class="description">{{aut.User()?.gender}}</div>
               </div>
             </div>
             <div class="item">
@@ -59,10 +59,10 @@
     <!-- Fin perfil visible-->
     <div id="row-buttons-profile" class="row panel-body">
       <div class="col-md-5">
-        <a class="btn btn-ln btn-raised btn-info" (click)="showGoals()">Registro de Metas</a>
+        <a class="btn btn-ln btn-raised btn-info" (click)="changeEditMode(3)">Registro de Metas</a>
       </div>
       <div class="col-md-7">
-        <a class="btn btn-ln btn-raised btn-danger" (click)="editPass()">Cambiar contraseña</a>
+        <a class="btn btn-ln btn-raised btn-danger" (click)="changeEditMode(2)">Cambiar contraseña</a>
       </div>
     </div>
   </div>
@@ -106,6 +106,24 @@
         <br>
         <a class="btn btn-ln btn-raised btn-danger" (click)="saveChanges(true)">Guardar contraseña</a>
         <span *ngIf="edit_mode != 0" class="btn btn-danger pull-right" (click)="saveChanges(false)"> Atrás</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cambiar imagen -->
+  <div class="col-md-4 col-md-offset-4">
+    <div class="form-horizontal panel panel-default" *ngIf="editMode == 4">
+      <div class="panel-heading"><h3 class="text-muted dialog-title">Editar imagen de perfil</h3></div>
+      <div class="panel-body">
+        <form>
+      		<div class="form-group">
+      			<label for="exampleInputFile">Subir imagen</label> <input type="file"
+      				(change)="selectFile($event)">
+      		</div>
+          <alert *ngIf="imageResponse" [mainTitle]="imageWellUploded ? '¡Imagen subida con éxito!' : 'Error al subir la imagen'" [message]="" [color]="imageWellUploded ? 'green' : 'negative'" [closable]="false" [timeable]="-1"></alert>
+      		<button type="submit" class="btn btn-default" (click)="uploadImage()"> Guardar imagen</button>
+      	</form>
+        <span *ngIf="edit_mode != 0" class="btn btn-danger pull-right" (click)="saveChanges(false); imageResponse=false;"> Atrás</span>
       </div>
     </div>
   </div>
