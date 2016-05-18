@@ -1,4 +1,4 @@
-export interface IDiet {
+export interface Diet {
   id?: number;
   trainerId: number;
   name: string;

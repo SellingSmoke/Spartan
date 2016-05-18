@@ -6,7 +6,6 @@
     </div>
 
     <div *ngIf="seleccion2" (click)="noSeleccion2($event.target)" class="seleccion">
-      <!-- <h2 *ngIf="! esOtro()" class="seleccionable" *ngFor="#parametro of parametrosExtra" (click)="noSeleccionArgumentos2(parametro)">AQUI</h2> -->
       <card *ngFor="#parametro of parametrosExtra" [card]="parametro" (click)="noSeleccionArgumentos2(parametro)"></card>
       <div (click)="nada($event)" class="col-md-4 col-md-offset-4 form-horizontal divDeAñadir" *ngIf="esOtro()">
         <div class="form-group">

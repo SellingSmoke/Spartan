@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, AfterViewInit } from 'angular2/core';
-import { IDiet } from '../../models/diet2.model';
+import { Diet } from '../../models/diet2.model';
 import { ShowFoodPipe } from '../../pipes/diet-pipes.pipe';
 import { AutenticacionService } from '../../services/autenticacion.service';
 
@@ -15,7 +15,7 @@ declare var jQuery:JQueryStatic;
 export class Diets implements OnInit, AfterViewInit{
 
 	@Input()
-	diet: IDiet;
+	diet: Diet;
 
 	static days =['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'];
 

@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from 'angular2/core';
-import { Goal } from '../models/goal.model';
+import { Goal } from '../models/goal2.model';
 /*
  * Beautify the progess bar if value is under 20
  *
@@ -78,17 +78,17 @@ export class GoalNamePipe implements PipeTransform {
         //["perder peso","ganar musculo", "ganar resistencia" , "trabajar especificamente", "mejorar en", "otra"];
       switch (goal.type) {
         case 0:
-          return "Perder " + goal.campo_metaX + " de peso";
+          return "Perder " + goal.campoMetaX + " de peso";
         case 1:
-          return "Ganar masa muscular aumentado " + goal.campo_metaX;
+          return "Ganar masa muscular aumentado " + goal.campoMetaX;
         case 2:
-          return "Ganar resistencia corriendo aproximadamente " + goal.campo_metaX ;
+          return "Ganar resistencia corriendo aproximadamente " + goal.campoMetaX ;
         case 3:
-          return "Trabajar específicamente la " + goal.campo_metaX + " del cuerpo";
+          return "Trabajar específicamente la " + goal.campoMetaX + " del cuerpo";
         case 4:
-          return "Mejorar en "+goal.campo_metaX;
+          return "Mejorar en "+goal.campoMetaX;
         case 5:
-          return goal.campo_metaX;
+          return goal.campoMetaX;
         default:
           console.log("Meta corrupta");
           return "Meta no válida"

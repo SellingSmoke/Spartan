@@ -1,6 +1,6 @@
 import { Component, Output, Input, EventEmitter } from 'angular2/core';
 import {FORM_DIRECTIVES} from 'angular2/common';
-import { Goal } from "../../models/goal.model";
+import { Goal, newGoal } from "../../models/goal2.model";
 import { Card, ICard } from '../card/card'
 
 @Component({
@@ -146,9 +146,7 @@ export class GoalForm {
         var meta:Goal;
         var indexMeta = this.selecciones.indexOf(this.seleccionado);
         var campoX = this.seleccionado2;    // Parametro X del tipo (Kg,Km)
-        var student_id = 3;     // ID del alumno al que pertenece la meta
-        // meta.id = 1; (Lo pone la base de datos)
-        meta = new Goal(student_id, indexMeta, campoX);
+        meta = newGoal(indexMeta, campoX);
         console.log(meta);
         this.newGoal.emit(meta);
     }

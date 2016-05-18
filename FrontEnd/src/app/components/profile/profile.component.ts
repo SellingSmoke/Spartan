@@ -1,9 +1,6 @@
 import {Component, OnInit} from 'angular2/core';
-import { StudentService } from '../../services/student.service';
 import { UserService } from '../../services/user.service';
-import { Student } from '../../models/student.model';
-import { GoalService } from '../../services/goal.service';
-import {Goal} from '../../models/goal.model';
+import {Goal} from '../../models/goal2.model';
 import { GoalNamePipe } from '../../pipes/student-pipes.pipe';
 import { AutenticacionService } from '../../services/autenticacion.service';
 import {MultipartItem} from "../../multipart-upload/multipart-item";
@@ -15,7 +12,7 @@ import { Alert } from '../../directives/alert/alert';
     templateUrl: 'app/components/profile/profile.html',
 		styleUrls: ['app/components/profile/profile.css'],
 		pipes: [GoalNamePipe],
-		providers: [StudentService, GoalService, UserService],
+		providers: [UserService],
 		directives: [Alert]
 })
 
@@ -41,7 +38,7 @@ export class Profile implements OnInit{
 	private imageWellUploded:boolean;
 	private imageResponse:boolean = false;
 
-	constructor(private _userService: UserService, private _studentService: StudentService, private _goalService: GoalService,private aut: AutenticacionService){
+	constructor(private _userService: UserService,private aut: AutenticacionService){
 		this.progress = 0;
 		this.num = 0;
 		this.numComplete = 0;
@@ -62,11 +59,6 @@ export class Profile implements OnInit{
 			// 	 this.progress+= student.goal.progress;
 			// 	 if(student.goal.diet) this.numDiets += 1;
 			// }
-
-		this._goalService.getGoals(1)
-			.then(goals => {
-				this.filterGoals(goals);
-			});
 	}
 
 	changeEditMode(i:number){

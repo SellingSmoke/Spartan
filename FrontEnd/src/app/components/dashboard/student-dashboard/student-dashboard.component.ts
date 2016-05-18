@@ -4,7 +4,7 @@ import { RouteParams } from 'angular2/router';
 import { User } from '../../../models/user.model';
 
 import { Comment } from '../../../models/comment2.model';
-import { Task, ITask } from '../../../models/task2.model';
+import { Task, newTask, setType } from '../../../models/task2.model';
 import { Goal } from '../../../models/goal2.model';
 
 import { GoalForm } from '../../../directives/goalForm/goal-form'
@@ -56,8 +56,7 @@ export class DashboardAlumno implements OnInit{
    */
 
 	ngOnInit(){
-		//console.log(this.aut.User().goals[0].comments[0].comment); // SOLO PARA PRUEBAS
-		if(this.student.goal) this.task = new Task(this.student.goal.id);
+		this.task = newTask();
 		this.posChanged = false;
 	}
 
@@ -69,9 +68,13 @@ export class DashboardAlumno implements OnInit{
 		this.trainer_dashboard_event.emit(null);
   }
 
+	newGoal(){
+		this.student.goal = null;
+	}
+
 	getGoal(goal: Goal){
-		this.student.goal[0] = goal;
-		this.task = new Task(this.student.goal.id);
+		this.student.goal = goal;
+		// AQUI SE GUARDA EN LA BASE DE DATOS (POST GOAL)
 	}
 
 	goalResponse(acepted:boolean){
@@ -79,23 +82,23 @@ export class DashboardAlumno implements OnInit{
 		this.student.goal.canceled = !acepted;
 		// LLAMAR A GUARDAR
 		if(this.aut.esProfesor() && !acepted){
-			this.student.goal = null;
+			this.newGoal();
 			this.goBack();
 		}
 	}
 
-	saveTask(mode){
-		// AQUI SE LLAMARÁ A GUARDAR EN LA BDD
+	saveTask(mode:boolean){
 		if (mode){
 			this.student.goal.tasks.push(this.task);
+		  // AQUI SE LLAMARÁ A GUARDAR EN LA BDD (POST TASK)
 		}
-		this.task = new Task(this.student.goal.id);
+		this.task = newTask();
 		// Para cerrar el dialog
 		this.showDialog();
 	}
 
 	setType(type: number){
-		this.task.setType(type);
+		this.task = setType(type, this.task);
 		jQuery(".breadcrumb").hide();
 		if (type) {
 			jQuery("#form-aerobico").hide();
@@ -111,12 +114,12 @@ export class DashboardAlumno implements OnInit{
 			case 1:	this.tab = 1;
 							break;
 			case 2: this.tab = 2;
-							// Pone los comentarios de tu contraparte a leidos (TO REFACTOR -> NO LOCALSTORAGE)
+							// Pone los comentarios de tu contraparte a leidos
 							for (var comment of this.student.goal.comments){
 								if(comment.rol != this.aut.User().roles[0] && !comment.read)
 									comment.read = true;
 							}
-							//Llamar a guardar en la BDD
+							//Llamar a guardar en la BDD (POST COMMENT)
 							break;
 			case 3: this.tab = 3;
 							break;
