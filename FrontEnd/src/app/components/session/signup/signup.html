@@ -3,15 +3,15 @@
 <div class="row vertical-center-row">
   <div class="col-md-6 text center col-md-offset-3">
     <div class="panel panel-danger">
-      <div class="panel-heading mdl-typography--display-1 sp-center">Nuevo alumno</div>
+      <div class="panel-heading mdl-typography--display-1 sp-center">Nuevo {{rolRegistro ? 'alumno' : 'entrenador'}}</div>
       <div class="panel-body">
-        <form class="form-horizontal">
+        <form class="form-horizontal" (ngSubmit)="registrar()">
           <fieldset>
             <div class="form-group is-empty">
               <label for="nombre" class="col-md-2 control-label">Nombre</label>
 
               <div class="col-md-10">
-                <input [(ngModel)]="name" class="form-control" id="nombre" placeholder="Nombre" type="text">
+                <input [(ngModel)]="name" class="form-control" id="nombre" placeholder="Nombre" type="text" required>
               </div>
               <span class="material-input"></span>
             </div>
@@ -19,7 +19,7 @@
               <label for="apellido" class="col-md-2 control-label">Apellidos</label>
 
               <div class="col-md-10">
-                <input [(ngModel)]="lastname" class="form-control" id="apellido" placeholder="Apellidos" type="text">
+                <input [(ngModel)]="lastname" class="form-control" id="apellido" placeholder="Apellidos" type="text" required>
               </div>
               <span class="material-input"></span>
             </div>
@@ -29,7 +29,7 @@
               <div class="col-md-10">
                 <div class="radio radio-primary">
                   <label>
-                    <input (click)="gender = 'Hombre'" [checked]="gender == 'Hombre'" name="opcion" id="hombre" value="hombre" checked="" type="radio"><span class="circle"></span><span class="check"></span> Hombre
+                    <input (click)="gender = 'Hombre'" [checked]="gender == 'Hombre'" name="opcion" id="hombre" value="hombre" type="radio"><span class="circle"></span><span class="check"></span> Hombre
                   </label>
                 </div>
                 <div class="radio radio-primary">
@@ -40,10 +40,10 @@
               </div>
             </div>
             <div class="form-group is-empty">
-              <label for="mail" class="col-md-2 control-label">Email</label>
+              <label for="mail" class="col-md-2 control-label" required>Email</label>
 
               <div class="col-md-10">
-                <input [(ngModel)]="email" class="form-control" id="mail" placeholder="E-mail" type="email">
+                <input [(ngModel)]="email" class="form-control" id="mail" placeholder="E-mail" type="email" required>
               </div>
               <span class="material-input"></span>
             </div>
@@ -51,7 +51,7 @@
               <label for="password" class="col-md-2 control-label">Contraseña</label>
 
               <div class="col-md-10">
-                <input [(ngModel)]="pass1" class="form-control" id="password" placeholder="Contraseña" type="password">
+                <input [(ngModel)]="pass1" class="form-control" id="password" placeholder="Contraseña" type="password" pattern=".{5,20}" required>
 
               </div>
               <span class="material-input"></span>
@@ -60,7 +60,7 @@
               <label for="passwordCheck" class="col-md-2 control-label">Confirmar contraseña</label>
 
               <div class="col-md-10">
-                <input [(ngModel)]="pass2" class="form-control" id="passwordCheck" placeholder="Confirmar contraseña" type="password">
+                <input [(ngModel)]="pass2" class="form-control" id="passwordCheck" placeholder="Confirmar contraseña" type="password" pattern=".{5,20}" required>
 
               </div>
               <span class="material-input"></span>
@@ -76,17 +76,19 @@
               </div>
             </div>
             <div class="form-group is-empty">
-              <label for="codigoActivacion" class="col-md-2 control-label">Código de activación</label>
+              <label for="codigoActivacion" class="col-md-2 control-label">{{rolRegistro ? 'Código de activación' : 'Código de entrenador'}}</label>
 
               <div class="col-md-10">
                 <input class="form-control" id="codigoActivacion">
-                <span class="help-block">Introduzca el código proporcionado por su entrenador</span>
+                <span class="help-block">{{rolRegistro ? 'Introduzca el código proporcionado por su entrenador' : 'Introduzca su código de entrenador'}}</span>
               </div>
-              <span class="material-input"></span></div>
+              <span class="material-input"></span>
+            </div>
+            <alert *ngIf="!passMatching" (eventShowable)="passMatching = true" [mainTitle]="'¡Las contraseñas no coinciden!'" [message]="'Revise las contraseñas'" [color]="'negative'" [closable]="true" [timeable]="-1"></alert>
             <div class="form-group">
               <div class="col-md-10 col-md-offset-2">
                 <button type="button" onclick="window.history.back()" class="btn btn-default">Cancel</button>
-                <button type="submit" [disabled]="!disable" class="btn btn-primary" (click)="registrar()">Submit</button>
+                <input type="submit" [disabled]="!disable" class="btn btn-primary" value="Enviar">
               </div>
             </div>
           </fieldset>
