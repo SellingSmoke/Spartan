@@ -61,6 +61,8 @@ public class User {
 	
 	private String gender;
 	
+	private String imageUrl;
+
 	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Goal> goals;
 
@@ -72,7 +74,7 @@ public class User {
 
 	public User() {}
 
-	public User(long trainer_id, String name, String lastname, String email,long birthday, String gender,String password, String... roles) {
+	public User(long trainer_id, String name, String lastname, String email, long birthday, String gender, String password, String... roles) {
 		this.trainerId = trainer_id;
 		this.name = name;
 		this.lastname = lastname;
@@ -80,6 +82,11 @@ public class User {
 		this.birthday = birthday;
 		this.registrationDate = System.currentTimeMillis();
 		this.gender = gender;
+		if (this.gender == "Hombre"){
+			this.imageUrl = "/../assets/imagenes/male_default.png";
+		} else{
+			this.imageUrl = "/../assets/imagenes/female_default.jpg";
+		}
 		this.passwordHash = new BCryptPasswordEncoder().encode(password);
 		this.roles = new ArrayList<>(Arrays.asList(roles));
 		this.goals = new ArrayList<>();
@@ -104,8 +111,8 @@ public class User {
 	public String getLastname() {
 		return lastname;
 	}
-
-	public void setLastame(String lastname) {
+	
+	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
 	
@@ -174,6 +181,14 @@ public class User {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+	
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 
 }

@@ -2,9 +2,11 @@ import {Injectable} from 'angular2/core';
 import {Http, Headers, RequestOptions} from 'angular2/http';
 import {Observable} from 'rxjs/Observable';
 import { User } from '../models/user.model';
+import {MultipartItem} from "../multipart-upload/multipart-item";
+import {MultipartUploader} from "../multipart-upload/multipart-uploader";
 import 'rxjs/Rx';
 
-const URL = 'users/';
+const URL:string = 'users/';
 
 @Injectable()
 export class UserService {
@@ -34,6 +36,5 @@ export class UserService {
     console.error(error);
     return Observable.throw("Server error (" + error.status + "): " + error.text())
   }
-
 
 }

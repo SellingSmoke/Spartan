@@ -1,22 +1,25 @@
 import {Component, OnInit} from 'angular2/core';
-import { StudentService } from '../../services/student.service';
-import { Student } from '../../models/student.model';
-import { GoalService } from '../../services/goal.service';
-import {Goal} from '../../models/goal.model';
+import { UserService } from '../../services/user.service';
+import {Goal} from '../../models/goal2.model';
 import { GoalNamePipe } from '../../pipes/student-pipes.pipe';
 import { AutenticacionService } from '../../services/autenticacion.service';
+import {MultipartItem} from "../../multipart-upload/multipart-item";
+import {MultipartUploader} from "../../multipart-upload/multipart-uploader";
+import { Alert } from '../../directives/alert/alert';
 
 @Component({
 	selector: 'profile',
     templateUrl: 'app/components/profile/profile.html',
 		styleUrls: ['app/components/profile/profile.css'],
 		pipes: [GoalNamePipe],
-		providers: [StudentService, GoalService]
+		providers: [UserService],
+		directives: [Alert]
 })
 
 export class Profile implements OnInit{
+
 	// public student:Student;
-	public editMode:number; // 0 nada - 1 mail - 2 pass  - 3 registro histórico de metas
+	public editMode:number; // 0 nada - 1 mail - 2 pass  - 3 registro histórico de metas - 4 imagen
 	public goals:Goal[];
 
 	completeGoals:Goal[];
@@ -30,7 +33,12 @@ export class Profile implements OnInit{
 	num:number;
 	progress:number;
 
-	constructor(private _studentService: StudentService, private _goalService: GoalService,private aut: AutenticacionService){
+	private file: File;
+
+	private imageWellUploded:boolean;
+	private imageResponse:boolean = false;
+
+	constructor(private _userService: UserService,private aut: AutenticacionService){
 		this.progress = 0;
 		this.num = 0;
 		this.numComplete = 0;
@@ -51,23 +59,11 @@ export class Profile implements OnInit{
 			// 	 this.progress+= student.goal.progress;
 			// 	 if(student.goal.diet) this.numDiets += 1;
 			// }
-
-		this._goalService.getGoals(1)
-			.then(goals => {
-				this.filterGoals(goals);
-			});
 	}
 
-	editPass(){
-		this.editMode = 2;
-	}
-
-	editMail(){
-		this.editMode = 1;
-	}
-
-	showGoals(){
-		this.editMode = 3;
+	changeEditMode(i:number){
+		this.editMode = i;
+		console.log("HHHHHHH " + this.editMode);
 	}
 
 	anyos(){
@@ -101,5 +97,37 @@ export class Profile implements OnInit{
 		}
 	}
 
+	selectFile($event) {
+		this.file = $event.target.files[0];
+		console.debug("Imagen seleccionada: " + this.file.name + " type:" + this.file.size + " size:" + this.file.size);
+	}
+
+	uploadImage() {
+		console.debug("Uploading file...");
+		if (this.file == null){
+			console.error("You have to select a file and set a description.");
+			return;
+		}
+
+		let formData = new FormData();
+		formData.append("file",  this.file);
+		formData.append("id",  this.aut.User().id);
+
+		let multipartItem = new MultipartItem(new MultipartUploader({url: 'users/imageUpload'}));
+		multipartItem.formData = formData;
+
+		multipartItem.callback = (data, status, headers) => {
+			this.imageResponse = true;
+			if (status == 201){
+				this.imageWellUploded = true;
+				this.aut.User().imageUrl = data;
+				console.debug("File has been uploaded");
+			} else {
+				this.imageWellUploded = false;
+				console.error("Error uploading file");
+			}
+		};
+		multipartItem.upload();
+	}
 
 };

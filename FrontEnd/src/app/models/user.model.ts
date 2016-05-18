@@ -19,6 +19,8 @@ export interface User {
 
   // Datos calculados para evitar cargar datos a cada consulta
 
+
   goal?: Goal;
-  img_url?:string;
+  imageUrl?:string;
+
 }
