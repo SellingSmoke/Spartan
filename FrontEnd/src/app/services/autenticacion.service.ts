@@ -1,7 +1,7 @@
 import {Injectable} from 'angular2/core';
 import { Http, RequestOptions, Headers } from 'angular2/http';
 import {Router} from 'angular2/router';
-import { User } from '../models/user.model';;
+import { User } from '../models/user.model';
 import 'rxjs/Rx';
 
 @Injectable()
@@ -134,6 +134,7 @@ export class AutenticacionService {
      */
 
     private exit(){
+      AutenticacionService.staticUser = undefined;
       localStorage.clear();
       this.router.navigateByUrl("/");
     }

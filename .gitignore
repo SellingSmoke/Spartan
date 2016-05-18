@@ -1,0 +1,3 @@
+Backend/target/**
+Backend/src/main/resources/static/**
+FrontEnd/tmp/**
