@@ -11,7 +11,7 @@ export interface User {
   lastname: string;
   roles: string[];
   email: string;
-  gender: number;
+  gender: string;
   birthday: number;
   registrationDate: number;
 

@@ -13,7 +13,10 @@ import {RouterLink} from "angular2/router";
 })
 
 export class MainPage{
-  constructor (){
+  constructor (private _router: Router){}
 
+	goToRegister(r:string) {
+    this._router.navigate(['Signup', { role: r }]);
   }
+
 };

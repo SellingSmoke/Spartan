@@ -20,6 +20,8 @@ export class LoggedInRouterOutlet extends RouterOutlet {
             'login': true,
             'registroAlumno': true,
             'registroEntrenador': true,
+            'signup/student': true,
+            'signup/trainer': true,
             '':true
         };
         this.rutasPrivadas = {
