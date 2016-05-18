@@ -1,6 +1,8 @@
 import {Component} from 'angular2/core';
+import {Router} from "angular2/router";
 import { UserService } from '../../../services/user.service';
 import { User } from '../../../models/user.model';
+import { AutenticacionService } from '../../,,/../../services/autenticacion.service';
 
 @Component({
 	selector: 'registroAlumno',
@@ -18,28 +20,32 @@ export class StudentSignUp {
 		pass1:string;
 		pass2:string;
 
-		constructor(private userService: UserService) {}
+		constructor(public router: Router,private userService: UserService,private autenticacionService: AutenticacionService) {}
 
-    registrar() {
+    public registrar() {
         if (this.pass1 === this.pass2){
-					console.log("HAS PULSADO SUBMIT!!!!");
-					console.log(this.toJSON());
-
-            // var aux= JSON.parse(localStorage.getItem('usuarios'));
-            // aux.push({user:this.model.user,pass:this.model.pass1,rol:"2"});
-            // localStorage.removeItem('usuarios');
-            // localStorage.setItem('usuarios', JSON.stringify(aux));
-
-						this.userService.newUser(this.toJSON());
-
-        }
+					this.userService.newUser(this.toJSON()).subscribe(
+						user => { console.log("¡Te has logeado con exito "+user.name+"!");
+											this.logIn();
+										}
+					)
+        }else{
+					console.log("Las contaseñas no coinciden");
+				}
     }
 
-		toJSON(): User {
+		private logIn(){
+			this.autenticacionService.logIn(this.name, this.pass1).subscribe(
+				user => this.router.parent.navigateByUrl('/dashboard')
+			);
+		}
+
+		private toJSON(): User {
 			return {
 				trainerId: 1,
 				name: this.name,
 				lastname: this.lastname,
+				passwordHash: this.pass1,
 				roles: ["ROLE_STUDENT"],
 				email: this.email,
 				gender: this.gender,

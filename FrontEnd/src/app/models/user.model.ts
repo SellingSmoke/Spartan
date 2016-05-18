@@ -5,6 +5,7 @@ export interface User {
   // Datos de la base de datos
 
   id?: number;
+  passwordHash?:string;
   trainerId: number;
   name: string;
   lastname: string;

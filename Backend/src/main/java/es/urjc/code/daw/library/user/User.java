@@ -16,6 +16,8 @@ import javax.persistence.OneToMany;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 import es.urjc.code.daw.library.goal.Goal;
 
@@ -62,7 +64,7 @@ public class User {
 	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Goal> goals;
 
-	@JsonIgnore
+	@JsonProperty(access = Access.WRITE_ONLY)
 	private String passwordHash;
 
 	@ElementCollection(fetch = FetchType.EAGER)
@@ -138,13 +140,15 @@ public class User {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-
+	
+	
+	@JsonIgnore
 	public String getPasswordHash() {
 		return passwordHash;
 	}
 
-	public void setPasswordHash(String passwordHash) {
-		this.passwordHash = passwordHash;
+	public void setPasswordHash(String passwordNormal) {
+		this.passwordHash =  new BCryptPasswordEncoder().encode(passwordNormal);
 	}
 
 	public List<String> getRoles() {

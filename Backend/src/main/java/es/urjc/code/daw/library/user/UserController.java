@@ -43,13 +43,12 @@ public class UserController {
 
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	public ResponseEntity<User> newUser(@RequestBody User user) {
-		
 		if(userRepository.findByName(user.getName()) == null){
 			userRepository.save(user);
 			return new ResponseEntity<>(user, HttpStatus.CREATED);
 		}else{
 			return new ResponseEntity<>(HttpStatus.IM_USED);
-		}	
+		}
 	}
 
 //	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)

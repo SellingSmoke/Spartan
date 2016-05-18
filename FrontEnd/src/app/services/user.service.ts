@@ -4,7 +4,7 @@ import {Observable} from 'rxjs/Observable';
 import { User } from '../models/user.model';
 import 'rxjs/Rx';
 
-const URL = 'books/';
+const URL = 'users/';
 
 @Injectable()
 export class UserService {
@@ -18,6 +18,7 @@ export class UserService {
   public newUser(user: User) {
 
     let body = JSON.stringify(user);
+    console.log(body);
     let headers = new Headers({
         'Content-Type': 'application/json',
         'X-Requested-With': 'XMLHttpRequest'
@@ -30,9 +31,9 @@ export class UserService {
   }
 
   private handleError(error: any){
-      console.error(error);
-      return Observable.throw("Server error (" + error.status + "): " + error.text())
-    }
+    console.error(error);
+    return Observable.throw("Server error (" + error.status + "): " + error.text())
+  }
 
 
 }

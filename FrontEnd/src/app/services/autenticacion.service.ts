@@ -134,6 +134,7 @@ export class AutenticacionService {
      */
 
     private exit(){
+      AutenticacionService.staticUser = undefined;
       localStorage.clear();
       this.router.navigateByUrl("/");
     }
