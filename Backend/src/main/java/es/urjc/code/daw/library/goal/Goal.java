@@ -10,8 +10,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import es.urjc.code.daw.library.comment.Comment;
+import es.urjc.code.daw.library.diet.Diet;
 import es.urjc.code.daw.library.task.Task;
 
 @Entity
@@ -42,6 +44,9 @@ public class Goal{
 	
 	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Comment> comments;
+	
+	@OneToOne
+	private Diet diet;
 
 	public Goal() {}
 
@@ -62,6 +67,15 @@ public class Goal{
 		this.canceled = canceled;
 		this.tasks = new ArrayList<>();
 		this.comments = new ArrayList<>();
+		this.diet = null;
+	}
+
+	public Diet getDiet() {
+		return diet;
+	}
+
+	public void setDiet(Diet diet) {
+		this.diet = diet;
 	}
 
 	public List<Task> getTasks() {
