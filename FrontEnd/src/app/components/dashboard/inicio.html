@@ -3,8 +3,8 @@
 <dashboard-alumno (trainer_dashboard_event)='getTrainerDashBoard($event)'
     [(student)]="student" *ngIf="aut.esAlumno() || seeStudentTasks"></dashboard-alumno>
 
-<!--<dashboard-entrenador (student_dashboard_event)='getStudentDashBoard($event)'
+<dashboard-entrenador (student_dashboard_event)='getStudentDashBoard($event)'
     *ngIf="aut.esProfesor() && !seeStudentTasks"></dashboard-entrenador>
 
-<dashboard-admin *ngIf="aut.isAdmin()"></dashboard-admin>-->
+<!--<dashboard-admin *ngIf="aut.isAdmin()"></dashboard-admin>-->
 </span>

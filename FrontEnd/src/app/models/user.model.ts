@@ -1,4 +1,4 @@
-import {IGoal} from './goal2.model';
+import {Goal} from './goal2.model';
 
 export interface User {
 
@@ -15,10 +15,10 @@ export interface User {
   birthday: number;
   registrationDate: number;
 
-  goals: IGoal[];
+  goals: Goal[];
 
   // Datos calculados para evitar cargar datos a cada consulta
 
-  goal?: IGoal;
+  goal?: Goal;
   img_url?:string;
 }

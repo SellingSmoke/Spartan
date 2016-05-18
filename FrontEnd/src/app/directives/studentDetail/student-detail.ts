@@ -1,5 +1,5 @@
 import { Component,Input } from 'angular2/core';
-import { Student } from '../../models/student.model';
+import { User } from '../../models/user.model';
 import { Router } from 'angular2/router';
 import { BeautifyProgessBarPipe, GoalNamePipe, GenderPipe } from '../../pipes/student-pipes.pipe';
 
@@ -13,7 +13,7 @@ import { BeautifyProgessBarPipe, GoalNamePipe, GenderPipe } from '../../pipes/st
 export class StudentDetailComponent{
 
   @Input()
-  student: Student;
+  student: User;
 
   constructor(private _router: Router) {}
 

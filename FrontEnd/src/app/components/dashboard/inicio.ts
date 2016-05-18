@@ -28,10 +28,18 @@ export class Inicio{
      }
   }
 
+  /**
+		Método que te lleva al dashboard de un alumno, seleccionado en dashboard entrenador
+	*/
+
   getStudentDashBoard(student: User){
     this.student = student;
     this.seeStudentTasks = true;
   }
+
+  /**
+    Método que te lleva al dashboard del entrenador, tras estar en el dashboard de un alumno
+  */
 
   getTrainerDashBoard(){
     this.seeStudentTasks = false;

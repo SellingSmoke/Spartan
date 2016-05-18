@@ -1,8 +1,8 @@
 import { Comment } from './comment2.model';
-import { ITask } from './task2.model';
-import { IDiet } from './diet2.model';
+import { Task } from './task2.model';
+import { Diet } from './diet2.model';
 
-export interface IGoal {
+export interface Goal {
 
   id?: number;             // ID de la Meta
   //studentId: number;     // ID del alumno al que pertenece la meta
@@ -24,35 +24,23 @@ export interface IGoal {
   acepted: boolean;
   canceled: boolean;
 
-  diet?: IDiet;       // Una meta puede o no llevar una dieta asociada
+  diet?: Diet;       // Una meta puede o no llevar una dieta asociada
   comments?: Comment[];
-  tasks?: ITask[];
+  tasks?: Task[];
 
 }
 
-export class Goal implements IGoal{
-    id:number;
-    studentId:number;
-    progress:number;
-    type:number;
-    campoMetaX:string;
-    active: boolean;
-    acepted: boolean;
-    canceled: boolean;
-    diet: IDiet;
-    comments: Comment[];
-    tasks: ITask[];
-
-    constructor(s_id: number, type: number, c_x: string){
-      this.studentId = s_id;
-      this.progress = 0;
-      this.type = type;
-      this.campoMetaX = c_x;
-      this.acepted = false;
-      this.canceled = false;
-      this.diet = null;
-      this.comments = [];
-      this.tasks = [];
-    }
-
+export function newGoal(type:number, campoX:string):Goal{
+  var goal = {
+    progress: 0,
+    type: type,
+    campoMetaX: campoX,
+    active: true,
+    acepted: false,
+    canceled: false,
+    diet: undefined,
+    comments: [],
+    tasks: [],
+  }
+  return goal;
 }
