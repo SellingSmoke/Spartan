@@ -1,4 +1,4 @@
-export interface IComment {
+export interface Comment {
   id?: number;
   rol: string;
   // Los comentarios son de la meta, solo podrán ser del entrenador o del alumno
@@ -13,17 +13,12 @@ export interface IComment {
   // distinto del tuyo a true
 }
 
-export class Comment implements IComment{
-  id: number;
-  rol: string;
-  date: number;
-  comment: string;
-  read: boolean;
-
-  constructor(){
-    this.comment = "";
-    this.rol = localStorage.getItem('rol');
-    this.date = new Date().getTime();
-    this.read = false;
+export function newComment(text:string):Comment{
+  var comment = {
+    comment: text,
+    rol: localStorage.getItem('rol'),
+    date: new Date().getTime(),
+    read: false,
   }
+  return comment;
 }

@@ -1,4 +1,4 @@
-import { IComment } from './comment2.model';
+import { Comment } from './comment2.model';
 import { ITask } from './task2.model';
 import { IDiet } from './diet2.model';
 
@@ -25,7 +25,7 @@ export interface IGoal {
   canceled: boolean;
 
   diet?: IDiet;       // Una meta puede o no llevar una dieta asociada
-  comments?: IComment[];
+  comments?: Comment[];
   tasks?: ITask[];
 
 }
@@ -40,7 +40,7 @@ export class Goal implements IGoal{
     acepted: boolean;
     canceled: boolean;
     diet: IDiet;
-    comments: IComment[];
+    comments: Comment[];
     tasks: ITask[];
 
     constructor(s_id: number, type: number, c_x: string){

@@ -80,6 +80,7 @@ export class AutenticacionService {
     private setUser(){
       if(!AutenticacionService.staticUser){
         AutenticacionService.staticUser = this.currentUser;
+        AutenticacionService.staticUser.goal = this.currentUser.goals[0];
       }else{
         console.log("Ya hay usuario");
       }

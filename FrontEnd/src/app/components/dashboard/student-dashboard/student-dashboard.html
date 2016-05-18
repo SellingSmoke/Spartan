@@ -3,7 +3,6 @@
 <!-- FIN FORMULARIO NUEVA META -->
 
 <div *ngIf="student.goal" class="sp-container-lg">
-  <!--<div class="col-md-2"></div>-->
   <div class="col-md-8 col-md-offset-2">
     <div class="container">
       <div class="panel panel-default">
@@ -83,7 +82,7 @@
                   <div class="header">
                     Sin tareas
                   </div>
-                  <p>{{ rol == 1 ? 'Añade nuevas tareas a tu alumno' : 'Espera a que tu entrenador te asigne tareas' }}</p>
+                  <p>{{ aut.esProfesor() ? 'Añade nuevas tareas a tu alumno' : 'Espera a que tu entrenador te asigne tareas' }}</p>
                 </div>
               </div>
 
@@ -332,7 +331,7 @@
                   Sin dieta asignada
                 </div>
                 <p>{{ aut.esProfesor() ? 'Puedes añadir una dieta a tu alumno' : 'Contacta con tu entrenador para que te asigne una dieta a tu meta' }}</p>
-                <ul  *ngIf="aut.esProfesor()" class="list">
+                <ul *ngIf="aut.esProfesor()" class="list">
                   <li>Añade el contenido que consideres correcto para la dieta del alumno pulsando <code>editar</code></li>
                   <li>Cuando acabes, pulsa <code>guardar</code></li>
                 </ul>

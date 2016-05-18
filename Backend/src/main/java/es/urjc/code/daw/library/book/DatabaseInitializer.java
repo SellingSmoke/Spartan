@@ -34,8 +34,8 @@ public class DatabaseInitializer implements CommandLineRunner {
 		User u = new User(1,"student", "normal", "miCorreo2@gmail.com", l, "Mujer", "pass","ROLE_STUDENT");
 		Goal g = new Goal(50, 3, "parte superior", true, true, false);
 		Comment c1 = new Comment("ROLE_STUDENT", "Oye, y esto ... como se hace", true);
-		Comment c2 = new Comment("ROLE_STUDENT", "Oye, y esto ... como se hace", true);
-		Comment c3 = new Comment("ROLE_STUDENT", "Oye, y esto ... como se hace", true);
+		Comment c2 = new Comment("ROLE_TRAINER", "Se hace asi asi y asi", false);
+		Comment c3 = new Comment("ROLE_STUDENT", "Vale vale, vamo' a carmarnos", false);
 		u.getGoals().add(g);
 		Task t = new Task("Repeticiones",  0, "Esta tarea hay que hacerla asi", 1, 15, "repeticiones", 10, 40, "Kg", 35);
 		

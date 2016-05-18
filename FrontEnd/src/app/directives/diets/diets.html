@@ -81,92 +81,92 @@
         <tr class="hover-transition-to-do">
           <td>Desayuno</td>
           <td>
-              <p *ngIf="!edit_mode">{{ diet.matrix[0][0] | ShowFood:0 }}</p>
-              <p *ngIf="!edit_mode">{{ diet.matrix[0][0] | ShowFood:1 }}</p>
-              <p *ngIf="!edit_mode">{{ diet.matrix[0][0] | ShowFood:2 }}</p>
+              <p *ngIf="!edit_mode">{{ matrix[0][0] | ShowFood:0 }}</p>
+              <p *ngIf="!edit_mode">{{ matrix[0][0] | ShowFood:1 }}</p>
+              <p *ngIf="!edit_mode">{{ matrix[0][0] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Desayuno</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[0][0]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[0][0]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
           </td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[1][0] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[1][0] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[1][0] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[1][0] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[1][0] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[1][0] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Desayuno</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[1][0]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[1][0]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
           </td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[2][0] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[2][0] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[2][0] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[2][0] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[2][0] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[2][0] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Desayuno</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[2][0]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[2][0]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
           </td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[3][0] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[3][0] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[3][0] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[3][0] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[3][0] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[3][0] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Desayuno</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[3][0]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[3][0]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
           </td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[4][0] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[4][0] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[4][0] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[4][0] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[4][0] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[4][0] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Desayuno</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[4][0]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[4][0]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
           </td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[5][0] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[5][0] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[5][0] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[5][0] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[5][0] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[5][0] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Desayuno</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[5][0]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[5][0]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
           </td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[6][0] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[6][0] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[6][0] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[6][0] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[6][0] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[6][0] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Desayuno</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[6][0]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[6][0]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
@@ -175,92 +175,92 @@
         <tr class="hover-transition-to-do">
           <td>Comida</td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[0][1] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[0][1] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[0][1] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[0][1] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[0][1] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[0][1] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Comida</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[0][1]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[0][1]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
           </td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[1][1] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[1][1] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[1][1] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[1][1] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[1][1] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[1][1] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Comida</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[1][1]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[1][1]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
           </td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[2][1] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[2][1] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[2][1] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[2][1] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[2][1] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[2][1] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Comida</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[2][1]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[2][1]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
           </td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[3][1] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[3][1] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[3][1] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[3][1] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[3][1] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[3][1] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Comida</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[3][1]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[3][1]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
           </td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[4][1] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[4][1] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[4][1] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[4][1] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[4][1] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[4][1] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Comida</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[4][1]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[4][1]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
           </td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[5][1] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[5][1] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[5][1] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[5][1] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[5][1] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[5][1] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Comida</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[5][1]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[5][1]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
           </td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[6][1] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[6][1] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[6][1] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[6][1] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[6][1] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[6][1] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Comida</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[6][1]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[6][1]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
@@ -269,92 +269,92 @@
         <tr  class="hover-transition-to-do">
           <td>Merienda</td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[0][2] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[0][2] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[0][2] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[0][2] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[0][2] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[0][2] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Merienda</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[0][2]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[0][2]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
           </td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[1][2] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[1][2] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[1][2] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[1][2] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[1][2] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[1][2] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Merienda</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[1][2]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[1][2]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
           </td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[2][2] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[2][2] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[2][2] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[2][2] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[2][2] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[2][2] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Merienda</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[2][2]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[2][2]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
           </td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[3][2] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[3][2] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[3][2] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[3][2] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[3][2] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[3][2] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Merienda</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[3][2]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[3][2]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
           </td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[4][2] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[4][2] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[4][2] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[4][2] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[4][2] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[4][2] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Merienda</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[4][2]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[4][2]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
           </td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[5][2] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[5][2] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[5][2] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[5][2] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[5][2] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[5][2] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Merienda</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[5][2]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[5][2]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
           </td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[6][2] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[6][2] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[6][2] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[6][2] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[6][2] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[6][2] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Merienda</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[6][2]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[6][2]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
@@ -363,92 +363,92 @@
         <tr class="hover-transition-to-do">
           <td>Cena</td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[0][3] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[0][3] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[0][3] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[0][3] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[0][3] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[0][3] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Cena</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[1][3]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[1][3]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
           </td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[1][3] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[1][3] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[1][3] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[1][3] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[1][3] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[1][3] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Cena</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[1][3]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[1][3]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
           </td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[2][3] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[2][3] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[2][3] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[2][3] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[2][3] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[2][3] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Cena</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[2][3]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[2][3]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
           </td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[3][3] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[3][3] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[3][3] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[3][3] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[3][3] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[3][3] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Cena</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[3][3]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[3][3]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
           </td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[4][3] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[4][3] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[4][3] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[4][3] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[4][3] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[4][3] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Cena</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[4][3]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[4][3]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
           </td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[5][3] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[5][3] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[5][3] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[5][3] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[5][3] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[5][3] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Cena</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[5][3]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[5][3]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
           </td>
           <td>
-            <p *ngIf="!edit_mode">{{ diet.matrix[6][3] | ShowFood:0 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[6][3] | ShowFood:1 }}</p>
-            <p *ngIf="!edit_mode">{{ diet.matrix[6][3] | ShowFood:2 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[6][3] | ShowFood:0 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[6][3] | ShowFood:1 }}</p>
+            <p *ngIf="!edit_mode">{{ matrix[6][3] | ShowFood:2 }}</p>
             <fieldset *ngIf="edit_mode">
               <div *ngIf="edit_mode" class="edit-form form-group">
                 <label class="col-md-2 control-label">Cena</label>
                 <div class="col-md-9 col-md-offset-1">
-                  <textarea rows="3" [(ngModel)]="diet.matrix[6][3]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
+                  <textarea rows="3" [(ngModel)]="matrix[6][3]" type="text" class="form-control" placeholder="Descripcion de la dieta"></textarea>
                 </div>
               </div>
             </fieldset>
