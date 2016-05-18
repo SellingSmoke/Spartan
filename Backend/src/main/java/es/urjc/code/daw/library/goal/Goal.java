@@ -38,6 +38,7 @@ public class Goal{
 	
 	boolean acepted;
 	boolean canceled;
+	boolean active;
 	
 	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Task> tasks;
@@ -58,11 +59,12 @@ public class Goal{
 		this.comments = comments;
 	}
 
-	public Goal(double progress, int type, String campoMetaX, boolean acepted, boolean canceled) {
+	public Goal(double progress, int type, String campoMetaX, boolean active, boolean acepted, boolean canceled) {
 		super();
 		this.progress = progress;
 		this.type = type;
 		this.campoMetaX = campoMetaX;
+		this.acepted = acepted;
 		this.acepted = acepted;
 		this.canceled = canceled;
 		this.tasks = new ArrayList<>();
@@ -124,6 +126,14 @@ public class Goal{
 
 	public void setCanceled(boolean canceled) {
 		this.canceled = canceled;
+	}
+	
+	public boolean isActive() {
+		return this.active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 
 	public long getId() {

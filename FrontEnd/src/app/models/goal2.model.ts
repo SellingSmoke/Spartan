@@ -20,6 +20,7 @@ export interface IGoal {
   // -> 2 Pierna
   // -> 3 ... (Por completar)
 
+  active: boolean;
   acepted: boolean;
   canceled: boolean;
 
@@ -29,12 +30,13 @@ export interface IGoal {
 
 }
 
-export class Goal implements Goal{
+export class Goal implements IGoal{
     id:number;
     studentId:number;
     progress:number;
     type:number;
     campoMetaX:string;
+    active: boolean;
     acepted: boolean;
     canceled: boolean;
     diet: IDiet;

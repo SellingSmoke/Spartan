@@ -141,7 +141,6 @@ public class User {
 		this.gender = gender;
 	}
 	
-	
 	@JsonIgnore
 	public String getPasswordHash() {
 		return passwordHash;
