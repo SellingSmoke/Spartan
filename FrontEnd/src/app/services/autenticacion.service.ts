@@ -3,6 +3,7 @@ import { Http, RequestOptions, Headers } from 'angular2/http';
 import {Router} from 'angular2/router';
 import { User } from '../models/user.model';
 import 'rxjs/Rx';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class AutenticacionService {
@@ -24,11 +25,9 @@ export class AutenticacionService {
 
   		let options = new RequestOptions({headers});
 
-  		return this.http.get('logIn', options).map(
-  			response => {
-				  return this.processLogInResponse(response);
-  			}
-  		);
+  		return this.http.get('logIn', options)
+      .map(response => this.processLogInResponse(response))
+      .catch(error => Observable.throw(error))
   	}
 
 

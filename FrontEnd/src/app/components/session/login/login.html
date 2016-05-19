@@ -4,13 +4,13 @@
       <div class="panel panel-danger">
         <div class="panel-heading mdl-typography--display-1 sp-center">Spartan Login</div>
         <div class="panel-body">
-          <form class="form-horizontal">
+          <form class="form-horizontal"  (ngSubmit)="logIn(user.value, pass.value)">
             <fieldset>
               <div class="form-group is-empty">
                 <label for="nombreUsuario" class="col-md-2 control-label">Nombre de usuario</label>
 
                 <div class="col-md-10">
-                  <input #user class="form-control" id="nombreUsuario" placeholder="Nombre de usuario" type="text">
+                  <input #user class="form-control" id="nombreUsuario" placeholder="Nombre de usuario" type="text" required>
                 </div>
                 <span class="material-input"></span>
               </div>
@@ -18,7 +18,7 @@
                 <label for="password" class="col-md-2 control-label">Contraseña</label>
 
                 <div class="col-md-10">
-                  <input #pass class="form-control" id="password" placeholder="Contraseña" type="password">
+                  <input #pass class="form-control" id="password" placeholder="Contraseña" type="password" required>
 
                 </div>
                 <span class="material-input"></span>
@@ -33,10 +33,11 @@
                   </div>
                 </div>
               </div>
+              <alert *ngIf="fieldsIncorrect" (eventShowable)="fieldsIncorrect = false" [mainTitle]="'Campo incorrecto'" [message]="'Revise su nombre de usuario o contraseña'" [color]="'negative'" [closable]="true" [timeable]="-1"></alert>
               <div class="form-group">
                 <div class="col-md-10 col-md-offset-2">
                   <button type="button" onclick="window.history.back()" class="btn btn-default">Atrás</button>
-                  <button type="submit" class="btn btn-primary" (click)="logIn($event, user.value, pass.value)">Entrar</button>
+                  <button type="submit" class="btn btn-primary">Entrar</button>
                 </div>
               </div>
             </fieldset>

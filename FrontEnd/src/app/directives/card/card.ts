@@ -1,4 +1,4 @@
-import { Component, Input } from 'angular2/core';
+import { Component, Input, Output, EventEmitter } from 'angular2/core';
 
 @Component({
     selector: 'card',
@@ -11,6 +11,12 @@ export class Card {
     @Input()
     card:ICard;
 
+    @Output()
+    eventClick = new EventEmitter<any>();
+
+    public clickEventEmitter(){
+      this.eventClick.emit(null);
+    }
 };
 
 export interface ICard {

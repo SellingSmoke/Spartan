@@ -58,6 +58,7 @@ export class Signup implements OnInit{
 		}
 
 		private toJSON(): User {
+			let img = this.gender == "Hombre" ? "/../assets/imagenes/male_default.png" : "/../assets/imagenes/female_default.jpg";
 			return {
 				trainerId: 1,
 				name: this.name,
@@ -69,7 +70,7 @@ export class Signup implements OnInit{
 				birthday: 1360006343670,
 				registrationDate: Date.now(),
 				goals: [],
-				imageUrl:""
+				imageUrl:img
 			}
 		}
 
