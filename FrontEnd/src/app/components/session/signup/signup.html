@@ -84,7 +84,7 @@
               </div>
               <span class="material-input"></span>
             </div>
-            <alert *ngIf="!passMatching" (eventShowable)="passMatching = true" [mainTitle]="'¡Las contraseñas no coinciden!'" [message]="'Revise las contraseñas'" [color]="'negative'" [closable]="true" [timeable]="-1"></alert>
+            <alert *ngIf="!passMatching" (eventShowable)="passMatching = true" [mainTitle]="mainTitleAlert" [message]="messageAlert" [color]="'negative'" [closable]="true" [timeable]="-1"></alert>
             <div class="form-group">
               <div class="col-md-10 col-md-offset-2">
                 <button type="button" onclick="window.history.back()" class="btn btn-default">Cancel</button>

@@ -16,6 +16,8 @@ export class Signup implements OnInit{
 
 		private rolRegistro: boolean; //true: student; false: trainer
 		private rolString: string;
+		mainTitleAlert: string;
+		messageAlert: string;
 
 		name:string;
 		lastname: string;
@@ -36,16 +38,24 @@ export class Signup implements OnInit{
 			}
 		}
 
-		constructor(public router: Router, private userService: UserService, private autenticacionService: AutenticacionService, private _routeParams: RouteParams) {}
+		constructor(public router: Router, private userService: UserService, private autenticacionService: AutenticacionService, private _routeParams: RouteParams) {
+			this.mainTitleAlert = "";
+			this.messageAlert = "";
+		}
 
     public registrar() {
         if (this.pass1 === this.pass2){
 					this.userService.newUser(this.toJSON()).subscribe(
 						user => { console.log("¡Te has loggeado con exito "+user.name+"!");
 											this.logIn();
-										}
+										},
+						error => {  this.mainTitleAlert = "¡Nombre de usuario ya en uso!";
+										  	this.messageAlert = "Elija otro nombre";
+										  	this.passMatching = false; }
 					)
         }else{
+					this.mainTitleAlert = "¡Las contraseñas no coinciden!";
+					this.messageAlert = "Revise los dos campos";
 					this.passMatching = false;
 					console.log("Las contraseñas no coinciden");
 				}

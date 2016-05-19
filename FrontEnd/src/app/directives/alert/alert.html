@@ -1,4 +1,4 @@
-<div class="ui message" [ngClass]="color">
+<div class="ui message alertBox" [ngClass]="color" style="margin-top: 1.5em !important;">
   <i *ngIf="closable" class="close icon" (click)="closeAlert()"></i>
   <div class="header">{{mainTitle}}</div>
   <p>{{message}}</p>
