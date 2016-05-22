@@ -2,11 +2,12 @@ import { Component, Output, Input, EventEmitter } from 'angular2/core';
 import {FORM_DIRECTIVES} from 'angular2/common';
 import { Goal, newGoal } from "../../models/goal2.model";
 import { Card, ICard } from '../card/card'
-
+import {GoalService} from '../../services/goal.service';
 @Component({
     selector: 'goal-form',
     styleUrls: ['app/directives/goalForm/goal-form.css'],
     templateUrl: 'app/directives/goalForm/goal-form.html',
+    providers: [GoalService],
     directives: [FORM_DIRECTIVES, Card]
 })
 
@@ -31,7 +32,7 @@ export class GoalForm {
     @Output()
     newGoal = new EventEmitter<Goal>();
 
-    constructor(){
+    constructor(private goalService: GoalService){
         this.seleccionado = {id: 0, title: " ( ··· ) ", description: null, img: null};
         this.parametrosExtra = [];
 
@@ -149,5 +150,6 @@ export class GoalForm {
         meta = newGoal(indexMeta, campoX);
         console.log(meta);
         this.newGoal.emit(meta);
+        this.goalService.newGoal(meta);
     }
 };
