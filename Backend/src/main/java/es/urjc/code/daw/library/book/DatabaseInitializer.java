@@ -32,6 +32,9 @@ public class DatabaseInitializer implements CommandLineRunner {
 		userRepository.save(new User(-1, "trainer", "good", "miCorreo1@gmail.com", l, "Hombre", "pass", "ROLE_TRAINER"));	
 		userRepository.save(new User(-2,"admin", "bad", "miCorreo3@gmail.com", l, "Hombre","pass","ROLE_ADMIN"));
 		
+		//Segundo entrenador
+		userRepository.save(new User(-3, "Entrenadora", "La mejor", "entreno@gmail.com", l, "Mujer", "pass", "ROLE_TRAINER"));
+		
 		User u = new User(1,"student", "normal", "miCorreo2@gmail.com", l, "Mujer", "pass","ROLE_STUDENT");
 		Goal g = new Goal(50, 3, "parte superior", true, true, false);
 		Comment c1 = new Comment("ROLE_STUDENT", "Oye, y esto ... como se hace", true);
@@ -54,6 +57,7 @@ public class DatabaseInitializer implements CommandLineRunner {
 		
 		
 		// Añadimos a Pablo
+		
 		/*
 		 * { id: 2, name: "Pablo", lastname:"Fuente Pérez",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589,
 //       goal: { id: 2, student_id: 2, type: 1, progress: 50, campo_metaX: "10kg", acepted: true, canceled:false,
@@ -82,7 +86,25 @@ public class DatabaseInitializer implements CommandLineRunner {
 		userRepository.save(pablo);
 		
 		
+		//Añadimos a Los demás para el primer entrenador
+		User u1 = new User(-1, "Adolfo", "Suarez", "ad@gmail.com", l, "Hombre", "pass", "ROLE_STUDENT");
+		u1.getGoals().add(new Goal(30, 1, "Meta A",true,true,false));
 		
+		User u2 = new User(-1, "Cristina", "Murillo", "cm@gmail.com", l, "Mujer", "pass", "ROLE_STUDENT");
+		u2.getGoals().add(new Goal(30, 1, "Meta C",true,true,false));
+		
+		User u3 = new User(-1, "Maria", "Garcia", "cm@gmail.com", l, "Mujer", "pass", "ROLE_STUDENT");
+		u3.getGoals().add(new Goal(30, 1, "Meta M",true,true,false));
+		
+		//Para el segundo
+		User u4 = new User(-3, "Sergio", "Perez", "sp@gmail.com", l, "Hombre", "pass", "ROLE_STUDENT");
+		u4.getGoals().add(new Goal(30, 1, "Meta S",true,true,false));
+		
+		User u5 = new User(-3, "Juan", "Miguel", "cm@gmail.com", l, "Hombre", "pass", "ROLE_STUDENT");
+		u5.getGoals().add(new Goal(30, 1, "Meta JM",true,true,false));
+		
+		User u6 = new User(-3, "Carmen", "Galán", "cm@gmail.com", l, "Mujer", "pass", "ROLE_STUDENT");
+		u6.getGoals().add(new Goal(30, 1, "Meta CG",true,true,false));
 		
 	}
 }
