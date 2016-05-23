@@ -26,6 +26,7 @@ public class DatabaseInitializer implements CommandLineRunner {
 
 		// Sample users
 		
+		//Cumpleaños por defecto
 		long l = Long.parseLong("650581933000");
 
 		userRepository.save(new User(-1, "trainer", "good", "miCorreo1@gmail.com", l, "Hombre", "pass", "ROLE_TRAINER"));	
