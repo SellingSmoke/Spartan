@@ -28,10 +28,10 @@ Para ejecutar la aplicacipn seguir los siguientes pasos:
 Implementado en Angular2. Probada la funcionalidad en Windows, Mac y Linux.
 
 ## Diagrama de clases Typescript utilizadas en Angular2
-![Diagrama de clases y estructura básica](Diagramas/SpartanClases.png)
+![Diagrama de clases y estructura básica](FrontEnd/Diagramas/SpartanClases.png)
 
 ## Diagrama de interacción de clases
-![Diagrama de interaccion clases](Diagramas/SpartanDiagram.png)
+![Diagrama de interaccion clases](FrontEnd/Diagramas/SpartanDiagram.png)
 
 ## Integrantes del equipo de desarrollo:
 
