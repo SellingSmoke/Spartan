@@ -67,9 +67,21 @@ public class DatabaseInitializer implements CommandLineRunner {
 			// public User(long trainer_id, String name, String lastname, String email, long birthday, String gender, String password, String... roles) 
 		User pablo = new User(-1, "pablo", "Fuente Pérez", "pablo@gmail.com", l, "Hombre", "pass", "ROLE_STUDENT");
 			// public Goal(double progress, int type, String campoMetaX, boolean active, boolean acepted, boolean canceled) {
-		Goal goal = new Goal(30, 1, "",false,true,false);
-		Goal goal2 = new Goal(50, 2,"",true,true,false);
-		// pablo.setGoals(goals);
+		Goal goal = new Goal(30, 1, "Meta 1",false,true,false);
+		Goal goal2 = new Goal(50, 2,"Meta 2",true,true,false);
+		pablo.getGoals().add(goal2);
+		pablo.getGoals().add(goal);
+		
+		
+			//public Task(String name, int status, String description, int type, int objective1, String format1, int result1,
+				//int objective2, String format2, int result2) {
+		Task t1 = new Task("Recorrido",  1, "Te queda esta también", 0, 100, "km", 0, 20, "minutos", 18);
+		Task t2 = new Task("Repeticiones",  2, "Esta tarea hay que hacerla asi", 1, 15, "repeticiones", 10, 40, "Kg", 35);
+		goal2.getTasks().add(t1);
+		goal2.getTasks().add(t2);
+		userRepository.save(pablo);
+		
+		
 		
 		
 	}
