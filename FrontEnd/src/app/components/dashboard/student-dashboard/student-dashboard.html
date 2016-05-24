@@ -95,15 +95,15 @@
                   </div>
                   <div id="botones-tarea" class="one-line-right">
                     <div id="botones-tarea-inside" class="pull-right">
-                      <a *ngIf="!aut.esProfesor() && task.status === 0" (click)="task.status = 1" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab" title="Completar tarea al 100%">
+                      <a *ngIf="!aut.esProfesor() && task.status === 0" (click)="completeTask(task)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab" title="Completar tarea al 100%">
                         <i class="material-icons">done</i>
                         <div class="ripple-container"></div>
                       </a>
-                      <a *ngIf="task.status === 1" (click)="task.status = 1" class="only-check-no-button mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                      <a *ngIf="task.status === 1" class="only-check-no-button mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
                         <i class="material-icons">done</i>
                         <div class="ripple-container"></div>
                       </a>
-                      <a *ngIf="!aut.esProfesor() && task.status === 2" (click)="task.status = 1" class="only-check-no-button mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                      <a *ngIf="!aut.esProfesor() && task.status === 2" class="only-check-no-button mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
                         <i class="material-icons">watch_later</i>
                         <div class="ripple-container"></div>
                       </a>
@@ -207,7 +207,7 @@
                       <h5 *ngIf="task.type === 1" class="col-md-12 text-pending-2">{{student.name}} consiguió completar {{task.result2}} {{task.format2}} con {{task.result1}} {{task.format1}}</h5>
                     </div>
                     <div class="row task-treatment-buttons">
-                      <button (click)="task.status = 1" class="btn btn-success"><i class="material-icons">done</i> Dar como completada</button>
+                      <button (click)="completeTask(task)" class="btn btn-success"><i class="material-icons">done</i> Dar como completada</button>
                       <button (click)=editTrigger(task) class="btn btn-danger"><i class="material-icons">mode_edit</i> Editar tarea</button>
                     </div>
                   </div>
