@@ -149,7 +149,9 @@ export class GoalForm {
         var campoX = this.seleccionado2;    // Parametro X del tipo (Kg,Km)
         meta = newGoal(indexMeta, campoX);
         console.log(meta);
-        this.newGoal.emit(meta);
-        this.goalService.newGoal(meta);
+        this.goalService.newGoal(meta).subscribe(// ¡¡¡ ANTES DEL EMIT !!!
+          response => this.newGoal.emit(meta),
+          error => console.log("No se guardo correctamente la meta")
+        );
     }
 };

@@ -4,14 +4,14 @@ import {Http, Headers, RequestOptions} from 'angular2/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/Rx';
 
-const URL:string = "/goals";
+const URL:string = "goals/";
  @Injectable()
  export class GoalService {
 
   constructor (private http: Http){}
 
   public newGoal(goal: Goal) {
-
+    console.log("Se va a enviar meta");
     let body = JSON.stringify(goal);
     console.log(body);
     let headers = new Headers({
@@ -27,7 +27,7 @@ const URL:string = "/goals";
 
   private handleError(error: any){
     console.error(error);
-   return Observable.throw("Server error (" + error.status + "): " + error.text())
+    return Observable.throw("Server error (" + error.status + "): " + error.text())
   }
 
  }

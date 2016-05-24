@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import es.urjc.code.daw.library.user.UserComponent;
 import es.urjc.code.daw.library.user.UserRepository;
+
 @RestController
 @RequestMapping("/goals")
 public class GoalController {
@@ -21,13 +22,13 @@ public class GoalController {
 	private UserRepository userRepository;
 	@Autowired
 	private UserComponent user;
-	//private UserRepository userRepository;
 	
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	public ResponseEntity<Goal> newGoal(@RequestBody Goal goal) {
 			User userLogado =user.getLoggedUser();
 			userLogado.getGoals().add(goal);
 			userRepository.save(userLogado);
+			System.out.println(userRepository.findOne(userLogado.getId()).getGoals().isEmpty());
 			return new ResponseEntity<>(goal, HttpStatus.CREATED);
 	}
 	

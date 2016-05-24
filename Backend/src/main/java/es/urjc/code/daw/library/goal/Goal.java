@@ -23,12 +23,12 @@ public class Goal{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-	double progress;       // Progreso de la Meta (Calculada en el servidor por tareas completadas)
-	int type;
+	private double progress;       // Progreso de la Meta (Calculada en el servidor por tareas completadas)
+	private int type;
 	  // Tipo de meta:
 	  // ["perder peso","ganar musculo", "ganar resistencia" , "trabajar especificamente", "mejorar en", "otra"];
 	
-	String campoMetaX;    // Parametro X del tipo (Kg,Km)
+	private String campoMetaX;    // Parametro X del tipo (Kg,Km)
 	
 	  // Modalidades:
 	  // -> 0 (Vacio)
@@ -36,9 +36,9 @@ public class Goal{
 	  // -> 2 Pierna
 	  // -> 3 ... (Por completar)
 	
-	boolean acepted;
-	boolean canceled;
-	boolean active;
+	private boolean acepted;
+	private boolean canceled;
+	private boolean active;
 	
 	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Task> tasks;
