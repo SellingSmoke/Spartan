@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.FileCopyUtils;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,7 +14,7 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-
+import java.util.Collection;
 
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -33,6 +34,19 @@ public class UserController {
 		}else{
 			return new ResponseEntity<>(HttpStatus.IM_USED);
 		}
+	}
+	
+	@RequestMapping(value = "/students/{id}", method = RequestMethod.GET)
+	public ResponseEntity<Collection<User>> getStudents(@PathVariable(value="id") String id) {
+		long id_i = -1;
+		try{
+			id_i = Long.parseLong(id);
+		}catch(NumberFormatException e){
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+		System.err.println("ID_"+id_i);
+		Collection<User> students = userRepository.findByTrainerId(id_i);
+		return new ResponseEntity<>(students,HttpStatus.OK);
 	}
 	
 

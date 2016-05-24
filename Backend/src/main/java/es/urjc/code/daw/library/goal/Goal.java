@@ -60,12 +60,11 @@ public class Goal{
 	}
 
 	public Goal(double progress, int type, String campoMetaX, boolean active, boolean acepted, boolean canceled) {
-		super();
 		this.progress = progress;
 		this.type = type;
 		this.campoMetaX = campoMetaX;
 		this.acepted = acepted;
-		this.acepted = acepted;
+		this.active = active;
 		this.canceled = canceled;
 		this.tasks = new ArrayList<>();
 		this.comments = new ArrayList<>();
