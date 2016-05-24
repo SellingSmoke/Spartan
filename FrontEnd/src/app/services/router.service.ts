@@ -36,7 +36,7 @@ export class LoggedInRouterOutlet extends RouterOutlet {
         if (!this.rutasPublicas[url] && !this.autenticacion.isLogIn()) {
             console.log(1);
             //Ruta no publica sin token
-            this.padre.navigateByUrl('/login');
+            this.padre.navigateByUrl('/');
         }else if (this.rutasPublicas[url] && this.autenticacion.isLogIn()){
           console.log(2);
             //Ruta publica con token

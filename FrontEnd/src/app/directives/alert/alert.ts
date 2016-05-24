@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from 'angular2/core';
-import {NgClass} from 'angular2/common';
+import { NgClass } from 'angular2/common';
 
 @Component({
     selector: 'alert',

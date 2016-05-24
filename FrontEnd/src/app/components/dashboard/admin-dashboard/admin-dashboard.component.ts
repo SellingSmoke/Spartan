@@ -3,7 +3,7 @@
 import { bootstrap }    from 'angular2/platform/browser';
 import { Component, OnInit } from 'angular2/core';
 import { Router } from 'angular2/router';
-import { Goal } from '../../../models/goal2.model';
+import { Goal } from '../../../models/goal.model';
 import { User } from '../../../models/user.model';
 import { AutenticacionService } from '../../../services/autenticacion.service';
 import { GoalNamePipe } from '../../../pipes/student-pipes.pipe';

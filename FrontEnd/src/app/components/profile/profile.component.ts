@@ -1,6 +1,6 @@
 import {Component, OnInit} from 'angular2/core';
 import { UserService } from '../../services/user.service';
-import {Goal} from '../../models/goal2.model';
+import {Goal} from '../../models/goal.model';
 import { GoalNamePipe } from '../../pipes/student-pipes.pipe';
 import { AutenticacionService } from '../../services/autenticacion.service';
 import {MultipartItem} from "../../multipart-upload/multipart-item";

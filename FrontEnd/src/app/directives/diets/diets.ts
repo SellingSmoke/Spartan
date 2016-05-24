@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, AfterViewInit } from 'angular2/core';
-import { Diet } from '../../models/diet2.model';
+import { Diet } from '../../models/diet.model';
 import { ShowFoodPipe } from '../../pipes/diet-pipes.pipe';
 import { AutenticacionService } from '../../services/autenticacion.service';
 
