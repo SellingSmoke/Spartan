@@ -69,7 +69,6 @@ public class TaskController {
 		Task task = taskRepository.findOne(id_i_1);
 		goal.getTasks().remove(task);
 		taskRepository.delete(task);
-		goalRepository.save(goal);
 		return new ResponseEntity<>(task, HttpStatus.OK);
 	}
 	
