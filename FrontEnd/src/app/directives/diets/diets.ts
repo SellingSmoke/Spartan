@@ -34,7 +34,7 @@ export class Diets implements OnInit, AfterViewInit{
 		Prioridad 1
 	*/
 
-	constructor(private aut:AutenticacionService) {
+	constructor(private aut:AutenticacionService,	private dietService: DietService) {
 		this.setDay(new Date().getDay() + 1);
 		this.edit_mode = false;
 		this.rol = this.aut.esProfesor();
@@ -109,13 +109,13 @@ export class Diets implements OnInit, AfterViewInit{
 			this.diet.matrix = JSON.stringify(this.matrix); // Serializar
 			if( this.diet.id != undefined){
 				// AQUI SE HARÁ UN PUT (Ya existe)
-				this.DietService.editDiet(this.diet).subscribe(
+				this.dietService.editDiet(this.diet).subscribe(
 					respose => console.log("Dieta editada!"),
 					error => console.log(error)
 				);
 			}else{
 				// AQUI SE HARÁ UN POST (Nueva)
-				this.DietService.newDiet(this.diet).subscribe(
+				this.dietService.newDiet(this.diet).subscribe(
 					respose => console.log("Dieta creada!"),
 					error => console.log(error)
 				);

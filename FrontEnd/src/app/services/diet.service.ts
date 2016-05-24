@@ -14,7 +14,7 @@ const URL:string = "diet/";
    *  GOAL POST
    */
 
-  public newDiet(diet: Diet) {
+  public newDiet(diet:Diet) {
     console.log("Se va a enviar meta");
     let body = JSON.stringify(diet);
     let headers = new Headers({
@@ -34,7 +34,7 @@ const URL:string = "diet/";
 
   public editDiet(diet: Diet) {
     console.log("Se va a editar meta");
-    console.log(goal);
+    console.log(diet);
     let body = JSON.stringify(diet);
     let headers = new Headers({
         'Content-Type': 'application/json',
