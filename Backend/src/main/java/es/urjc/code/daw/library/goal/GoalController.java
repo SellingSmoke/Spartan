@@ -33,15 +33,17 @@ public class GoalController {
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Goal> deleteGoal(@RequestBody Goal goal) {
-		if(goalRepository.findOne(goal.getId()) != null){
-			goalRepository.delete(goal);
-			return new ResponseEntity<>(goal, HttpStatus.OK);
-		}else{
-			return new ResponseEntity<>(HttpStatus.CONFLICT);
-		}
+//		if(goalRepository.findOne(goal.getId()) != null){
+//			goalRepository.delete(goal);
+//			return new ResponseEntity<>(goal, HttpStatus.OK);
+//		}else{
+//			return new ResponseEntity<>(HttpStatus.CONFLICT);
+//		}
+		// ES NECESARIO RECOGER EL PARAMETRO DE LA RUTA
+		return null;
 	}
 	
-	@RequestMapping(value = "/modifyGoal", method = RequestMethod.PUT)
+	@RequestMapping(value = "/edit", method = RequestMethod.PUT)
 	public ResponseEntity<Goal> modifyGoal(@RequestBody Goal goal) {
 		if(goalRepository.findOne(goal.getId()) == null){
 			goalRepository.save(goal);

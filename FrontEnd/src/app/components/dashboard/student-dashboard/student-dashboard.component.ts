@@ -13,6 +13,7 @@ import { CommentDirective } from '../../../directives/comments/comment.directive
 
 import { BeautifyProgessBarPipe, GoalNamePipe } from '../../../pipes/student-pipes.pipe';
 import { AutenticacionService } from '../../../services/autenticacion.service';
+import { GoalService } from '../../../services/goal.service';
 
 declare var jQuery:JQueryStatic
 
@@ -20,7 +21,7 @@ declare var jQuery:JQueryStatic
 	selector: 'dashboard-alumno',
   templateUrl: 'app/components/dashboard/student-dashboard/student-dashboard.html',
 	styleUrls: ['app/components/dashboard/student-dashboard/student-dashboard.css'],
-  providers: [AutenticacionService],
+  providers: [AutenticacionService, GoalService],
 	directives:  [GoalForm, CommentDirective, Diets],
   pipes: [BeautifyProgessBarPipe, GoalNamePipe],
 	inputs: ['student']
@@ -45,7 +46,7 @@ export class DashboardAlumno implements OnInit{
 	posChanged:boolean;
 
 
-	constructor(private aut: AutenticacionService) {
+	constructor(private aut: AutenticacionService, private goalService: GoalService) {
 		this.tab = 1;
 		this.posChanged = false; //Por si acaso, como no se donde se inicializa realmente
 	}
@@ -74,17 +75,20 @@ export class DashboardAlumno implements OnInit{
 
 	getGoal(goal: Goal){
 		this.student.goal = goal;
-		// AQUI SE GUARDA EN LA BASE DE DATOS (POST GOAL)
 	}
 
 	goalResponse(acepted:boolean){
 		this.student.goal.acepted = acepted;
 		this.student.goal.canceled = !acepted;
-		// LLAMAR A GUARDAR
-		if(this.aut.esProfesor() && !acepted){
-			this.newGoal();
-			this.goBack();
-		}
+		this.goalService.editGoal(this.student.goal).subscribe(
+			response => {
+				if(this.aut.esProfesor() && !acepted){
+					this.newGoal(); // Poner la meta del alumno a null
+					this.goBack();  // Vuelve al DashboardEntrenador
+				}
+			},
+			error => console.log(error)
+		)
 	}
 
 	saveTask(mode:boolean){
