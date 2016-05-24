@@ -15,12 +15,15 @@ export class CommentDirective {
     @Input()
     comments:Comment[];
 
+    @Input()
+    goalId:number;
+
     constructor(private aut: AutenticacionService, private commentService: CommentService){}
 
     saveComment(text: string){
       let comment = newComment(text);
       //this.comments.push(comment);
-      this.commentService.newComment(comment, this.aut.User().goal.id).subscribe(
+      this.commentService.newComment(comment, this.goalId).subscribe(
         response => this.comments.push(comment),
         error => console.log(error)
       );

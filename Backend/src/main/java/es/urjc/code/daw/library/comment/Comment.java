@@ -18,7 +18,6 @@ public class Comment{
 	private boolean read;
 	
 	public Comment(String rol, String comment, boolean read) {
-		super();
 		this.rol = rol;
 		this.date = System.currentTimeMillis();
 		this.comment = comment;

@@ -26,12 +26,10 @@ public class Task {
 	private int result2;           // Resultado del alumno 2  (Peso/Tiempo)
 	
 	
-	
-	public Task() {}
+
 	
 	public Task(String name, int status, String description, int type, int objective1, String format1, int result1,
 			int objective2, String format2, int result2) {
-		super();
 		this.name = name;
 		this.status = status;
 		this.description = description;
@@ -43,6 +41,8 @@ public class Task {
 		this.format2 = format2;
 		this.result2 = result2;
 	}
+	
+	public Task() {}
 
 	public long getId() {
 		return id;
