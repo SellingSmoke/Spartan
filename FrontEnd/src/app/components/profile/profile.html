@@ -94,17 +94,20 @@
         <div class="form-group">
           <label for="inputPassword" class="col-md-2 control-label">Contraseña</label>
           <div class="col-md-10">
-            <input type="password" class="form-control" id="inputPassword" placeholder="Nueva contraseña">
+            <input #pass1 type="password" class="form-control" id="inputPassword" placeholder="Nueva contraseña">
           </div>
         </div>
         <div class="form-group">
           <label for="inputPassword" class="col-md-2 control-label">Repetir Contraseña</label>
           <div class="col-md-10">
-            <input type="password" class="form-control" id="inputPassword" placeholder="Repetir contraseña">
+            <input #pass2 type="password" class="form-control" id="inputPassword" placeholder="Repetir contraseña">
           </div>
         </div>
+        <alert *ngIf="fieldsIncorrect" (eventShowable)="fieldsIncorrect = false" [mainTitle]="'Campo incorrecto'" [message]="'Revise que ambas contraseñas coincidan'" [color]="'negative'" [closable]="true" [timeable]="-1"></alert>
+
         <br>
-        <a class="btn btn-ln btn-raised btn-danger" (click)="saveChanges(true)">Guardar contraseña</a>
+
+        <a class="btn btn-ln btn-raised btn-danger" (click)="savePass(pass1.value,pass2.value)">Guardar contraseña</a>
         <span *ngIf="edit_mode != 0" class="btn btn-danger pull-right" (click)="saveChanges(false)"> Atrás</span>
       </div>
     </div>

@@ -49,6 +49,21 @@ export class UserService {
       .catch(error => this.handleError(error));
   }
 
+  public editUser(user: User, pass?:String) {
+    console.log("Se va a editar un usuario");
+    let body = JSON.stringify(user);
+    console.log(body);
+    let headers = new Headers({
+        'Content-Type': 'application/json',
+        'X-Requested-With': 'XMLHttpRequest'
+    });
+    let options = new RequestOptions({ headers });
+    let url = URL +"editUser/";
+    return this.http.put(url, body, options)
+      .map(response => response.json())
+      .catch(error => this.handleError(error));
+  }
+
   private processStudentsResponse(students:User[]){
     return students.map(this.assignGoal);
   }
