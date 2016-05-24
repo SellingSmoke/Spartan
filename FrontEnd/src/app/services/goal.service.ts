@@ -13,7 +13,6 @@ const URL:string = "goals/";
   public newGoal(goal: Goal) {
     console.log("Se va a enviar meta");
     let body = JSON.stringify(goal);
-    console.log(body);
     let headers = new Headers({
         'Content-Type': 'application/json',
        'X-Requested-With': 'XMLHttpRequest'
@@ -21,6 +20,21 @@ const URL:string = "goals/";
     let options = new RequestOptions({ headers });
 
     return this.http.post(URL, body, options)
+      .map(response => response.json())
+      .catch(error => this.handleError(error));
+  }
+
+  public deleteGoal(id: number) {
+    console.log("Se va a borrar una meta");
+    let headers = new Headers({
+        'Content-Type': 'application/json',
+       'X-Requested-With': 'XMLHttpRequest'
+     });
+    let options = new RequestOptions({ headers });
+
+    let url = URL + id;
+
+    return this.http.delete(URL, options)
       .map(response => response.json())
       .catch(error => this.handleError(error));
   }
