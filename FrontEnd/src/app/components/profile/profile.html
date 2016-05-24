@@ -119,9 +119,8 @@
       <div class="panel-heading"><h3 class="text-muted dialog-title">Editar imagen de perfil</h3></div>
       <div class="panel-body">
         <form>
-      		<div class="form-group">
-      			<label for="exampleInputFile">Subir imagen</label> <input type="file"
-      				(change)="selectFile($event)">
+      		<div class=" btn btn-default form-group">
+      			<label for="exampleInputFile">Subir imagen</label> <input type="file" (change)="selectFile($event)">
       		</div>
           <alert *ngIf="imageResponse" [mainTitle]="imageWellUploded ? '¡Imagen subida con éxito!' : 'Error al subir la imagen'" [message]="" [color]="imageWellUploded ? 'green' : 'negative'" [closable]="false" [timeable]="-1"></alert>
       		<button type="submit" class="btn btn-default" (click)="uploadImage()"> Guardar imagen</button>
@@ -162,7 +161,7 @@
             <span>{{aut.User()?.goal}}</span><!-- <span>{{aut.User()?.goal | GoalName}}</span> -->
           </td>
           <td class="two wide"><i [class]="(aut.User().goal?.diet === null) ? 'teal icon remove' : 'teal icon checkmark'"></i></td>
-          <td class="two wide">{{aut.User().goal?.comments.length}}</td>
+          <td class="two wide">{{aut.User().goal?.comments?.length}}</td>
           <td class="two wide" colspan="2">{{aut.User().goal?.progress}}%</td>
         </tr>
 
@@ -179,7 +178,7 @@
             <span>{{goal | GoalName}}</span>
           </td>
           <td class="two wide"><i [class]="(!goal.diet) ? 'teal icon remove' : 'teal icon checkmark'"></i></td>
-          <td class="two wide">{{goal.comments.length}}</td>
+          <td class="two wide">{{goal.comments?.length}}</td>
           <td class="two wide" colspan="2">{{goal.progress}}%</td>
         </tr>
 
@@ -196,7 +195,7 @@
             <span>{{goal | GoalName}}</span>
           </td>
           <td class="two wide"><i [class]="(goal.diet) ? 'teal icon remove' : 'teal icon checkmark'"></i></td>
-          <td class="two wide">{{goal.comments.length}}</td>
+          <td class="two wide">{{goal.comments?.length}}</td>
           <td class="two wide" colspan="2">{{goal.progress}}%</td>
         </tr>
       </tbody>
