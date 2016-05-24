@@ -53,6 +53,18 @@ export class DashboardEntrenador implements OnInit{
 	}
 
 	/**
+	 * Devuelve el progreso del alumno
+	 */
+	 progress(student:User):number{
+		 if(student.goal != null){
+			 var completadas = student.goal.tasks.filter( t => t.status == 1).length;
+			 var totales = student.goal.tasks.length;
+			 return (completadas/totales) * 100
+		 }
+		 return 0;
+	 }
+
+	/**
 		Método que se llama inmediatamente después del OnInit
 	*/
 

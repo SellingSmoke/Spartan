@@ -16,8 +16,8 @@
 
           <!-- PROGRESO -->
           <div id="barra-progreso-meta" *ngIf="student.goal.acepted" class="progress">
-            <div class="progress-bar" [style.width.%]="student.goal.progress">
-              <span class="sp-label">{{ student.goal.progress | BeautifyProgessBar }}</span>
+            <div class="progress-bar" [style.width.%]="progress()">
+              <span class="sp-label">{{ progress() | BeautifyProgessBar }}</span>
             </div>
           </div>
 

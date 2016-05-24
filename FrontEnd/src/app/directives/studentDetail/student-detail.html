@@ -3,8 +3,8 @@
     <p><b>Meta del alumno</b></p>
     <p> {{ student.goal | GoalName }}</p>
     <div *ngIf="student.goal != null" class="progress">
-      <div class="progress-bar" [style.width.%]="student.goal.progress">
-        <span class="sp-label">{{ student.goal.progress | BeautifyProgessBar }}</span>
+      <div class="progress-bar" [style.width.%]="progress()">
+        <span class="sp-label">{{ progress(student) | BeautifyProgessBar }}</span>
       </div>
     </div>
     <p *ngIf="false" class="sp-label2 text-muted">Sin tareas completadas</p>
@@ -21,7 +21,7 @@
       <i class="large birthday middle aligned icon"></i>
       <div class="content">
         <a class="header">Edad</a>
-        <div class="description">{{student.birthday}}</div>
+        <div class="description">{{student.birthday | date}} ({{anyos()}} años)</div>
       </div>
     </div>
     <div class="item">
