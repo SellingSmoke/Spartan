@@ -14,7 +14,7 @@ export class UserService {
   constructor (private http: Http){}
 
   /**
-     Devuelve todos los alumnos
+     Devuelve un usuario
   */
 
   public newUser(user: User) {
@@ -30,6 +30,34 @@ export class UserService {
     return this.http.post(URL, body, options)
       .map(response => response.json())
       .catch(error => this.handleError(error));
+  }
+
+  /**
+     Devuelve todos los alumnos de un entrenador
+  */
+
+  public getStudents(id:number) {
+
+    let headers = new Headers({
+        'Content-Type': 'application/json',
+        'X-Requested-With': 'XMLHttpRequest'
+    });
+    let options = new RequestOptions({ headers });
+    let url = URL + "/students/"+id
+    return this.http.get(url, options)
+      .map(response => this.processStudentsResponse(response.json()))
+      .catch(error => this.handleError(error));
+  }
+
+  private processStudentsResponse(students:User[]){
+    return students.map(this.assignGoal);
+  }
+
+  private assignGoal(user:User):User{
+    console.log("META AQUI");
+    console.log(user.goals.filter(goal => goal.active)[0]);
+    user.goal = user.goals.filter(goal => goal.active)[0];
+    return user;
   }
 
   private handleError(error: any){
