@@ -89,22 +89,28 @@ public class DatabaseInitializer implements CommandLineRunner {
 		//Añadimos a Los demás para el primer entrenador
 		User u1 = new User(1, "Adolfo", "Suarez", "ad@gmail.com", l, "Hombre", "pass", "ROLE_STUDENT");
 		u1.getGoals().add(new Goal(30, 1, "Meta A",true,true,false));
+		userRepository.save(u1);
 		
 		User u2 = new User(1, "Cristina", "Murillo", "cm@gmail.com", l, "Mujer", "pass", "ROLE_STUDENT");
 		u2.getGoals().add(new Goal(30, 1, "Meta C",true,true,false));
+		userRepository.save(u2);
 		
 		User u3 = new User(1, "Maria", "Garcia", "cm@gmail.com", l, "Mujer", "pass", "ROLE_STUDENT");
 		u3.getGoals().add(new Goal(30, 1, "Meta M",true,true,false));
+		userRepository.save(u3);
 		
 		//Para el segundo
 		User u4 = new User(-3, "Sergio", "Perez", "sp@gmail.com", l, "Hombre", "pass", "ROLE_STUDENT");
 		u4.getGoals().add(new Goal(30, 1, "Meta S",true,true,false));
+		userRepository.save(u4);
 		
 		User u5 = new User(-3, "Juan", "Miguel", "cm@gmail.com", l, "Hombre", "pass", "ROLE_STUDENT");
 		u5.getGoals().add(new Goal(30, 1, "Meta JM",true,true,false));
+		userRepository.save(u5);
 		
 		User u6 = new User(-3, "Carmen", "Galán", "cm@gmail.com", l, "Mujer", "pass", "ROLE_STUDENT");
 		u6.getGoals().add(new Goal(30, 1, "Meta CG",true,true,false));
+		userRepository.save(u6);
 		
 	}
 }

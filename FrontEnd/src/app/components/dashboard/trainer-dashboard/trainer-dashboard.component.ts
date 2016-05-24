@@ -23,7 +23,6 @@ export class DashboardEntrenador implements OnInit{
 
 	selectedStudent: User;
 	students: User[];
-	images:string[];
 
   constructor(private _router: Router, private userService:UserService,private aut: AutenticacionService) {
 		this.students =[];
@@ -58,19 +57,9 @@ export class DashboardEntrenador implements OnInit{
 	*/
 
   ngOnInit() {
-		this.images = IMAGES;
 		this.userService.getStudents(this.aut.User().id).subscribe(
 			response => {console.log(response), this.students = response},
 			error => console.log(error)
 		)
   }
 }
-
-
-var IMAGES = ["http://semantic-ui.com/images/avatar/large/steve.jpg",
-	           "http://semantic-ui.com/images/avatar2/large/matthew.png",
-	           "http://semantic-ui.com/images/avatar/large/daniel.jpg",
-	           "http://semantic-ui.com/images/avatar/large/elliot.jpg",
-	           "http://semantic-ui.com/images/avatar/large/jenny.jpg",
-	           "http://semantic-ui.com/images/avatar/large/stevie.jpg",
-						 "http://semantic-ui.com/images/avatar/large/helen.jpg"];

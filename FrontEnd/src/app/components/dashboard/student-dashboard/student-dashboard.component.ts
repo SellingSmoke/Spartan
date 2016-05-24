@@ -100,15 +100,14 @@ export class DashboardAlumno implements OnInit{
 
 	saveTask(mode: boolean){
 		if (mode){
-			this.student.goal.tasks.push(this.task);
+
+			console.log("TASK ENVIADA: " + this.task);
+			console.log("ID DE LA GOAL: " + this.student.goal.id);
 		  this.taskService.newTask(this.task, this.student.goal.id).subscribe(
-				respose => {console.log("Tarea añadida!"); this.student.goal.tasks.push(this.task);},
+				respose => {console.log("Tarea añadida!");this.student.goal.tasks.push(this.task);this.task = newTask();this.showDialog();},
 				error => console.log(error)
 			);
 		}
-		this.task = newTask();
-		// Para cerrar el dialog
-		this.showDialog();
 	}
 
 	setType(type: number){
@@ -217,10 +216,8 @@ export class DashboardAlumno implements OnInit{
 	 * Elimina una tarea (solo entrendor)
 	 */
 	deleteTask(task: Task){
-		var x = this.student.goal.tasks.indexOf(task);
-		this.student.goal.tasks.splice(x, 1);
 		this.taskService.deleteTask(task.id).subscribe(
-			respose => console.log("Tarea eliminada!"),
+			respose => {var x = this.student.goal.tasks.indexOf(task); this.student.goal.tasks.splice(x, 1); console.log("Tarea eliminada!")},
 			error => console.log(error)
 		);
 	}
