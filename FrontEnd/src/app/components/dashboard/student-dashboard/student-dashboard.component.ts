@@ -104,7 +104,12 @@ export class DashboardAlumno implements OnInit{
 			console.log("TASK ENVIADA: " + this.task);
 			console.log("ID DE LA GOAL: " + this.student.goal.id);
 		  this.taskService.newTask(this.task, this.student.goal.id).subscribe(
-				respose => {console.log("Tarea añadida!");this.student.goal.tasks.push(this.task);this.task = newTask();this.showDialog();},
+				response => {
+					console.log("Tarea añadida!");
+					console.log(response);
+					this.student.goal.tasks.push(response);
+					this.task = newTask();
+					this.showDialog();},
 				error => console.log(error)
 			);
 		}
@@ -196,7 +201,7 @@ export class DashboardAlumno implements OnInit{
 		task.status = 0;
 		this.editTrigger(task);
 		this.taskService.editTask(task).subscribe(
-			respose => console.log("Tarea editada!"),
+			response => console.log("Tarea editada!"),
 			error => console.log(error)
 		)
 	}
@@ -207,7 +212,7 @@ export class DashboardAlumno implements OnInit{
 	completeTask(task: Task) {
 		task.status = 1;
 		this.taskService.editTask(task).subscribe(
-			respose => console.log("Tarea completada!"),
+			response => console.log("Tarea completada!"),
 			error => console.log(error)
 		);
 	}
@@ -216,8 +221,8 @@ export class DashboardAlumno implements OnInit{
 	 * Elimina una tarea (solo entrendor)
 	 */
 	deleteTask(task: Task){
-		this.taskService.deleteTask(task.id).subscribe(
-			respose => {var x = this.student.goal.tasks.indexOf(task); this.student.goal.tasks.splice(x, 1); console.log("Tarea eliminada!")},
+		this.taskService.deleteTask(task, this.student.goal.id).subscribe(
+			response => {var x = this.student.goal.tasks.indexOf(task); this.student.goal.tasks.splice(x, 1); console.log("Tarea eliminada!")},
 			error => console.log(error)
 		);
 	}
@@ -228,7 +233,7 @@ export class DashboardAlumno implements OnInit{
 	taskToPending(task: Task){
 		task.status = 2;
 		this.taskService.editTask(task).subscribe(
-			respose => {console.log("Tarea a pendiente!"); this.clickOnTaskInput(task.id)},
+			response => {console.log("Tarea a pendiente!"); this.clickOnTaskInput(task.id)},
 			error => console.log(error)
 		);
 	}
