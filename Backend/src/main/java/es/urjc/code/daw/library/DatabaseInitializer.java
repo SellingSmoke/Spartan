@@ -1,4 +1,4 @@
-package es.urjc.code.daw.library;
+/*package es.urjc.code.daw.library;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -63,7 +63,7 @@ public class DatabaseInitializer implements CommandLineRunner {
 		
 		// Añadimos a Pablo
 		
-		/*
+		
 		 * { id: 2, name: "Pablo", lastname:"Fuente Pérez",email: "michel.maes95@gmail.com", gender:0, age: 20, registration_date: 1461111590589,
 //       goal: { id: 2, student_id: 2, type: 1, progress: 50, campo_metaX: "10kg", acepted: true, canceled:false,
 //         diet: null,
@@ -71,7 +71,7 @@ public class DatabaseInitializer implements CommandLineRunner {
 //         tasks: [{ id: 5, name: "Recorrido 2", goal_id: 2, status: 1, description: "Te queda esta también", type: 0, objective1:100, format1:"Km", result1: 0, objective2:20, format2:"minutos", result2:18 },
 //           { id: 6, name: "Repeticiones 2", goal_id: 2, status: 2, description: "Esta tarea hay que hacerla de este modo FIN", type: 1, objective1:12, format1:"Kg", result1: 0, objective2:20, format2:"Repeticiones", result2:18 }
 //         ]}},
-		 */
+		 
 		
 			// public User(long trainer_id, String name, String lastname, String email, long birthday, String gender, String password, String... roles) 
 		User pablo = new User(-1, "pablo", "Fuente Pérez", "pablo@gmail.com", l, "Hombre", "pass", "ROLE_STUDENT");
@@ -119,3 +119,4 @@ public class DatabaseInitializer implements CommandLineRunner {
 		
 	}
 }
+*/
