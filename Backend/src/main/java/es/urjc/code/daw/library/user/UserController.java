@@ -1,6 +1,8 @@
 package es.urjc.code.daw.library.user;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,6 +26,8 @@ import java.nio.file.Paths;
 
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+
+import es.urjc.code.daw.library.goal.Goal;
 
 @RestController
 @RequestMapping("/users")
@@ -65,7 +69,6 @@ public class UserController {
 		}
 	}
 	
-
 	@RequestMapping(value = "/imageUpload", method = RequestMethod.POST)
 	public ResponseEntity<String> handleFileUpload(@RequestParam MultipartFile file, @RequestParam long id) throws IOException {
 		
