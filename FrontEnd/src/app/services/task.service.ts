@@ -24,7 +24,7 @@ export class TaskService {
    });
     let options = new RequestOptions({ headers });
     let url = URL + "goal/"+goal_id;
-    return this.http.post(URL, body, options)
+    return this.http.post(url, body, options)
       .map(response => response.json())
       .catch(error => this.handleError(error));
   }
