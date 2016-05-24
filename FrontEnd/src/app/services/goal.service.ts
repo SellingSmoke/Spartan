@@ -34,6 +34,7 @@ const URL:string = "goals/";
 
   public editGoal(goal: Goal) {
     console.log("Se va a editar meta");
+    console.log(goal);
     let body = JSON.stringify(goal);
     let headers = new Headers({
         'Content-Type': 'application/json',

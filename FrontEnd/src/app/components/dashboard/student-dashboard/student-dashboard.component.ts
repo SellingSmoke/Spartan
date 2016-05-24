@@ -14,6 +14,7 @@ import { CommentDirective } from '../../../directives/comments/comment.directive
 import { BeautifyProgessBarPipe, GoalNamePipe } from '../../../pipes/student-pipes.pipe';
 import { AutenticacionService } from '../../../services/autenticacion.service';
 import { GoalService } from '../../../services/goal.service';
+import { TaskService } from '../../../services/task.service';
 
 declare var jQuery:JQueryStatic
 
@@ -21,7 +22,7 @@ declare var jQuery:JQueryStatic
 	selector: 'dashboard-alumno',
   templateUrl: 'app/components/dashboard/student-dashboard/student-dashboard.html',
 	styleUrls: ['app/components/dashboard/student-dashboard/student-dashboard.css'],
-  providers: [AutenticacionService, GoalService],
+  providers: [AutenticacionService, GoalService,TaskService],
 	directives:  [GoalForm, CommentDirective, Diets],
   pipes: [BeautifyProgessBarPipe, GoalNamePipe],
 	inputs: ['student']
@@ -46,7 +47,8 @@ export class DashboardAlumno implements OnInit{
 	posChanged:boolean;
 
 
-	constructor(private aut: AutenticacionService, private goalService: GoalService) {
+	constructor(private aut: AutenticacionService,
+								private goalService: GoalService, private taskService: TaskService) {
 		this.tab = 1;
 		this.posChanged = false; //Por si acaso, como no se donde se inicializa realmente
 	}
@@ -73,7 +75,12 @@ export class DashboardAlumno implements OnInit{
 		this.student.goal = null;
 	}
 
+	/**
+	 *	Recoge la meta del formulario
+   */
+
 	getGoal(goal: Goal){
+		console.log("Metra creada: "+goal.id)
 		this.student.goal = goal;
 	}
 
@@ -161,9 +168,16 @@ export class DashboardAlumno implements OnInit{
 	    return false;
 	}
 
-	taskToPending(t){
-		jQuery('#s'+t.id).trigger("click");
-		t.status = 2;
+	/**
+	 * Guarda las modificaciones hechas por el alumno
+	 */
+
+	taskToPending(task: Task){
+		task.status = 2;
+		this.taskService.editTask(task).subscribe(
+			respose => jQuery('#s'+task.id).trigger("click"),
+			error => console.log(error)
+		)
 	}
 
 	colorlabel (e){

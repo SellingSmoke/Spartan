@@ -1,6 +1,9 @@
 package es.urjc.code.daw.library.goal;
 
 import es.urjc.code.daw.library.user.*;
+
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,7 +32,21 @@ public class GoalController {
 			User userLogado =user.getLoggedUser();
 			userLogado.getGoals().add(goal);
 			userRepository.save(userLogado);
-			return new ResponseEntity<>(goal, HttpStatus.CREATED);
+	    // LA ÑAPA DE LAS ÑAPAS, HAY QUE VER COMO MIERDAS HACER ESTO BIEN
+		//goal = userRepository.findOne(userLogado.getId()).getGoals().get(userLogado.getGoals().size()-1);
+		goal = userRepository.findOne(userLogado.getId()).getGoals()
+				.stream().filter( g -> g.isActive()).collect(Collectors.toList()).get(0);
+		return new ResponseEntity<>(goal, HttpStatus.CREATED);
+	}
+	
+	@RequestMapping(value = "/edit", method = RequestMethod.PUT)
+	public ResponseEntity<Goal> modifyGoal(@RequestBody Goal goal) {
+		if(goalRepository.findOne(goal.getId()) != null){
+			goalRepository.save(goal);
+			return new ResponseEntity<>(goal, HttpStatus.OK);
+		}else{
+			return new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
+		}
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
@@ -45,14 +62,4 @@ public class GoalController {
 		return new ResponseEntity<>(goal, HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/edit", method = RequestMethod.PUT)
-	public ResponseEntity<Goal> modifyGoal(@RequestBody Goal goal) {
-		if(goalRepository.findOne(goal.getId()) == null){
-			goalRepository.save(goal);
-			return new ResponseEntity<>(goal, HttpStatus.OK);
-		}else{
-			return new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
-		}
-	}
-		
 }

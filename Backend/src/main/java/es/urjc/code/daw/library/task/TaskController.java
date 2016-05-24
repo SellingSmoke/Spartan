@@ -39,8 +39,19 @@ public class TaskController {
 		}
 	}
 	
+	@RequestMapping(value = "/edit", method = RequestMethod.PUT)
+	public ResponseEntity<Task> editTask(@RequestBody Task task) {
+		if(goalRepository.findOne(task.getId()) != null){
+			taskRepository.save(task);
+			return new ResponseEntity<>(task, HttpStatus.OK);
+		}else{
+			return new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
+		}
+	}
+	
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Task> deleteTask(@PathVariable(value="id") String id) {
+		System.out.println("Matchea delete");
 		long id_i = -1;
 		try{
 			id_i = Long.parseLong(id);
@@ -52,14 +63,6 @@ public class TaskController {
 		return new ResponseEntity<>(task, HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/edit", method = RequestMethod.PUT)
-	public ResponseEntity<Task> editTask(@RequestBody Task task) {
-		if(goalRepository.findOne(task.getId()) == null){
-			taskRepository.save(task);
-			return new ResponseEntity<>(task, HttpStatus.OK);
-		}else{
-			return new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
-		}
-	}
+	
 		
 }

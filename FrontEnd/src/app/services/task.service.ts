@@ -34,7 +34,7 @@ export class TaskService {
    */
 
   public editTask(task: Task) {
-    console.log("Se va a editar meta");
+    console.log("Se va a editar tarea");
     let body = JSON.stringify(task);
     let headers = new Headers({
         'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ export class TaskService {
    */
 
   public deleteTask(id: number) {
-    console.log("Se va a borrar una meta");
+    console.log("Se va a borrar una tarea");
     let headers = new Headers({
         'Content-Type': 'application/json',
        'X-Requested-With': 'XMLHttpRequest'
