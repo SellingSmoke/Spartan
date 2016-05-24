@@ -4,6 +4,7 @@ import es.urjc.code.daw.library.user.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -32,15 +33,16 @@ public class GoalController {
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Goal> deleteGoal(@RequestBody Goal goal) {
-//		if(goalRepository.findOne(goal.getId()) != null){
-//			goalRepository.delete(goal);
-//			return new ResponseEntity<>(goal, HttpStatus.OK);
-//		}else{
-//			return new ResponseEntity<>(HttpStatus.CONFLICT);
-//		}
-		// ES NECESARIO RECOGER EL PARAMETRO DE LA RUTA
-		return null;
+	public ResponseEntity<Goal> deleteGoal(@PathVariable(value="id") String id) {
+		long id_i = -1;
+		try{
+			id_i = Long.parseLong(id);
+		}catch(NumberFormatException e){
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+		Goal goal = goalRepository.findOne(id_i);
+		goalRepository.delete(id_i);
+		return new ResponseEntity<>(goal, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "/edit", method = RequestMethod.PUT)
