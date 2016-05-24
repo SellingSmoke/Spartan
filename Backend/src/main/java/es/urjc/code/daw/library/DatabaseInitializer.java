@@ -40,11 +40,15 @@ public class DatabaseInitializer implements CommandLineRunner {
 		Comment c1 = new Comment("ROLE_STUDENT", "Oye, y esto ... como se hace", true);
 		Comment c2 = new Comment("ROLE_TRAINER", "Se hace asi asi y asi", false);
 		Comment c3 = new Comment("ROLE_STUDENT", "Vale vale, vamo' a carmarnos", false);
-		u.getGoals().add(g);
-		Task t = new Task("Repeticiones",  0, "Esta tarea hay que hacerla asi", 1, 15, "repeticiones", 10, 40, "Kg", 35);
+		
+		Task tar1 = new Task("Dominadas Push-Up",  0, "Después de calentar los hombros", 1, 15, "Kg", 10, 40, "repeticiones", 35);
+		Task tar2 = new Task("Press de pecho",  0, "Procura no lastimarte la columna", 1, 20, "peso propio", 10, 80, "repeticiones", 35);
+		Task tar3 = new Task("Elíptica",  1, "No comiences demasiado rápido", 1, 5, "minutos", 10, 40, "km", 35);
 		
 		String m = "[[\" - Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja\",\"- Menestra de verduras - Conejo al tomillo - 1 clementina\",\"- 1 yogur desnatado\",\"- Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor\"],[\" - Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja\",\"- Menestra de verduras - Conejo al tomillo - 1 manzana\",\"- 1 yogur desnatado\",\"- Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor\"],[\" - Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja\",\"- Menestra de verduras - Conejo al tomillo - 1 pera\",\"- 1 yogur desnatado\",\"- Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor\"],[\" - Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja\",\"- Menestra de verduras - Conejo al tomillo - 1 platano\",\"- 1 yogur desnatado\",\"- Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor\"],[\" - Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja\",\"- Menestra de verduras - Conejo al tomillo - 1 kiwi\",\"- 1 yogur desnatado\",\"- Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor\"],[\" - Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja\",\"- Menestra de verduras - Conejo al tomillo - 2 mandarina\",\"- 1 yogur desnatado\",\"- Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor\"],[\" - Leche descremada - 2 biscotes sin sal con aceite de oliva - 1 naranja\",\"- Menestra de verduras - Conejo al tomillo - 1 naranja\",\"- 1 yogur desnatado\",\"- Ensalada de scarola, granada y pepitas de girasol - Merluza al vapor\"]]";
-		g.getTasks().add(t);
+		g.getTasks().add(tar1);
+		g.getTasks().add(tar2);
+		g.getTasks().add(tar3);
 		g.getComments().add(c1);
 		g.getComments().add(c2);
 		g.getComments().add(c3);
@@ -52,6 +56,7 @@ public class DatabaseInitializer implements CommandLineRunner {
 				"No apta para celiacos", m);
 		dietRepository.save(d);
 		g.setDiet(d);
+		u.getGoals().add(g);
 		userRepository.save(u);
 		
 		

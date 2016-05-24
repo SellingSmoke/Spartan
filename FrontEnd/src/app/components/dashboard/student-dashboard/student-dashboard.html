@@ -232,7 +232,7 @@
                     </div>
                   </div>
 
-                  <div *ngIf="!task.type" id="{{'form-aerobico-EDITAR-' + task.id}}">
+                  <div *ngIf="task.type" id="{{'form-aerobico-EDITAR-' + task.id}}">
                     <div class="col-md-4 form-group">
                       <input [(ngModel)]="task.objective1" class="form-control" id="repeticiones-tarea-EDITAR" placeholder="Num. repeticiones" type="number">
                     </div>
@@ -253,7 +253,7 @@
                     </div>
                   </div>
 
-                  <div *ngIf="task.type" id="{{'form-anaerobico-EDITAR-' + task.id}}">
+                  <div *ngIf="!task.type" id="{{'form-anaerobico-EDITAR-' + task.id}}">
                     <div class="col-md-4 form-group">
                       <input [(ngModel)]="task.objective1" class="form-control" id="distancia-tarea-EDITAR" placeholder="Distancia" type="number">
                     </div>
