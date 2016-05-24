@@ -19,6 +19,9 @@ export class Diets implements OnInit, AfterViewInit{
 	@Input()
 	diet: Diet;
 
+	@Input()
+	goalId:number;
+
 	static days =['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'];
 
 	// Contendrá los platos de cada dia de la semana
@@ -110,13 +113,13 @@ export class Diets implements OnInit, AfterViewInit{
 			if( this.diet.id != undefined){
 				// AQUI SE HARÁ UN PUT (Ya existe)
 				this.dietService.editDiet(this.diet).subscribe(
-					respose => console.log("Dieta editada!"),
+					response => { this.diet = response; this.matrix = JSON.parse(this.diet.matrix);},
 					error => console.log(error)
 				);
 			}else{
 				// AQUI SE HARÁ UN POST (Nueva)
-				this.dietService.newDiet(this.diet).subscribe(
-					respose => console.log("Dieta creada!"),
+				this.dietService.newDiet(this.diet, this.goalId).subscribe(
+					response => {this.diet = response; this.matrix = JSON.parse(this.diet.matrix);},
 					error => console.log(error)
 				);
 			}

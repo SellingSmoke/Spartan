@@ -11,10 +11,10 @@ const URL:string = "diet/";
   constructor (private http: Http){}
 
   /**
-   *  GOAL POST
+   *  DIET POST
    */
 
-  public newDiet(diet:Diet) {
+  public newDiet(diet:Diet, goalId:number) {
     console.log("Se va a enviar meta");
     let body = JSON.stringify(diet);
     let headers = new Headers({
@@ -22,14 +22,14 @@ const URL:string = "diet/";
        'X-Requested-With': 'XMLHttpRequest'
    });
     let options = new RequestOptions({ headers });
-
-    return this.http.post(URL, body, options)
+    let url = URL + "goal/"+goalId;
+    return this.http.post(url, body, options)
       .map(response => response.json())
       .catch(error => this.handleError(error));
   }
 
   /**
-   *  GOAL PUT
+   *  DIET PUT
    */
 
   public editDiet(diet: Diet) {

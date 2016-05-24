@@ -27,26 +27,24 @@ public class DietController {
 	private DietRepository dietRepository;
 	@Autowired
 	private GoalRepository goalRepository;
-	@Autowired
-	private UserRepository userRepository;
-	@Autowired
-	private UserComponent user;
 
-	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public ResponseEntity<Diet> newGoal(@RequestBody Diet diet) {
-			User userLogado =user.getLoggedUser();
-			Goal goal = userRepository.findOne(userLogado.getId()).getGoals()
-					.stream().filter( g -> g.isActive()).collect(Collectors.toList()).get(0);
-			
-			goal.setDiet(diet);
-			
+	@RequestMapping(value = "/goal/{id}", method = RequestMethod.POST)
+	public ResponseEntity<Diet> newGoal(@RequestBody Diet diet, @PathVariable(value="id") String id) {
+		long id_i = -1;
+		try{
+			id_i = Long.parseLong(id);
+		}catch(NumberFormatException e){
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+		Goal goal = goalRepository.findOne(id_i);
+		if(goal != null){
 			dietRepository.save(diet);
+			goal.setDiet(diet);
 			goalRepository.save(goal);
-			userRepository.save(userLogado);
-	    // LA ÑAPA DE LAS ÑAPAS, HAY QUE VER COMO MIERDAS HACER ESTO BIEN
-		//goal = userRepository.findOne(userLogado.getId()).getGoals().get(userLogado.getGoals().size()-1);
-
-		return new ResponseEntity<>(diet, HttpStatus.CREATED);
+			return new ResponseEntity<>(diet, HttpStatus.CREATED);
+		}else{
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
 	}
 	
 	@RequestMapping(value = "/edit", method = RequestMethod.PUT)

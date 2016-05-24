@@ -339,7 +339,7 @@
             </div>
 
             <!-- FORMULARIO Y VISTA DE LA DIETA -->
-            <diets *ngIf="student.goal.diet || aut.esProfesor()" [(diet)]="student.goal.diet"></diets>
+            <diets *ngIf="student.goal.diet || aut.esProfesor()" [(diet)]="student.goal.diet" [goalId]="student.goal.id"></diets>
 
           </div>
 
