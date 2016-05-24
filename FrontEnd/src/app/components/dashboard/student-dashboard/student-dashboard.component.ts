@@ -84,7 +84,7 @@ export class DashboardAlumno implements OnInit{
 		this.student.goal = goal;
 	}
 
-	goalResponse(acepted:boolean){
+	goalResponse(acepted: boolean){
 		this.student.goal.acepted = acepted;
 		this.student.goal.canceled = !acepted;
 		this.goalService.editGoal(this.student.goal).subscribe(
@@ -98,10 +98,13 @@ export class DashboardAlumno implements OnInit{
 		)
 	}
 
-	saveTask(mode:boolean){
+	saveTask(mode: boolean){
 		if (mode){
 			this.student.goal.tasks.push(this.task);
-		  // AQUI SE LLAMARÁ A GUARDAR EN LA BDD (POST TASK)
+		  this.taskService.newTask(this.task, this.student.goal.id).subscribe(
+				respose => {console.log("Tarea añadida!"); this.student.goal.tasks.push(this.task);},
+				error => console.log(error)
+			);
 		}
 		this.task = newTask();
 		// Para cerrar el dialog
@@ -120,7 +123,7 @@ export class DashboardAlumno implements OnInit{
     }
 	}
 
-	setTab(n:number){
+	setTab(n: number){
 		switch(n){
 			case 1:	this.tab = 1;
 							break;
@@ -168,37 +171,68 @@ export class DashboardAlumno implements OnInit{
 	    return false;
 	}
 
-	/**
-	 * Guarda las modificaciones hechas por el alumno
-	 */
+	colorlabel (e: string){
+		  jQuery(e).toggleClass('add-color-label');
+	}
 
-	taskToPending(task: Task){
-		task.status = 2;
+	editTrigger(task: Task) {
+		jQuery("#edit-window-" + task.id).toggleClass("start-no-display");
+		if (!(jQuery('#s' + task.id).is(':checked'))){
+			jQuery("#edit-window-" + task.id).removeClass("start-no-display");
+		 	this.clickOnTaskInput(task.id);
+	  }
+	}
+
+	clickOnTaskInput (id: number){
+		jQuery('#s'+id).trigger("click");
+	}
+
+
+	//OPERACIONES CRUD
+
+	/**
+	 * Guarda las modificaciones hechas por el entrenador en los objetivos de la meta
+	 */
+	saveEdit(task: Task) {
+		task.status = 0;
+		this.editTrigger(task);
 		this.taskService.editTask(task).subscribe(
-			respose => jQuery('#s'+task.id).trigger("click"),
+			respose => console.log("Tarea editada!"),
 			error => console.log(error)
 		)
 	}
 
-	colorlabel (e){
-		  jQuery(e).toggleClass('add-color-label');
+	/**
+	 * Completa una tarea (alumno directamente, entrenador en una tarea pendiente)
+	 */
+	completeTask(task: Task) {
+		task.status = 1;
+		this.taskService.editTask(task).subscribe(
+			respose => console.log("Tarea completada!"),
+			error => console.log(error)
+		);
 	}
 
-	editTrigger(t) {
-		jQuery("#edit-window-" + t.id).toggleClass("start-no-display");
-		if (!(jQuery('#s' + t.id).is(':checked'))){
-			jQuery("#edit-window-" + t.id).removeClass("start-no-display");
-		 	jQuery('#s'+t.id).trigger("click");
-	  }
-	}
-
-	saveEdit(t) {
-		t.status = 0;
-		this.editTrigger(t);
-	}
-
-	deleteTask(t){
-		var x = this.student.goal.tasks.indexOf(t);
+	/**
+	 * Elimina una tarea (solo entrendor)
+	 */
+	deleteTask(task: Task){
+		var x = this.student.goal.tasks.indexOf(task);
 		this.student.goal.tasks.splice(x, 1);
+		this.taskService.deleteTask(task.id).subscribe(
+			respose => console.log("Tarea eliminada!"),
+			error => console.log(error)
+		);
+	}
+
+	/**
+	 * Guarda las modificaciones hechas por el alumno en los objetivos alcanzados
+	 */
+	taskToPending(task: Task){
+		task.status = 2;
+		this.taskService.editTask(task).subscribe(
+			respose => {console.log("Tarea a pendiente!"); this.clickOnTaskInput(task.id)},
+			error => console.log(error)
+		);
 	}
 }
