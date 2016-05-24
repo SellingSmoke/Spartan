@@ -34,7 +34,7 @@ export class Profile implements OnInit{
 	progress:number;
 
 	private file: File;
-
+	private fieldsIncorrect:boolean;
 	private imageWellUploded:boolean;
 	private imageResponse:boolean = false;
 
@@ -49,6 +49,7 @@ export class Profile implements OnInit{
 		this.numTasks = 0;
 		this.completeGoals = [];
 		this.canceledGoals = [];
+		this.fieldsIncorrect=false;
 	}
 
 	ngOnInit(){
@@ -70,11 +71,24 @@ export class Profile implements OnInit{
 		return Math.floor(parseInt(((Date.now() - this.aut.User().birthday) / (1000 * 60 * 60 * 24* 365)).toFixed(1)));
 	}
 
+	savePass(pass1:string, pass2:string){
+		if(pass1 == pass2){
+			this.aut.User().passwordHash = pass1;
+			this.saveChanges(true);
+		}else{
+			// LLAMAR ALERT
+			this.fieldsIncorrect = true;
+		}
+
+	}
 
 	saveChanges(save:boolean){
 		if(save){
-			// Guardar los cambios en la base de datos
-			// Hacer PUT con este estudiante
+			console.log("HE LLEGADO A SAVECHANGES");
+			this._userService.editUser(this.aut.User()).subscribe(
+				response => console.log() ,
+				error => console.log(error)
+			);
 		}
 		this.editMode = 0;
 	}

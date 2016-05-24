@@ -3,6 +3,7 @@ package es.urjc.code.daw.library.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,6 +26,8 @@ public class UserController {
 
 	@Autowired
 	private UserRepository userRepository;
+	@Autowired
+	private UserComponent userComponent;
 
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	public ResponseEntity<User> newUser(@RequestBody User user) {
@@ -49,6 +52,23 @@ public class UserController {
 		return new ResponseEntity<>(students,HttpStatus.OK);
 	}
 	
+	@RequestMapping(value = "/editUser", method = RequestMethod.PUT)
+	public ResponseEntity<User> changePass(@RequestBody User user) {
+		if( user != null){
+			User userC = this.userComponent.getLoggedUser();
+			if(user.getEmail() != this.userComponent.getLoggedUser().getEmail()){
+				userC.setEmail(user.getEmail());
+			}
+			if(user.getPasswordHash() != null){
+				userC.setPasswordHash(user.getPasswordHash());
+			}
+			userRepository.save(userC);
+			return new ResponseEntity<>(userC,HttpStatus.OK);
+		}else{
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+
+	}
 
 	@RequestMapping(value = "/imageUpload", method = RequestMethod.POST)
 	public ResponseEntity<String> handleFileUpload(@RequestParam MultipartFile file, @RequestParam long id) throws IOException {
