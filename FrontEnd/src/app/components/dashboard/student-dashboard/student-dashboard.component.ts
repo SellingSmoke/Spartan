@@ -3,9 +3,9 @@ import { RouteParams } from 'angular2/router';
 
 import { User } from '../../../models/user.model';
 
-import { Comment } from '../../../models/comment2.model';
-import { Task, newTask, setType } from '../../../models/task2.model';
-import { Goal } from '../../../models/goal2.model';
+import { Comment } from '../../../models/comment.model';
+import { Task, newTask, setType } from '../../../models/task.model';
+import { Goal } from '../../../models/goal.model';
 
 import { GoalForm } from '../../../directives/goalForm/goal-form'
 import { Diets } from '../../../directives/diets/diets'

@@ -1,4 +1,4 @@
-import { Goal } from '../models/goal2.model';
+import { Goal } from '../models/goal.model';
 import { Injectable } from 'angular2/core';
 import {Http, Headers, RequestOptions} from 'angular2/http';
 import {Observable} from 'rxjs/Observable';

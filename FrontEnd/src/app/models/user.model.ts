@@ -1,4 +1,4 @@
-import {Goal} from './goal2.model';
+import {Goal} from './goal.model';
 
 export interface User {
 

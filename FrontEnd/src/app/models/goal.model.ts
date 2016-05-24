@@ -1,6 +1,6 @@
-import { Comment } from './comment2.model';
-import { Task } from './task2.model';
-import { Diet } from './diet2.model';
+import { Comment } from './comment.model';
+import { Task } from './task.model';
+import { Diet } from './diet.model';
 
 export interface Goal {
 

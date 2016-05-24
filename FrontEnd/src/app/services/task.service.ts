@@ -1,4 +1,4 @@
-import { Task } from '../models/task2.model';
+import { Task } from '../models/task.model';
 import { Injectable } from 'angular2/core';
 
 @Injectable()

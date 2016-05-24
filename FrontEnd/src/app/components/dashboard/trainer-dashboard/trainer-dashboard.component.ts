@@ -2,9 +2,9 @@ import { Component, OnInit, Output, EventEmitter } from 'angular2/core';
 import { Router, Route, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
 import { StudentDetailComponent } from '../../../directives/studentDetail/student-detail';
 import { User } from '../../../models/user.model';
-import { Comment } from '../../../models/comment2.model';
-import { Task, newTask, setType } from '../../../models/task2.model';
-import { Goal } from '../../../models/goal2.model';
+import { Comment } from '../../../models/comment.model';
+import { Task, newTask, setType } from '../../../models/task.model';
+import { Goal } from '../../../models/goal.model';
 
 @Component({
 	selector: 'dashboard-entrenador',
