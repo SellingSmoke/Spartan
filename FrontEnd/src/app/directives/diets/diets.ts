@@ -2,6 +2,7 @@ import { Component, Input, OnInit, AfterViewInit } from 'angular2/core';
 import { Diet, newDiet } from '../../models/diet.model';
 import { ShowFoodPipe } from '../../pipes/diet-pipes.pipe';
 import { AutenticacionService } from '../../services/autenticacion.service';
+import { DietService } from '../../services/diet.service';
 
 declare var jQuery:JQueryStatic;
 
@@ -9,7 +10,8 @@ declare var jQuery:JQueryStatic;
 	selector: 'diets',
   templateUrl: 'app/directives/diets/diets.html',
 	styleUrls: ['app/directives/diets/diets.css'],
-	pipes: [ShowFoodPipe]
+	pipes: [ShowFoodPipe],
+	providers: [DietService]
 })
 
 export class Diets implements OnInit, AfterViewInit{
@@ -107,8 +109,16 @@ export class Diets implements OnInit, AfterViewInit{
 			this.diet.matrix = JSON.stringify(this.matrix); // Serializar
 			if( this.diet.id != undefined){
 				// AQUI SE HARÁ UN PUT (Ya existe)
+				this.DietService.editDiet(this.diet).subscribe(
+					respose => console.log("Dieta editada!"),
+					error => console.log(error)
+				);
 			}else{
 				// AQUI SE HARÁ UN POST (Nueva)
+				this.DietService.newDiet(this.diet).subscribe(
+					respose => console.log("Dieta creada!"),
+					error => console.log(error)
+				);
 			}
 		}
 		this.edit_mode = !this.edit_mode;
