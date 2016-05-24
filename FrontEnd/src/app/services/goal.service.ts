@@ -60,7 +60,7 @@ const URL:string = "goals/";
 
     let url = URL + id;
 
-    return this.http.delete(URL, options)
+    return this.http.delete(url, options)
       .map(response => response.json())
       .catch(error => this.handleError(error));
   }

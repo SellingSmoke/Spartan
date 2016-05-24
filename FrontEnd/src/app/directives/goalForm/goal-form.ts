@@ -150,7 +150,7 @@ export class GoalForm {
         meta = newGoal(indexMeta, campoX);
         console.log(meta);
         this.goalService.newGoal(meta).subscribe(// ¡¡¡ ANTES DEL EMIT !!!
-          response => this.newGoal.emit(meta),
+          response => this.newGoal.emit(response),
           error => console.log("No se guardo correctamente la meta")
         );
     }
