@@ -1,7 +1,5 @@
 package es.urjc.code.daw.library.user;
 
-import java.util.Collection;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +15,6 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -28,8 +25,6 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @RequestMapping("/users")
 public class UserController {
-
-	private static final Logger log = LoggerFactory.getLogger(UserController.class);
 
 	@Autowired
 	private UserRepository userRepository;

@@ -4,8 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>es.sidelab</groupId>
-	<artifactId>image_uploader</artifactId>
-	<version>0.1.0</version>
+	<artifactId>SpartanBackend</artifactId>
+	<version>2.1.0</version>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
