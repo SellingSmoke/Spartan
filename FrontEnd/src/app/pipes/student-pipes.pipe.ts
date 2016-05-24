@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from 'angular2/core';
 import { Goal } from '../models/goal.model';
+import { User } from '../models/user.model';
 /*
  * Beautify the progess bar if value is under 20
  *
@@ -20,7 +21,7 @@ export class BeautifyProgessBarPipe implements PipeTransform {
         if (value == 100){
           return "META COMPLETADA";
         }
-        return value + "% COMPLETADO";
+        return Math.floor(value) + "% COMPLETADO";
       }
       return null;
     }

@@ -240,4 +240,16 @@ export class DashboardAlumno implements OnInit{
 			error => console.log(error)
 		);
 	}
+
+	/**
+	 * Devuelve el progreso del alumno
+	 */
+	 progress():number{
+		 if(this.student.goal != null){
+			 var completadas = this.student.goal.tasks.filter( t => t.status == 1).length;
+			 var totales = this.student.goal.tasks.length;
+			 return (completadas/totales) * 100
+		 }
+		 return 0;
+	 }
 }

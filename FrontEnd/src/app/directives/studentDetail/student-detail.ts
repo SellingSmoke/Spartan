@@ -17,4 +17,20 @@ export class StudentDetailComponent{
 
   constructor(private _router: Router) {}
 
+  /**
+	 * Devuelve el progreso del alumno
+	 */
+	 progress():number{
+		 if(this.student.goal != null){
+			 var completadas = this.student.goal.tasks.filter( t => t.status == 1).length;
+			 var totales = this.student.goal.tasks.length;
+			 return (completadas/totales) * 100
+		 }
+		 return 0;
+	 }
+
+   anyos(){
+ 		return Math.floor(parseInt(((Date.now() - this.student.birthday) / (1000 * 60 * 60 * 24* 365)).toFixed(1)));
+ 	 }
+
 }
