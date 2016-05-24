@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, AfterViewInit } from 'angular2/core';
-import { Diet } from '../../models/diet.model';
+import { Diet, newDiet } from '../../models/diet.model';
 import { ShowFoodPipe } from '../../pipes/diet-pipes.pipe';
 import { AutenticacionService } from '../../services/autenticacion.service';
 
@@ -44,7 +44,7 @@ export class Diets implements OnInit, AfterViewInit{
 	*/
 	ngOnInit(){
 		if(!this.diet){
-			// this.diet = new Diet(1, "", ""); // BORRAR EN UN FUTURO
+			this.diet = newDiet(this.aut.User().id); // Inicializa una nueva dieta
 			this.matrix = [
 				/** Lunes     */ ["", "", "", ""],
 				/** Martes    */ ["", "", "", ""],
@@ -55,7 +55,7 @@ export class Diets implements OnInit, AfterViewInit{
 				/** Domingo   */ ["", "", "", ""]
 			];
 		}else{
-			this.matrix = JSON.parse(this.diet.matrix);
+			this.matrix = JSON.parse(this.diet.matrix); // Deserializar
 		}
 	}
 
@@ -100,12 +100,16 @@ export class Diets implements OnInit, AfterViewInit{
 	}
 
 	/**
-		 Cambiar el modo de edición
-	*/
+	 * Cambiar el modo de edición (También guarda)
+	 */
 	editMode(save:boolean){
 		if(save){
-			// Aqui se hará PUT sobre la meta
-
+			this.diet.matrix = JSON.stringify(this.matrix); // Serializar
+			if( this.diet.id != undefined){
+				// AQUI SE HARÁ UN PUT (Ya existe)
+			}else{
+				// AQUI SE HARÁ UN POST (Nueva)
+			}
 		}
 		this.edit_mode = !this.edit_mode;
 	}
