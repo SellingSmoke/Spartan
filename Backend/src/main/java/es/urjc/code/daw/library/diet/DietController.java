@@ -20,48 +20,43 @@ import es.urjc.code.daw.library.user.UserRepository;
 
 
 @RestController
-@RequestMapping("/goals")
+@RequestMapping("/diet")
 public class DietController {
 	
 	@Autowired
-	private DietRepository goalRepository;
+	private DietRepository dietRepository;
+	@Autowired
+	private GoalRepository goalRepository;
 	@Autowired
 	private UserRepository userRepository;
 	@Autowired
 	private UserComponent user;
 
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public ResponseEntity<Goal> newGoal(@RequestBody Goal goal) {
+	public ResponseEntity<Diet> newGoal(@RequestBody Diet diet) {
 			User userLogado =user.getLoggedUser();
-			Goal goal = userRepository.fin;
+			Goal goal = userRepository.findOne(userLogado.getId()).getGoals()
+					.stream().filter( g -> g.isActive()).collect(Collectors.toList()).get(0);
+			
+			goal.setDiet(diet);
+			
+			dietRepository.save(diet);
+			goalRepository.save(goal);
 			userRepository.save(userLogado);
 	    // LA ÑAPA DE LAS ÑAPAS, HAY QUE VER COMO MIERDAS HACER ESTO BIEN
 		//goal = userRepository.findOne(userLogado.getId()).getGoals().get(userLogado.getGoals().size()-1);
-		goal = userRepository.findOne(userLogado.getId()).getGoals()
-				.stream().filter( g -> g.isActive()).collect(Collectors.toList()).get(0);
-		return new ResponseEntity<>(goal, HttpStatus.CREATED);
+
+		return new ResponseEntity<>(diet, HttpStatus.CREATED);
 	}
 	
 	@RequestMapping(value = "/edit", method = RequestMethod.PUT)
-	public ResponseEntity<Goal> modifyGoal(@RequestBody Goal goal) {
-		if(goalRepository.findOne(goal.getId()) != null){
-			goalRepository.save(goal);
-			return new ResponseEntity<>(goal, HttpStatus.OK);
+	public ResponseEntity<Diet> modifyGoal(@RequestBody Diet diet) {
+		if(dietRepository.findOne(diet.getId()) != null){
+			dietRepository.save(diet);
+			return new ResponseEntity<>(diet, HttpStatus.OK);
 		}else{
 			return new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
 		}
 	}
-	
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Goal> deleteGoal(@PathVariable(value="id") String id) {
-		long id_i = -1;
-		try{
-			id_i = Long.parseLong(id);
-		}catch(NumberFormatException e){
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-		}
-		Goal goal = goalRepository.findOne(id_i);
-		goalRepository.delete(id_i);
-		return new ResponseEntity<>(goal, HttpStatus.OK);
-	}
+
 }
