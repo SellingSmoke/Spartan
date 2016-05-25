@@ -33,6 +33,9 @@ Implementado en Angular2. Probada la funcionalidad en Windows, Mac y Linux.
 ## Diagrama de interacción de clases
 ![Diagrama de interaccion clases](FrontEnd/Diagramas/SpartanDiagram.png)
 
+## Diagrama de clases del código Java del servidor
+![Diagrama de clases Java del servidor](FrontEnd/Diagramas/UMLFinal.png)
+
 ## Diagrama de relación de la Base de Datos
 ![Diagrama de relacion de la BDD](FrontEnd/Diagramas/BDD_Spring_ModeloER.png)
 ## Integrantes del equipo de desarrollo:
