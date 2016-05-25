@@ -136,8 +136,8 @@ export class DashboardAlumno implements OnInit{
 			case 2: this.tab = 2;
 							// Pone los comentarios de tu contraparte a leidos
 							for (var comment of this.student.goal.comments){
-								if(comment.rol != this.aut.User().roles[0] && !comment.read)
-									comment.read = true;
+								if(comment.rol != this.aut.User().roles[0] && !comment.readed)
+									comment.readed = true;
 							}
 							//Llamar a guardar en la BDD (POST COMMENT)
 							break;
@@ -149,7 +149,7 @@ export class DashboardAlumno implements OnInit{
 	getNoReadComments(){
 		var n = 0;
 		for (var comment of this.student.goal.comments){
-			if (!comment.read){
+			if (!comment.readed){
 				if(comment.rol == "ROLE_STUDENT" && this.aut.esProfesor()){
 					n++
 				}else if(comment.rol == "ROLE_TRAINER" && this.aut.esAlumno()){

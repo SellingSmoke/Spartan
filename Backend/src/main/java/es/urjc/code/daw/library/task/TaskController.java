@@ -34,11 +34,14 @@ public class TaskController {
 		}
 		Goal goal = goalRepository.findOne(id_i);
 		if(goal != null){
+			taskRepository.save(task);
+			System.out.println("ID1: "+task.getId());
 			goal.getTasks().add(task);
+			System.out.println("ID2: "+task.getId());
+			System.out.println("IDGOAL: "+goal.getId());
 			goalRepository.save(goal);
-			List<Task> l = goalRepository.findOne(id_i).getTasks();
-			Task task2 = l.get(l.size()-1);
-			return new ResponseEntity<>(task2, HttpStatus.CREATED);
+			System.out.println("ID3: "+task.getId());
+			return new ResponseEntity<>(task, HttpStatus.CREATED);
 		}else{
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
@@ -56,7 +59,6 @@ public class TaskController {
 	
 	@RequestMapping(value = "/{id1}/goal/{id2}", method = RequestMethod.DELETE)
 	public ResponseEntity<Task> deleteTask(@PathVariable(value="id1") String id1, @PathVariable(value="id2") String id2) {
-		System.out.println("Matchea delete");
 		long id_i_1 = -1;
 		long id_i_2 = -1;
 		try{

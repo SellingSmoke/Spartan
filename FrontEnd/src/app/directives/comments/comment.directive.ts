@@ -22,7 +22,6 @@ export class CommentDirective {
 
     saveComment(text: string){
       let comment = newComment(text);
-      //this.comments.push(comment);
       this.commentService.newComment(comment, this.goalId).subscribe(
         response => this.comments.push(comment),
         error => console.log(error)

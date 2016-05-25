@@ -5,9 +5,9 @@ export interface Comment {
   // 1 -> Lo ha escrito el alumno
   // 2 -> Lo ha escrito el entrenador
   date: number;
-  comment: string;
+  comentary: string;
 
-  read: boolean;
+  readed: boolean;
   // Los comentarios pueden haber sido leidos o no
   // Cuando abres la pestaña de comentarios pondra todos los comentarios con el rol
   // distinto del tuyo a true
@@ -15,10 +15,10 @@ export interface Comment {
 
 export function newComment(text:string):Comment{
   var comment = {
-    comment: text,
+    comentary: text,
     rol: localStorage.getItem('rol'),
     date: new Date().getTime(),
-    read: false,
+    readed: false,
   }
   return comment;
 }

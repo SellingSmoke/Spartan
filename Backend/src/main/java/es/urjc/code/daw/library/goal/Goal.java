@@ -44,20 +44,10 @@ public class Goal{
 	private List<Task> tasks;
 	
 	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
-	private List<Comment> comments;
+	private List<Comment> comentarios;
 	
 	@OneToOne
 	private Diet diet;
-
-	public Goal() {}
-
-	public List<Comment> getComments() {
-		return comments;
-	}
-
-	public void setComments(List<Comment> comments) {
-		this.comments = comments;
-	}
 
 	public Goal(double progress, int type, String campoMetaX, boolean active, boolean acepted, boolean canceled) {
 		this.progress = progress;
@@ -67,8 +57,18 @@ public class Goal{
 		this.active = active;
 		this.canceled = canceled;
 		this.tasks = new ArrayList<>();
-		this.comments = new ArrayList<>();
+		this.comentarios = new ArrayList<>();
 		this.diet = null;
+	}
+	
+	public Goal() {}
+
+	public List<Comment> getComments() {
+		return comentarios;
+	}
+
+	public void setComments(List<Comment> comments) {
+		this.comentarios = comments;
 	}
 
 	public Diet getDiet() {

@@ -75,11 +75,11 @@
                 </div>
               </div>
             </div>
-            <div class="form-group is-empty">
+            <div *ngIf="rolRegistro" class="form-group is-empty">
               <label for="codigoActivacion" class="col-md-2 control-label">{{rolRegistro ? 'Código de activación' : 'Código de entrenador'}}</label>
 
               <div class="col-md-10">
-                <input class="form-control" id="codigoActivacion">
+                <input [(ngModel)]="trainer_id" type="number" class="form-control" id="codigoActivacion">
                 <span class="help-block">{{rolRegistro ? 'Introduzca el código proporcionado por su entrenador' : 'Introduzca su código de entrenador'}}</span>
               </div>
               <span class="material-input"></span>
