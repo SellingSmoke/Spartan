@@ -1,7 +1,5 @@
 package es.urjc.code.daw.library.diet;
 
-import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,10 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import es.urjc.code.daw.library.goal.Goal;
 import es.urjc.code.daw.library.goal.GoalRepository;
-import es.urjc.code.daw.library.task.Task;
-import es.urjc.code.daw.library.user.User;
-import es.urjc.code.daw.library.user.UserComponent;
-import es.urjc.code.daw.library.user.UserRepository;
+
 
 
 @RestController

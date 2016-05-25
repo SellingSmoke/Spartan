@@ -244,6 +244,7 @@ export class DashboardAlumno implements OnInit{
 		 if(this.student.goal != null){
 			 var completadas = this.student.goal.tasks.filter( t => t.status == 1).length;
 			 var totales = this.student.goal.tasks.length;
+			 this.student.goal.progress = (completadas/totales) * 100;
 			 return (completadas/totales) * 100
 		 }
 		 return 0;

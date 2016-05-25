@@ -158,7 +158,7 @@
         </td>
         <tr class="fila-meta-actual">
           <td class="three wide sp-not">
-            <span>{{aut.User()?.goal}}</span><!-- <span>{{aut.User()?.goal | GoalName}}</span> -->
+             <span>{{aut.User()?.goal | GoalName }}</span>
           </td>
           <td class="two wide"><i [class]="(aut.User().goal?.diet === null) ? 'teal icon remove' : 'teal icon checkmark'"></i></td>
           <td class="two wide">{{aut.User().goal?.comments?.length}}</td>
