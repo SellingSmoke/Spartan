@@ -38,6 +38,11 @@ Implementado en Angular2. Probada la funcionalidad en Windows, Mac y Linux.
 
 ## Diagrama de relación de la Base de Datos
 ![Diagrama de relacion de la BDD](FrontEnd/Diagramas/BDD_Spring_ModeloER.png)
+
+## Vídeo demo de la app en funcionamiento
+
+https://youtu.be/DGvbsc0NDCE
+
 ## Integrantes del equipo de desarrollo:
 
 <!-- Tabla -->
