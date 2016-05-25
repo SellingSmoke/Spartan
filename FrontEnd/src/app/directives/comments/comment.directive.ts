@@ -1,11 +1,12 @@
 import { Component, Input } from 'angular2/core';
 import { Comment, newComment } from '../../models/comment.model';
+import {  Goal } from '../../models/goal.model';
 import { AutenticacionService } from '../../services/autenticacion.service';
-import { CommentService } from '../../services/comment.service';
+import { GoalService } from '../../services/goal.service';
 
 @Component({
     selector: 'comment',
-    providers: [AutenticacionService, CommentService],
+    providers: [AutenticacionService, GoalService],
     templateUrl: 'app/directives/comments/comment.directive.html',
     inputs: ['comments']
 })
@@ -13,21 +14,17 @@ import { CommentService } from '../../services/comment.service';
 export class CommentDirective {
 
     @Input()
-    comments:Comment[];
+    goal:Goal;
 
-    @Input()
-    goalId:number;
-
-    constructor(private aut: AutenticacionService, private commentService: CommentService){}
+    constructor(private aut: AutenticacionService, private goalService: GoalService){}
 
     saveComment(text: string){
       let comment = newComment(text);
-      //this.comments.push(comment);
-      this.commentService.newComment(comment, this.goalId).subscribe(
-        response => this.comments.push(comment),
-        error => console.log(error)
-      );
-      console.log(this.comments);
+      this.goal.comments.push(comment);
+      this.goalService.editGoal(this.goal).subscribe(
+  			response => console.log("Se guardo tu comentario"),
+  			error => console.log(error)
+  		)
     }
 
 };

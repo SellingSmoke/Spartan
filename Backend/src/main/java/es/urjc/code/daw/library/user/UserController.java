@@ -47,7 +47,6 @@ public class UserController {
 		}catch(NumberFormatException e){
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
-		System.err.println("ID_"+id_i);
 		Collection<User> students = userRepository.findByTrainerId(id_i);
 		return new ResponseEntity<>(students,HttpStatus.OK);
 	}

@@ -51,7 +51,7 @@ export class TaskService {
    *  TASK DELETE
    */
 
-  public deleteTask(task: Task, id_goal: number) {
+  public deleteTask(task: Task) {
     console.log("Se va a borrar una tarea");
     let headers = new Headers({
         'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ export class TaskService {
      });
     let options = new RequestOptions({ headers });
 
-    let url = URL + task.id + "/goal/" + id_goal;
+    let url = URL + task.id;
 
     return this.http.delete(url, options)
       .map(response => response.json())

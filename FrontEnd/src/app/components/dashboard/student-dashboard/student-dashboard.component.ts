@@ -100,21 +100,18 @@ export class DashboardAlumno implements OnInit{
 
 	saveTask(mode: boolean){
 		if (mode){
-			console.log("TASK ENVIADA: " + this.task);
-			console.log("ID DE LA GOAL: " + this.student.goal.id);
-		  this.taskService.newTask(this.task, this.student.goal.id).subscribe(
+			this.student.goal.tasks.push(this.task);
+			this.goalService.editGoal(this.student.goal).subscribe(
 				response => {
-					console.log("Tarea añadida!");
-					console.log(response);
-					this.student.goal.tasks.push(response);
+					this.student.goal = response;
 					this.task = newTask();
-					this.showDialog();},
+					this.showDialog();
+				},
 				error => console.log(error)
-			);
+			)
 		}else{
 			this.showDialog();
 		}
-
 	}
 
 	setType(type: number){
@@ -136,8 +133,8 @@ export class DashboardAlumno implements OnInit{
 			case 2: this.tab = 2;
 							// Pone los comentarios de tu contraparte a leidos
 							for (var comment of this.student.goal.comments){
-								if(comment.rol != this.aut.User().roles[0] && !comment.read)
-									comment.read = true;
+								if(comment.rol != this.aut.User().roles[0] && !comment.readed)
+									comment.readed = true;
 							}
 							//Llamar a guardar en la BDD (POST COMMENT)
 							break;
@@ -149,7 +146,7 @@ export class DashboardAlumno implements OnInit{
 	getNoReadComments(){
 		var n = 0;
 		for (var comment of this.student.goal.comments){
-			if (!comment.read){
+			if (!comment.readed){
 				if(comment.rol == "ROLE_STUDENT" && this.aut.esProfesor()){
 					n++
 				}else if(comment.rol == "ROLE_TRAINER" && this.aut.esAlumno()){
@@ -194,8 +191,6 @@ export class DashboardAlumno implements OnInit{
 	}
 
 
-	//OPERACIONES CRUD
-
 	/**
 	 * Guarda las modificaciones hechas por el entrenador en los objetivos de la meta
 	 */
@@ -223,11 +218,12 @@ export class DashboardAlumno implements OnInit{
 	 * Elimina una tarea (solo entrendor)
 	 */
 	deleteTask(task: Task){
-		var x = this.student.goal.tasks.indexOf(task); this.student.goal.tasks.splice(x, 1);
-		this.taskService.deleteTask(task, this.student.goal.id).subscribe(
-			response => {console.log("Tarea eliminada!")},
+		var x = this.student.goal.tasks.indexOf(task);
+		this.student.goal.tasks.splice(x, 1);
+		this.goalService.editGoal(this.student.goal).subscribe(
+			response => console.log("Tarea eliminada"),
 			error => console.log(error)
-		);
+		)
 	}
 
 	/**

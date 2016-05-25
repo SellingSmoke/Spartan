@@ -27,6 +27,8 @@ export class Signup implements OnInit{
 		pass1:string;
 		pass2:string;
 
+		trainer_id:number = -1;
+
 		private passMatching:boolean = true;
 
 		ngOnInit(){
@@ -70,7 +72,7 @@ export class Signup implements OnInit{
 		private toJSON(): User {
 			let img = this.gender == "Hombre" ? "/../assets/imagenes/male_default.png" : "/../assets/imagenes/female_default.jpg";
 			return {
-				trainerId: 1,
+				trainerId: this.trainer_id,
 				name: this.name,
 				lastname: this.lastname,
 				passwordHash: this.pass1,

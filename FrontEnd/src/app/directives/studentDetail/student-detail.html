@@ -1,13 +1,13 @@
 <div class="content">
   <div class="well well-sm">
     <p><b>Meta del alumno</b></p>
-    <p> {{ student.goal | GoalName }}</p>
-    <div *ngIf="student.goal != null" class="progress">
+    <p *ngIf="student.goal"> {{ student.goal | GoalName }}</p>
+    <div *ngIf="student.goal" class="progress">
       <div class="progress-bar" [style.width.%]="progress()">
         <span class="sp-label">{{ progress(student) | BeautifyProgessBar }}</span>
       </div>
     </div>
-    <p *ngIf="false" class="sp-label2 text-muted">Sin tareas completadas</p>
+    <p *ngIf="!student.goal" class="sp-label2 text-muted">Sin tareas completadas</p>
   </div>
   <div class="ui relaxed divided list">
     <div class="item">

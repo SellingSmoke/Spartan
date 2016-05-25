@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import es.urjc.code.daw.library.goal.Goal;
 import es.urjc.code.daw.library.goal.GoalRepository;
-import es.urjc.code.daw.library.task.Task;
 
 
 @RestController

@@ -14,14 +14,14 @@ public class Comment{
 	
 	private String rol;
 	private long date;
-	private String comment;
-	private boolean read;
+	private String comentary;
+	private boolean readed;
 	
-	public Comment(String rol, String comment, boolean read) {
+	public Comment(String rol, String comment, boolean readed) {
 		this.rol = rol;
 		this.date = System.currentTimeMillis();
-		this.comment = comment;
-		this.read = read;
+		this.comentary = comment;
+		this.readed = readed;
 	}
 
 	public Comment() {}
@@ -42,20 +42,20 @@ public class Comment{
 		this.rol = rol;
 	}
 
-	public String getComment() {
-		return comment;
+	public String getComentary() {
+		return comentary;
 	}
 
-	public void setComment(String comment) {
-		this.comment = comment;
+	public void setComentary(String comment) {
+		this.comentary = comment;
 	}
 
-	public boolean isRead() {
-		return read;
+	public boolean isReaded() {
+		return readed;
 	}
 
-	public void setRead(boolean read) {
-		this.read = read;
+	public void setReaded(boolean readed) {
+		this.readed = readed;
 	}
 
 	public long getDate() {
