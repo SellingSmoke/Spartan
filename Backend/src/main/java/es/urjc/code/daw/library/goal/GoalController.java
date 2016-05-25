@@ -32,6 +32,7 @@ public class GoalController {
 			User userLogado =user.getLoggedUser();
 			userLogado.getGoals().add(goal);
 			userRepository.save(userLogado);
+			userRepository.flush();
 		goal = userRepository.findOne(userLogado.getId()).getGoals()
 				.stream().filter( g -> g.isActive()).collect(Collectors.toList()).get(0);
 		return new ResponseEntity<>(goal, HttpStatus.CREATED);

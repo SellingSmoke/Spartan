@@ -57,19 +57,15 @@ public class TaskController {
 		}
 	}
 	
-	@RequestMapping(value = "/{id1}/goal/{id2}", method = RequestMethod.DELETE)
-	public ResponseEntity<Task> deleteTask(@PathVariable(value="id1") String id1, @PathVariable(value="id2") String id2) {
-		long id_i_1 = -1;
-		long id_i_2 = -1;
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<Task> deleteTask(@PathVariable(value="id") String id) {
+		long id_i= -1;
 		try{
-			id_i_1 = Long.parseLong(id1);
-			id_i_2 = Long.parseLong(id1);
+			id_i = Long.parseLong(id);
 		}catch(NumberFormatException e){
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
-		Goal goal = goalRepository.findOne(id_i_2);
-		Task task = taskRepository.findOne(id_i_1);
-		goal.getTasks().remove(task);
+		Task task = taskRepository.findOne(id_i);
 		taskRepository.delete(task);
 		return new ResponseEntity<>(task, HttpStatus.OK);
 	}
