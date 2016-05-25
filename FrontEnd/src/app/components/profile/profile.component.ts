@@ -53,8 +53,7 @@ export class Profile implements OnInit{
 	}
 
 	ngOnInit(){
-		console.log(this.aut.User().gender);
-
+		this.filterGoals(this.aut.User().goals)
 			//this.numComments += student.goal.comments.length;
 			// if(student.goal){
 			// 	 this.progress+= student.goal.progress;
@@ -64,7 +63,6 @@ export class Profile implements OnInit{
 
 	changeEditMode(i:number){
 		this.editMode = i;
-		console.log("HHHHHHH " + this.editMode);
 	}
 
 	anyos(){
