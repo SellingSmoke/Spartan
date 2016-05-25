@@ -48,11 +48,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	private void configureUrlAuthorization(HttpSecurity http) throws Exception {
 
 		// APP: This rules have to be changed by app developer
+		
+		// SOLO USUARIO
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/goals/**").hasRole("USER");
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/tasks/**").hasRole("USER");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/comment/**").hasRole("USER");
 
-		// URLs that need authentication to access to it
-		http.authorizeRequests().antMatchers(HttpMethod.POST, "/books/**").hasRole("USER");
-		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/books/**").hasRole("USER");
-		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/books/**").hasRole("ADMIN");		
+		// SOLO ENTRENADOR
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/tasks/**").hasRole("TRAINER");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/tasks/**").hasRole("TRAINER");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/diet/**").hasRole("TRAINER");
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/diet/**").hasRole("TRAINER");
+		
+		// SOLO ALUMNO
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/goals/**").hasRole("STUDENT");
+
+				
 
 		// Other URLs can be accessed without authentication
 		http.authorizeRequests().anyRequest().permitAll();

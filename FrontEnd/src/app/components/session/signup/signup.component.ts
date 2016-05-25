@@ -76,7 +76,7 @@ export class Signup implements OnInit{
 				name: this.name,
 				lastname: this.lastname,
 				passwordHash: this.pass1,
-				roles: [this.rolString],
+				roles: [this.rolString, "ROLE_USER"],
 				email: this.email,
 				gender: this.gender,
 				birthday: 1360006343670,
